@@ -69,7 +69,7 @@ const write = (path: string, content: string) => {
 
 rmSync(OUT_DIR, { recursive: true, force: true });
 cpSync("public", OUT_DIR, { recursive: true });
-for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now, past }));
+for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now }));
 write("past/index.html", renderPast(past, config));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
