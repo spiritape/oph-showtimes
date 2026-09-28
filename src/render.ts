@@ -15,9 +15,19 @@ export type SiteConfig = {
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
+/** The Cloudflare Pages address the site had before its own domain. */
+const PAGES_HOST = "oph-showtimes.pages.dev";
+
+// Sends visitors on the old Pages address, or on www., to the site's own domain.
+function redirectScript(siteUrl: string) {
+  const host = new URL(siteUrl).host;
+  if (!siteUrl.startsWith("https://") || host === PAGES_HOST) return "";
+  return `<script>if(["www.${host}","${PAGES_HOST}"].includes(location.hostname))location.replace("${siteUrl}"+location.pathname+location.search+location.hash)</script>`;
+}
+
 function page(opts: { title: string; description: string; body: string; config: SiteConfig; path: string }) {
   const { config } = opts;
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8">${redirectScript(config.siteUrl)}<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(opts.title)}</title><meta name="description" content="${escapeHtml(opts.description)}">
 <link rel="canonical" href="${config.siteUrl}${opts.path}"><meta name="color-scheme" content="light dark">
 <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">

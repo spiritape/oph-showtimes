@@ -8,7 +8,8 @@ import { fetchSource, readSource } from "../src/source.ts";
 export interface Env {
   /** Subscribers under "sub:<hash of endpoint>", plus the last schedule fingerprint. */
   WATCHER: KVNamespace;
-  SITE_ORIGIN: string;
+  /** Space-separated origins the site is served from; the first is its own domain. */
+  SITE_ORIGINS: string;
   GITHUB_REPO: string;
   GITHUB_WORKFLOW: string;
   CONTACT_EMAIL: string;
@@ -103,8 +104,11 @@ export default {
   },
 
   async fetch(request, env) {
+    const origins = env.SITE_ORIGINS.split(/\s+/);
+    const origin = request.headers.get("Origin") ?? "";
     const cors = {
-      "Access-Control-Allow-Origin": env.SITE_ORIGIN,
+      "Access-Control-Allow-Origin": origins.includes(origin) ? origin : origins[0]!,
+      Vary: "Origin",
       "Access-Control-Allow-Methods": "POST",
       "Access-Control-Allow-Headers": "Content-Type",
     };

@@ -1,6 +1,6 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), with one-tap Google Calendar links and optional browser notifications for New Titles. New titles appear within a few minutes of the Playhouse announcing them. Not affiliated with the Playhouse.
+An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), live at [ojaishowtimes.com](https://ojaishowtimes.com), with one-tap Google Calendar links and optional browser notifications for New Titles. New titles appear within a few minutes of the Playhouse announcing them. Not affiliated with the Playhouse.
 
 See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, Live Show…) and [docs/adr](docs/adr) for decisions.
 
@@ -37,8 +37,8 @@ A local build writes `data/state.json`. Don't commit one built from the fixture.
 
 ## Setup
 
-1. **Cloudflare Pages**: a Pages project named `oph-showtimes` (Direct Upload), and an API token with *Cloudflare Pages: Edit*.
+1. **Cloudflare Pages**: a Pages project named `oph-showtimes` (Direct Upload), and an API token with *Cloudflare Pages: Edit*. The domain `ojaishowtimes.com` (registered with Cloudflare) and its `www.` are added under the project's *Custom domains*; pages send visitors from `www.` and the old `oph-showtimes.pages.dev` address to it.
 2. **GitHub repo → Settings → Secrets and variables → Actions**:
    - Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `NOTIFY_SECRET`
-   - Variables: `SITE_URL`, `CONTACT_EMAIL`, `WATCHER_URL`, `VAPID_PUBLIC_KEY`
+   - Variables: `SITE_URL` (`https://ojaishowtimes.com`), `CONTACT_EMAIL`, `WATCHER_URL`, `VAPID_PUBLIC_KEY`
 3. **Watcher**: `npm run deploy:watcher`, then set the secrets listed at the top of [worker/wrangler.toml](worker/wrangler.toml).

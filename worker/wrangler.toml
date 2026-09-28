@@ -16,7 +16,8 @@ binding = "WATCHER"
 id = "a83341b6b3494913b8657b6ecf027635"
 
 [vars]
-SITE_ORIGIN = "https://oph-showtimes.pages.dev"
+# The site's own domain first; the Pages address still works while it redirects.
+SITE_ORIGINS = "https://ojaishowtimes.com https://www.ojaishowtimes.com https://oph-showtimes.pages.dev"
 GITHUB_REPO = "spiritape/oph-showtimes"
 GITHUB_WORKFLOW = "update.yml"
 
