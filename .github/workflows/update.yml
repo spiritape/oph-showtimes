@@ -1,9 +1,16 @@
 name: Update schedule
 
 on:
+  # The watcher Worker starts this within ~2 minutes of a change (docs/adr/0002).
+  # GitHub's own schedule is only a fallback in case the watcher stops.
   schedule:
-    - cron: "*/15 * * * *" # check every 15 minutes; deploys only when something changed
+    - cron: "7 * * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: Republish even if the schedule hasn't changed
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -30,8 +37,10 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
-          # Starting a run by hand always republishes.
-          FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          WATCHER_URL: ${{ vars.WATCHER_URL }}
+          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          # Starting a run by hand republishes; the watcher's runs don't need to.
+          FORCE_PUBLISH: ${{ inputs.force && '1' || '' }}
 
       - name: Deploy to Cloudflare Pages
         if: steps.build.outputs.publish == 'true'
@@ -51,6 +60,26 @@ jobs:
             git commit -m "Update seen Titles"
             git push
           fi
+
+      # Sent after deploy so the link works, and after saving state so a
+      # failure can never make the next run send the same notification twice.
+      - name: Send New Title Notification
+        if: steps.build.outputs.publish == 'true'
+        run: npx tsx src/send-notification.ts
+        env:
+          WATCHER_URL: ${{ vars.WATCHER_URL }}
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
+
+      - name: Report a held notification
+        if: steps.build.outputs.notification_held != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HELD: ${{ steps.build.outputs.notification_held }}
+        run: |
+          gh label create notification-held --color FBCA04 --force
+          gh issue create --label notification-held \
+            --title "New Title Notification held back" \
+            --body "The site was published, but no notification was sent because this looked like a misread: $HELD"
 
       - name: Report a failed update
         if: failure()

@@ -11,6 +11,11 @@ h1{font-size:1.35rem;margin:0;letter-spacing:-.01em}
 h1 a{color:inherit;text-decoration:none}
 .sub{color:var(--muted);margin:2px 0 0;font-size:.9rem}
 .theater{margin:6px 0 0;font-size:.85rem;color:var(--muted)}
+.notify{margin:10px 0 0}
+.notify button{font:inherit;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.notify button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.notify button:disabled{opacity:.5}
+.notify-tip{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
 .theater a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
 nav{display:flex;gap:6px;margin:16px 0 4px}
 nav a{padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:.9rem}
@@ -50,3 +55,18 @@ export const CLIENT_SCRIPT = `(()=>{const n=Date.now(),f=new Intl.DateTimeFormat
 document.querySelectorAll("[data-start]").forEach(e=>{if(Date.parse(e.dataset.start)+18e5<n)e.remove()});
 document.querySelectorAll("[data-day]").forEach(s=>{if(!s.querySelector("[data-start]")){s.remove();return}const h=s.querySelector("h2");h.textContent=s.dataset.day===t?"Today":s.dataset.day===m?"Tomorrow":h.dataset.label});
 const l=document.querySelector("[data-list]");if(l&&!l.querySelector("[data-start]"))l.innerHTML='<p class="empty">Nothing else scheduled right now.</p>'})()`;
+
+// The "Notify me" button. Registers /sw.js, subscribes to Web Push with the
+// watcher's public key and hands the subscription to the watcher. On an iPhone
+// that hasn't added the site to its home screen, it explains how instead.
+export const NOTIFY_SCRIPT = `(async()=>{const b=document.querySelector("[data-notify]"),tip=document.querySelector("[data-notify-tip]");if(!b)return;
+const api=b.dataset.api,key=b.dataset.key,say=t=>{tip.textContent=t;tip.hidden=false};
+const ios=/iphone|ipad|ipod/i.test(navigator.userAgent),home=navigator.standalone||matchMedia("(display-mode: standalone)").matches;
+if(!("serviceWorker" in navigator)||!("PushManager" in window)){if(ios&&!home){b.hidden=false;b.onclick=()=>say("On iPhone: tap Share, then Add to Home Screen. Open OPH Showtimes from your home screen and tap this button again.")}return}
+let reg,sub;try{reg=await navigator.serviceWorker.register("/sw.js");sub=await reg.pushManager.getSubscription()}catch(e){return}
+const show=()=>{b.textContent=sub?"🔔 Notifications on":"🔔 Notify me of new titles";b.setAttribute("aria-pressed",String(!!sub))};show();b.hidden=false;
+const post=(path,body)=>fetch(api+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw new Error(r.status)});
+b.onclick=async()=>{b.disabled=true;tip.hidden=true;try{if(sub){await post("/unsubscribe",{endpoint:sub.endpoint});await sub.unsubscribe();sub=null;say("Notifications are off.")}
+else{if(await Notification.requestPermission()!=="granted"){say("Notifications are blocked for this site. You can allow them in your browser's site settings.");return}
+sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});await post("/subscribe",sub.toJSON());say("You'll get a notification when a new film or live show is announced.")}}
+catch(e){say("Couldn't change notifications. Please try again.")}finally{b.disabled=false;show()}}})()`;

@@ -1,10 +1,14 @@
-import { CLIENT_SCRIPT, STYLES } from "./page-assets.ts";
+import { CLIENT_SCRIPT, NOTIFY_SCRIPT, STYLES } from "./page-assets.ts";
 import { THEATER } from "./theater.ts";
 import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
 import { dayKey, dayLabel, timeLabel } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
-export type SiteConfig = { siteUrl: string };
+export type SiteConfig = {
+  siteUrl: string;
+  /** New Title Notifications; off when the watcher isn't configured. */
+  notifications: { watcherUrl: string; vapidPublicKey: string } | null;
+};
 
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -14,13 +18,21 @@ function page(opts: { title: string; description: string; body: string; config: 
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(opts.title)}</title><meta name="description" content="${escapeHtml(opts.description)}">
 <link rel="canonical" href="${config.siteUrl}${opts.path}"><meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎞</text></svg>">
+<link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2d2a8c">
 <style>${STYLES}</style></head><body>
 <header><h1><a href="/">OPH Showtimes</a></h1><p class="sub">An unofficial schedule for the Ojai Playhouse</p>
-<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p></header>
+<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p>${notifyButton(config)}</header>
 <main>${opts.body}</main>
 ${footer()}
-<script>${CLIENT_SCRIPT}</script></body></html>`;
+<script>${CLIENT_SCRIPT}</script>${config.notifications ? `<script>${NOTIFY_SCRIPT}</script>` : ""}</body></html>`;
+}
+
+// Hidden until the script has checked this browser can take notifications.
+function notifyButton(config: SiteConfig) {
+  const n = config.notifications;
+  if (!n) return "";
+  return `<p class="notify"><button type="button" data-notify data-api="${escapeHtml(n.watcherUrl)}" data-key="${escapeHtml(n.vapidPublicKey)}" hidden>🔔 Notify me of new titles</button></p><p class="notify-tip" data-notify-tip role="status" hidden></p>`;
 }
 
 function footer() {

@@ -1,6 +1,6 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with one-tap links to add a Showtime to Google Calendar. The Playhouse's own website is the source of truth.
+An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with one-tap links to add a Showtime to Google Calendar, and optional notifications when New Titles are announced. The Playhouse's own website is the source of truth.
 
 ## Language
 
@@ -29,3 +29,17 @@ _Avoid_: Genre, type
 **Source**:
 The official Ojai Playhouse website that we read the schedule from.
 _Avoid_: Feed, API
+
+### Notifications
+
+**New Title**:
+A Title that appears on the schedule and wasn't there at any point in the previous 60 days. Extra Showtimes for a Title already listed don't make it new.
+_Avoid_: New screening, new film (a New Title can be a Live Show)
+
+**New Title Notification**:
+The one browser notification sent to every Subscriber when a check finds one or more New Titles.
+_Avoid_: Alert, push, email
+
+**Subscriber**:
+A browser that has turned on New Title Notifications.
+_Avoid_: User, member, follower

@@ -22,3 +22,19 @@ export function guardRead(previousCount: number | null, read: () => Showtime[]):
   return { ok: true, showtimes };
 }
 
+
+const MAX_NEW_TITLES = 10;
+
+/**
+ * Holds back a New Title Notification that looks like a misread rather than a
+ * real announcement, e.g. the Source restyling every title so all look unseen.
+ */
+export function guardNotification(newCount: number, totalCount: number): { ok: true } | { ok: false; reason: string } {
+  if (newCount > MAX_NEW_TITLES || (totalCount >= 6 && newCount * 2 > totalCount)) {
+    return {
+      ok: false,
+      reason: `${newCount} of ${totalCount} Titles look new, which usually means the Source changed how it writes titles`,
+    };
+  }
+  return { ok: true };
+}

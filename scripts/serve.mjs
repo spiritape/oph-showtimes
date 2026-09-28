@@ -4,7 +4,13 @@ import { readFile } from "node:fs/promises";
 import { extname, join } from "node:path";
 
 const root = join(import.meta.dirname, "..", "dist");
-const types = { ".html": "text/html; charset=utf-8" };
+const types = {
+  ".html": "text/html; charset=utf-8",
+  ".js": "text/javascript",
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".webmanifest": "application/manifest+json",
+};
 createServer(async (req, res) => {
   let path = decodeURIComponent(new URL(req.url, "http://x").pathname);
   if (path.endsWith("/")) path += "index.html";

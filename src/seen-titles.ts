@@ -34,3 +34,15 @@ export function finishedTitles(seen: SeenTitles, current: Title[]): Title[] {
 export function knownSlugs(seen: SeenTitles | null): Record<string, string> {
   return Object.fromEntries(Object.entries(seen?.titles ?? {}).map(([key, entry]) => [key, entry.title.slug]));
 }
+
+/**
+ * New Titles: on the schedule now, but not seen at any point in the last 60
+ * days. With no memory yet (the first run) nothing counts as new.
+ */
+export function findNewTitles(seen: SeenTitles | null, titles: Title[], now: Date): Title[] {
+  if (!seen) return [];
+  return titles.filter((title) => {
+    const known = seen.titles[title.key];
+    return !known || now.getTime() - Date.parse(known.lastShowtime) > KEEP_FINISHED_DAYS * DAY;
+  });
+}

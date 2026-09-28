@@ -1,0 +1,24 @@
+# The watcher: see docs/adr/0002. Deploy with `npm run deploy:watcher`.
+# Secrets (set with `npx wrangler secret put <NAME> -c worker/wrangler.toml`):
+#   GITHUB_TOKEN       fine-grained token, this repo only, "Actions: read and write"
+#   NOTIFY_SECRET      shared with the GitHub repo secret of the same name
+#   VAPID_PRIVATE_JWK  Web Push signing key (its public half is the VAPID_PUBLIC_KEY repo variable)
+#   CONTACT_EMAIL      sent to the Source in the User-Agent and to push services
+name = "oph-showtimes-watcher"
+main = "index.ts"
+compatibility_date = "2026-09-01"
+
+[triggers]
+crons = ["*/2 * * * *"]
+
+[[kv_namespaces]]
+binding = "WATCHER"
+id = "a83341b6b3494913b8657b6ecf027635"
+
+[vars]
+SITE_ORIGIN = "https://oph-showtimes.pages.dev"
+GITHUB_REPO = "spiritape/oph-showtimes"
+GITHUB_WORKFLOW = "update.yml"
+
+[observability]
+enabled = true
