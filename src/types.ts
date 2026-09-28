@@ -16,7 +16,7 @@ export type Showtime = {
   infoHtml: string | null;
 };
 
-/** A Film or Event: every Showtime sharing the same title (ignoring case and spacing). */
+/** A Film or Live Show: every Showtime sharing the same title (ignoring case and spacing). */
 export type Title = {
   /** Identity across runs: the name ignoring case and spacing. */
   key: string;

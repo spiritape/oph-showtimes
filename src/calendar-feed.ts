@@ -1,10 +1,6 @@
-import { bookingLink, titlePath } from "./showtime.ts";
-import { runtimeMinutes } from "./time.ts";
+import { calendarEntry, calendarStamp } from "./showtime.ts";
 import type { ScheduledShowtime } from "./types.ts";
 
-const DEFAULT_MINUTES = 120;
-
-const stamp = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 const escapeText = (s: string) => s.replace(/[\\;,]/g, (c) => `\\${c}`).replace(/\n/g, "\\n");
 
 // RFC 5545 lines must be folded at 75 octets.
@@ -22,27 +18,23 @@ function fold(line: string): string {
   return out.join("\r\n ");
 }
 
-function vevent({ title, showtime }: ScheduledShowtime, siteUrl: string, now: Date): string[] {
-  const start = new Date(showtime.startsAt);
-  const end = new Date(start.getTime() + (runtimeMinutes(title.runtime) ?? DEFAULT_MINUTES) * 60_000);
-  const url = siteUrl + titlePath(title);
-  const booking = bookingLink(showtime);
-  const desc = [showtime.price, booking && `${booking.label}: ${booking.url}`, url].filter(Boolean).join("\n");
+function vevent(scheduled: ScheduledShowtime, siteUrl: string, now: Date): string[] {
+  const entry = calendarEntry(scheduled, siteUrl);
   return [
     "BEGIN:VEVENT",
-    `UID:${showtime.id}@oph-showtimes`,
-    `DTSTAMP:${stamp(now)}`,
-    `DTSTART:${stamp(start)}`,
-    `DTEND:${stamp(end)}`,
-    `SUMMARY:${escapeText(title.name)}`,
-    `LOCATION:${escapeText("Ojai Playhouse, 145 E. Ojai Ave, Ojai, CA 93023")}`,
-    `DESCRIPTION:${escapeText(desc)}`,
-    `URL:${url}`,
+    `UID:${scheduled.showtime.id}@oph-showtimes`,
+    `DTSTAMP:${calendarStamp(now)}`,
+    `DTSTART:${calendarStamp(entry.start)}`,
+    `DTEND:${calendarStamp(entry.end)}`,
+    `SUMMARY:${escapeText(entry.summary)}`,
+    `LOCATION:${escapeText(entry.location)}`,
+    `DESCRIPTION:${escapeText(entry.description)}`,
+    `URL:${entry.url}`,
     "END:VEVENT",
   ];
 }
 
-/** A Calendar Feed (or a single-Showtime calendar file) in iCalendar format. */
+/** A Calendar Feed in iCalendar format. */
 export function calendarFeed(name: string, showtimes: ScheduledShowtime[], siteUrl: string, now: Date): string {
   return (
     [

@@ -15,13 +15,17 @@ nav a{padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var
 nav a[aria-current]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;font-weight:600}
 ul{list-style:none;margin:0;padding:0}
-.showtime{display:grid;grid-template-columns:5.2rem 1fr auto;gap:2px 12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
-.time{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.showtime{display:grid;grid-template-columns:5.2rem 64px 1fr auto;grid-template-areas:"time thumb info actions";gap:0 12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.showtime.no-thumb{grid-template-columns:5.2rem 1fr auto;grid-template-areas:"time info actions"}
+.time{grid-area:time;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.thumb{grid-area:thumb;width:64px;aspect-ratio:5/3;border-radius:4px;overflow:hidden;background:var(--tag)}
+.thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.info{grid-area:info;display:flex;flex-direction:column;min-width:0}
 .name{font-weight:600;color:var(--fg);text-decoration:none}
 .name:hover{text-decoration:underline}
-.price{grid-column:2;color:var(--muted);font-size:.85rem}
+.price{color:var(--muted);font-size:.85rem}
 .tag{display:inline-block;background:var(--tag);color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;font-weight:500}
-.actions{grid-row:1/span 2;grid-column:3;align-self:center;display:flex;gap:10px;align-items:center}
+.actions{grid-area:actions;display:flex;gap:10px;align-items:center}
 .book{background:var(--accent);color:var(--accent-fg);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;white-space:nowrap}
 .add-cal{color:var(--muted);font-size:.8rem}
 a{color:var(--accent)}
@@ -32,7 +36,7 @@ a{color:var(--accent)}
 .synopsis{margin:12px 0 0}
 footer{color:var(--muted);font-size:.85rem;padding-top:32px;padding-bottom:40px}
 footer h3{color:var(--fg);font-size:.95rem;margin:24px 0 6px}
-@media (max-width:30rem){.showtime{grid-template-columns:4.6rem 1fr}.actions{grid-row:auto;grid-column:2;margin-top:6px}}
+@media (max-width:30rem){.showtime{grid-template-columns:4.2rem 56px 1fr;grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.showtime.no-thumb{grid-template-columns:4.2rem 1fr;grid-template-areas:"time info" "time actions"}.thumb{width:56px}.actions{margin-top:8px}}
 `.replace(/\n/g, "");
 
 // Pages are only rebuilt when the schedule changes (or every 3 hours). Between

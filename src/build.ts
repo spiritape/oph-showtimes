@@ -7,7 +7,7 @@ import { calendarFeed } from "./calendar-feed.ts";
 import { guardRead } from "./guard.ts";
 import { OUT_DIR, STATE_FILE } from "./paths.ts";
 import { hashSchedule, shouldPublish, type LastPublish } from "./refresh.ts";
-import { renderNotFound, renderSchedule, renderTitle, type SiteConfig } from "./render.ts";
+import { renderNotFound, renderSchedule, renderTitle, SCHEDULE_PAGES, type SiteConfig } from "./render.ts";
 import { buildSchedule } from "./schedule.ts";
 import { finishedTitles, knownSlugs, rememberTitles, type SeenTitles } from "./seen-titles.ts";
 import { isListed } from "./showtime.ts";
@@ -61,8 +61,7 @@ const write = (path: string, content: string) => {
 };
 
 rmSync(OUT_DIR, { recursive: true, force: true });
-write("index.html", renderSchedule(titles, config, { filmsOnly: false, now }));
-write("films/index.html", renderSchedule(titles, config, { filmsOnly: true, now }));
+for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now }));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
 
@@ -72,7 +71,6 @@ const upcoming = titles.flatMap((title) =>
 write("calendar/all.ics", calendarFeed("Ojai Playhouse (OPH Showtimes)", upcoming, config.siteUrl, now));
 const films = upcoming.filter((s) => s.title.isFilm);
 write("calendar/films.ics", calendarFeed("Ojai Playhouse films (OPH Showtimes)", films, config.siteUrl, now));
-for (const s of upcoming) write(`ics/${s.showtime.id}.ics`, calendarFeed(s.title.name, [s], config.siteUrl, now));
 write("_headers", "/*.ics\n  Content-Type: text/calendar; charset=utf-8\n/*\n  Cache-Control: public, max-age=300\n");
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });

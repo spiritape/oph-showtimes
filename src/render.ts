@@ -1,5 +1,5 @@
 import { CLIENT_SCRIPT, STYLES } from "./page-assets.ts";
-import { bookingLink, categoryLabel, isListed, titlePath } from "./showtime.ts";
+import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
 import { dayKey, dayLabel, timeLabel } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
@@ -30,21 +30,28 @@ function footer(config: SiteConfig) {
 <p>Not affiliated with the Ojai Playhouse. Times are Pacific and come from <a href="https://www.ojaiplayhouse.com/">ojaiplayhouse.com</a>, checked every 15 minutes. Always confirm there before you go. Follow the Playhouse on <a href="https://www.instagram.com/ojaiplayhouse">Instagram</a>.</p></footer>`;
 }
 
-function actions(s: Showtime) {
+function actions(title: Title, s: Showtime, config: SiteConfig) {
   const booking = bookingLink(s);
   const link = booking ? `<a class="book" href="${escapeHtml(booking.url)}" rel="noopener">${booking.label}</a>` : "";
-  return `<span class="actions">${link}<a class="add-cal" href="/ics/${escapeHtml(s.id)}.ics" title="Add to calendar">+ Cal</a></span>`;
+  const calendar = googleCalendarUrl({ title, showtime: s }, config.siteUrl);
+  return `<span class="actions">${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar">+ Cal</a></span>`;
 }
 
 const tag = (title: Title) => `<span class="tag">${escapeHtml(categoryLabel(title))}</span>`;
 
-function showtimeRow(title: Title, s: Showtime, label: "title" | "title-no-tag" | "day") {
-  const what =
-    label === "day"
-      ? `<span>${escapeHtml(dayLabel(s.startsAt))}</span>`
-      : `<span><a class="name" href="${titlePath(title)}">${escapeHtml(title.name)}</a>${label === "title" ? tag(title) : ""}</span>`;
+function thumbnail(title: Title) {
+  const src = thumbnailUrl(title.imageUrl);
+  return `<span class="thumb">${src ? `<img src="${escapeHtml(src)}" alt="" width="64" height="38" loading="lazy" decoding="async">` : ""}</span>`;
+}
+
+type RowStyle = { showTitle: boolean; showTag: boolean };
+
+function showtimeRow(title: Title, s: Showtime, config: SiteConfig, style: RowStyle) {
+  const heading = style.showTitle
+    ? `<span><a class="name" href="${titlePath(title)}">${escapeHtml(title.name)}</a>${style.showTag ? tag(title) : ""}</span>`
+    : `<span>${escapeHtml(dayLabel(s.startsAt))}</span>`;
   const price = s.price ? `<span class="price">${escapeHtml(s.price.replace(/\n/g, " · "))}</span>` : "";
-  return `<li class="showtime" data-start="${s.startsAt}"><span class="time">${timeLabel(s.startsAt)}</span>${what}${price}${actions(s)}</li>`;
+  return `<li class="showtime${style.showTitle ? "" : " no-thumb"}" data-start="${s.startsAt}"><span class="time">${timeLabel(s.startsAt)}</span>${style.showTitle ? thumbnail(title) : ""}<span class="info">${heading}${price}</span>${actions(title, s, config)}</li>`;
 }
 
 function dayHeading(day: string, firstStart: string, now: Date) {
@@ -53,10 +60,24 @@ function dayHeading(day: string, firstStart: string, now: Date) {
   return dayLabel(firstStart);
 }
 
-export function renderSchedule(titles: Title[], config: SiteConfig, opts: { filmsOnly: boolean; now: Date }) {
-  const { filmsOnly, now } = opts;
+export type ScheduleFilter = "all" | "films" | "live";
+
+const FILTERS: Record<ScheduleFilter, { label: string; path: string; pageTitle: string; include: (t: Title) => boolean }> = {
+  all: { label: "Everything", path: "/", pageTitle: "OPH Showtimes", include: () => true },
+  films: { label: "Films", path: "/films/", pageTitle: "Films · OPH Showtimes", include: (t) => t.isFilm },
+  live: { label: "Live shows", path: "/live/", pageTitle: "Live shows · OPH Showtimes", include: (t) => !t.isFilm },
+};
+
+export const SCHEDULE_PAGES = Object.entries(FILTERS).map(([filter, f]) => ({
+  filter: filter as ScheduleFilter,
+  file: `${f.path.slice(1)}index.html`,
+}));
+
+export function renderSchedule(titles: Title[], config: SiteConfig, opts: { filter: ScheduleFilter; now: Date }) {
+  const { now } = opts;
+  const filter = FILTERS[opts.filter];
   const listed: ScheduledShowtime[] = titles
-    .filter((title) => !filmsOnly || title.isFilm)
+    .filter(filter.include)
     .flatMap((title) => title.showtimes.filter((s) => isListed(s, now)).map((showtime) => ({ title, showtime })))
     .sort((a, b) => a.showtime.startsAt.localeCompare(b.showtime.startsAt));
   const days = new Map<string, ScheduledShowtime[]>();
@@ -65,18 +86,22 @@ export function renderSchedule(titles: Title[], config: SiteConfig, opts: { film
     days.set(day, [...(days.get(day) ?? []), entry]);
   }
 
+  // A Films-only list doesn't need a "Film" tag on every row.
+  const style: RowStyle = { showTitle: true, showTag: opts.filter !== "films" };
   const list = [...days]
     .map(([day, entries]) => {
       const first = entries[0]!.showtime.startsAt;
-      const rows = entries.map(({ title, showtime }) => showtimeRow(title, showtime, filmsOnly ? "title-no-tag" : "title"));
+      const rows = entries.map(({ title, showtime }) => showtimeRow(title, showtime, config, style));
       return `<section data-day="${day}"><h2 data-label="${escapeHtml(dayLabel(first))}">${dayHeading(day, first, now)}</h2><ul>${rows.join("")}</ul></section>`;
     })
     .join("");
-  const nav = `<nav><a href="/"${filmsOnly ? "" : ' aria-current="page"'}>Everything</a><a href="/films/"${filmsOnly ? ' aria-current="page"' : ""}>Films only</a></nav>`;
+  const nav = `<nav>${Object.entries(FILTERS)
+    .map(([key, f]) => `<a href="${f.path}"${key === opts.filter ? ' aria-current="page"' : ""}>${f.label}</a>`)
+    .join("")}</nav>`;
   return page({
-    title: filmsOnly ? "Films · OPH Showtimes" : "OPH Showtimes",
+    title: filter.pageTitle,
     description: "What's playing at the Ojai Playhouse: every upcoming Showtime, by day.",
-    path: filmsOnly ? "/films/" : "/",
+    path: filter.path,
     config,
     body: `${nav}<div data-list>${list || '<p class="empty">Nothing scheduled right now.</p>'}</div>`,
   });
@@ -97,7 +122,7 @@ ${title.livestreamUrl ? `<p><a href="${escapeHtml(title.livestreamUrl)}" rel="no
 <h2>Showtimes</h2>
 <div data-list>${
     upcoming.length
-      ? `<ul>${upcoming.map((s) => showtimeRow(title, s, "day")).join("")}</ul>`
+      ? `<ul>${upcoming.map((s) => showtimeRow(title, s, config, { showTitle: false, showTag: false })).join("")}</ul>`
       : `<p class="empty">No upcoming Showtimes. <a href="/">See what's playing</a>.</p>`
   }</div></article>`;
   return page({

@@ -1,4 +1,5 @@
-import type { Showtime, Title } from "./types.ts";
+import { runtimeMinutes } from "./time.ts";
+import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
 /** A Showtime stays listed until this long after it starts. */
 export const LISTED_AFTER_START_MINUTES = 30;
@@ -15,6 +16,46 @@ export function bookingLink(s: Showtime): { label: "RSVP" | "Tickets"; url: stri
 
 export const titlePath = (title: Title) => `/t/${title.slug}/`;
 
-/** "Film", "Comedy", "Music"… */
-export const categoryLabel = (title: Title) =>
-  title.isFilm ? "Film" : (title.category ?? "Event").replace(/^./, (c) => c.toUpperCase());
+/** "Film", or a Live Show's Category: "Comedy", "Music"… */
+export function categoryLabel(title: Title): string {
+  if (title.isFilm) return "Film";
+  // The Source files talks and one-offs under "misc", which says nothing to a visitor.
+  if (!title.category || title.category === "misc") return "Live show";
+  return title.category.replace(/^./, (c) => c.toUpperCase());
+}
+
+const VENUE = "Ojai Playhouse, 145 E. Ojai Ave, Ojai, CA 93023";
+/** Assumed length when the Source gives no running time. */
+const DEFAULT_MINUTES = 120;
+
+/** What a calendar needs to know about one Showtime. */
+export function calendarEntry({ title, showtime }: ScheduledShowtime, siteUrl: string) {
+  const start = new Date(showtime.startsAt);
+  const end = new Date(start.getTime() + (runtimeMinutes(title.runtime) ?? DEFAULT_MINUTES) * 60_000);
+  const url = siteUrl + titlePath(title);
+  const booking = bookingLink(showtime);
+  const description = [showtime.price, booking && `${booking.label}: ${booking.url}`, url].filter(Boolean).join("\n");
+  return { start, end, summary: title.name, location: VENUE, description, url };
+}
+
+/** UTC timestamp in the compact form calendars use, e.g. 20260929T020000Z. */
+export const calendarStamp = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+
+/** Opens Google Calendar's "new event" screen prefilled with the Showtime. */
+export function googleCalendarUrl(scheduled: ScheduledShowtime, siteUrl: string): string {
+  const entry = calendarEntry(scheduled, siteUrl);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: entry.summary,
+    dates: `${calendarStamp(entry.start)}/${calendarStamp(entry.end)}`,
+    location: entry.location,
+    details: entry.description,
+  });
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
+/** A small (128px wide) version of a Source image, or null if its host can't resize. */
+export function thumbnailUrl(imageUrl: string | null): string | null {
+  const match = imageUrl?.match(/^(https:\/\/[\w-]+\.graphassets\.com\/[\w-]+)\/([\w-]+)$/);
+  return match ? `${match[1]}/resize=width:128/${match[2]}` : null;
+}
