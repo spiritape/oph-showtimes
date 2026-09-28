@@ -8,9 +8,10 @@ export const isListed = (s: Showtime, now: Date) =>
   Date.parse(s.startsAt) + LISTED_AFTER_START_MINUTES * 60_000 > now.getTime();
 
 /** Where to book: a free/RSVP link wins over a paid ticket link. */
-export function bookingLink(s: Showtime): { label: "RSVP" | "Tickets"; url: string } | null {
-  if (s.rsvpUrl) return { label: "RSVP", url: s.rsvpUrl };
-  if (s.ticketUrl) return { label: "Tickets", url: s.ticketUrl };
+export function bookingLink(s: Showtime): { label: "RSVP" | "Tickets"; url: string; free: boolean } | null {
+  // The Source only uses its RSVP links (free screening / free event) for free Showtimes.
+  if (s.rsvpUrl) return { label: "RSVP", url: s.rsvpUrl, free: true };
+  if (s.ticketUrl) return { label: "Tickets", url: s.ticketUrl, free: false };
   return null;
 }
 

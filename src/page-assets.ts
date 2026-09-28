@@ -1,8 +1,8 @@
 // Inlined into every page so each page is a single request.
 
 export const STYLES = `
-:root{--bg:#fbf9f4;--fg:#1d1b18;--muted:#6f6a62;--line:#e4dfd5;--accent:#2d2a8c;--accent-fg:#fff;--tag:#efeae0}
-@media (prefers-color-scheme:dark){:root{--bg:#141312;--fg:#eeeae3;--muted:#9c968c;--line:#2b2926;--accent:#a9a6ff;--accent-fg:#141312;--tag:#26241f}}
+:root{--free:#1f8a4c;--bg:#fbf9f4;--fg:#1d1b18;--muted:#6f6a62;--line:#e4dfd5;--accent:#2d2a8c;--accent-fg:#fff;--tag:#efeae0}
+@media (prefers-color-scheme:dark){:root{--free:#5fd08f;--bg:#141312;--fg:#eeeae3;--muted:#9c968c;--line:#2b2926;--accent:#a9a6ff;--accent-fg:#141312;--tag:#26241f}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
 main,header,footer{max-width:40rem;margin:0 auto;padding:0 16px}
@@ -27,6 +27,7 @@ ul{list-style:none;margin:0;padding:0}
 .tag{display:inline-block;background:var(--tag);color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;font-weight:500}
 .actions{grid-area:actions;display:flex;gap:10px;align-items:center}
 .book{background:var(--accent);color:var(--accent-fg);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;white-space:nowrap}
+.free{display:inline-flex;color:var(--free);margin-right:-4px}
 .add-cal{color:var(--muted);font-size:.8rem}
 a{color:var(--accent)}
 .empty{color:var(--muted);padding:24px 0}

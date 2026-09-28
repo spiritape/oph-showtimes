@@ -33,9 +33,14 @@ function footer(config: SiteConfig) {
 function actions(title: Title, s: Showtime, config: SiteConfig) {
   const booking = bookingLink(s);
   const link = booking ? `<a class="book" href="${escapeHtml(booking.url)}" rel="noopener">${booking.label}</a>` : "";
+  const free = booking?.free ? freeIcon(title.isFilm ? "Free screening" : "Free event") : "";
   const calendar = googleCalendarUrl({ title, showtime: s }, config.siteUrl);
-  return `<span class="actions">${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar">+ Cal</a></span>`;
+  return `<span class="actions">${free}${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar">+ Cal</a></span>`;
 }
+
+// A small price tag, so free Showtimes stand out without another badge.
+const freeIcon = (label: string) =>
+  `<span class="free" role="img" aria-label="${label}" title="${label}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8.6 1.5H14v5.4l-6.8 6.8a1.2 1.2 0 0 1-1.7 0L2.3 10.5a1.2 1.2 0 0 1 0-1.7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="4.5" r="1.1" fill="currentColor"/></svg></span>`;
 
 const tag = (title: Title) => `<span class="tag">${escapeHtml(categoryLabel(title))}</span>`;
 
