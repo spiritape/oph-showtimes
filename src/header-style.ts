@@ -142,7 +142,7 @@ export const HEADER_STYLE: HeaderStyle = {
   notify: { radius: 40, borderWidth: 1, weight: 500, size: 0.8, padX: 12, padY: 4, uppercase: false },
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
-  list: { rowPadding: 12, columnGap: 12, dayGap: 28, headingGap: 4, thumbWidth: 64, dividers: true },
+  list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   light: {
     background: "#fbf9f4",
     title: "#1d1b18",

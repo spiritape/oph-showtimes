@@ -111,14 +111,14 @@ function nav(current: ScheduleFilter | "past") {
   return `<nav>${links.join("")}</nav>`;
 }
 
-/** Played Showtimes grouped by Pacific day, most recent day first. */
+/** Showtimes grouped by Pacific day, keeping their order. */
 function groupByDay(entries: ScheduledShowtime[]) {
   const days = new Map<string, ScheduledShowtime[]>();
   for (const entry of entries) {
     const day = dayKey(entry.showtime.startsAt);
     days.set(day, [...(days.get(day) ?? []), entry]);
   }
-  return [...days.values()];
+  return days;
 }
 
 const pastRow = ({ title, showtime }: ScheduledShowtime) =>
@@ -140,15 +140,10 @@ export function renderSchedule(
     .filter(filter.include)
     .flatMap((title) => title.showtimes.filter((s) => isListed(s, now)).map((showtime) => ({ title, showtime })))
     .sort((a, b) => a.showtime.startsAt.localeCompare(b.showtime.startsAt));
-  const days = new Map<string, ScheduledShowtime[]>();
-  for (const entry of listed) {
-    const day = dayKey(entry.showtime.startsAt);
-    days.set(day, [...(days.get(day) ?? []), entry]);
-  }
 
   // A Films-only list doesn't need a "Film" tag on every row.
   const style: RowStyle = { showTitle: true, showTag: opts.filter !== "films" };
-  const list = [...days]
+  const list = [...groupByDay(listed)]
     .map(([day, entries]) => {
       const first = entries[0]!.showtime.startsAt;
       const rows = entries.map(({ title, showtime }) => showtimeRow(title, showtime, config, style));
@@ -165,7 +160,7 @@ export function renderSchedule(
 }
 
 export function renderPast(past: ScheduledShowtime[], config: SiteConfig) {
-  const days = groupByDay(past)
+  const days = [...groupByDay(past).values()]
     .map(
       (entries) =>
         `<section><h2>${escapeHtml(dayLabel(entries[0]!.showtime.startsAt))}</h2><ul class="past">${entries.map(pastRow).join("")}</ul></section>`,

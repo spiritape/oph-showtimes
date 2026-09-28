@@ -20,6 +20,10 @@ Two pieces ([ADR 0002](docs/adr/0002-cloudflare-watcher-for-fast-updates.md)):
 
 Starting **Update schedule** by hand from the Actions tab always republishes. Tests run in a separate workflow on every push.
 
+## Changing the look
+
+The header, the buttons (Notify, filters, Tickets/RSVP) and the schedule list's spacing come from `HEADER_STYLE` in [src/header-style.ts](src/header-style.ts). Change it there, or use the Header Editor: a live-preview page ([tools/header-editor.html](tools/header-editor.html), published as a private claude.ai artifact) whose Save button stores the same fields for Claude to copy into `HEADER_STYLE`. Web fonts load from Google Fonts only when one is chosen.
+
 ## Local development
 
 ```bash
