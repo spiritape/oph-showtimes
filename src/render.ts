@@ -1,3 +1,4 @@
+import { HEADER_STYLE } from "./header-style.ts";
 import { CLIENT_SCRIPT, NOTIFY_SCRIPT, STYLES } from "./page-assets.ts";
 import { THEATER } from "./theater.ts";
 import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
@@ -21,11 +22,19 @@ function page(opts: { title: string; description: string; body: string; config: 
 <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2d2a8c">
 <style>${STYLES}</style></head><body>
-<header><h1><a href="/">OPH Showtimes</a></h1><p class="sub">An unofficial schedule for the Ojai Playhouse</p>
-<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p>${notifyButton(config)}</header>
+<header>${headerContent()}${notifyButton(config)}</header>
 <main>${opts.body}</main>
 ${footer()}
 <script>${CLIENT_SCRIPT}</script>${config.notifications ? `<script>${NOTIFY_SCRIPT}</script>` : ""}</body></html>`;
+}
+
+function headerContent() {
+  const h = HEADER_STYLE;
+  const sub = h.showSubtitle ? `<p class="sub">${escapeHtml(h.subtitleText)}</p>` : "";
+  const address = h.showAddress
+    ? `<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p>`
+    : "";
+  return `<h1><a href="/">${escapeHtml(h.titleText)}</a></h1>${sub}\n${address}`;
 }
 
 // Hidden until the script has checked this browser can take notifications.

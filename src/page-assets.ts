@@ -1,4 +1,5 @@
 // Inlined into every page so each page is a single request.
+import { headerCss } from "./header-style.ts";
 
 export const STYLES = `
 :root{--free:#1f8a4c;--bg:#fbf9f4;--fg:#1d1b18;--muted:#6f6a62;--line:#e4dfd5;--accent:#2d2a8c;--accent-fg:#fff;--tag:#efeae0}
@@ -6,11 +7,8 @@ export const STYLES = `
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
 main,header,footer{max-width:40rem;margin:0 auto;padding:0 16px}
-header{padding-top:24px;padding-bottom:8px}
-h1{font-size:1.35rem;margin:0;letter-spacing:-.01em}
 h1 a{color:inherit;text-decoration:none}
 .sub{color:var(--muted);margin:2px 0 0;font-size:.9rem}
-.theater{margin:6px 0 0;font-size:.85rem;color:var(--muted)}
 .notify{margin:10px 0 0}
 .notify button{font:inherit;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
 .notify button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
@@ -49,7 +47,7 @@ a{color:var(--accent)}
 footer{color:var(--muted);font-size:.85rem;padding-top:32px;padding-bottom:40px}
 footer h3{color:var(--fg);font-size:.95rem;margin:24px 0 6px}
 @media (max-width:30rem){.showtime{grid-template-columns:4.2rem 56px 1fr;grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.showtime.no-thumb{grid-template-columns:4.2rem 1fr;grid-template-areas:"time info" "time actions"}.thumb{width:56px}.actions{margin-top:8px}}
-`.replace(/\n/g, "");
+`.replace(/\n/g, "") + headerCss();
 
 // Pages are only rebuilt when the schedule changes (or every 3 hours). Between
 // rebuilds this hides Showtimes 30 minutes after they start (see
