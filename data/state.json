@@ -1,8 +1,8 @@
 {
- "lastReadCount": 43,
+ "lastReadCount": 61,
  "lastPublish": {
-  "scheduleHash": "5779da6fdca8baee2f70120ac16173ee176dcec685db7c9af694a07aa1887add",
-  "publishedAt": "2026-09-28T20:33:09.872Z"
+  "scheduleHash": "a919c2eec60d07d82eaa4dac827bb9583daf19db89c81ea8d3ee1e03fcd3a9dc",
+  "publishedAt": "2026-09-28T21:51:07.119Z"
  },
  "seen": {
   "titles": {
@@ -185,7 +185,7 @@
     }
    },
    "the history of concrete": {
-    "lastShowtime": "2026-10-04T21:00:00.000Z",
+    "lastShowtime": "2026-10-29T21:15:00.000Z",
     "title": {
      "key": "the history of concrete",
      "slug": "the-history-of-concrete",
@@ -226,6 +226,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmullngb7l61l07lmd8o92dfj",
        "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Starring: John Wilson<br>Running Time: 1hr 40min</p><p>After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.</p>"
+      },
+      {
+       "id": "cmufzw85erthm07n3wti4713u",
+       "title": "The History of Concrete",
+       "subtitle": null,
+       "startsAt": "2026-10-29T21:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1150?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpcokjjq07n3h7lpq6rv",
+       "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Running Time: 1hr 42min</p><p>Following the finale of his acclaimed HBO series “How To with John Wilson”, NYC documentarian John Wilson looks to the bedrock of his beloved New York City for inspiration and structure. Concrete, the world&#39;s most widely used building material, appears as an ever-present life force, and John sets out to make the definitive documentary on the matter. After attending a workshop on how to write and sell a Hallmark movie, he decides to use the industry-approved Hallmark formula to tell this seemingly drab story and increase his movie’s appeal. But his foundation soon begins to crumble - literally and figuratively - as he struggles to balance artistic freedom with the realities of the modern film industry.</p>"
       }
      ]
     }
@@ -1114,6 +1127,567 @@
        "price": "$13.50/$12 (child 12 & under - senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
        "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker<br>Starring: Justin Fletcher, John Spakes, Nina Sosanya<br>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
+      }
+     ]
+    }
+   },
+   "the story of documentary film": {
+    "lastShowtime": "2026-10-26T20:00:00.000Z",
+    "title": {
+     "key": "the story of documentary film",
+     "slug": "the-story-of-documentary-film",
+     "name": "The Story of Documentary Film",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Mark Cousins",
+     "runtime": "3hr",
+     "rating": null,
+     "synopsis": "The Story of Documentary Film traces the history of documentary from its very beginnings to the present day. Drawing on Mark Cousins’ decades of research, the series re-examines classics of the genre including Hoop Dreams, The Gleaners and I, Shoah, Stop Making Sense and Paris Is Burning. Alongside these celebrated films, it introduces audiences to striking new discoveries and overlooked works from across the globe, with a spotlight on the many great female filmmakers who have too often been written out of the history of documentary filmmaking. Structured chronologically, but interspersed with stand-alone thematic sections, the series challenges prevailing assumptions about what documentary is, offering a captivating new perspective on the history of a form that continues to shape how we understand the world around us.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkd0a3i707n3o1s7ggrj",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug2v883xzpr07lngdqubtdt",
+       "title": "The Story of Documentary Film",
+       "subtitle": null,
+       "startsAt": "2026-10-26T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1155?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkd0a3i707n3o1s7ggrj",
+       "infoHtml": "<p>Year: 2026<br>Director: Mark Cousins<br>Running Time: 3hr</p><p>The Story of Documentary Film traces the history of documentary from its very beginnings to the present day. Drawing on Mark Cousins’ decades of research, the series re-examines classics of the genre including Hoop Dreams, The Gleaners and I, Shoah, Stop Making Sense and Paris Is Burning. Alongside these celebrated films, it introduces audiences to striking new discoveries and overlooked works from across the globe, with a spotlight on the many great female filmmakers who have too often been written out of the history of documentary filmmaking. Structured chronologically, but interspersed with stand-alone thematic sections, the series challenges prevailing assumptions about what documentary is, offering a captivating new perspective on the history of a form that continues to shape how we understand the world around us. </p><p>The Ojai Documentary Film Festival is presenting Chapters 1 to 3 of the film. </p>"
+      }
+     ]
+    }
+   },
+   "musk": {
+    "lastShowtime": "2026-10-27T00:00:00.000Z",
+    "title": {
+     "key": "musk",
+     "slug": "musk",
+     "name": "Musk",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Alex Gibney",
+     "runtime": "3hr 52 minutes (with intermission)",
+     "rating": null,
+     "synopsis": "Elon Musk has amassed so much power, he’s like a character in a Marvel comic book. A short recap of his handiwork: Tesla popularized electric vehicles; Starlink expanded the reach of the internet; Twitter bowed to his takeover; and DOGE radically transformed the US government. Musk has been at the centre of AI development and this past summer, the IPO for SpaceX made him the richest man in the world. His influence arguably touches everyone on the planet. Surely this is worth fresh scrutiny. After nearly four years of work, Oscar-winning filmmaker Alex Gibney delivers his most ambitious and epic documentary, seeking to understand the history and motivations of the ultimate tech bro. When this film was first announced, Musk immediately denounced it on Twitter and refused to participate. But that didn’t impede Gibney, who draws upon countless hours of interviews that Musk has given over the years. Even more revealingly, Gibney conducts new interviews with figures who have known Musk up close and personal, including the mogul’s father, Errol Musk. The news cycle moves so fast, it’s hard to remember that Musk was once at home among liberals, with his companies promoting clean energy and invoicing the Obama administration for hundreds of millions in tech contracts. What drove him into the world of Donald Trump? Musk frequently invokes science fiction stories and has coyly wondered aloud if we’re living in a video game–like simulation. Playing off this idea, Gibney leans visually into an innovative graphic treatment throughout the film. But make no mistake: this is really happening.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk0ja5qr07lnplr0c73e",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufzfyk5qyml07lnjwamgxug",
+       "title": "Musk",
+       "subtitle": null,
+       "startsAt": "2026-10-27T00:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1146?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk0ja5qr07lnplr0c73e",
+       "infoHtml": "<p>Year: 2026<br>Director: Alex Gibney<br>Running Time: 3hr 52 minutes (with intermission)</p><p>Elon Musk has amassed so much power, he’s like a character in a Marvel comic book. A short recap of his handiwork: Tesla popularized electric vehicles; Starlink expanded the reach of the internet; Twitter bowed to his takeover; and DOGE radically transformed the US government. Musk has been at the centre of AI development and this past summer, the IPO for SpaceX made him the richest man in the world. His influence arguably touches everyone on the planet. Surely this is worth fresh scrutiny. After nearly four years of work, Oscar-winning filmmaker Alex Gibney delivers his most ambitious and epic documentary, seeking to understand the history and motivations of the ultimate tech bro. When this film was first announced, Musk immediately denounced it on Twitter and refused to participate. But that didn’t impede Gibney, who draws upon countless hours of interviews that Musk has given over the years. Even more revealingly, Gibney conducts new interviews with figures who have known Musk up close and personal, including the mogul’s father, Errol Musk. The news cycle moves so fast, it’s hard to remember that Musk was once at home among liberals, with his companies promoting clean energy and invoicing the Obama administration for hundreds of millions in tech contracts. What drove him into the world of Donald Trump? Musk frequently invokes science fiction stories and has coyly wondered aloud if we’re living in a video game–like simulation. Playing off this idea, Gibney leans visually into an innovative graphic treatment throughout the film. But make no mistake: this is really happening.</p>"
+      }
+     ]
+    }
+   },
+   "punishment park": {
+    "lastShowtime": "2026-10-27T19:00:00.000Z",
+    "title": {
+     "key": "punishment park",
+     "slug": "punishment-park",
+     "name": "Punishment Park",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1971",
+     "director": "Peter Watkins",
+     "runtime": "1hr 31min",
+     "rating": null,
+     "synopsis": "Set during the Nixon administration, Punishment Park (1971) depicts a dystopian parallel reality in which detained political dissidents face an obscene decision. After being convicted of their “crimes” in a sham court proceeding, they are offered the choice between life in prison or three days in “Punishment Park,” a desert landscape where armed guards pursue them on foot as they race toward an American flag miles away on the dusty horizon. Those who can reach the flag before they are captured are promised release; those who are caught and refuse to comply with their captors’ demands are shot and killed. Peter Watkins’s staggering documentary-style drama moves across a barren landscape. Camera crews embed with the convicted men and women—and the armed forces chasing them—to expose these miscarriages of justice and their violent results. The film provokes us to consider the machinery of power and reflect on just how imaginary this imagined state is.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk51a3h507n366i7tadd",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug3v79h08xc07lnqysfbt23",
+       "title": "Punishment Park",
+       "subtitle": null,
+       "startsAt": "2026-10-27T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002245109020?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk51a3h507n366i7tadd",
+       "infoHtml": "<p>Year: 1971<br>Director: Peter Watkins<br>Running Time: 1hr 31min</p><p><strong>Post screening Q&amp;A cinematographer Joan Churchill</strong></p><p>Set during the Nixon administration, <em>Punishment Park (1971)</em> depicts a dystopian parallel reality in which detained political dissidents face an obscene decision. After being convicted of their “crimes” in a sham court proceeding, they are offered the choice between life in prison or three days in “Punishment Park,” a desert landscape where armed guards pursue them on foot as they race toward an American flag miles away on the dusty horizon. Those who can reach the flag before they are captured are promised release; those who are caught and refuse to comply with their captors’ demands are shot and killed. Peter Watkins’s staggering documentary-style drama moves across a barren landscape. Camera crews embed with the convicted men and women—and the armed forces chasing them—to expose these miscarriages of justice and their violent results. The film provokes us to consider the machinery of power and reflect on just how imaginary this imagined state is.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "rehearsals for a revolution": {
+    "lastShowtime": "2026-10-27T21:30:00.000Z",
+    "title": {
+     "key": "rehearsals for a revolution",
+     "slug": "rehearsals-for-a-revolution",
+     "name": "Rehearsals for a Revolution",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Pegah Ahangarani",
+     "runtime": "1hr 35min",
+     "rating": null,
+     "synopsis": "Pegah Ahangarani traces her life through five portraits of relatives and mentors. Using personal archives, home videos, protests, and newspapers, she chronicles over 40 years of Iranian history from 1979 to 2026.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsj8qjaklb07n3sp8q58bg",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufzk0s3rc7n07n37l68igfz",
+       "title": "Rehearsals for a Revolution",
+       "subtitle": null,
+       "startsAt": "2026-10-27T21:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1147?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsj8qjaklb07n3sp8q58bg",
+       "infoHtml": "<p>Year: 2026<br>Director: Pegah Ahangarani<br>Running Time: 1hr 35min</p><p>Pegah Ahangarani traces her life through five portraits of relatives and mentors. Using personal archives, home videos, protests, and newspapers, she chronicles over 40 years of Iranian history from 1979 to 2026.</p>"
+      }
+     ]
+    }
+   },
+   "everest: the other side": {
+    "lastShowtime": "2026-10-27T21:30:00.000Z",
+    "title": {
+     "key": "everest: the other side",
+     "slug": "everest-the-other-side",
+     "name": "Everest: The Other Side",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Jimmy Chin, Elizabeth Chai Vasarhelyi",
+     "runtime": "1hr 55min",
+     "rating": null,
+     "synopsis": "Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of their sport. Their drive sharpened into a shared dream: to climb and ski the direct North Face of Everest - the most difficult and dangerous climb on the mountain and the most coveted ski line on Earth. Thousands have summited the mountain via Nepal's southeast ridge, but only a handful have ever reached the top by this route, and no one has successfully skied down.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjv0a3g907n3myr6rk90",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufznbvjr8ou07lnrz0ua123",
+       "title": "Everest: The Other Side",
+       "subtitle": null,
+       "startsAt": "2026-10-27T21:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1148?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjv0a3g907n3myr6rk90",
+       "infoHtml": "<p>Year: 2026<br>Director: Jimmy Chin, Elizabeth Chai Vasarhelyi<br>Running Time: 1hr 55min</p><p>Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of their sport. Their drive sharpened into a shared dream: to climb and ski the direct North Face of Everest - the most difficult and dangerous climb on the mountain and the most coveted ski line on Earth. Thousands have summited the mountain via Nepal&#39;s southeast ridge, but only a handful have ever reached the top by this route, and no one has successfully skied down.</p><p>Already known for their extraordinary feats in the mountains and no strangers to loss, Morrison and Nelson stake everything on this daunting challenge. From National Geographic Documentary Films and Elizabeth Chai Vasarhelyi and Jimmy Chin - the Oscar®-winning filmmakers behind Free Solo and Meru - Everest: The Other Side is an intimate portrait of two people bound by love, ambition and the pursuit of the impossible.</p>"
+      }
+     ]
+    }
+   },
+   "nuisance bear": {
+    "lastShowtime": "2026-10-28T02:00:00.000Z",
+    "title": {
+     "key": "nuisance bear",
+     "slug": "nuisance-bear",
+     "name": "Nuisance Bear",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Jack Weisman, Gabriela Osio Vanden",
+     "runtime": "1hr 30min",
+     "rating": null,
+     "synopsis": "Churchill, Manitoba sells itself as the “Polar Bear Capital of the World,” but what happens when the mascot becomes a problem? In their debut feature, Canadian filmmakers Gabriela Osio Vanden and Jack Weisman track a polar bear through encounters with tourists, trucks, sirens, traps, wildlife officers, hunters, and relocation. The town profits from ursine spectacle, but Vanden and Weisman portray bears as neither scenery nor symbol. Instead, the bear becomes our protagonist, trapped in a system built to watch, sell, manage, and remove it.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk2ya5qy07ln0u1ros7g",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug2zdsly3y007ln3a3bz5uk",
+       "title": "Nuisance Bear",
+       "subtitle": null,
+       "startsAt": "2026-10-28T02:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1156?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk2ya5qy07ln0u1ros7g",
+       "infoHtml": "<p>Year: 2026<br>Director: Jack Weisman, Gabriela Osio Vanden<br>Running Time: 1hr 30min</p><p><strong>Post screening Q&amp;A with co-director Jack Weisman</strong></p><p>Churchill, Manitoba sells itself as the “Polar Bear Capital of the World,” but what happens when the mascot becomes a problem? In their debut feature, Canadian filmmakers Gabriela Osio Vanden and Jack Weisman track a polar bear through encounters with tourists, trucks, sirens, traps, wildlife officers, hunters, and relocation. The town profits from ursine spectacle, but Vanden and Weisman portray bears as neither scenery nor symbol. Instead, the bear becomes our protagonist, trapped in a system built to watch, sell, manage, and remove it.</p><p>Nuisance Bear overturns the nature documentary from the inside. Every chase, stare, and shutter click asks who is really intruding on whom. Moving between Churchill and the Inuit community of Arviat - with guidance and narration from late Inuit elder Mike Tunalaaq Gibbons - the film touches on issues of climate crisis, conservation, tourism, colonial settlement, and coexistence. Winner of the highly coveted Sundance Grand Jury Prize for Documentary, this is a formally daring work about spectacle, survival, and the violence hidden inside the word “nuisance”.</p>"
+      }
+     ]
+    }
+   },
+   "remake": {
+    "lastShowtime": "2026-10-28T21:30:00.000Z",
+    "title": {
+     "key": "remake",
+     "slug": "remake",
+     "name": "Remake",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Ross McElwee",
+     "runtime": "1hr 54min",
+     "rating": null,
+     "synopsis": "In Remake, filmmaker Ross McElwee turns his lens on the passage of time and the uneasy space between documenting life and understanding it. The film traces McElwee’s relationship with his son Adrian, and the fragile bond the camera created between them while Adrian was alive, and now that he’s gone.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkbfa5rj07lnbe9agcxf",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufzq3lirbwr07lnm8e81hp4",
+       "title": "Remake",
+       "subtitle": null,
+       "startsAt": "2026-10-28T21:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1149?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkbfa5rj07lnbe9agcxf",
+       "infoHtml": "<p>Year: 2026<br>Director: Ross McElwee<br>Running Time: 1hr 54min</p><p>In <em>Remake</em>, filmmaker Ross McElwee turns his lens on the passage of time and the uneasy space between documenting life and understanding it. The film traces McElwee’s relationship with his son Adrian, and the fragile bond the camera created between them while Adrian was alive, and now that he’s gone.</p><p>Drawing from decades of footage, some shot by Ross, some by Adrian, the film becomes a layered excavation of memory and image making. Threaded through is the ghost of another project: a stalled effort by Hollywood to fictionalise McElwee’s 1986 classic, <em>Sherman’s March</em>. What emerges is a work shaped by absence and propelled forward by the urge to keep looking, even when there’s no clear story left to tell.</p>"
+      }
+     ]
+    }
+   },
+   "the bend in the river": {
+    "lastShowtime": "2026-10-28T23:30:00.000Z",
+    "title": {
+     "key": "the bend in the river",
+     "slug": "the-bend-in-the-river",
+     "name": "The Bend in the River",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2025",
+     "director": "Robb Moss",
+     "runtime": "1hr 22min",
+     "rating": null,
+     "synopsis": "The Bend in the River chronicles five close friends over nearly fifty years. Starting in 1978, director Robb Moss documents his friend’s outdoor rent-free life during one clothing-optional rafting trip through the Grand Canyon. In 2003, he filmed his friends again coming to terms with their transition from being young and carefree to responsible and middle-aged. Now, in 2025, Moss finds his friends in their 70s grappling with the choices they’ve made as individuals and as a generation. Cathy, Barry, Jim, Danny, and Jeff have lived most of their lives. They’ve held jobs, been married, had children, seen those children married, divorced, remarried, helped raise grandchildren, dreamt, suffered, succeeded and survived. The film interweaves moments from the distant past with those of the recent present, taking viewers back-and-forth through time and inviting candid reflections on what it means to live and grow old.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkera5s407lnj8sv60vv",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug33wcxz10x07n3p7lte7ou",
+       "title": "The Bend in the River",
+       "subtitle": null,
+       "startsAt": "2026-10-28T23:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1158?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkera5s407lnj8sv60vv",
+       "infoHtml": "<p>Year: 2025<br>Director: Robb Moss<br>Running Time: 1hr 22min</p><p><strong>Post screening Q&amp;A with director Robb Moss</strong></p><p>The Bend in the River chronicles five close friends over nearly fifty years. Starting in 1978, director Robb Moss documents his friend’s outdoor rent-free life during one clothing-optional rafting trip through the Grand Canyon. In 2003, he filmed his friends again coming to terms with their transition from being young and carefree to responsible and middle-aged. Now, in 2025, Moss finds his friends in their 70s grappling with the choices they’ve made as individuals and as a generation. Cathy, Barry, Jim, Danny, and Jeff have lived most of their lives. They’ve held jobs, been married, had children, seen those children married, divorced, remarried, helped raise grandchildren, dreamt, suffered, succeeded and survived. The film interweaves moments from the distant past with those of the recent present, taking viewers back-and-forth through time and inviting candid reflections on what it means to live and grow old.</p>"
+      }
+     ]
+    }
+   },
+   "jean-michel": {
+    "lastShowtime": "2026-10-29T02:30:00.000Z",
+    "title": {
+     "key": "jean-michel",
+     "slug": "jean-michel",
+     "name": "Jean-Michel",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Viridiana Lieberman, Quinn Wilson",
+     "runtime": "1hr 35min",
+     "rating": null,
+     "synopsis": "An intimate portrait of iconic 20th-century artist Jean-Michel Basquiat, told through the eyes of those closest to him: his family.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjyya3gr07n3f4zxw86v",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug37kazyriv07ln0ysu2v04",
+       "title": "Jean-Michel",
+       "subtitle": null,
+       "startsAt": "2026-10-29T02:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1157?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjyya3gr07n3f4zxw86v",
+       "infoHtml": "<p>Year: 2026<br>Director: Viridiana Lieberman, Quinn Wilson <br>Running Time: 1hr 35min</p><p>An intimate portrait of iconic 20th-century artist Jean-Michel Basquiat, told through the eyes of those closest to him: his family.</p>"
+      }
+     ]
+    }
+   },
+   "wild combination: a portrait of arthur russell": {
+    "lastShowtime": "2026-10-29T04:15:00.000Z",
+    "title": {
+     "key": "wild combination: a portrait of arthur russell",
+     "slug": "wild-combination-a-portrait-of-arthur-russell",
+     "name": "Wild Combination: A Portrait of Arthur Russell",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2008",
+     "director": "Matt Wolf",
+     "runtime": "1hr 11min",
+     "rating": null,
+     "synopsis": "Wild Combination is director Matt Wolf’s visually absorbing portrait of the seminal avant-garde composer, singer-songwriter, cellist, and disco producer Arthur Russell. Before his untimely death from AIDS in 1992, Arthur prolifically created music that spanned both pop and the transcendent possibilities of abstract art. Now, over fifteen years since his passing, Arthur's work is finally finding its audience. Wolf incorporates rare archival footage and commentary from Arthur's family, friends, and closest collaborators - including Philip Glass and Allen Ginsberg - to tell this poignant and important story.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkgqa5sb07ln36lfu812",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug4028g0fgq07lnkuxa3dud",
+       "title": "Wild Combination: A Portrait of Arthur Russell",
+       "subtitle": null,
+       "startsAt": "2026-10-29T04:15:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002245150143?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdkgqa5sb07ln36lfu812",
+       "infoHtml": "<p>Year: 2008<br>Director: Matt Wolf<br>Running Time: 1hr 11min</p><p>Wild Combination is director Matt Wolf’s visually absorbing portrait of the seminal avant-garde composer, singer-songwriter, cellist, and disco producer Arthur Russell. Before his untimely death from AIDS in 1992, Arthur prolifically created music that spanned both pop and the transcendent possibilities of abstract art. Now, over fifteen years since his passing, Arthur&#39;s work is finally finding its audience. Wolf incorporates rare archival footage and commentary from Arthur&#39;s family, friends, and closest collaborators - including Philip Glass and Allen Ginsberg - to tell this poignant and important story.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "the queen of versailles": {
+    "lastShowtime": "2026-10-29T19:00:00.000Z",
+    "title": {
+     "key": "the queen of versailles",
+     "slug": "the-queen-of-versailles",
+     "name": "The Queen of Versailles",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2012",
+     "director": "Lauren Greenfield",
+     "runtime": "1hr 43min",
+     "rating": null,
+     "synopsis": "Meet Jackie and David Siegel and their eight children; Jackie is a former beauty queen and David is the billionaire 'Time-Share King' of the world, and they are building their dream home - the USA’s largest single domestic home - modelled on the Versailles palace in France. And then the economic crisis hits. The Queen of Versailles (2012) is their story of how, in the face of the worst economic crisis in 100 years, Jackie, David, their children, maids, dogs, employees and business associates struggle to keep the time-share business afloat and finish their dream-home: Versailles, Florida. The Queen of Versailles is a deft and surprisingly subtle piece of filmmaking; Lauren Greenfield’s knowing camera not only interviews but captures private moments in the Siegels’ lives, and she constructs metaphors to create portraits of family, friends, colleagues, nannies and children as their rarefied world is turned upside down. The result is a hypnotic film of a family and the demise of the American Dream.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk76a5r507ln6sceanea",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug43fja0kjl07lnu62nibz7",
+       "title": "The Queen of Versailles",
+       "subtitle": null,
+       "startsAt": "2026-10-29T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002245222359?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk76a5r507ln6sceanea",
+       "infoHtml": "<p>Year: 2012<br>Director: Lauren Greenfield<br>Running Time: 1hr 43min</p><p><strong>Post screening Q&amp;A with director Lauren Greenfield</strong></p><p>Meet Jackie and David Siegel and their eight children; Jackie is a former beauty queen and David is the billionaire &#39;Time-Share King&#39; of the world, and they are building their dream home - the USA’s largest single domestic home - modelled on the Versailles palace in France. And then the economic crisis hits. The Queen of Versailles (2012) is their story of how, in the face of the worst economic crisis in 100 years, Jackie, David, their children, maids, dogs, employees and business associates struggle to keep the time-share business afloat and finish their dream-home: Versailles, Florida. The Queen of Versailles is a deft and surprisingly subtle piece of filmmaking; Lauren Greenfield’s knowing camera not only interviews but captures private moments in the Siegels’ lives, and she constructs metaphors to create portraits of family, friends, colleagues, nannies and children as their rarefied world is turned upside down. The result is a hypnotic film of a family and the demise of the American Dream.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "barbara forever": {
+    "lastShowtime": "2026-10-29T21:00:00.000Z",
+    "title": {
+     "key": "barbara forever",
+     "slug": "barbara-forever",
+     "name": "Barbara Forever",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Brydie O'Connor",
+     "runtime": "1hr 42min",
+     "rating": null,
+     "synopsis": "BARBARA FOREVER explores the films, archive, and ongoing cultural impact of experimental filmmaker Barbara Hammer, revealing her ingenious lifelong artistic effort to create and record lesbian histories, personal and societal. Through her own images and words, the film centers Hammer as a prism of the cultural ecosystems around her—through the feminist and queer movements in 1970s San Francisco, the male-dominated New York art world of the 1980s, the New Queer Cinema movement of the 1990s, and expanded LGBTQIA+ representation in art and culture in the 2000s.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgp81kem707lnuld4r3hx",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufzt7ibroiw07n37cbxoctr",
+       "title": "Barbara Forever",
+       "subtitle": null,
+       "startsAt": "2026-10-29T21:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1151?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgp81kem707lnuld4r3hx",
+       "infoHtml": "<p>Year: 2026<br>Director: Brydie O&#39;Connor<br>Running Time: 1hr 42min</p><p>BARBARA FOREVER explores the films, archive, and ongoing cultural impact of experimental filmmaker Barbara Hammer, revealing her ingenious lifelong artistic effort to create and record lesbian histories, personal and societal. Through her own images and words, the film centers Hammer as a prism of the cultural ecosystems around her—through the feminist and queer movements in 1970s San Francisco, the male-dominated New York art world of the 1980s, the New Queer Cinema movement of the 1990s, and expanded LGBTQIA+ representation in art and culture in the 2000s.</p><p>Driven by her canon of over eighty films, a vast collection of unreleased archival materials - hundreds of hours of footage, personal photographs and ephemera, and extensive audio interviews - BARBARA FOREVER tells Barbara Hammer’s story through her own voice and visual perspective, making her the expert on her life, vision, and motivations.</p><p>Barbara Hammer’s films break taboos around female sexuality, aging, illness, and queer love, often using her own body as a site of exploration and political power.</p><p>Through the course of the film, she shows us that the personal is not only political, the personal is historical. Looking to Barbara Hammer as one of the first filmmakers to put a full lesbian life on screen that wasn’t there before, her work becomes a blueprint for a new generation of queer and radical artists to write their own histories into existence. This exploration of both Barbara Hammer’s life, work, archive, and her ongoing legacy provides an urgent, necessary story of queer life, feminist history, and American cinema.</p>"
+      }
+     ]
+    }
+   },
+   "you can see everything": {
+    "lastShowtime": "2026-10-30T02:00:00.000Z",
+    "title": {
+     "key": "you can see everything",
+     "slug": "you-can-see-everything",
+     "name": "You Can See Everything",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Nathan Fielder, Lance Oppenheim",
+     "runtime": "2hr 54 minutes",
+     "rating": null,
+     "synopsis": "Thirty-four days before she’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss. From boundary-pushing directors Nathan Fielder and Lance Oppenheim comes YOU CAN SEE EVERYTHING.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmug2ngmjy3jc07n3xmsgpad2",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmufzzcjvrowy07lne0pw8bcm",
+       "title": "You Can See Everything",
+       "subtitle": null,
+       "startsAt": "2026-10-30T02:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1152?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$20",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmug2ngmjy3jc07n3xmsgpad2",
+       "infoHtml": "<p>Year: 2026<br>Director: Nathan Fielder, Lance Oppenheim<br>Running Time: 2hr 54 minutes</p><p>Thirty-four days before she’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss. From boundary-pushing directors Nathan Fielder and Lance Oppenheim comes YOU CAN SEE EVERYTHING.</p>"
+      }
+     ]
+    }
+   },
+   "boatbuilders": {
+    "lastShowtime": "2026-10-30T19:00:00.000Z",
+    "title": {
+     "key": "boatbuilders",
+     "slug": "boatbuilders",
+     "name": "Boatbuilders",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Luke Lorentzen",
+     "runtime": "1hr 45min",
+     "rating": null,
+     "synopsis": "At Brooklin Boat Yard in Maine, 60 skilled craftsmen build wooden boats. Over four seasons, the film follows their construction of a 56-foot sailboat, exploring how deep engagement with work, community, and place creates meaning.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpb0kjjh07n3m95sgv45",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug472im19ec07n3nih8wky9",
+       "title": "Boatbuilders",
+       "subtitle": null,
+       "startsAt": "2026-10-30T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002245316641?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpb0kjjh07n3m95sgv45",
+       "infoHtml": "<p>Year: 2026<br>Director: Luke Lorentzen<br>Running Time: 1hr 45min</p><p>At Brooklin Boat Yard in Maine, 60 skilled craftsmen build wooden boats. Over four seasons, the film follows their construction of a 56-foot sailboat, exploring how deep engagement with work, community, and place creates meaning.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "soul patrol": {
+    "lastShowtime": "2026-10-30T21:15:00.000Z",
+    "title": {
+     "key": "soul patrol",
+     "slug": "soul-patrol",
+     "name": "Soul Patrol",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "J.M. Harper",
+     "runtime": "1hr 40min",
+     "rating": null,
+     "synopsis": "Soul Patrol uncovers a hidden chapter of American military history by focusing on the Vietnam War's first Black special ops team, an elite unit operating deep behind enemy lines. With unprecedented access to this once-secretive group of African-American veterans, director J.M. Harper reconstructs their journey with an immediacy rarely seen in Vietnam War storytelling, using raw Super 8 footage, photographs, and audio recordings from their personal archives. Opening on the war’s 50th anniversary, the surviving members reunite in a hotel that becomes a surreal liminal space, where memory, brotherhood, and unresolved trauma collide. As the men reflect on their experiences, the film interrogates the contradictions of fighting for freedom abroad while facing inequality at home. Winner of the Directing Award for U.S. Documentary at the Sundance Film Festival, Soul Patrol is not just a war story, but a reckoning – an intimate portrait of survival, memory, and the enduring cost of war on those asked to fight it.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpgkkenn07ln6lemlx4s",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug03gdos1qq07n362i4knjo",
+       "title": "Soul Patrol",
+       "subtitle": null,
+       "startsAt": "2026-10-30T21:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1153?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpgkkenn07ln6lemlx4s",
+       "infoHtml": "<p>Year: 2026<br>Director: J.M. Harper<br>Running Time: 1hr 40min</p><p>Soul Patrol uncovers a hidden chapter of American military history by focusing on the Vietnam War&#39;s first Black special ops team, an elite unit operating deep behind enemy lines. With unprecedented access to this once-secretive group of African-American veterans, director J.M. Harper reconstructs their journey with an immediacy rarely seen in Vietnam War storytelling, using raw Super 8 footage, photographs, and audio recordings from their personal archives. Opening on the war’s 50th anniversary, the surviving members reunite in a hotel that becomes a surreal liminal space, where memory, brotherhood, and unresolved trauma collide. As the men reflect on their experiences, the film interrogates the contradictions of fighting for freedom abroad while facing inequality at home. Winner of the Directing Award for U.S. Documentary at the Sundance Film Festival, Soul Patrol is not just a war story, but a reckoning – an intimate portrait of survival, memory, and the enduring cost of war on those asked to fight it.</p>"
+      }
+     ]
+    }
+   },
+   "once upon a time in harlem": {
+    "lastShowtime": "2026-10-31T00:00:00.000Z",
+    "title": {
+     "key": "once upon a time in harlem",
+     "slug": "once-upon-a-time-in-harlem",
+     "name": "Once Upon a Time in Harlem",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "William Greaves, David Greaves, Liani Greaves",
+     "runtime": "1hr 30min",
+     "rating": null,
+     "synopsis": "One afternoon in August 1972, at the behest of legendary, genre-defying filmmaker William Greaves, a coterie of luminaries from the Harlem Renaissance gathered - with cameras rolling - for an intimate party in Duke Ellington’s townhouse. Fifty years later, completed by Greaves’ son David, Once Upon a Time in Harlem has emerged as a rapturous living archive of one of the most important artistic movements of the 20th century and, posthumously, one of the most important works in the Greaves filmography.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpeakjk607n3nv19dlhn",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug06trvrxsb07lnpa7v43ak",
+       "title": "Once Upon a Time in Harlem",
+       "subtitle": null,
+       "startsAt": "2026-10-31T00:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1154?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpeakjk607n3nv19dlhn",
+       "infoHtml": "<p>Year: 2026<br>Director: William Greaves, David Greaves, Liani Greaves<br>Running Time: 1hr 30min</p><p>One afternoon in August 1972, at the behest of legendary, genre-defying filmmaker William Greaves, a coterie of luminaries from the Harlem Renaissance gathered - with cameras rolling - for an intimate party in Duke Ellington’s townhouse. Fifty years later, completed by Greaves’ son David, <em>Once Upon a Time in Harlem</em> has emerged as a rapturous living archive of one of the most important artistic movements of the 20th century and, posthumously, one of the most important works in the Greaves filmography. </p><p>A towering constellation of artists, poets, painters, musicians, scholars, and other notables appear throughout — among them Aaron Douglas, Arna Bontemps, Richard Bruce Nugent, James Van Der Zee, and Countee Cullen’s widow, Ida Mae Cullen. Free from any institutionalized gaze and structure, they congregate around a large punch bowl to drink, reminisce, banter, and passionately debate their legacy. The conversations we’re privy to flow naturally and candidly, marked variously by humour, fervour, reflexive insight, and not a bit of melancholy, as they take stock of their achievements in their older age.</p><p>Greaves’ multiple 16mm cameras are at the heart of the action, capturing and partaking in the collegial repartee, while the deft, contemporary editing balances the original ’70s textures with an exhilarating, contemporary immediacy, tracing the urgency of these artists and their ideas from the 1920s through to the 1970s and to our present moment.</p><p>Functioning as well as a dynamic inquiry into the ways culture is actively inherited and sustained across disciplines, and creates communities of protest and survival, <em>Once Upon a Time in Harlem </em>is a monumental reclamation of cinematic and cultural memory.</p>"
+      }
+     ]
+    }
+   },
+   "the best summer": {
+    "lastShowtime": "2026-10-31T02:30:00.000Z",
+    "title": {
+     "key": "the best summer",
+     "slug": "the-best-summer",
+     "name": "The Best Summer",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Tamra Davis",
+     "runtime": "1hr 22min",
+     "rating": null,
+     "synopsis": "A found footage documentary from a concert tour in 1995 that features live performances, candid interviews and a behind the scene view of what it's like to be on tour with the Beastie Boys, Sonic Youth, Foo Fighters, Beck, Pavement, Rancid, The Amps and Bikini Kill.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpjjkjm407n339oeikl6",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug3aoonzban07n3ubxx01ky",
+       "title": "The Best Summer",
+       "subtitle": null,
+       "startsAt": "2026-10-31T02:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1159?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpjjkjm407n339oeikl6",
+       "infoHtml": "<p>Year: 2026<br>Director: Tamra Davis<br>Running Time: 1hr 22min</p><p><strong>Post screening Q&amp;A with director Tamra Davis</strong></p><p>A found footage documentary from a concert tour in 1995 that features live performances, candid interviews and a behind the scene view of what it&#39;s like to be on tour with the Beastie Boys, Sonic Youth, Foo Fighters, Beck, Pavement, Rancid, The Amps and Bikini Kill.</p>"
       }
      ]
     }
