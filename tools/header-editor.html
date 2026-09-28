@@ -67,6 +67,9 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .site .name{font-weight:600}
 .site .price{display:block;color:var(--muted);font-size:.85rem}
 .site .book{white-space:nowrap}
+.site .acts{display:flex;gap:10px;align-items:center}
+.site .free{display:inline-flex}
+.site .free-badge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid currentColor;border-radius:4px;padding:1px 4px}
 @media (max-width:54rem){.app{grid-template-columns:1fr}.preview-wrap{position:sticky;top:0;z-index:1;background:var(--bg);padding-block:8px;order:-1;max-height:48vh;overflow:auto}.top{order:-2}}
 .frame.phone .site .showtime{grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.frame.phone .site .acts{margin-top:8px}
 @media (max-width:30rem){.chips{grid-template-columns:repeat(3,1fr)}label.row{grid-template-columns:6rem 1fr 3.2rem}.color{grid-template-columns:6rem 2.2rem 1fr}}
@@ -166,6 +169,18 @@ input[type=range]{width:100%;accent-color:var(--accent)}
     </details>
 
     <details open>
+      <summary>Free icon and Today</summary>
+      <div class="body">
+        <p class="label">Icon beside free RSVP buttons</p>
+        <div class="chips" id="freeIcon" role="group" aria-label="Free icon"></div>
+        <p class="label">Colors</p>
+        <p class="hint" data-mode-hint></p>
+        <div id="highlightColors" style="display:grid;gap:8px"></div>
+        <p class="hint">The first day in the list gets this color: "Today", or the soonest day with screenings.</p>
+      </div>
+    </details>
+
+    <details open>
       <summary>Buttons</summary>
       <div class="body">
         <div class="seg" id="buttonKind" role="group" aria-label="Which button">
@@ -212,15 +227,17 @@ input[type=range]{width:100%;accent-color:var(--accent)}
         </header>
         <main>
           <nav><a aria-current="page">Everything</a><a>Films</a><a>Live shows</a><a>Past</a></nav>
-          <section data-day><h2>Tomorrow</h2>
+          <div data-list>
+          <section data-day><h2>Today</h2>
           <ul>
-            <li class="showtime"><span class="time">7:00 PM</span><span class="thumb" style="background:linear-gradient(135deg,#3b4a6b,#9a7b58)"></span><span class="info"><span class="name">Collateral (4k restored)</span><span class="price">Registration required</span></span><span class="acts"><span class="book rsvp">RSVP</span></span></li>
+            <li class="showtime"><span class="time">7:00 PM</span><span class="thumb" style="background:linear-gradient(135deg,#3b4a6b,#9a7b58)"></span><span class="info"><span class="name">Collateral (4k restored)</span><span class="price">Registration required</span></span><span class="acts"><span id="pFree"></span><span class="book rsvp">RSVP</span></span></li>
             <li class="showtime"><span class="time">9:15 PM</span><span class="thumb" style="background:linear-gradient(135deg,#1f2a44,#6d5a8c)"></span><span class="info"><span class="name">Donnie Darko (25th anniversary)</span><span class="price">$15</span></span><span class="acts"><span class="book">Tickets</span></span></li>
           </ul></section>
-          <section data-day><h2>Tue, Sep 29</h2>
+          <section data-day><h2>Tomorrow</h2>
           <ul>
             <li class="showtime"><span class="time">7:00 PM</span><span class="thumb" style="background:linear-gradient(135deg,#5b3a2e,#c29a5b)"></span><span class="info"><span class="name">Highlander</span><span class="price">$15/$13.50 (senior 60+)</span></span><span class="acts"><span class="book">Tickets</span></span></li>
           </ul></section>
+          </div>
         </main>
       </div>
     </div>
@@ -266,6 +283,7 @@ const LIVE = {
   notify: { radius: 40, borderWidth: 1, weight: 500, size: 0.8, padX: 12, padY: 4, uppercase: false },
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
+  freeIcon: "badge",
   list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   navAlign: "center",
   light: {
@@ -274,6 +292,7 @@ const LIVE = {
     pillText: "#1d1b18", pillBg: "#fbf9f4", pillBorder: "#e4dfd5", pillActiveText: "#fbf9f4", pillActiveBg: "#1d1b18",
     ticketText: "#ffffff", ticketBg: "#2d2a8c", ticketBorder: "#2d2a8c",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
+    freeIcon: "#1f8a4c", firstDay: "#6f6a62",
   },
   dark: {
     background: "#141312", title: "#7f94e1", subtitle: "#9c968c", address: "#5b5a57",
@@ -281,8 +300,22 @@ const LIVE = {
     pillText: "#eeeae3", pillBg: "#141312", pillBorder: "#2b2926", pillActiveText: "#141312", pillActiveBg: "#eeeae3",
     ticketText: "#ffffff", ticketBg: "#0131e4", ticketBorder: "#36a15b",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
+    freeIcon: "#5fd08f", firstDay: "#61d090",
   },
 };
+// Same shapes as FREE_ICONS in src/header-style.ts.
+const FREE_ICONS = {
+  tag: '<path d="M8.6 1.5H14v5.4l-6.8 6.8a1.2 1.2 0 0 1-1.7 0L2.3 10.5a1.2 1.2 0 0 1 0-1.7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="4.5" r="1.1" fill="currentColor"/>',
+  ticket: '<path d="M2 4.5h12v2.2a1.5 1.5 0 0 0 0 2.6v2.2H2V9.3a1.5 1.5 0 0 0 0-2.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10.5 5v6" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.2 1.3"/>',
+  gift: '<rect x="2.25" y="5.75" width="11.5" height="3" rx=".6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.25 8.75v4.5h9.5v-4.5M8 5.75v7.5M8 5.75C6.8 3 4.5 3 4.8 4.7c.2 1 2 1.05 3.2 1.05Zm0 0c1.2-2.75 3.5-2.75 3.2-1.05-.2 1-2 1.05-3.2 1.05Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+  sparkle: '<path d="M8 1.5 9.5 6.5l5 1.5-5 1.5L8 14.5l-1.5-5-5-1.5 5-1.5Z" fill="currentColor"/>',
+  heart: '<path d="M8 13.5S2 10 2 5.8A3 3 0 0 1 8 4.5a3 3 0 0 1 6 1.3C14 10 8 13.5 8 13.5Z" fill="currentColor"/>',
+  badge: "",
+  none: "",
+};
+const ICON_LABELS = { tag: "Tag", ticket: "Ticket", gift: "Gift", sparkle: "Sparkle", heart: "Heart", badge: "Free", none: "None" };
+const iconHtml = (k) => k === "badge" ? '<span class="free free-badge">Free</span>' : k === "none" ? "" : `<span class="free" role="img" aria-label="Free screening"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">${FREE_ICONS[k]}</svg></span>`;
+const HIGHLIGHT_COLORS = { freeIcon: "Free icon", firstDay: "Today heading" };
 const HEADER_COLORS = { background: "Background", title: "Title", subtitle: "Subtitle", address: "Address" };
 const BUTTON_COLORS = {
   notify: { notifyText: "Text", notifyBg: "Fill", notifyBorder: "Border" },
@@ -327,6 +360,8 @@ function css(h) {
     `.site .book{font-family:${bf};${shape(h.tickets)};color:${c.ticketText};background:${c.ticketBg};border-color:${c.ticketBorder}}` +
     `.site .book.rsvp{color:${c.rsvpText};background:${c.rsvpBg};border-color:${c.rsvpBorder}}` +
     `.site [data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}` +
+    `.site [data-list]>[data-day]:first-child h2{color:${c.firstDay}}` +
+    `.site .free{color:${c.freeIcon}}` +
     `.site .showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:${width === "phone" ? "4.2rem" : "5.2rem"} ${tw}px 1fr${width === "phone" ? "" : " auto"};border-bottom-width:${l.dividers ? 1 : 0}px}` +
     `.site .thumb{width:${tw}px}`;
 }
@@ -337,7 +372,10 @@ $("fontsLocal").innerHTML = Object.entries(FONTS).filter(([, f]) => !f[2]).map(c
 $("fontsWeb").innerHTML = Object.entries(FONTS).filter(([, f]) => f[2]).map(chip).join("");
 
 const colorRow = (k, label) => `<div class="color"><label for="c-${k}">${label}</label><input type="color" id="c-${k}" data-c="${k}" aria-label="${label} color"><input type="text" id="t-${k}" data-c="${k}" aria-label="${label} hex" maxlength="7"></div>`;
+$("freeIcon").innerHTML = Object.keys(FREE_ICONS).map((k) => `<button type="button" class="chip" data-v="${k}" aria-label="${ICON_LABELS[k]}"><b style="color:var(--free-chip);height:1.4rem;display:flex;align-items:center">${iconHtml(k) || "–"}</b><span>${ICON_LABELS[k]}</span></button>`).join("");
+
 function colorRows() {
+  $("highlightColors").innerHTML = Object.entries(HIGHLIGHT_COLORS).map(([k, l]) => colorRow(k, l)).join("");
   $("headerColors").innerHTML = Object.entries(HEADER_COLORS).map(([k, l]) => colorRow(k, l)).join("");
   $("buttonColors").innerHTML = Object.entries(BUTTON_COLORS[kind]).map(([k, l]) => colorRow(k, l)).join("");
   document.querySelectorAll("[data-mode-hint]").forEach((p) => p.textContent = `Editing ${mode}-mode colors. Switch the preview to edit the other mode.`);
@@ -359,6 +397,9 @@ function render() {
   for (const [k, f] of Object.entries(LFMT)) { $("l-" + k).value = s.list[k]; $("l-" + k).nextElementSibling.textContent = f(s.list[k]); }
   $("l-dividers").checked = s.list.dividers;
   press("navAlign", s.navAlign);
+  press("freeIcon", s.freeIcon);
+  $("pFree").innerHTML = iconHtml(s.freeIcon);
+  $("freeIcon").style.setProperty("--free-chip", s[mode].freeIcon);
   $("filledWrap").hidden = kind !== "notify";
   press("fontTarget", fontTarget);
   press("fontsLocal", s[fontTarget]); press("fontsWeb", s[fontTarget]);
@@ -406,6 +447,7 @@ onPick("fontsWeb", (v) => { s[fontTarget] = v; changed(); });
 onPick("fontTarget", (v) => { fontTarget = v; render(); });
 onPick("align", (v) => { s.align = v; changed(); });
 onPick("navAlign", (v) => { s.navAlign = v; changed(); });
+onPick("freeIcon", (v) => { s.freeIcon = v; changed(); });
 onPick("buttonKind", (v) => { kind = v; colorRows(); render(); });
 onPick("shapePreset", (v) => { s[kind].radius = Number(v); changed(); });
 onPick("mode", (v) => { mode = v; colorRows(); render(); });

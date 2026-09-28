@@ -31,6 +31,7 @@ ul{list-style:none;margin:0;padding:0}
 .actions{grid-area:actions;display:flex;gap:10px;align-items:center}
 .book{text-decoration:none;white-space:nowrap}
 .free{display:inline-flex;color:var(--free);margin-right:-4px}
+.free-badge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid currentColor;border-radius:4px;padding:1px 4px;margin-right:0}
 .add-cal{display:inline-flex;padding:4px;border-radius:6px;line-height:0}
 .add-cal:hover{background:var(--tag)}
 a{color:var(--accent)}

@@ -1,4 +1,4 @@
-import { fontLinks, HEADER_STYLE } from "./header-style.ts";
+import { fontLinks, FREE_ICONS, HEADER_STYLE } from "./header-style.ts";
 import { CLIENT_SCRIPT, NOTIFY_SCRIPT, STYLES } from "./page-assets.ts";
 import { SOURCE_URL } from "./source.ts";
 import { THEATER } from "./theater.ts";
@@ -76,9 +76,13 @@ function actions(title: Title, s: Showtime, config: SiteConfig) {
 
 const CALENDAR_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3" fill="#fff" stroke="#4285f4" stroke-width="1.6"/><path d="M3 7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v2H3Z" fill="#4285f4"/><path d="M8 2.5v3M16 2.5v3" stroke="#4285f4" stroke-width="1.6" stroke-linecap="round"/><text x="12" y="18.2" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#4285f4">31</text></svg>`;
 
-// A small price tag, so free Showtimes stand out without another badge.
-const freeIcon = (label: string) =>
-  `<span class="free" role="img" aria-label="${label}" title="${label}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8.6 1.5H14v5.4l-6.8 6.8a1.2 1.2 0 0 1-1.7 0L2.3 10.5a1.2 1.2 0 0 1 0-1.7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="4.5" r="1.1" fill="currentColor"/></svg></span>`;
+// Marks free Showtimes without another button; see FREE_ICONS.
+function freeIcon(label: string) {
+  const icon = HEADER_STYLE.freeIcon;
+  if (icon === "none") return "";
+  if (icon === "badge") return `<span class="free free-badge" title="${label}">Free</span>`;
+  return `<span class="free" role="img" aria-label="${label}" title="${label}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">${FREE_ICONS[icon]}</svg></span>`;
+}
 
 const tag = (title: Title) => `<span class="tag">${escapeHtml(categoryLabel(title))}</span>`;
 

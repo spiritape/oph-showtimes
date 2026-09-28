@@ -33,6 +33,19 @@ export const FONTS = {
 
 export type FontKey = keyof typeof FONTS;
 
+/** Marks free Showtimes next to their RSVP button: 16×16 SVG shapes drawn in currentColor, or a text badge. */
+export const FREE_ICONS = {
+  tag: '<path d="M8.6 1.5H14v5.4l-6.8 6.8a1.2 1.2 0 0 1-1.7 0L2.3 10.5a1.2 1.2 0 0 1 0-1.7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="4.5" r="1.1" fill="currentColor"/>',
+  ticket: '<path d="M2 4.5h12v2.2a1.5 1.5 0 0 0 0 2.6v2.2H2V9.3a1.5 1.5 0 0 0 0-2.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10.5 5v6" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.2 1.3"/>',
+  gift: '<rect x="2.25" y="5.75" width="11.5" height="3" rx=".6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.25 8.75v4.5h9.5v-4.5M8 5.75v7.5M8 5.75C6.8 3 4.5 3 4.8 4.7c.2 1 2 1.05 3.2 1.05Zm0 0c1.2-2.75 3.5-2.75 3.2-1.05-.2 1-2 1.05-3.2 1.05Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+  sparkle: '<path d="M8 1.5 9.5 6.5l5 1.5-5 1.5L8 14.5l-1.5-5-5-1.5 5-1.5Z" fill="currentColor"/>',
+  heart: '<path d="M8 13.5S2 10 2 5.8A3 3 0 0 1 8 4.5a3 3 0 0 1 6 1.3C14 10 8 13.5 8 13.5Z" fill="currentColor"/>',
+  badge: "",
+  none: "",
+} as const;
+
+export type FreeIcon = keyof typeof FREE_ICONS;
+
 /** The shape of one kind of button. Sizes in px, except `size` (rem). */
 export type ButtonShape = {
   radius: number;
@@ -60,6 +73,10 @@ export type HeaderColors = {
   ticketText: string;
   ticketBg: string;
   ticketBorder: string;
+  /** The icon beside free Showtimes' RSVP buttons */
+  freeIcon: string;
+  /** The first day's heading in the list ("Today", or the soonest day) */
+  firstDay: string;
   /** Free screenings and events (RSVP buttons). */
   rsvpText: string;
   rsvpBg: string;
@@ -113,6 +130,7 @@ export type HeaderStyle = {
   pills: ButtonShape;
   tickets: ButtonShape;
   list: ListStyle;
+  freeIcon: FreeIcon;
   light: HeaderColors;
   dark: HeaderColors;
 };
@@ -142,6 +160,7 @@ export const HEADER_STYLE: HeaderStyle = {
   notify: { radius: 40, borderWidth: 1, weight: 500, size: 0.8, padX: 12, padY: 4, uppercase: false },
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
+  freeIcon: "badge",
   list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   light: {
     background: "#fbf9f4",
@@ -159,6 +178,8 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketText: "#ffffff",
     ticketBg: "#2d2a8c",
     ticketBorder: "#2d2a8c",
+    freeIcon: "#1f8a4c",
+    firstDay: "#6f6a62",
     rsvpText: "#ffffff",
     rsvpBg: "#f05537",
     rsvpBorder: "#f05537",
@@ -179,6 +200,8 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketText: "#ffffff",
     ticketBg: "#0131e4",
     ticketBorder: "#36a15b",
+    freeIcon: "#5fd08f",
+    firstDay: "#61d090",
     rsvpText: "#ffffff",
     rsvpBg: "#f05537",
     rsvpBorder: "#f05537",
@@ -214,6 +237,8 @@ export function headerCss(h: HeaderStyle = HEADER_STYLE) {
     `.book{font-family:${buttonFont};${shape(h.tickets)};color:var(--h-ticket-text);background:var(--h-ticket-bg);border-color:var(--h-ticket-border)}`,
     `.book.rsvp{color:var(--h-rsvp-text);background:var(--h-rsvp-bg);border-color:var(--h-rsvp-border)}`,
     `[data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}`,
+    `[data-list]>[data-day]:first-child h2{color:var(--h-first-day)}`,
+    `.free{color:var(--h-free-icon)}`,
     `.showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:5.2rem ${l.thumbWidth}px 1fr auto;border-bottom-width:${l.dividers ? 1 : 0}px}`,
     `.thumb{width:${l.thumbWidth}px}`,
     `@media (max-width:30rem){.showtime{grid-template-columns:4.2rem ${phoneThumb}px 1fr}.thumb{width:${phoneThumb}px}}`,
