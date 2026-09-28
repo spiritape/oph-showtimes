@@ -1,8 +1,8 @@
 {
- "lastReadCount": 41,
+ "lastReadCount": 42,
  "lastPublish": {
-  "scheduleHash": "5f472cceeedf21efdb575f9cd78407c4241942c8a3b3dc8e772ac281451cc1c4",
-  "publishedAt": "2026-09-28T19:01:08.912Z"
+  "scheduleHash": "731269a4ef06c45c0dacc6acfeb8b865bb7ed468c7ec074723c1553ee34f9357",
+  "publishedAt": "2026-09-28T20:31:12.704Z"
  },
  "seen": {
   "titles": {
@@ -1068,6 +1068,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulm0odplrk507lmemf726ky",
        "infoHtml": "<p>Year: 2026<br>Director: Destin Daniel Cretton<br>Starring: Tom Holland, Zendaya, Mark Ruffalo, Jon Bernthal<br>Running Time: 2hr 25min</p><p>A forgotten Peter Parker lives alone as a full-time Spider-Man until mounting pressure triggers a dangerous change and a powerful new enemy emerges.</p>"
+      }
+     ]
+    }
+   },
+   "shaun the sheep: the beast of mossy bottom": {
+    "lastShowtime": "2026-10-04T19:00:00.000Z",
+    "title": {
+     "key": "shaun the sheep: the beast of mossy bottom",
+     "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+     "name": "Shaun the Sheep: The Beast of Mossy Bottom",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Steve Cox, Matthew Walker",
+     "runtime": "1hr 21min",
+     "rating": "PG",
+     "synopsis": "On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmulpbhqsrghs07lirxmsl8ae",
+       "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+       "subtitle": null,
+       "startsAt": "2026-10-04T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1163?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (child 12 & under - senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
+       "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker<br>Starring: Justin Fletcher, John Spakes, Nina Sosanya<br>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
       }
      ]
     }
