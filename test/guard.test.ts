@@ -47,8 +47,12 @@ describe("guardNotification", () => {
   });
 
   it("holds a notification with more New Titles than any real announcement", () => {
-    expect(guardNotification(11, 60).ok).toBe(false);
-    expect(guardNotification(10, 60).ok).toBe(true);
+    expect(guardNotification(26, 60).ok).toBe(false);
+    expect(guardNotification(25, 60).ok).toBe(true);
+  });
+
+  it("allows a big announcement that isn't most of the schedule", () => {
+    expect(guardNotification(17, 44)).toEqual({ ok: true });
   });
 
   it("allows a small schedule where everything is new", () => {

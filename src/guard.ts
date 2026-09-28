@@ -23,7 +23,8 @@ export function guardRead(previousCount: number | null, read: () => Showtime[]):
 }
 
 
-const MAX_NEW_TITLES = 10;
+// The Playhouse has announced 17 Titles at once (Sep 2026), so allow a big batch.
+const MAX_NEW_TITLES = 25;
 
 /**
  * Holds back a New Title Notification that looks like a misread rather than a
