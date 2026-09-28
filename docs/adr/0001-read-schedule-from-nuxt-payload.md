@@ -1,6 +1,6 @@
 # Read the schedule from the Source's embedded page data
 
-OPH Showtimes is unofficial, so we have no access to the Playhouse's Hygraph CMS API or its Veezi ticketing feed. The Source (ojaiplayhouse.com) is a server-rendered Nuxt site, and every page includes the full list of upcoming Showtimes as JSON in its `__NUXT_DATA__` script tag. We read that JSON instead of scraping the visible HTML or running a headless browser. It is structured and complete, and fetching it only takes a plain HTTP request. It is also an undocumented internal format that will break without warning when the Source is redeployed. That is why the build refuses to publish, and refuses to send alerts, when a read looks wrong (it fails, returns zero Showtimes, or returns less than half of the previous count).
+OPH Showtimes is unofficial, so we have no access to the Playhouse's Hygraph CMS API or its Veezi ticketing feed. The Source (ojaiplayhouse.com) is a server-rendered Nuxt site, and every page includes the full list of upcoming Showtimes as JSON in its `__NUXT_DATA__` script tag. We read that JSON instead of scraping the visible HTML or running a headless browser. It is structured and complete, and fetching it only takes a plain HTTP request. It is also an undocumented internal format that will break without warning when the Source is redeployed. That is why the build refuses to publish when a read looks wrong (it fails, returns zero Showtimes, or returns less than half of the previous count).
 
 ## Considered Options
 

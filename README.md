@@ -1,20 +1,19 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), with calendar feeds and email alerts when new titles are announced. Not affiliated with the Playhouse.
+An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), with calendar feeds. It picks up newly announced titles within about 15 minutes. Not affiliated with the Playhouse.
 
-See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, New Title Alert…) and [docs/adr](docs/adr) for decisions.
+See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, Calendar Feed…) and [docs/adr](docs/adr) for decisions.
 
 ## How it works
 
-A GitHub Actions job runs every 3 hours:
+A GitHub Actions job checks the Playhouse every 15 minutes (GitHub's scheduler can run a few minutes late):
 
 1. Fetches the Playhouse homepage and reads the schedule from its embedded data ([ADR 0001](docs/adr/0001-read-schedule-from-nuxt-payload.md)).
-2. Refuses to publish or alert if the read looks broken, and opens an issue instead.
-3. Builds static HTML and `.ics` calendar feeds into `dist/`, then deploys them to Cloudflare Pages.
-4. Commits `data/state.json`, the record of every Title seen so far.
-5. Emails Subscribers through Buttondown if any new Titles appeared. The state is saved before sending, so an alert is sent at most once. If an alert would announce more than 10 Titles, or more than half the schedule, it is held back and an issue is opened instead.
+2. Refuses to publish if the read looks broken, and opens an issue instead.
+3. If the schedule changed, or the site hasn't been refreshed for 3 hours, builds static HTML and `.ics` calendar feeds into `dist/` and deploys them to Cloudflare Pages. Otherwise it stops there.
+4. After a deploy, commits `data/state.json`: the Titles seen recently (so finished Titles keep their page for 60 days and every Title keeps its URL) and a fingerprint of the published schedule.
 
-The job only runs on its schedule or when started by hand from the Actions tab. Pushing code doesn't deploy it.
+Starting the workflow by hand from the Actions tab always republishes. Tests run in a separate workflow on every push.
 
 ## Local development
 
@@ -30,8 +29,7 @@ A local build writes `data/state.json`. Don't commit one built from the fixture.
 ## Setup
 
 1. **Cloudflare Pages**: create a Pages project named `oph-showtimes` (Direct Upload). Create an API token with the *Cloudflare Pages: Edit* permission.
-2. **Buttondown**: create a newsletter and enable double opt-in. Copy your username and API key.
-3. **GitHub repo settings → Secrets and variables → Actions**:
-   - Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `BUTTONDOWN_API_KEY`
-   - Variables: `SITE_URL` (e.g. `https://oph-showtimes.pages.dev`), `BUTTONDOWN_USERNAME`, `CONTACT_EMAIL` (sent to the Playhouse in the User-Agent)
-4. Run the **Update schedule** workflow once by hand. The first run records every current Title and sends no email.
+2. **GitHub repo settings → Secrets and variables → Actions**:
+   - Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+   - Variables: `SITE_URL` (e.g. `https://oph-showtimes.pages.dev`), `CONTACT_EMAIL` (sent to the Playhouse in the User-Agent)
+3. Run the **Update schedule** workflow once by hand.

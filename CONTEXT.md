@@ -1,6 +1,6 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with calendar and email notifications. The Playhouse's own website is the source of truth.
+An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with calendar feeds. The Playhouse's own website is the source of truth.
 
 ## Language
 
@@ -22,10 +22,6 @@ _Avoid_: Show, gig
 A Film or Event, i.e. anything that has Showtimes. Used when the distinction doesn't matter.
 _Avoid_: Listing, item, program
 
-**Returning Title**:
-A Title that reappears more than 60 days after its last Showtime. It is treated as new.
-_Avoid_: Re-release, revival
-
 **Category**:
 The kind of title a Film or Event is, as labeled by the Playhouse (e.g. film, comedy).
 _Avoid_: Genre, type
@@ -34,16 +30,8 @@ _Avoid_: Genre, type
 The official Ojai Playhouse website that we read the schedule from.
 _Avoid_: Feed, API
 
-### Notifications
+### Calendar
 
 **Calendar Feed**:
 A subscribable calendar that contains every upcoming Showtime.
 _Avoid_: ICS, calendar export
-
-**New Title Alert**:
-One email sent to Subscribers listing every Title that is new (never seen before, or a Returning Title) since the last check. New Showtimes for a Title already listed don't count.
-_Avoid_: New Film Alert, notification, update email
-
-**Subscriber**:
-A person who has confirmed their email address to receive New Title Alerts.
-_Avoid_: User, member, follower

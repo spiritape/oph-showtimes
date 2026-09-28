@@ -32,15 +32,12 @@ a{color:var(--accent)}
 .synopsis{margin:12px 0 0}
 footer{color:var(--muted);font-size:.85rem;padding-top:32px;padding-bottom:40px}
 footer h3{color:var(--fg);font-size:.95rem;margin:24px 0 6px}
-form{display:flex;gap:8px;flex-wrap:wrap}
-input[type=email]{flex:1;min-width:12rem;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
-button{background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}
 @media (max-width:30rem){.showtime{grid-template-columns:4.6rem 1fr}.actions{grid-row:auto;grid-column:2;margin-top:6px}}
 `.replace(/\n/g, "");
 
-// Pages are rebuilt every few hours; between rebuilds this hides Showtimes
-// 30 minutes after they start (see LISTED_AFTER_START_MINUTES) and keeps the
-// Today/Tomorrow headings right.
+// Pages are only rebuilt when the schedule changes (or every 3 hours). Between
+// rebuilds this hides Showtimes 30 minutes after they start (see
+// LISTED_AFTER_START_MINUTES) and keeps the Today/Tomorrow headings right.
 export const CLIENT_SCRIPT = `(()=>{const n=Date.now(),f=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles"}),k=d=>f.format(d),t=k(n),m=k(n+864e5);
 document.querySelectorAll("[data-start]").forEach(e=>{if(Date.parse(e.dataset.start)+18e5<n)e.remove()});
 document.querySelectorAll("[data-day]").forEach(s=>{if(!s.querySelector("[data-start]")){s.remove();return}const h=s.querySelector("h2");h.textContent=s.dataset.day===t?"Today":s.dataset.day===m?"Tomorrow":h.dataset.label});

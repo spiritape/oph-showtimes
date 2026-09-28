@@ -3,10 +3,7 @@ import { bookingLink, categoryLabel, isListed, titlePath } from "./showtime.ts";
 import { dayKey, dayLabel, timeLabel } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
-export type SiteConfig = {
-  siteUrl: string;
-  buttondownUsername: string | null;
-};
+export type SiteConfig = { siteUrl: string };
 
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -26,16 +23,11 @@ ${footer(config)}
 
 function footer(config: SiteConfig) {
   const host = config.siteUrl.replace(/^https?:\/\//, "");
-  const signup = config.buttondownUsername
-    ? `<h3>Get an email when new titles are announced</h3>
-<form action="https://buttondown.com/api/emails/embed-subscribe/${escapeHtml(config.buttondownUsername)}" method="post">
-<input type="email" name="email" placeholder="you@example.com" required aria-label="Email address"><button>Subscribe</button></form>`
-    : "";
-  return `<footer>${signup}
+  return `<footer>
 <h3>Add to your calendar</h3>
 <p><a href="webcal://${host}/calendar/all.ics">Everything</a> · <a href="webcal://${host}/calendar/films.ics">Films only</a></p>
 <h3>About</h3>
-<p>Not affiliated with the Ojai Playhouse. Times are Pacific and come from <a href="https://www.ojaiplayhouse.com/">ojaiplayhouse.com</a>, checked every few hours. Always confirm there before you go. Follow the Playhouse on <a href="https://www.instagram.com/ojaiplayhouse">Instagram</a>.</p></footer>`;
+<p>Not affiliated with the Ojai Playhouse. Times are Pacific and come from <a href="https://www.ojaiplayhouse.com/">ojaiplayhouse.com</a>, checked every 15 minutes. Always confirm there before you go. Follow the Playhouse on <a href="https://www.instagram.com/ojaiplayhouse">Instagram</a>.</p></footer>`;
 }
 
 function actions(s: Showtime) {

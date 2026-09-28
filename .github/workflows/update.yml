@@ -2,7 +2,7 @@ name: Update schedule
 
 on:
   schedule:
-    - cron: "17 */3 * * *" # every 3 hours
+    - cron: "*/15 * * * *" # check every 15 minutes; deploys only when something changed
   workflow_dispatch:
 
 permissions:
@@ -23,26 +23,26 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run typecheck && npm test
 
-      - name: Build site
+      - name: Check the schedule
         id: build
         run: npm run build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
-          BUTTONDOWN_USERNAME: ${{ vars.BUTTONDOWN_USERNAME }}
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          # Starting a run by hand always republishes.
+          FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
 
       - name: Deploy to Cloudflare Pages
+        if: steps.build.outputs.publish == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PROJECT || 'oph-showtimes' }} --branch=main
 
-      # Saved before emailing, so a failure can never make the next run send
-      # the same New Title Alert twice. A failed send is reported, not retried.
       - name: Save seen Titles
+        if: steps.build.outputs.publish == 'true'
         run: |
           git config user.name "oph-showtimes-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -52,32 +52,15 @@ jobs:
             git push
           fi
 
-      # Sent after deploy so the links in the email work.
-      - name: Send New Title Alert
-        run: npx tsx src/send-alert.ts
-        env:
-          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
-
-      - name: Report a held alert
-        if: steps.build.outputs.alert_held != ''
-        env:
-          GH_TOKEN: ${{ github.token }}
-          HELD: ${{ steps.build.outputs.alert_held }}
-        run: |
-          gh label create alert-held --color FBCA04 --force
-          gh issue create --label alert-held \
-            --title "New Title Alert held back" \
-            --body "The site was published, but this alert was not sent because it looked like a misread: $HELD. If these really are new, send an email by hand from Buttondown."
-
       - name: Report a failed update
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
-          FAILED_STEP: ${{ steps.build.outcome == 'failure' && 'Reading the Playhouse schedule' || 'A later step (deploy, saving state or sending the alert)' }}
+          FAILED_STEP: ${{ steps.build.outcome == 'failure' && 'Reading the Playhouse schedule' || 'Deploying or saving state' }}
         run: |
           if [ -z "$(gh issue list --label update-failed --state open --json number --jq '.[].number')" ]; then
             gh label create update-failed --color B60205 --force
             gh issue create --label update-failed \
               --title "Scheduled update failed" \
-              --body "$FAILED_STEP failed. If the build failed, nothing was deployed and no alert was sent (see docs/adr/0001). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              --body "$FAILED_STEP failed. If reading failed, nothing was deployed (see docs/adr/0001). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           fi
