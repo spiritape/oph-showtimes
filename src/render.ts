@@ -1,4 +1,4 @@
-import { HEADER_STYLE } from "./header-style.ts";
+import { fontLinks, HEADER_STYLE } from "./header-style.ts";
 import { CLIENT_SCRIPT, NOTIFY_SCRIPT, STYLES } from "./page-assets.ts";
 import { THEATER } from "./theater.ts";
 import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
@@ -21,7 +21,7 @@ function page(opts: { title: string; description: string; body: string; config: 
 <link rel="canonical" href="${config.siteUrl}${opts.path}"><meta name="color-scheme" content="light dark">
 <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2d2a8c">
-<style>${STYLES}</style></head><body>
+${fontLinks()}<style>${STYLES}</style></head><body>
 <header>${headerContent()}${notifyButton(config)}</header>
 <main>${opts.body}</main>
 ${footer()}

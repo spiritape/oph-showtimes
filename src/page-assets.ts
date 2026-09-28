@@ -9,15 +9,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-app
 main,header,footer{max-width:40rem;margin:0 auto;padding:0 16px}
 h1 a{color:inherit;text-decoration:none}
 .sub{color:var(--muted);margin:2px 0 0;font-size:.9rem}
-.notify{margin:10px 0 0}
-.notify button{font:inherit;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.notify button{font:inherit;cursor:pointer}
 .notify button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
 .notify button:disabled{opacity:.5}
 .notify-tip{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
 .theater a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
 nav{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
-nav a{padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:.9rem}
-nav a[aria-current]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+nav a{text-decoration:none}
 h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;font-weight:600}
 ul{list-style:none;margin:0;padding:0}
 .showtime{display:grid;grid-template-columns:5.2rem 64px 1fr auto;grid-template-areas:"time thumb info actions";gap:0 12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
@@ -31,7 +29,7 @@ ul{list-style:none;margin:0;padding:0}
 .price{color:var(--muted);font-size:.85rem}
 .tag{display:inline-block;background:var(--tag);color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;font-weight:500}
 .actions{grid-area:actions;display:flex;gap:10px;align-items:center}
-.book{background:var(--accent);color:var(--accent-fg);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;white-space:nowrap}
+.book{text-decoration:none;white-space:nowrap}
 .free{display:inline-flex;color:var(--free);margin-right:-4px}
 .add-cal{display:inline-flex;padding:4px;border-radius:6px;line-height:0}
 .add-cal:hover{background:var(--tag)}
