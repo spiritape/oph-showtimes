@@ -13,7 +13,7 @@ h1 a{color:inherit;text-decoration:none}
 .notify button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
 .notify button:disabled{opacity:.5}
 .notify-tip{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
-.theater a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+.theater a,header .sub a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
 nav{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
 nav a{text-decoration:none}
 h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;font-weight:600}

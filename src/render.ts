@@ -1,5 +1,6 @@
 import { fontLinks, HEADER_STYLE } from "./header-style.ts";
 import { CLIENT_SCRIPT, NOTIFY_SCRIPT, STYLES } from "./page-assets.ts";
+import { SOURCE_URL } from "./source.ts";
 import { THEATER } from "./theater.ts";
 import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
 import { dayKey, dayLabel, timeLabel } from "./time.ts";
@@ -30,7 +31,12 @@ ${footer()}
 
 function headerContent() {
   const h = HEADER_STYLE;
-  const sub = h.showSubtitle ? `<p class="sub">${escapeHtml(h.subtitleText)}</p>` : "";
+  // "Ojai Playhouse" in the subtitle links to the Playhouse's own site.
+  const subText = escapeHtml(h.subtitleText).replace(
+    "Ojai Playhouse",
+    `<a href="${SOURCE_URL}" rel="noopener">Ojai Playhouse</a>`,
+  );
+  const sub = h.showSubtitle ? `<p class="sub">${subText}</p>` : "";
   const address = h.showAddress
     ? `<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p>`
     : "";
