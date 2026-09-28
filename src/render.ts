@@ -86,12 +86,49 @@ const FILTERS: Record<ScheduleFilter, { label: string; path: string; pageTitle: 
   live: { label: "Live shows", path: "/live/", pageTitle: "Live shows · OPH Showtimes", include: (t) => !t.isFilm },
 };
 
+const PAST_PATH = "/past/";
+
+function nav(current: ScheduleFilter | "past") {
+  const links = Object.entries(FILTERS).map(
+    ([key, f]) => `<a href="${f.path}"${key === current ? ' aria-current="page"' : ""}>${f.label}</a>`,
+  );
+  // Wide screens show the Past panel beside the schedule instead of this tab.
+  links.push(`<a class="past-tab" href="${PAST_PATH}"${current === "past" ? ' aria-current="page"' : ""}>Past</a>`);
+  return `<nav>${links.join("")}</nav>`;
+}
+
+/** Played Showtimes grouped by Pacific day, most recent day first. */
+function groupByDay(entries: ScheduledShowtime[]) {
+  const days = new Map<string, ScheduledShowtime[]>();
+  for (const entry of entries) {
+    const day = dayKey(entry.showtime.startsAt);
+    days.set(day, [...(days.get(day) ?? []), entry]);
+  }
+  return [...days.values()];
+}
+
+const pastRow = ({ title, showtime }: ScheduledShowtime, showTag: boolean) =>
+  `<li><span class="time">${timeLabel(showtime.startsAt)}</span><span><a class="name" href="${titlePath(title)}">${escapeHtml(title.name)}</a>${showTag ? tag(title) : ""}</span></li>`;
+
+/** The small Past panel beside the schedule on wide screens. */
+function pastPanel(past: ScheduledShowtime[]) {
+  if (!past.length) return "";
+  const days = groupByDay(past)
+    .map((entries) => `<h3>${escapeHtml(dayLabel(entries[0]!.showtime.startsAt))}</h3><ul>${entries.map((e) => pastRow(e, false)).join("")}</ul>`)
+    .join("");
+  return `<aside class="past-panel" aria-label="Past showtimes"><h2><a href="${PAST_PATH}">Past</a></h2>${days}</aside>`;
+}
+
 export const SCHEDULE_PAGES = Object.entries(FILTERS).map(([filter, f]) => ({
   filter: filter as ScheduleFilter,
   file: `${f.path.slice(1)}index.html`,
 }));
 
-export function renderSchedule(titles: Title[], config: SiteConfig, opts: { filter: ScheduleFilter; now: Date }) {
+export function renderSchedule(
+  titles: Title[],
+  config: SiteConfig,
+  opts: { filter: ScheduleFilter; now: Date; past: ScheduledShowtime[] },
+) {
   const { now } = opts;
   const filter = FILTERS[opts.filter];
   const listed: ScheduledShowtime[] = titles
@@ -113,15 +150,28 @@ export function renderSchedule(titles: Title[], config: SiteConfig, opts: { filt
       return `<section data-day="${day}"><h2 data-label="${escapeHtml(dayLabel(first))}">${dayHeading(day, first, now)}</h2><ul>${rows.join("")}</ul></section>`;
     })
     .join("");
-  const nav = `<nav>${Object.entries(FILTERS)
-    .map(([key, f]) => `<a href="${f.path}"${key === opts.filter ? ' aria-current="page"' : ""}>${f.label}</a>`)
-    .join("")}</nav>`;
   return page({
     title: filter.pageTitle,
     description: "What's playing at the Ojai Playhouse: every upcoming Showtime, by day.",
     path: filter.path,
     config,
-    body: `${nav}<div data-list>${list || '<p class="empty">Nothing scheduled right now.</p>'}</div>`,
+    body: `${nav(opts.filter)}<div data-list>${list || '<p class="empty">Nothing scheduled right now.</p>'}</div>${pastPanel(opts.past.filter(({ title }) => filter.include(title)))}`,
+  });
+}
+
+export function renderPast(past: ScheduledShowtime[], config: SiteConfig) {
+  const days = groupByDay(past)
+    .map(
+      (entries) =>
+        `<section><h2>${escapeHtml(dayLabel(entries[0]!.showtime.startsAt))}</h2><ul class="past">${entries.map((e) => pastRow(e, true)).join("")}</ul></section>`,
+    )
+    .join("");
+  return page({
+    title: "Past · OPH Showtimes",
+    description: "What played at the Ojai Playhouse in the last two months.",
+    path: PAST_PATH,
+    config,
+    body: `${nav("past")}${days || '<p class="empty">Nothing has played recently.</p>'}`,
   });
 }
 

@@ -17,7 +17,7 @@ h1 a{color:inherit;text-decoration:none}
 .notify button:disabled{opacity:.5}
 .notify-tip{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
 .theater a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
-nav{display:flex;gap:6px;margin:16px 0 4px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
 nav a{padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:.9rem}
 nav a[aria-current]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;font-weight:600}
@@ -43,6 +43,18 @@ a{color:var(--accent)}
 .hero{width:100%;height:auto;aspect-ratio:1280/770;object-fit:cover;border-radius:8px;margin-top:8px;background:var(--tag)}
 .facts{color:var(--muted);margin:8px 0}
 .synopsis{margin:12px 0 0}
+.past li{display:grid;grid-template-columns:5.2rem 1fr;gap:0 12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.past .time{grid-area:auto}
+.past .name{color:var(--muted)}
+.past-panel{display:none}
+@media (min-width:66rem){.past-tab{display:none}
+.past-panel{display:block;position:fixed;top:24px;left:calc(50% + 21rem);width:13rem;max-height:min(22rem,calc(100vh - 48px));overflow-y:auto;border:1px solid var(--line);border-radius:8px;padding:2px 12px 10px;font-size:.8rem;color:var(--muted)}
+.past-panel h2{margin:10px 0 2px}
+.past-panel h2 a{color:inherit;text-decoration:none}
+.past-panel h3{font-size:.72rem;font-weight:600;margin:10px 0 2px;color:var(--muted)}
+.past-panel li{display:flex;gap:6px;padding:2px 0}
+.past-panel .time{font-weight:500;flex:none;width:4.2rem}
+.past-panel .name{color:var(--muted);font-weight:500}}
 footer{color:var(--muted);font-size:.85rem;padding-top:32px;padding-bottom:40px}
 footer h3{color:var(--fg);font-size:.95rem;margin:24px 0 6px}
 @media (max-width:30rem){.showtime{grid-template-columns:4.2rem 56px 1fr;grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.showtime.no-thumb{grid-template-columns:4.2rem 1fr;grid-template-areas:"time info" "time actions"}.thumb{width:56px}.actions{margin-top:8px}}

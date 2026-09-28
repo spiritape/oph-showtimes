@@ -7,9 +7,9 @@ import { guardNotification, guardRead } from "./guard.ts";
 import { composeNotification } from "./notification.ts";
 import { NOTIFICATION_FILE, OUT_DIR, STATE_FILE } from "./paths.ts";
 import { hashSchedule, shouldPublish, type LastPublish } from "./refresh.ts";
-import { renderNotFound, renderSchedule, renderTitle, SCHEDULE_PAGES, type SiteConfig } from "./render.ts";
+import { renderNotFound, renderPast, renderSchedule, renderTitle, SCHEDULE_PAGES, type SiteConfig } from "./render.ts";
 import { buildSchedule } from "./schedule.ts";
-import { findNewTitles, finishedTitles, knownSlugs, rememberTitles, type SeenTitles } from "./seen-titles.ts";
+import { findNewTitles, finishedTitles, knownSlugs, pastShowtimes, rememberTitles, type SeenTitles } from "./seen-titles.ts";
 import { fetchSource, readSource } from "./source.ts";
 
 type BuildState = { lastReadCount: number; lastPublish?: LastPublish; seen: SeenTitles };
@@ -60,6 +60,7 @@ const titles = buildSchedule(read.showtimes, knownSlugs(previous?.seen ?? null))
 const newTitles = findNewTitles(previous?.seen ?? null, titles, now);
 const seen = rememberTitles(previous?.seen ?? null, titles, now);
 const finished = finishedTitles(seen, titles);
+const past = pastShowtimes(seen, now);
 
 const write = (path: string, content: string) => {
   mkdirSync(dirname(`${OUT_DIR}/${path}`), { recursive: true });
@@ -68,7 +69,8 @@ const write = (path: string, content: string) => {
 
 rmSync(OUT_DIR, { recursive: true, force: true });
 cpSync("public", OUT_DIR, { recursive: true });
-for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now }));
+for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now, past }));
+write("past/index.html", renderPast(past, config));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
 

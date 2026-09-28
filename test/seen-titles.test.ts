@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { findNewTitles, finishedTitles, rememberTitles } from "../src/seen-titles.ts";
+import { findNewTitles, finishedTitles, pastShowtimes, rememberTitles } from "../src/seen-titles.ts";
 import type { Title } from "../src/types.ts";
 
 const now = new Date("2026-10-01T12:00:00Z");
@@ -53,6 +53,35 @@ describe("rememberTitles", () => {
     const earlier = rememberTitles(null, [title("Digger", "2026-09-20T02:00:00Z")], now);
     const current = [title("Digger", "2026-10-02T02:00:00Z")];
     expect(finishedTitles(rememberTitles(earlier, current, now), current)).toEqual([]);
+  });
+});
+
+describe("pastShowtimes", () => {
+  const starts = (seen: ReturnType<typeof rememberTitles>) => pastShowtimes(seen, now).map((p) => p.showtime.startsAt);
+
+  it("keeps played Showtimes the Source has dropped, most recent first", () => {
+    const earlier = rememberTitles(
+      null,
+      [title("Digger", "2026-09-20T02:00:00Z", "2026-09-25T02:00:00Z", "2026-10-02T02:00:00Z")],
+      new Date("2026-09-19T00:00:00Z"),
+    );
+    const current = title("Digger", "2026-10-02T02:00:00Z");
+    current.showtimes[0]!.id = "Digger-2";
+    const seen = rememberTitles(earlier, [current], now);
+    expect(starts(seen)).toEqual(["2026-09-25T02:00:00Z", "2026-09-20T02:00:00Z"]);
+    expect(seen.titles.digger!.title.showtimes).toHaveLength(3);
+  });
+
+  it("forgets a dropped Showtime that hadn't played yet, and ones over 60 days old", () => {
+    const earlier = rememberTitles(
+      null,
+      [title("Digger", "2026-07-20T02:00:00Z", "2026-09-30T02:00:00Z", "2026-10-05T02:00:00Z")],
+      new Date("2026-07-19T00:00:00Z"),
+    );
+    const seen = rememberTitles(earlier, [title("Other", "2026-10-09T02:00:00Z")], now);
+    expect(starts(seen)).toEqual(["2026-09-30T02:00:00Z"]);
+    const cancelled = rememberTitles(earlier, [title("Digger", "2026-10-09T02:00:00Z")], now);
+    expect(cancelled.titles.digger!.title.showtimes.map((s) => s.startsAt)).toEqual(["2026-09-30T02:00:00Z", "2026-10-09T02:00:00Z"]);
   });
 });
 
