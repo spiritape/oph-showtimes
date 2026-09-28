@@ -204,12 +204,17 @@ export function renderPast(past: ScheduledShowtime[], config: SiteConfig) {
   });
 }
 
+// The script in CLIENT_SCRIPT makes it return to the previous page of this site.
+const backButton = () =>
+  `<div class="back-row"><a class="back" href="/" data-back>${escapeHtml(HEADER_STYLE.backButton.label)}</a></div>`;
+
 export function renderTitle(title: Title, config: SiteConfig, now: Date) {
   const upcoming = title.showtimes.filter((s) => isListed(s, now));
   const facts = [title.year, title.director, title.runtime, title.rating && `Rated ${title.rating}`].filter(
     (f): f is string => Boolean(f),
   );
   const body = `<article>
+${HEADER_STYLE.backButton.position !== "bottom" ? backButton() : ""}
 <h2 class="title-name">${escapeHtml(title.name)}${tag(title)}</h2>
 ${title.subtitle ? `<p class="sub">${escapeHtml(title.subtitle)}</p>` : ""}
 ${title.imageUrl ? `<img class="hero" src="${escapeHtml(title.imageUrl)}" alt="" width="1280" height="770" decoding="async">` : ""}
@@ -221,7 +226,7 @@ ${title.livestreamUrl ? `<p><a href="${escapeHtml(title.livestreamUrl)}" rel="no
     upcoming.length
       ? `<ul>${upcoming.map((s) => showtimeRow(title, s, config, { showTitle: false, showTag: false })).join("")}</ul>`
       : `<p class="empty">No upcoming Showtimes. <a href="/">See what's playing</a>.</p>`
-  }</div></article>`;
+  }</div>${HEADER_STYLE.backButton.position !== "top" ? backButton() : ""}</article>`;
   return page({
     title: `${title.name} · OPH Showtimes`,
     description: title.synopsis?.slice(0, 160) ?? `${title.name} at the Ojai Playhouse`,

@@ -77,6 +77,9 @@ export type HeaderColors = {
   freeIcon: string;
   /** The first day's heading in the list ("Today", or the soonest day) */
   firstDay: string;
+  backText: string;
+  backBg: string;
+  backBorder: string;
   footerText: string;
   footerHeading: string;
   footerLink: string;
@@ -84,6 +87,16 @@ export type HeaderColors = {
   rsvpText: string;
   rsvpBg: string;
   rsvpBorder: string;
+};
+
+/** The Back button on Title pages. Its shape is `back`, its colors `back*`. */
+export type BackButton = {
+  label: string;
+  /** Above the Title's name, below its Showtimes, or both */
+  position: "top" | "bottom" | "both";
+  align: "left" | "center" | "right";
+  /** px above the button */
+  gap: number;
 };
 
 /** The footer at the bottom of every page. */
@@ -147,6 +160,8 @@ export type HeaderStyle = {
   notify: ButtonShape;
   pills: ButtonShape;
   tickets: ButtonShape;
+  back: ButtonShape;
+  backButton: BackButton;
   list: ListStyle;
   freeIcon: FreeIcon;
   footer: FooterStyle;
@@ -190,6 +205,8 @@ export const HEADER_STYLE: HeaderStyle = {
     paddingTop: 96,
     paddingBottom: 24,
   },
+  back: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
+  backButton: { label: "← Back", position: "top", align: "left", gap: 16 },
   list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   light: {
     background: "#fbf9f4",
@@ -209,6 +226,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketBorder: "#2d2a8c",
     freeIcon: "#1f8a4c",
     firstDay: "#6f6a62",
+    backText: "#1d1b18",
+    backBg: "#fbf9f4",
+    backBorder: "#e4dfd5",
     footerText: "#6f6a62",
     footerHeading: "#1d1b18",
     footerLink: "#2d2a8c",
@@ -234,6 +254,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketBorder: "#36a15b",
     freeIcon: "#5fd08f",
     firstDay: "#61d090",
+    backText: "#eeeae3",
+    backBg: "#141312",
+    backBorder: "#2b2926",
     footerText: "#9c968c",
     footerHeading: "#eeeae3",
     footerLink: "#a9a6ff",
@@ -274,6 +297,8 @@ export function headerCss(h: HeaderStyle = HEADER_STYLE) {
     `[data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}`,
     `[data-list]>[data-day]:first-child h2{color:var(--h-first-day)}`,
     `.free{color:var(--h-free-icon)}`,
+    `.back-row{text-align:${h.backButton.align};margin:${h.backButton.gap}px 0 0}`,
+    `.back{font-family:${buttonFont};${shape(h.back)};color:var(--h-back-text);background:var(--h-back-bg);border-color:var(--h-back-border)}`,
     `footer{font-family:${FONTS[h.footer.font].stack};text-align:${h.footer.align};font-size:${h.footer.size}rem;padding-top:${h.footer.paddingTop}px;padding-bottom:${h.footer.paddingBottom}px;color:var(--h-footer-text)}`,
     `footer h3{color:var(--h-footer-heading)}`,
     `footer a{color:var(--h-footer-link)}`,

@@ -36,6 +36,7 @@ ul{list-style:none;margin:0;padding:0}
 .add-cal:hover{background:var(--tag)}
 a{color:var(--accent)}
 .empty{color:var(--muted);padding:24px 0}
+.back{display:inline-block;text-decoration:none}
 .title-name{font-size:1.6rem;text-transform:none;letter-spacing:-.01em;color:var(--fg);margin:16px 0 0}
 .hero{width:100%;height:auto;aspect-ratio:1280/770;object-fit:cover;border-radius:8px;margin-top:8px;background:var(--tag)}
 .facts{color:var(--muted);margin:8px 0}
@@ -48,12 +49,15 @@ footer h3{color:var(--fg);font-size:.95rem;margin:24px 0 6px}
 @media (max-width:30rem){.showtime{grid-template-columns:4.2rem 56px 1fr;grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.showtime.no-thumb{grid-template-columns:4.2rem 1fr;grid-template-areas:"time info" "time actions"}.thumb{width:56px}.actions{margin-top:8px}}
 `.replace(/\n/g, "") + headerCss();
 
+// The Back button on Title pages returns to the previous page of this site
+// (keeping its filter and scroll position), or to the schedule otherwise.
 // Pages are only rebuilt when the schedule changes (or every 3 hours). Between
 // rebuilds this hides Showtimes 30 minutes after they start (see
 // LISTED_AFTER_START_MINUTES) and keeps the Today/Tomorrow headings right.
 export const CLIENT_SCRIPT = `(()=>{const n=Date.now(),f=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles"}),k=d=>f.format(d),t=k(n),m=k(n+864e5);
 document.querySelectorAll("[data-start]").forEach(e=>{if(Date.parse(e.dataset.start)+18e5<n)e.remove()});
 document.querySelectorAll("[data-day]").forEach(s=>{if(!s.querySelector("[data-start]")){s.remove();return}const h=s.querySelector("h2");h.textContent=s.dataset.day===t?"Today":s.dataset.day===m?"Tomorrow":h.dataset.label});
+if(document.referrer.startsWith(location.origin+"/")&&history.length>1)document.querySelectorAll("[data-back]").forEach(b=>b.onclick=e=>{e.preventDefault();history.back()});
 const l=document.querySelector("[data-list]");if(l&&!l.querySelector("[data-start]"))l.innerHTML='<p class="empty">Nothing else scheduled right now.</p>'})()`;
 
 // The "Notify me" button. Registers /sw.js, subscribes to Web Push with the

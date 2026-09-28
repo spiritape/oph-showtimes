@@ -70,6 +70,13 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .site .book{white-space:nowrap}
 .site .acts{display:flex;gap:10px;align-items:center}
 .site .free{display:inline-flex}
+.site .back{display:inline-block;text-decoration:none;cursor:default}
+.site .title-name{font-size:1.6rem;text-transform:none;letter-spacing:-.01em;color:var(--fg);margin:16px 0 0}
+.site .tag{display:inline-block;background:var(--tag);color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:4px;font-weight:500}
+.site .hero{width:100%;aspect-ratio:1280/770;border-radius:8px;margin-top:8px}
+.site .facts{color:var(--muted);margin:8px 0}
+.site .showtime.no-thumb{grid-template-columns:5.2rem 1fr auto!important;grid-template-areas:"time info actions"}
+.frame.phone .site .showtime.no-thumb{grid-template-columns:4.2rem 1fr!important;grid-template-areas:"time info" "time actions"}
 .site footer{max-width:40rem;margin:0 auto;padding-left:16px;padding-right:16px}
 .site footer h3{font-size:.95rem;margin:24px 0 6px}
 .site .free-badge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid currentColor;border-radius:4px;padding:1px 4px}
@@ -206,7 +213,18 @@ input[type=range]{width:100%;accent-color:var(--accent)}
       <summary>Buttons</summary>
       <div class="body">
         <div class="seg" id="buttonKind" role="group" aria-label="Which button">
-          <button type="button" data-v="notify">Notify</button><button type="button" data-v="pills">Filters</button><button type="button" data-v="tickets">Tickets &amp; RSVP</button>
+          <button type="button" data-v="notify">Notify</button><button type="button" data-v="pills">Filters</button><button type="button" data-v="tickets">Tickets &amp; RSVP</button><button type="button" data-v="back">Back</button>
+        </div>
+        <div id="backOptions" style="display:grid;gap:10px">
+          <div class="stack"><label for="bb-label">Label</label><input type="text" id="bb-label"></div>
+          <p class="label">Placement on film pages</p>
+          <div class="seg" id="backPosition" role="group" aria-label="Back button position">
+            <button type="button" data-v="top">Top</button><button type="button" data-v="bottom">Bottom</button><button type="button" data-v="both">Both</button>
+          </div>
+          <div class="seg" id="backAlign" role="group" aria-label="Back button alignment">
+            <button type="button" data-v="left">Left</button><button type="button" data-v="center">Center</button><button type="button" data-v="right">Right</button>
+          </div>
+          <label class="row">Space above <input type="range" id="bb-gap" min="0" max="64" step="2"><output></output></label>
         </div>
         <p class="label">Shape</p>
         <div class="seg" id="shapePreset" role="group" aria-label="Corner style">
@@ -234,6 +252,9 @@ input[type=range]{width:100%;accent-color:var(--accent)}
       <div class="seg" id="mode" role="group" aria-label="Preview mode">
         <button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button>
       </div>
+      <div class="seg" id="page" role="group" aria-label="Preview page">
+        <button type="button" data-v="schedule">Schedule</button><button type="button" data-v="film">Film page</button>
+      </div>
       <div class="seg" id="width" role="group" aria-label="Preview width">
         <button type="button" data-v="desktop">Desktop</button><button type="button" data-v="phone">Phone</button>
       </div>
@@ -247,7 +268,19 @@ input[type=range]{width:100%;accent-color:var(--accent)}
           <p class="theater" id="pAddr"><a>145 E Ojai Ave, Ojai, CA 93023</a> · <a>(805) 646-1011</a></p>
           <p class="notify"><button type="button" tabindex="-1">🔔 Notify me of new titles</button></p>
         </header>
-        <main>
+        <main id="pFilm" hidden>
+          <div class="back-row" data-back-top><a class="back" data-back-label></a></div>
+          <h2 class="title-name">Digger <span class="tag">Film</span></h2>
+          <div class="hero" style="background:linear-gradient(135deg,#1f2a44,#6d5a8c)"></div>
+          <p class="facts">2025 · Directed by Jonathan Eagle · 1hr 42min</p>
+          <h2>Showtimes</h2>
+          <ul>
+            <li class="showtime no-thumb"><span class="time">7:00 PM</span><span class="info"><span class="name">Thu, Oct 1</span><span class="price">$15/$13.50 (senior 60+)</span></span><span class="acts"><span class="book">Tickets</span></span></li>
+            <li class="showtime no-thumb"><span class="time">4:15 PM</span><span class="info"><span class="name">Fri, Oct 2</span><span class="price">$15/$13.50 (senior 60+)</span></span><span class="acts"><span class="book">Tickets</span></span></li>
+          </ul>
+          <div class="back-row" data-back-bottom><a class="back" data-back-label></a></div>
+        </main>
+        <main id="pSchedule">
           <nav><a aria-current="page">Everything</a><a>Films</a><a>Live shows</a><a>Past</a></nav>
           <div data-list>
           <section data-day><h2>Today</h2>
@@ -307,6 +340,8 @@ const LIVE = {
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
   freeIcon: "badge",
+  back: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
+  backButton: { label: "← Back", position: "top", align: "left", gap: 16 },
   footer: {
     heading: "Notice",
     text: "Not affiliated with the Ojai Playhouse. Times are Pacific and come from [ojaiplayhouse.com](https://www.ojaiplayhouse.com/). Always confirm event times before you go. Follow the Playhouse on [Instagram](https://www.instagram.com/ojaiplayhouse).",
@@ -321,6 +356,7 @@ const LIVE = {
     ticketText: "#ffffff", ticketBg: "#2d2a8c", ticketBorder: "#2d2a8c",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
     freeIcon: "#1f8a4c", firstDay: "#6f6a62",
+    backText: "#1d1b18", backBg: "#fbf9f4", backBorder: "#e4dfd5",
     footerText: "#6f6a62", footerHeading: "#1d1b18", footerLink: "#2d2a8c",
   },
   dark: {
@@ -330,6 +366,7 @@ const LIVE = {
     ticketText: "#ffffff", ticketBg: "#0131e4", ticketBorder: "#36a15b",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
     freeIcon: "#5fd08f", firstDay: "#61d090",
+    backText: "#eeeae3", backBg: "#141312", backBorder: "#2b2926",
     footerText: "#9c968c", footerHeading: "#eeeae3", footerLink: "#a9a6ff",
   },
 };
@@ -351,13 +388,14 @@ const HEADER_COLORS = { background: "Background", title: "Title", subtitle: "Sub
 const BUTTON_COLORS = {
   notify: { notifyText: "Text", notifyBg: "Fill", notifyBorder: "Border" },
   pills: { pillText: "Text", pillBg: "Fill", pillBorder: "Border", pillActiveText: "Selected text", pillActiveBg: "Selected fill" },
+  back: { backText: "Text", backBg: "Fill", backBorder: "Border" },
   tickets: { ticketText: "Text", ticketBg: "Fill", ticketBorder: "Border", rsvpText: "Free: text", rsvpBg: "Free: fill", rsvpBorder: "Free: border" },
 };
 const DOC = "header/settings";
 
 let s = structuredClone(LIVE);
 let mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-let width = "desktop", fontTarget = "titleFont", kind = "notify";
+let width = "desktop", fontTarget = "titleFont", kind = "notify", pageView = "schedule";
 const $ = (id) => document.getElementById(id);
 const status = (text, ok) => { $("status").textContent = text; $("status").className = "status" + (ok ? " ok" : ""); };
 
@@ -393,6 +431,8 @@ function css(h) {
     `.site [data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}` +
     `.site [data-list]>[data-day]:first-child h2{color:${c.firstDay}}` +
     `.site .free{color:${c.freeIcon}}` +
+    `.site .back-row{text-align:${h.backButton.align};margin:${h.backButton.gap}px 0 0}` +
+    `.site .back{font-family:${bf};${shape(h.back)};color:${c.backText};background:${c.backBg};border-color:${c.backBorder}}` +
     `.site footer{font-family:${FONTS[h.footer.font][1]};text-align:${h.footer.align};font-size:${h.footer.size}rem;padding-top:${h.footer.paddingTop}px;padding-bottom:${h.footer.paddingBottom}px;color:${c.footerText}}` +
     `.site footer h3{color:${c.footerHeading}}.site footer a{color:${c.footerLink}}` +
     `.site .showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:${width === "phone" ? "4.2rem" : "5.2rem"} ${tw}px 1fr${width === "phone" ? "" : " auto"};border-bottom-width:${l.dividers ? 1 : 0}px}` +
@@ -447,6 +487,14 @@ function render() {
   for (const k of ["heading", "text"]) if (document.activeElement !== $("f-" + k)) $("f-" + k).value = s.footer[k];
   for (const [k, f] of Object.entries(FFMT)) { $("f-" + k).value = s.footer[k]; $("f-" + k).nextElementSibling.textContent = f(s.footer[k]); }
   press("footerAlign", s.footer.align);
+  $("backOptions").hidden = kind !== "back";
+  if (document.activeElement !== $("bb-label")) $("bb-label").value = s.backButton.label;
+  $("bb-gap").value = s.backButton.gap; $("bb-gap").nextElementSibling.textContent = s.backButton.gap + "px";
+  press("backPosition", s.backButton.position); press("backAlign", s.backButton.align); press("page", pageView);
+  document.querySelectorAll("[data-back-label]").forEach((a) => a.textContent = s.backButton.label);
+  document.querySelector("[data-back-top]").hidden = s.backButton.position === "bottom";
+  document.querySelector("[data-back-bottom]").hidden = s.backButton.position === "top";
+  $("pFilm").hidden = pageView !== "film"; $("pSchedule").hidden = pageView !== "schedule";
   $("pFooter").innerHTML = (s.footer.heading ? `<h3>${esc(s.footer.heading)}</h3>` : "") + richText(s.footer.text);
   press("align", s.align); press("mode", mode); press("width", width); press("buttonKind", kind);
   press("shapePreset", [0, 6, 99].includes(b.radius) ? b.radius : "");
@@ -474,7 +522,9 @@ $("controls").addEventListener("input", (e) => {
     if (/^#[0-9a-f]{6}$/i.test(v)) { s[mode][t.dataset.c] = v.toLowerCase(); changed(); }
     return;
   }
-  if (t.id.startsWith("f-")) {
+  if (t.id.startsWith("bb-")) {
+    s.backButton[t.id.slice(3)] = t.type === "range" ? Number(t.value) : t.value;
+  } else if (t.id.startsWith("f-")) {
     s.footer[t.id.slice(2)] = t.type === "range" ? Number(t.value) : t.value;
   } else if (t.id.startsWith("l-")) {
     s.list[t.id.slice(2)] = t.type === "checkbox" ? t.checked : Number(t.value);
@@ -495,7 +545,10 @@ onPick("fontTarget", (v) => { fontTarget = v; render(); });
 onPick("align", (v) => { s.align = v; changed(); });
 onPick("navAlign", (v) => { s.navAlign = v; changed(); });
 onPick("freeIcon", (v) => { s.freeIcon = v; changed(); });
-onPick("buttonKind", (v) => { kind = v; colorRows(); render(); });
+onPick("buttonKind", (v) => { kind = v; if (v === "back") pageView = "film"; colorRows(); render(); });
+onPick("backPosition", (v) => { s.backButton.position = v; changed(); });
+onPick("backAlign", (v) => { s.backButton.align = v; changed(); });
+onPick("page", (v) => { pageView = v; render(); });
 onPick("shapePreset", (v) => { s[kind].radius = Number(v); changed(); });
 onPick("mode", (v) => { mode = v; colorRows(); render(); });
 onPick("width", (v) => { width = v; render(); });
