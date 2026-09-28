@@ -1,0 +1,72 @@
+name: Update schedule
+
+on:
+  schedule:
+    - cron: "17 */3 * * *" # every 3 hours
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck && npm test
+
+      - name: Build site
+        id: build
+        run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          BUTTONDOWN_USERNAME: ${{ vars.BUTTONDOWN_USERNAME }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PROJECT || 'oph-showtimes' }} --branch=main
+
+      # Sent only after deploy so the links in the email work.
+      - name: Send New Title Alert
+        run: npx tsx src/send-alert.ts
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+
+      # Committed last: if anything above failed, the next run retries the alert.
+      - name: Save seen Titles
+        run: |
+          git config user.name "oph-showtimes-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update seen Titles"
+            git push
+          fi
+
+      - name: Report a broken read
+        if: failure() && steps.build.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(gh issue list --label source-read-failed --state open --json number --jq '.[].number')" ]; then
+            gh label create source-read-failed --color B60205 --force
+            gh issue create --label source-read-failed \
+              --title "Couldn't read the Playhouse schedule" \
+              --body "The scheduled build refused to publish (see ADR 0001). Nothing was deployed and no alert was sent. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
