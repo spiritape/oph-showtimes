@@ -62,7 +62,6 @@ rmSync(OUT_DIR, { recursive: true, force: true });
 for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now }));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
-write("_headers", "/*\n  Cache-Control: public, max-age=300\n");
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });
 const state: BuildState = {
