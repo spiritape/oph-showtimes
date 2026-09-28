@@ -11,7 +11,7 @@ One scheduled occurrence of a Film or Event at a specific date and time, with it
 _Avoid_: Screening, session, performance
 
 **Film**:
-A title shown as a movie, grouped from every Showtime that has the exact same title. For example, *Digger* is one Film with ten Showtimes.
+A title shown as a movie, grouped from every Showtime with the same title, ignoring case and spacing. For example, *Digger* is one Film with ten Showtimes.
 _Avoid_: Movie, feature
 
 **Event**:

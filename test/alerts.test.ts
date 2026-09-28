@@ -5,6 +5,7 @@ import type { Title } from "../src/types.ts";
 const now = new Date("2026-10-01T12:00:00Z");
 
 const title = (name: string, ...starts: string[]): Title => ({
+  key: name.toLowerCase(),
   slug: name.toLowerCase(),
   name,
   subtitle: null,
@@ -38,7 +39,7 @@ describe("checkForNewTitles", () => {
   it("sends nothing on the first run but remembers every Title", () => {
     const result = checkForNewTitles(null, [title("Digger", "2026-10-02T02:00:00Z")], now);
     expect(result.newTitles).toEqual([]);
-    expect(Object.keys(result.seen.titles)).toEqual(["Digger"]);
+    expect(Object.keys(result.seen.titles)).toEqual(["digger"]);
   });
 
   it("finds Titles never seen before, but not new Showtimes of known ones", () => {
@@ -72,7 +73,7 @@ describe("checkForNewTitles", () => {
       new Date("2026-07-01T00:00:00Z"),
     );
     const result = checkForNewTitles(seen, [], now);
-    expect(Object.keys(result.seen.titles)).toEqual(["Recent"]);
-    expect(result.seen.titles["Recent"]?.title.name).toBe("Recent");
+    expect(Object.keys(result.seen.titles)).toEqual(["recent"]);
+    expect(result.seen.titles["recent"]?.title.name).toBe("Recent");
   });
 });

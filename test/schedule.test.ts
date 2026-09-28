@@ -68,8 +68,41 @@ describe("buildSchedule", () => {
   it("adds the year to the slug when two Titles would collide", () => {
     const titles = buildSchedule([
       showtime({ title: "Solaris", infoHtml: "<p>Year: 1972</p>", startsAt: "2026-10-01T02:00:00.000Z" }),
-      showtime({ title: "SOLARIS", infoHtml: "<p>Year: 2002</p>", startsAt: "2026-11-01T02:00:00.000Z" }),
+      showtime({ title: "Solaris!", infoHtml: "<p>Year: 2002</p>", startsAt: "2026-11-01T02:00:00.000Z" }),
     ]);
     expect(titles.map((t) => t.slug)).toEqual(["solaris", "solaris-2002"]);
+  });
+
+  it("treats titles differing only in case or spacing as the same Title", () => {
+    const titles = buildSchedule([
+      showtime({ title: "Serial Mom", startsAt: "2026-10-01T02:00:00.000Z" }),
+      showtime({ title: "SERIAL  MOM ", startsAt: "2026-10-02T02:00:00.000Z" }),
+    ]);
+    expect(titles).toHaveLength(1);
+    expect(titles[0]).toMatchObject({ name: "Serial Mom", slug: "serial-mom" });
+    expect(titles[0]?.showtimes).toHaveLength(2);
+  });
+
+  it("keeps each Title's slug from earlier runs", () => {
+    const [first] = buildSchedule([showtime({ title: "Solaris", infoHtml: "<p>Year: 2002</p>" })]);
+    const titles = buildSchedule(
+      [
+        showtime({ title: "Solaris!", infoHtml: "<p>Year: 1972</p>", startsAt: "2026-10-01T02:00:00.000Z" }),
+        showtime({ title: "Solaris", infoHtml: "<p>Year: 2002</p>", startsAt: "2026-11-01T02:00:00.000Z" }),
+      ],
+      { [first!.key]: first!.slug },
+    );
+    expect(titles.map((t) => [t.name, t.slug])).toEqual([
+      ["Solaris!", "solaris-1972"],
+      ["Solaris", "solaris"],
+    ]);
+  });
+
+  it("never gives a new Title the slug of a finished one", () => {
+    const [finished] = buildSchedule([showtime({ title: "Solaris" })]);
+    const [next] = buildSchedule([showtime({ title: "Solaris!", infoHtml: "<p>Year: 1972</p>" })], {
+      [finished!.key]: finished!.slug,
+    });
+    expect(next?.slug).toBe("solaris-1972");
   });
 });

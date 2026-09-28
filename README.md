@@ -11,8 +11,10 @@ A GitHub Actions job runs every 3 hours:
 1. Fetches the Playhouse homepage and reads the schedule from its embedded data ([ADR 0001](docs/adr/0001-read-schedule-from-nuxt-payload.md)).
 2. Refuses to publish or alert if the read looks broken, and opens an issue instead.
 3. Builds static HTML and `.ics` calendar feeds into `dist/`, then deploys them to Cloudflare Pages.
-4. Emails Subscribers through Buttondown if any new Titles appeared.
-5. Commits `data/state.json`, the record of every Title seen so far.
+4. Commits `data/state.json`, the record of every Title seen so far.
+5. Emails Subscribers through Buttondown if any new Titles appeared. The state is saved before sending, so an alert is sent at most once. If an alert would announce more than 10 Titles, or more than half the schedule, it is held back and an issue is opened instead.
+
+The job only runs on its schedule or when started by hand from the Actions tab. Pushing code doesn't deploy it.
 
 ## Local development
 

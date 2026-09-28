@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { guardRead } from "../src/guard.ts";
+import { guardAlert, guardRead } from "../src/guard.ts";
 import type { Showtime } from "../src/types.ts";
 
 const showtimes = (n: number) => Array.from({ length: n }, (_, i) => ({ id: String(i) }) as Showtime);
@@ -31,5 +31,27 @@ describe("guardRead", () => {
       reason: "The Source listed 19 Showtimes, under half of the previous 40",
     });
     expect(guardRead(40, () => showtimes(20)).ok).toBe(true);
+  });
+});
+
+describe("guardAlert", () => {
+  it("allows a normal New Title Alert", () => {
+    expect(guardAlert(3, 25)).toEqual({ ok: true });
+  });
+
+  it("holds an alert that would announce most of the schedule", () => {
+    expect(guardAlert(14, 25)).toEqual({
+      ok: false,
+      reason: "14 of 25 Titles look new, which usually means the Source changed how it writes titles",
+    });
+  });
+
+  it("holds an alert with more new Titles than any real announcement", () => {
+    expect(guardAlert(11, 60).ok).toBe(false);
+    expect(guardAlert(10, 60).ok).toBe(true);
+  });
+
+  it("allows a small schedule where everything is new", () => {
+    expect(guardAlert(2, 2).ok).toBe(true);
   });
 });

@@ -1,3 +1,4 @@
+import { categoryLabel, titlePath } from "./showtime.ts";
 import { dayLabel, timeLabel } from "./time.ts";
 import type { Title } from "./types.ts";
 
@@ -12,8 +13,7 @@ export function composeAlert(newTitles: Title[], siteUrl: string): Alert {
       : `New at the Playhouse: ${names.slice(0, 2).join(", ")} +${names.length - 2} more`;
   const lines = newTitles.map((t) => {
     const first = t.showtimes[0]!;
-    const kind = t.isFilm ? "Film" : (t.category ?? "Event").replace(/^./, (c) => c.toUpperCase());
-    return `- **${t.name}** (${kind}): first showing ${dayLabel(first.startsAt)}, ${timeLabel(first.startsAt)}. ${siteUrl}/t/${t.slug}/`;
+    return `- ${t.name} (${categoryLabel(t)}): first showing ${dayLabel(first.startsAt)}, ${timeLabel(first.startsAt)}. ${siteUrl}${titlePath(t)}`;
   });
   const body = [
     "Just announced at the Ojai Playhouse:",

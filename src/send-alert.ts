@@ -1,6 +1,6 @@
 // Sends the queued New Title Alert, if any. Runs after the site is deployed so links work.
 import { existsSync, readFileSync, rmSync } from "node:fs";
-import { ALERT_FILE } from "./build-paths.ts";
+import { ALERT_FILE } from "./paths.ts";
 import { sendAlert, type Alert } from "./email.ts";
 
 if (!existsSync(ALERT_FILE)) {

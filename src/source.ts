@@ -15,9 +15,9 @@ export async function fetchSource(contactEmail: string): Promise<string> {
 export function readSource(html: string): Showtime[] {
   const match = html.match(/<script[^>]*id="__NUXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
   if (!match?.[1]) throw new Error("No schedule data found on the Source page");
-  const events = findEvents(revive(JSON.parse(match[1])));
-  if (!events) throw new Error("No schedule data found in the Source payload");
-  return events.map(toShowtime);
+  const records = findSourceRecords(revive(JSON.parse(match[1])));
+  if (!records) throw new Error("No schedule data found in the Source payload");
+  return records.map(toShowtime);
 }
 
 // Nuxt serializes its payload with devalue: a flat array where objects and
@@ -48,9 +48,10 @@ function revive(table: unknown[]): unknown {
   return at(0);
 }
 
-type RawEvent = Record<string, any>;
+/** One Showtime as the Source's CMS stores it (its GraphQL type is "Event"). */
+type SourceRecord = Record<string, any>;
 
-function findEvents(root: unknown): RawEvent[] | undefined {
+function findSourceRecords(root: unknown): SourceRecord[] | undefined {
   const data = (root as { data?: Record<string, unknown> })?.data ?? {};
   for (const entry of Object.values(data)) {
     const events = (entry as { events?: unknown })?.events;
@@ -59,12 +60,12 @@ function findEvents(root: unknown): RawEvent[] | undefined {
   return undefined;
 }
 
-function toShowtime(e: RawEvent): Showtime {
+function toShowtime(e: SourceRecord): Showtime {
   if (typeof e.title !== "string" || typeof e.eventDate !== "string") {
-    throw new Error(`Source event ${e.id} is missing a title or date`);
+    throw new Error(`Source record ${e.id} is missing a title or date`);
   }
   const startsAt = new Date(e.eventDate);
-  if (Number.isNaN(startsAt.getTime())) throw new Error(`Source event ${e.id} has a bad date`);
+  if (Number.isNaN(startsAt.getTime())) throw new Error(`Source record ${e.id} has a bad date`);
   return {
     id: String(e.id),
     title: e.title.trim(),
