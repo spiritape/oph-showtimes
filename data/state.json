@@ -1,8 +1,8 @@
 {
  "lastReadCount": 61,
  "lastPublish": {
-  "scheduleHash": "a919c2eec60d07d82eaa4dac827bb9583daf19db89c81ea8d3ee1e03fcd3a9dc",
-  "publishedAt": "2026-09-28T21:51:07.119Z"
+  "scheduleHash": "ae4db9c23a51f392cc6377a641a188b27cad802fb92bd8a612978f8f257e5730",
+  "publishedAt": "2026-09-28T21:55:10.032Z"
  },
  "seen": {
   "titles": {
@@ -1688,6 +1688,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpjjkjm407n339oeikl6",
        "infoHtml": "<p>Year: 2026<br>Director: Tamra Davis<br>Running Time: 1hr 22min</p><p><strong>Post screening Q&amp;A with director Tamra Davis</strong></p><p>A found footage documentary from a concert tour in 1995 that features live performances, candid interviews and a behind the scene view of what it&#39;s like to be on tour with the Beastie Boys, Sonic Youth, Foo Fighters, Beck, Pavement, Rancid, The Amps and Bikini Kill.</p>"
+      }
+     ]
+    }
+   },
+   "jean-michel basquiat": {
+    "lastShowtime": "2026-10-29T02:30:00.000Z",
+    "title": {
+     "key": "jean-michel basquiat",
+     "slug": "jean-michel-basquiat",
+     "name": "Jean-Michel Basquiat",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Viridiana Lieberman, Quinn Wilson",
+     "runtime": "1hr 35min",
+     "rating": null,
+     "synopsis": "An intimate portrait of iconic 20th-century artist Jean-Michel Basquiat, told through the eyes of those closest to him: his family.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjyya3gr07n3f4zxw86v",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmug37kazyriv07ln0ysu2v04",
+       "title": "Jean-Michel Basquiat",
+       "subtitle": null,
+       "startsAt": "2026-10-29T02:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1157?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjyya3gr07n3f4zxw86v",
+       "infoHtml": "<p>Year: 2026<br>Director: Viridiana Lieberman, Quinn Wilson <br>Running Time: 1hr 35min</p><p>An intimate portrait of iconic 20th-century artist Jean-Michel Basquiat, told through the eyes of those closest to him: his family.</p>"
       }
      ]
     }
