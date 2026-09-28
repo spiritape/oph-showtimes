@@ -77,10 +77,28 @@ export type HeaderColors = {
   freeIcon: string;
   /** The first day's heading in the list ("Today", or the soonest day) */
   firstDay: string;
+  footerText: string;
+  footerHeading: string;
+  footerLink: string;
   /** Free screenings and events (RSVP buttons). */
   rsvpText: string;
   rsvpBg: string;
   rsvpBorder: string;
+};
+
+/** The footer at the bottom of every page. */
+export type FooterStyle = {
+  /** Left empty, the footer has no heading. */
+  heading: string;
+  /** Plain text; [words](https://…) makes a link and a blank line starts a new paragraph. */
+  text: string;
+  font: FontKey;
+  align: "left" | "center";
+  /** rem */
+  size: number;
+  /** px */
+  paddingTop: number;
+  paddingBottom: number;
 };
 
 /** Spacing in the schedule list, in px. */
@@ -131,6 +149,7 @@ export type HeaderStyle = {
   tickets: ButtonShape;
   list: ListStyle;
   freeIcon: FreeIcon;
+  footer: FooterStyle;
   light: HeaderColors;
   dark: HeaderColors;
 };
@@ -161,6 +180,16 @@ export const HEADER_STYLE: HeaderStyle = {
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
   freeIcon: "badge",
+  footer: {
+    heading: "Notice",
+    text:
+      "Not affiliated with the Ojai Playhouse. Times are Pacific and come from [ojaiplayhouse.com](https://www.ojaiplayhouse.com/). Always confirm event times before you go. Follow the Playhouse on [Instagram](https://www.instagram.com/ojaiplayhouse).",
+    font: "system",
+    align: "left",
+    size: 0.8,
+    paddingTop: 96,
+    paddingBottom: 24,
+  },
   list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   light: {
     background: "#fbf9f4",
@@ -180,6 +209,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketBorder: "#2d2a8c",
     freeIcon: "#1f8a4c",
     firstDay: "#6f6a62",
+    footerText: "#6f6a62",
+    footerHeading: "#1d1b18",
+    footerLink: "#2d2a8c",
     rsvpText: "#ffffff",
     rsvpBg: "#f05537",
     rsvpBorder: "#f05537",
@@ -202,6 +234,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketBorder: "#36a15b",
     freeIcon: "#5fd08f",
     firstDay: "#61d090",
+    footerText: "#9c968c",
+    footerHeading: "#eeeae3",
+    footerLink: "#a9a6ff",
     rsvpText: "#ffffff",
     rsvpBg: "#f05537",
     rsvpBorder: "#f05537",
@@ -239,6 +274,9 @@ export function headerCss(h: HeaderStyle = HEADER_STYLE) {
     `[data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}`,
     `[data-list]>[data-day]:first-child h2{color:var(--h-first-day)}`,
     `.free{color:var(--h-free-icon)}`,
+    `footer{font-family:${FONTS[h.footer.font].stack};text-align:${h.footer.align};font-size:${h.footer.size}rem;padding-top:${h.footer.paddingTop}px;padding-bottom:${h.footer.paddingBottom}px;color:var(--h-footer-text)}`,
+    `footer h3{color:var(--h-footer-heading)}`,
+    `footer a{color:var(--h-footer-link)}`,
     `.showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:5.2rem ${l.thumbWidth}px 1fr auto;border-bottom-width:${l.dividers ? 1 : 0}px}`,
     `.thumb{width:${l.thumbWidth}px}`,
     `@media (max-width:30rem){.showtime{grid-template-columns:4.2rem ${phoneThumb}px 1fr}.thumb{width:${phoneThumb}px}}`,
@@ -247,7 +285,7 @@ export function headerCss(h: HeaderStyle = HEADER_STYLE) {
 
 /** Google Fonts stylesheet for the fonts in use, or "" when all are already on devices. */
 export function fontLinks(h: HeaderStyle = HEADER_STYLE) {
-  const specs = [...new Set([FONTS[h.titleFont], FONTS[h.textFont], FONTS[h.buttonFont]].map((f: Font) => f.google).filter(Boolean))];
+  const specs = [...new Set([FONTS[h.titleFont], FONTS[h.textFont], FONTS[h.buttonFont], FONTS[h.footer.font]].map((f: Font) => f.google).filter(Boolean))];
   if (!specs.length) return "";
   const href = `https://fonts.googleapis.com/css2?${specs.map((s) => `family=${s}`).join("&")}&display=swap`;
   return `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="${href}">`;

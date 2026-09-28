@@ -60,10 +60,25 @@ function notifyButton(config: SiteConfig) {
   return `<p class="notify"><button type="button" data-notify data-api="${escapeHtml(n.watcherUrl)}" data-key="${escapeHtml(n.vapidPublicKey)}" hidden>🔔 Notify me of new titles</button></p><p class="notify-tip" data-notify-tip role="status" hidden></p>`;
 }
 
+/** Escaped paragraphs from plain text, where [words](https://…) becomes a link. */
+export function richText(text: string) {
+  return text
+    .split(/\n\s*\n/)
+    .map((para) => para.trim())
+    .filter(Boolean)
+    .map(
+      (para) =>
+        `<p>${escapeHtml(para).replace(
+          /\[([^\]]+)\]\(((?:https?:\/\/|mailto:)[^\s)]+)\)/g,
+          (_, words: string, url: string) => `<a href="${url}" rel="noopener">${words}</a>`,
+        )}</p>`,
+    )
+    .join("");
+}
+
 function footer() {
-  return `<footer>
-<h3>About</h3>
-<p>Not affiliated with the Ojai Playhouse. Times are Pacific and come from <a href="https://www.ojaiplayhouse.com/">ojaiplayhouse.com</a>, checked every 15 minutes. Always confirm there before you go. Follow the Playhouse on <a href="https://www.instagram.com/ojaiplayhouse">Instagram</a>.</p></footer>`;
+  const f = HEADER_STYLE.footer;
+  return `<footer>${f.heading ? `<h3>${escapeHtml(f.heading)}</h3>` : ""}${richText(f.text)}</footer>`;
 }
 
 function actions(title: Title, s: Showtime, config: SiteConfig) {

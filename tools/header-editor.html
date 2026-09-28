@@ -29,6 +29,7 @@ details[open] summary::after{content:"–"}
 .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;margin:6px 0 -2px}
 label.row{display:grid;grid-template-columns:7.5rem 1fr 3.6rem;gap:10px;align-items:center;font-size:.85rem}
 label.row output{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.8rem;text-align:right}
+textarea{width:100%;min-height:8.5rem;resize:vertical;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit;line-height:1.4}
 input[type=text]{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
 input[type=range]{width:100%;accent-color:var(--accent)}
 .stack{display:grid;gap:4px;font-size:.85rem}
@@ -69,6 +70,8 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .site .book{white-space:nowrap}
 .site .acts{display:flex;gap:10px;align-items:center}
 .site .free{display:inline-flex}
+.site footer{max-width:40rem;margin:0 auto;padding-left:16px;padding-right:16px}
+.site footer h3{font-size:.95rem;margin:24px 0 6px}
 .site .free-badge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid currentColor;border-radius:4px;padding:1px 4px}
 @media (max-width:54rem){.app{grid-template-columns:1fr}.preview-wrap{position:sticky;top:0;z-index:1;background:var(--bg);padding-block:8px;order:-1;max-height:48vh;overflow:auto}.top{order:-2}}
 .frame.phone .site .showtime{grid-template-areas:"time thumb info" "time thumb actions";align-items:start}.frame.phone .site .acts{margin-top:8px}
@@ -107,7 +110,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
       <summary>Fonts</summary>
       <div class="body">
         <div class="seg" id="fontTarget" role="group" aria-label="Which text">
-          <button type="button" data-v="titleFont">Title</button><button type="button" data-v="textFont">Subtitle</button><button type="button" data-v="buttonFont">Buttons</button>
+          <button type="button" data-v="titleFont">Title</button><button type="button" data-v="textFont">Subtitle</button><button type="button" data-v="buttonFont">Buttons</button><button type="button" data-v="footerFont">Footer</button>
         </div>
         <p class="label">On every device</p>
         <div class="chips" id="fontsLocal" role="group" aria-label="Fonts on every device"></div>
@@ -180,6 +183,25 @@ input[type=range]{width:100%;accent-color:var(--accent)}
       </div>
     </details>
 
+    <details>
+      <summary>Footer</summary>
+      <div class="body">
+        <div class="stack"><label for="f-heading">Heading</label><input type="text" id="f-heading"></div>
+        <div class="stack"><label for="f-text">Text</label><textarea id="f-text"></textarea></div>
+        <p class="hint">Write [words](https://example.com) to make a link. Leave a blank line to start a new paragraph. Leave the heading empty to hide it.</p>
+        <div class="seg" id="footerAlign" role="group" aria-label="Footer alignment">
+          <button type="button" data-v="left">Left</button><button type="button" data-v="center">Center</button>
+        </div>
+        <label class="row">Text size <input type="range" id="f-size" min="0.7" max="1.2" step="0.05"><output></output></label>
+        <label class="row">Space above <input type="range" id="f-paddingTop" min="0" max="96" step="2"><output></output></label>
+        <label class="row">Space below <input type="range" id="f-paddingBottom" min="0" max="96" step="2"><output></output></label>
+        <p class="label">Colors</p>
+        <p class="hint" data-mode-hint></p>
+        <div id="footerColors" style="display:grid;gap:8px"></div>
+        <p class="hint">Its font is under Fonts → Footer.</p>
+      </div>
+    </details>
+
     <details open>
       <summary>Buttons</summary>
       <div class="body">
@@ -239,6 +261,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
           </ul></section>
           </div>
         </main>
+        <footer id="pFooter"></footer>
       </div>
     </div>
   </section>
@@ -284,6 +307,11 @@ const LIVE = {
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
   tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
   freeIcon: "badge",
+  footer: {
+    heading: "Notice",
+    text: "Not affiliated with the Ojai Playhouse. Times are Pacific and come from [ojaiplayhouse.com](https://www.ojaiplayhouse.com/). Always confirm event times before you go. Follow the Playhouse on [Instagram](https://www.instagram.com/ojaiplayhouse).",
+    font: "system", align: "left", size: 0.8, paddingTop: 96, paddingBottom: 24,
+  },
   list: { rowPadding: 3, columnGap: 13, dayGap: 30, headingGap: 2, thumbWidth: 62, dividers: true },
   navAlign: "center",
   light: {
@@ -293,6 +321,7 @@ const LIVE = {
     ticketText: "#ffffff", ticketBg: "#2d2a8c", ticketBorder: "#2d2a8c",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
     freeIcon: "#1f8a4c", firstDay: "#6f6a62",
+    footerText: "#6f6a62", footerHeading: "#1d1b18", footerLink: "#2d2a8c",
   },
   dark: {
     background: "#141312", title: "#7f94e1", subtitle: "#9c968c", address: "#5b5a57",
@@ -301,6 +330,7 @@ const LIVE = {
     ticketText: "#ffffff", ticketBg: "#0131e4", ticketBorder: "#36a15b",
     rsvpText: "#ffffff", rsvpBg: "#f05537", rsvpBorder: "#f05537",
     freeIcon: "#5fd08f", firstDay: "#61d090",
+    footerText: "#9c968c", footerHeading: "#eeeae3", footerLink: "#a9a6ff",
   },
 };
 // Same shapes as FREE_ICONS in src/header-style.ts.
@@ -315,6 +345,7 @@ const FREE_ICONS = {
 };
 const ICON_LABELS = { tag: "Tag", ticket: "Ticket", gift: "Gift", sparkle: "Sparkle", heart: "Heart", badge: "Free", none: "None" };
 const iconHtml = (k) => k === "badge" ? '<span class="free free-badge">Free</span>' : k === "none" ? "" : `<span class="free" role="img" aria-label="Free screening"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">${FREE_ICONS[k]}</svg></span>`;
+const FOOTER_COLORS = { footerText: "Text", footerHeading: "Heading", footerLink: "Links" };
 const HIGHLIGHT_COLORS = { freeIcon: "Free icon", firstDay: "Today heading" };
 const HEADER_COLORS = { background: "Background", title: "Title", subtitle: "Subtitle", address: "Address" };
 const BUTTON_COLORS = {
@@ -362,6 +393,8 @@ function css(h) {
     `.site [data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}` +
     `.site [data-list]>[data-day]:first-child h2{color:${c.firstDay}}` +
     `.site .free{color:${c.freeIcon}}` +
+    `.site footer{font-family:${FONTS[h.footer.font][1]};text-align:${h.footer.align};font-size:${h.footer.size}rem;padding-top:${h.footer.paddingTop}px;padding-bottom:${h.footer.paddingBottom}px;color:${c.footerText}}` +
+    `.site footer h3{color:${c.footerHeading}}.site footer a{color:${c.footerLink}}` +
     `.site .showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:${width === "phone" ? "4.2rem" : "5.2rem"} ${tw}px 1fr${width === "phone" ? "" : " auto"};border-bottom-width:${l.dividers ? 1 : 0}px}` +
     `.site .thumb{width:${tw}px}`;
 }
@@ -375,6 +408,7 @@ const colorRow = (k, label) => `<div class="color"><label for="c-${k}">${label}<
 $("freeIcon").innerHTML = Object.keys(FREE_ICONS).map((k) => `<button type="button" class="chip" data-v="${k}" aria-label="${ICON_LABELS[k]}"><b style="color:var(--free-chip);height:1.4rem;display:flex;align-items:center">${iconHtml(k) || "–"}</b><span>${ICON_LABELS[k]}</span></button>`).join("");
 
 function colorRows() {
+  $("footerColors").innerHTML = Object.entries(FOOTER_COLORS).map(([k, l]) => colorRow(k, l)).join("");
   $("highlightColors").innerHTML = Object.entries(HIGHLIGHT_COLORS).map(([k, l]) => colorRow(k, l)).join("");
   $("headerColors").innerHTML = Object.entries(HEADER_COLORS).map(([k, l]) => colorRow(k, l)).join("");
   $("buttonColors").innerHTML = Object.entries(BUTTON_COLORS[kind]).map(([k, l]) => colorRow(k, l)).join("");
@@ -385,6 +419,13 @@ const px = (v) => v + "px";
 const FMT = { titleSize: (v) => v.toFixed(2) + "rem", titleWeight: String, titleTracking: (v) => v.toFixed(2) + "em", paddingTop: px, paddingBottom: px, sidePadding: px, gap: px, addressGap: px, buttonGap: px, navGap: px };
 const LFMT = { rowPadding: px, columnGap: px, dayGap: px, headingGap: px, thumbWidth: px };
 const BFMT = { radius: px, borderWidth: px, size: (v) => v.toFixed(2) + "rem", weight: String, padX: px, padY: px };
+const getFont = (t) => t === "footerFont" ? s.footer.font : s[t];
+const setFont = (t, v) => { if (t === "footerFont") s.footer.font = v; else s[t] = v; };
+// Same rules as richText in src/render.ts.
+const richText = (text) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
+  .map((p) => `<p>${esc(p).replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:)[^\s)]+)\)/g, (_, w, u) => `<a href="${u}" target="_blank" rel="noopener">${w}</a>`)}</p>`).join("");
+const esc = (t) => t.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const FFMT = { size: (v) => v.toFixed(2) + "rem", paddingTop: px, paddingBottom: px };
 const press = (id, v) => $(id).querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === String(v))));
 
 function render() {
@@ -402,7 +443,11 @@ function render() {
   $("freeIcon").style.setProperty("--free-chip", s[mode].freeIcon);
   $("filledWrap").hidden = kind !== "notify";
   press("fontTarget", fontTarget);
-  press("fontsLocal", s[fontTarget]); press("fontsWeb", s[fontTarget]);
+  press("fontsLocal", getFont(fontTarget)); press("fontsWeb", getFont(fontTarget));
+  for (const k of ["heading", "text"]) if (document.activeElement !== $("f-" + k)) $("f-" + k).value = s.footer[k];
+  for (const [k, f] of Object.entries(FFMT)) { $("f-" + k).value = s.footer[k]; $("f-" + k).nextElementSibling.textContent = f(s.footer[k]); }
+  press("footerAlign", s.footer.align);
+  $("pFooter").innerHTML = (s.footer.heading ? `<h3>${esc(s.footer.heading)}</h3>` : "") + richText(s.footer.text);
   press("align", s.align); press("mode", mode); press("width", width); press("buttonKind", kind);
   press("shapePreset", [0, 6, 99].includes(b.radius) ? b.radius : "");
   for (const [k, v] of Object.entries(s[mode])) {
@@ -414,7 +459,6 @@ function render() {
   $("frame").classList.toggle("phone", width === "phone");
   $("pTitle").textContent = s.titleText;
   // Like the site: "Ojai Playhouse" in the subtitle is a link.
-  const esc = (t) => t.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   $("pSub").innerHTML = esc(s.subtitleText).replace("Ojai Playhouse", "<a>Ojai Playhouse</a>");
   $("pSub").hidden = !s.showSubtitle;
   $("pAddr").hidden = !s.showAddress;
@@ -430,7 +474,9 @@ $("controls").addEventListener("input", (e) => {
     if (/^#[0-9a-f]{6}$/i.test(v)) { s[mode][t.dataset.c] = v.toLowerCase(); changed(); }
     return;
   }
-  if (t.id.startsWith("l-")) {
+  if (t.id.startsWith("f-")) {
+    s.footer[t.id.slice(2)] = t.type === "range" ? Number(t.value) : t.value;
+  } else if (t.id.startsWith("l-")) {
     s.list[t.id.slice(2)] = t.type === "checkbox" ? t.checked : Number(t.value);
   } else if (t.id.startsWith("b-")) {
     const k = t.id.slice(2);
@@ -442,8 +488,9 @@ $("controls").addEventListener("input", (e) => {
 });
 $("controls").addEventListener("submit", (e) => e.preventDefault());
 const onPick = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) fn(b.dataset.v); });
-onPick("fontsLocal", (v) => { s[fontTarget] = v; changed(); });
-onPick("fontsWeb", (v) => { s[fontTarget] = v; changed(); });
+onPick("fontsLocal", (v) => { setFont(fontTarget, v); changed(); });
+onPick("fontsWeb", (v) => { setFont(fontTarget, v); changed(); });
+onPick("footerAlign", (v) => { s.footer.align = v; changed(); });
 onPick("fontTarget", (v) => { fontTarget = v; render(); });
 onPick("align", (v) => { s.align = v; changed(); });
 onPick("navAlign", (v) => { s.navAlign = v; changed(); });
