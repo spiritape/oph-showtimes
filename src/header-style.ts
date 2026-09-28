@@ -60,6 +60,25 @@ export type HeaderColors = {
   ticketText: string;
   ticketBg: string;
   ticketBorder: string;
+  /** Free screenings and events (RSVP buttons). */
+  rsvpText: string;
+  rsvpBg: string;
+  rsvpBorder: string;
+};
+
+/** Spacing in the schedule list, in px. */
+export type ListStyle = {
+  /** Above and below each Showtime row */
+  rowPadding: number;
+  /** Between a row's time, poster, details and buttons */
+  columnGap: number;
+  /** Above each day's heading */
+  dayGap: number;
+  /** Between a day's heading and its first row */
+  headingGap: number;
+  /** Poster width; phones get 7/8 of it */
+  thumbWidth: number;
+  dividers: boolean;
 };
 
 export type HeaderStyle = {
@@ -83,6 +102,8 @@ export type HeaderStyle = {
   buttonGap: number;
   /** px between the header and the filter buttons */
   navGap: number;
+  /** Where the filter buttons sit */
+  navAlign: "left" | "center";
   showSubtitle: boolean;
   showAddress: boolean;
   buttonFont: FontKey;
@@ -91,6 +112,7 @@ export type HeaderStyle = {
   notify: ButtonShape;
   pills: ButtonShape;
   tickets: ButtonShape;
+  list: ListStyle;
   light: HeaderColors;
   dark: HeaderColors;
 };
@@ -112,13 +134,15 @@ export const HEADER_STYLE: HeaderStyle = {
   addressGap: 0,
   buttonGap: 3,
   navGap: 16,
+  navAlign: "center",
   showSubtitle: true,
   showAddress: true,
   buttonFont: "humanist",
   notifyFilled: true,
   notify: { radius: 40, borderWidth: 1, weight: 500, size: 0.8, padX: 12, padY: 4, uppercase: false },
   pills: { radius: 40, borderWidth: 1, weight: 300, size: 0.8, padX: 10, padY: 3, uppercase: false },
-  tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: false },
+  tickets: { radius: 9, borderWidth: 1, weight: 600, size: 0.85, padX: 10, padY: 2, uppercase: true },
+  list: { rowPadding: 12, columnGap: 12, dayGap: 28, headingGap: 4, thumbWidth: 64, dividers: true },
   light: {
     background: "#fbf9f4",
     title: "#1d1b18",
@@ -135,6 +159,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketText: "#ffffff",
     ticketBg: "#2d2a8c",
     ticketBorder: "#2d2a8c",
+    rsvpText: "#ffffff",
+    rsvpBg: "#f05537",
+    rsvpBorder: "#f05537",
   },
   dark: {
     background: "#141312",
@@ -152,6 +179,9 @@ export const HEADER_STYLE: HeaderStyle = {
     ticketText: "#ffffff",
     ticketBg: "#0131e4",
     ticketBorder: "#36a15b",
+    rsvpText: "#ffffff",
+    rsvpBg: "#f05537",
+    rsvpBorder: "#f05537",
   },
 };
 
@@ -167,6 +197,8 @@ const shape = (b: ButtonShape) =>
 /** The header's and buttons' CSS, from HEADER_STYLE. The header background runs the full page width. */
 export function headerCss(h: HeaderStyle = HEADER_STYLE) {
   const buttonFont = FONTS[h.buttonFont].stack;
+  const l = h.list;
+  const phoneThumb = Math.round(l.thumbWidth * 0.875);
   return [
     `:root{${vars(h.light)}}`,
     `@media (prefers-color-scheme:dark){:root{${vars(h.dark)}}}`,
@@ -176,10 +208,15 @@ export function headerCss(h: HeaderStyle = HEADER_STYLE) {
     `header .theater{margin:${h.addressGap}px 0 0;font-size:.85rem;color:var(--h-address)}`,
     `.notify{margin:${h.buttonGap}px 0 0}`,
     `.notify button{font-family:${buttonFont};${shape(h.notify)};color:var(--h-notify-text);border-color:var(--h-notify-border);background:${h.notifyFilled ? "var(--h-notify-bg)" : "transparent"}}`,
-    `main>nav:first-child{margin-top:${h.navGap}px}`,
+    `main>nav:first-child{margin-top:${h.navGap}px;justify-content:${h.navAlign === "center" ? "center" : "flex-start"}}`,
     `nav a{font-family:${buttonFont};${shape(h.pills)};color:var(--h-pill-text);background:var(--h-pill-bg);border-color:var(--h-pill-border)}`,
     `nav a[aria-current]{color:var(--h-pill-active-text);background:var(--h-pill-active-bg);border-color:var(--h-pill-active-bg)}`,
     `.book{font-family:${buttonFont};${shape(h.tickets)};color:var(--h-ticket-text);background:var(--h-ticket-bg);border-color:var(--h-ticket-border)}`,
+    `.book.rsvp{color:var(--h-rsvp-text);background:var(--h-rsvp-bg);border-color:var(--h-rsvp-border)}`,
+    `[data-day] h2{margin:${l.dayGap}px 0 ${l.headingGap}px}`,
+    `.showtime{padding:${l.rowPadding}px 0;column-gap:${l.columnGap}px;grid-template-columns:5.2rem ${l.thumbWidth}px 1fr auto;border-bottom-width:${l.dividers ? 1 : 0}px}`,
+    `.thumb{width:${l.thumbWidth}px}`,
+    `@media (max-width:30rem){.showtime{grid-template-columns:4.2rem ${phoneThumb}px 1fr}.thumb{width:${phoneThumb}px}}`,
   ].join("");
 }
 

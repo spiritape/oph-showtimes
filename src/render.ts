@@ -58,7 +58,7 @@ function footer() {
 
 function actions(title: Title, s: Showtime, config: SiteConfig) {
   const booking = bookingLink(s);
-  const link = booking ? `<a class="book" href="${escapeHtml(booking.url)}" rel="noopener">${booking.label}</a>` : "";
+  const link = booking ? `<a class="book${booking.free ? " rsvp" : ""}" href="${escapeHtml(booking.url)}" rel="noopener">${booking.label}</a>` : "";
   const free = booking?.free ? freeIcon(title.isFilm ? "Free screening" : "Free event") : "";
   const calendar = googleCalendarUrl({ title, showtime: s }, config.siteUrl);
   return `<span class="actions">${free}${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar" aria-label="Add to Google Calendar">${CALENDAR_ICON}</a></span>`;
