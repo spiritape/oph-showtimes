@@ -1,8 +1,8 @@
 {
- "lastReadCount": 40,
+ "lastReadCount": 41,
  "lastPublish": {
-  "scheduleHash": "7eadde0a9463c16533579a1842c70e45cd849efaed08bc1c01869233e8b13c0f",
-  "publishedAt": "2026-09-28T18:51:07.059Z"
+  "scheduleHash": "5f472cceeedf21efdb575f9cd78407c4241942c8a3b3dc8e772ac281451cc1c4",
+  "publishedAt": "2026-09-28T19:01:08.912Z"
  },
  "seen": {
   "titles": {
@@ -1035,6 +1035,39 @@
        "price": "$69 - $199\nON SALE 8.28 12PM",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtc70li1nhjb07lneccjb7f3",
        "infoHtml": "<p>ON SALE 8.28 12PM</p><p>Twin Peaks: Conversation With The Stars</p><p>with:</p><p><strong>Sheryl Lee (Laura Palmer)<br>Ray Wise (Leland Palmer)<br>Sabrina Sutherland (Executive Producer of </strong><em><strong>Twin Peaks: The Return)</strong></em><strong><br>Hosted by Josh Eisenstadt</strong></p><p>$199 VIP Package includes:</p><p>One premium reserved ticket located in the first 4 rows<br>Personal photograph with Sheryl Lee and Ray Wise<br>Limited edition Twin Peaks &quot;Conversation with The Stars” poster; autographed by Sheryl Lee and Ray Wise<br>Commemorative Twin Peaks “Conversation with The Stars” laminate<br>Priority access to the venue<br>Limited availability</p>"
+      }
+     ]
+    }
+   },
+   "spider-man: brand new day": {
+    "lastShowtime": "2026-10-03T19:00:00.000Z",
+    "title": {
+     "key": "spider-man: brand new day",
+     "slug": "spider-man-brand-new-day",
+     "name": "Spider-Man: Brand New Day",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Destin Daniel Cretton",
+     "runtime": "2hr 25min",
+     "rating": null,
+     "synopsis": "A forgotten Peter Parker lives alone as a full-time Spider-Man until mounting pressure triggers a dangerous change and a powerful new enemy emerges.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulm0odplrk507lmemf726ky",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmulm2krtlufy07lmm2j9sdlo",
+       "title": "Spider-Man: Brand New Day",
+       "subtitle": null,
+       "startsAt": "2026-10-03T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1162?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulm0odplrk507lmemf726ky",
+       "infoHtml": "<p>Year: 2026<br>Director: Destin Daniel Cretton<br>Starring: Tom Holland, Zendaya, Mark Ruffalo, Jon Bernthal<br>Running Time: 2hr 25min</p><p>A forgotten Peter Parker lives alone as a full-time Spider-Man until mounting pressure triggers a dangerous change and a powerful new enemy emerges.</p>"
       }
      ]
     }
