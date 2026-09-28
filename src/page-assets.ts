@@ -30,7 +30,8 @@ ul{list-style:none;margin:0;padding:0}
 .actions{grid-area:actions;display:flex;gap:10px;align-items:center}
 .book{background:var(--accent);color:var(--accent-fg);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;white-space:nowrap}
 .free{display:inline-flex;color:var(--free);margin-right:-4px}
-.add-cal{color:var(--muted);font-size:.8rem}
+.add-cal{display:inline-flex;padding:4px;border-radius:6px;line-height:0}
+.add-cal:hover{background:var(--tag)}
 a{color:var(--accent)}
 .empty{color:var(--muted);padding:24px 0}
 .title-name{font-size:1.6rem;text-transform:none;letter-spacing:-.01em;color:var(--fg);margin:16px 0 0}

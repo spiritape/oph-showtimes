@@ -16,7 +16,7 @@ describe("shouldPublish", () => {
     expect(shouldPublish({ scheduleHash: "abc", publishedAt: "2026-10-01T11:45:00Z" }, "abc", now)).toBe(false);
   });
 
-  it("refreshes an unchanged schedule every 3 hours so Today and the Calendar Feeds stay current", () => {
+  it("refreshes an unchanged schedule every 3 hours so Today and past Showtimes stay current", () => {
     expect(shouldPublish({ scheduleHash: "abc", publishedAt: "2026-10-01T09:05:00Z" }, "abc", now)).toBe(false);
     expect(shouldPublish({ scheduleHash: "abc", publishedAt: "2026-10-01T09:00:00Z" }, "abc", now)).toBe(true);
   });

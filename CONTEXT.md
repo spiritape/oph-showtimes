@@ -1,6 +1,6 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with calendar feeds. The Playhouse's own website is the source of truth.
+An unofficial, fast, minimal schedule of everything playing at the Ojai Playhouse, with one-tap links to add a Showtime to Google Calendar. The Playhouse's own website is the source of truth.
 
 ## Language
 
@@ -29,9 +29,3 @@ _Avoid_: Genre, type
 **Source**:
 The official Ojai Playhouse website that we read the schedule from.
 _Avoid_: Feed, API
-
-### Calendar
-
-**Calendar Feed**:
-A subscribable calendar that contains every upcoming Showtime.
-_Avoid_: ICS, calendar export

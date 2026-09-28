@@ -1,8 +1,8 @@
 # OPH Showtimes
 
-An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), with calendar feeds. It picks up newly announced titles within about 15 minutes. Not affiliated with the Playhouse.
+An unofficial, fast, minimal schedule for the [Ojai Playhouse](https://www.ojaiplayhouse.com/), with one-tap Google Calendar links. It picks up newly announced titles within about 15 minutes. Not affiliated with the Playhouse.
 
-See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, Calendar Feed…) and [docs/adr](docs/adr) for decisions.
+See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, Live Show…) and [docs/adr](docs/adr) for decisions.
 
 ## How it works
 
@@ -10,7 +10,7 @@ A GitHub Actions job checks the Playhouse every 15 minutes (GitHub's scheduler c
 
 1. Fetches the Playhouse homepage and reads the schedule from its embedded data ([ADR 0001](docs/adr/0001-read-schedule-from-nuxt-payload.md)).
 2. Refuses to publish if the read looks broken, and opens an issue instead.
-3. If the schedule changed, or the site hasn't been refreshed for 3 hours, builds static HTML and `.ics` calendar feeds into `dist/` and deploys them to Cloudflare Pages. Otherwise it stops there.
+3. If the schedule changed, or the site hasn't been refreshed for 3 hours, builds static HTML into `dist/` and deploys them to Cloudflare Pages. Otherwise it stops there.
 4. After a deploy, commits `data/state.json`: the Titles seen recently (so finished Titles keep their page for 60 days and every Title keeps its URL) and a fingerprint of the published schedule.
 
 Starting the workflow by hand from the Actions tab always republishes. Tests run in a separate workflow on every push.

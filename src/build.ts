@@ -3,14 +3,12 @@
 // nothing, when the read looks wrong.
 import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
-import { calendarFeed } from "./calendar-feed.ts";
 import { guardRead } from "./guard.ts";
 import { OUT_DIR, STATE_FILE } from "./paths.ts";
 import { hashSchedule, shouldPublish, type LastPublish } from "./refresh.ts";
 import { renderNotFound, renderSchedule, renderTitle, SCHEDULE_PAGES, type SiteConfig } from "./render.ts";
 import { buildSchedule } from "./schedule.ts";
 import { finishedTitles, knownSlugs, rememberTitles, type SeenTitles } from "./seen-titles.ts";
-import { isListed } from "./showtime.ts";
 import { fetchSource, readSource } from "./source.ts";
 
 type BuildState = { lastReadCount: number; lastPublish?: LastPublish; seen: SeenTitles };
@@ -64,14 +62,7 @@ rmSync(OUT_DIR, { recursive: true, force: true });
 for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles, config, { filter, now }));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
-
-const upcoming = titles.flatMap((title) =>
-  title.showtimes.filter((s) => isListed(s, now)).map((showtime) => ({ title, showtime })),
-);
-write("calendar/all.ics", calendarFeed("Ojai Playhouse (OPH Showtimes)", upcoming, config.siteUrl, now));
-const films = upcoming.filter((s) => s.title.isFilm);
-write("calendar/films.ics", calendarFeed("Ojai Playhouse films (OPH Showtimes)", films, config.siteUrl, now));
-write("_headers", "/*.ics\n  Content-Type: text/calendar; charset=utf-8\n/*\n  Cache-Control: public, max-age=300\n");
+write("_headers", "/*\n  Cache-Control: public, max-age=300\n");
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });
 const state: BuildState = {

@@ -34,8 +34,10 @@ function actions(title: Title, s: Showtime, config: SiteConfig) {
   const link = booking ? `<a class="book" href="${escapeHtml(booking.url)}" rel="noopener">${booking.label}</a>` : "";
   const free = booking?.free ? freeIcon(title.isFilm ? "Free screening" : "Free event") : "";
   const calendar = googleCalendarUrl({ title, showtime: s }, config.siteUrl);
-  return `<span class="actions">${free}${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar">+ Cal</a></span>`;
+  return `<span class="actions">${free}${link}<a class="add-cal" href="${escapeHtml(calendar)}" target="_blank" rel="noopener" title="Add to Google Calendar" aria-label="Add to Google Calendar">${CALENDAR_ICON}</a></span>`;
 }
+
+const CALENDAR_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3" fill="#fff" stroke="#4285f4" stroke-width="1.6"/><path d="M3 7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v2H3Z" fill="#4285f4"/><path d="M8 2.5v3M16 2.5v3" stroke="#4285f4" stroke-width="1.6" stroke-linecap="round"/><text x="12" y="18.2" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#4285f4">31</text></svg>`;
 
 // A small price tag, so free Showtimes stand out without another badge.
 const freeIcon = (label: string) =>

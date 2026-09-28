@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { calendarFeed } from "../src/calendar-feed.ts";
 import { googleCalendarUrl, thumbnailUrl } from "../src/showtime.ts";
 import type { Showtime, Title } from "../src/types.ts";
 
@@ -59,13 +58,5 @@ describe("thumbnailUrl", () => {
   it("skips images it can't shrink, rather than loading a full-size one", () => {
     expect(thumbnailUrl("https://example.com/poster.jpg")).toBeNull();
     expect(thumbnailUrl(null)).toBeNull();
-  });
-});
-
-describe("calendarFeed", () => {
-  it("escapes the characters iCalendar reserves", () => {
-    const odd = { ...title, name: String.raw`Back\slash; comma, done` };
-    const feed = calendarFeed("Test", [{ title: odd, showtime }], "https://oph-showtimes.pages.dev", new Date());
-    expect(feed).toContain(String.raw`SUMMARY:Back\\slash\; comma\, done`);
   });
 });
