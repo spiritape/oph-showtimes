@@ -1,4 +1,5 @@
 import { CLIENT_SCRIPT, STYLES } from "./page-assets.ts";
+import { THEATER } from "./theater.ts";
 import { bookingLink, categoryLabel, googleCalendarUrl, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
 import { dayKey, dayLabel, timeLabel } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
@@ -15,17 +16,15 @@ function page(opts: { title: string; description: string; body: string; config: 
 <link rel="canonical" href="${config.siteUrl}${opts.path}"><meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎞</text></svg>">
 <style>${STYLES}</style></head><body>
-<header><h1><a href="/">OPH Showtimes</a></h1><p class="sub">An unofficial schedule for the Ojai Playhouse</p></header>
+<header><h1><a href="/">OPH Showtimes</a></h1><p class="sub">An unofficial schedule for the Ojai Playhouse</p>
+<p class="theater"><a href="${THEATER.mapsUrl}" rel="noopener">${THEATER.address}</a> · <a href="${THEATER.phoneHref}">${THEATER.phone}</a></p></header>
 <main>${opts.body}</main>
-${footer(config)}
+${footer()}
 <script>${CLIENT_SCRIPT}</script></body></html>`;
 }
 
-function footer(config: SiteConfig) {
-  const host = config.siteUrl.replace(/^https?:\/\//, "");
+function footer() {
   return `<footer>
-<h3>Add to your calendar</h3>
-<p><a href="webcal://${host}/calendar/all.ics">Everything</a> · <a href="webcal://${host}/calendar/films.ics">Films only</a></p>
 <h3>About</h3>
 <p>Not affiliated with the Ojai Playhouse. Times are Pacific and come from <a href="https://www.ojaiplayhouse.com/">ojaiplayhouse.com</a>, checked every 15 minutes. Always confirm there before you go. Follow the Playhouse on <a href="https://www.instagram.com/ojaiplayhouse">Instagram</a>.</p></footer>`;
 }

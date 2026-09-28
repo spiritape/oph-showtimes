@@ -1,3 +1,4 @@
+import { THEATER } from "./theater.ts";
 import { runtimeMinutes } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
@@ -25,7 +26,6 @@ export function categoryLabel(title: Title): string {
   return title.category.replace(/^./, (c) => c.toUpperCase());
 }
 
-const VENUE = "Ojai Playhouse, 145 E. Ojai Ave, Ojai, CA 93023";
 /** Assumed length when the Source gives no running time. */
 const DEFAULT_MINUTES = 120;
 
@@ -36,7 +36,7 @@ export function calendarEntry({ title, showtime }: ScheduledShowtime, siteUrl: s
   const url = siteUrl + titlePath(title);
   const booking = bookingLink(showtime);
   const description = [showtime.price, booking && `${booking.label}: ${booking.url}`, url].filter(Boolean).join("\n");
-  return { start, end, summary: title.name, location: VENUE, description, url };
+  return { start, end, summary: title.name, location: `${THEATER.name}, ${THEATER.address}`, description, url };
 }
 
 /** UTC timestamp in the compact form calendars use, e.g. 20260929T020000Z. */

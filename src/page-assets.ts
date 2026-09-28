@@ -10,6 +10,8 @@ header{padding-top:24px;padding-bottom:8px}
 h1{font-size:1.35rem;margin:0;letter-spacing:-.01em}
 h1 a{color:inherit;text-decoration:none}
 .sub{color:var(--muted);margin:2px 0 0;font-size:.9rem}
+.theater{margin:6px 0 0;font-size:.85rem;color:var(--muted)}
+.theater a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
 nav{display:flex;gap:6px;margin:16px 0 4px}
 nav a{padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:.9rem}
 nav a[aria-current]{background:var(--fg);color:var(--bg);border-color:var(--fg)}

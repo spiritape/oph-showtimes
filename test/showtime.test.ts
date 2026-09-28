@@ -42,7 +42,7 @@ describe("googleCalendarUrl", () => {
       action: "TEMPLATE",
       text: "Collateral (4k restored)",
       dates: "20260929T020000Z/20260929T040000Z",
-      location: "Ojai Playhouse, 145 E. Ojai Ave, Ojai, CA 93023",
+      location: "Ojai Playhouse, 145 E Ojai Ave, Ojai, CA 93023",
       details:
         "REGISTRATION REQUIRED\nRSVP: https://www.eventbrite.com/e/1998266653352\nhttps://oph-showtimes.pages.dev/t/collateral-4k-restored/",
     });
