@@ -1,0 +1,27 @@
+name: Send test notification
+
+# Sends a test New Title Notification to every Subscriber, through the same
+# path as a real one. Useful after setting up a new phone.
+on:
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Queue the test notification
+        run: |
+          mkdir -p data
+          cat > data/pending-notification.json <<JSON
+          {"title": "Test from OPH Showtimes", "body": "Notifications are working. You'll hear about new titles here.", "url": "${{ vars.SITE_URL }}/"}
+          JSON
+      - run: npx tsx src/send-notification.ts
+        env:
+          WATCHER_URL: ${{ vars.WATCHER_URL }}
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
