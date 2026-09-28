@@ -1,8 +1,8 @@
 {
- "lastReadCount": 39,
+ "lastReadCount": 40,
  "lastPublish": {
-  "scheduleHash": "ba68140b41961fb27c49657aca27cd7f26e9ff7329d4c1dd5bdf1ce19df2f7b6",
-  "publishedAt": "2026-09-28T14:39:09.169Z"
+  "scheduleHash": "7eadde0a9463c16533579a1842c70e45cd849efaed08bc1c01869233e8b13c0f",
+  "publishedAt": "2026-09-28T18:51:07.059Z"
  },
  "seen": {
   "titles": {
@@ -172,7 +172,7 @@
     }
    },
    "the history of concrete": {
-    "lastShowtime": "2026-10-01T02:00:00.000Z",
+    "lastShowtime": "2026-10-04T21:00:00.000Z",
     "title": {
      "key": "the history of concrete",
      "slug": "the-history-of-concrete",
@@ -199,6 +199,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmskh6c39678u08mr9329ljr5",
+       "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Starring: John Wilson<br>Running Time: 1hr 40min</p><p>After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.</p>"
+      },
+      {
+       "id": "cmullpw8qkz8407linrk5rl02",
+       "title": "The History of Concrete",
+       "subtitle": null,
+       "startsAt": "2026-10-04T21:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1161?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmullngb7l61l07lmd8o92dfj",
        "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Starring: John Wilson<br>Running Time: 1hr 40min</p><p>After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.</p>"
       }
      ]
