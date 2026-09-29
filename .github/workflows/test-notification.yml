@@ -1,9 +1,20 @@
 name: Send test notification
 
-# Sends a test New Title Notification to every Subscriber, through the same
-# path as a real one. Useful after setting up a new phone.
+# Sends a notification to every Subscriber, through the same path as a real
+# New Title Notification. With no inputs it's a test, useful after setting up
+# a new phone; fill them in to send an announcement by hand.
 on:
   workflow_dispatch:
+    inputs:
+      title:
+        description: Notification title
+        default: Test from OPH Showtimes
+      body:
+        description: Notification text
+        default: Notifications are working. You'll hear about new titles here.
+      path:
+        description: Page to open when tapped, e.g. / or /films/
+        default: /
 
 jobs:
   send:
@@ -15,12 +26,16 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Queue the test notification
+      - name: Queue the notification
+        # Inputs arrive through env, never pasted into the script.
+        env:
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+          URL: ${{ vars.SITE_URL }}${{ inputs.path }}
         run: |
           mkdir -p data
-          cat > data/pending-notification.json <<JSON
-          {"title": "Test from OPH Showtimes", "body": "Notifications are working. You'll hear about new titles here.", "url": "${{ vars.SITE_URL }}/"}
-          JSON
+          node -e 'const { TITLE: title, BODY: body, URL: url } = process.env;
+            require("fs").writeFileSync("data/pending-notification.json", JSON.stringify({ title, body, url }))'
       - run: npx tsx src/send-notification.ts
         env:
           WATCHER_URL: ${{ vars.WATCHER_URL }}
