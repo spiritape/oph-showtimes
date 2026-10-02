@@ -1,8 +1,8 @@
 {
- "lastReadCount": 58,
+ "lastReadCount": 59,
  "lastPublish": {
-  "scheduleHash": "b118a2334465ae4ec669c1e38fdaef98380446576531d9048644a51c42323232",
-  "publishedAt": "2026-10-02T23:40:52.932Z"
+  "scheduleHash": "e9e564b6774b3a92178b2c3a884194f40a47004d2a3c31a752a101f9a48e9ac2",
+  "publishedAt": "2026-10-02T23:42:40.751Z"
  },
  "seen": {
   "titles": {
@@ -1805,7 +1805,7 @@
     }
    },
    "other mommy": {
-    "lastShowtime": "2026-10-10T04:15:00.000Z",
+    "lastShowtime": "2026-10-11T04:15:00.000Z",
     "title": {
      "key": "other mommy",
      "slug": "other-mommy",
@@ -1832,6 +1832,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmurlrt89d57507n3trwtjcqv",
+       "infoHtml": "<p>Year: 2026<br>Director: Rob Savage<br>Starring: Jessica Chastain, Dichen Lachman, Karen Allen, Jay Duplass<br>Running Time: 1hr 33min </p><p>Rated: R</p><p>Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity which comes out of her closet. The presence, whom she calls &quot;Other Mommy,&quot; becomes increasingly threatening to her and her family.</p>"
+      },
+      {
+       "id": "cmurlx9gad91m07n37py5uaqe",
+       "title": "Other Mommy",
+       "subtitle": null,
+       "startsAt": "2026-10-11T04:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1168?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmurlrt5ndscb07lhwzrs2t4r",
        "infoHtml": "<p>Year: 2026<br>Director: Rob Savage<br>Starring: Jessica Chastain, Dichen Lachman, Karen Allen, Jay Duplass<br>Running Time: 1hr 33min </p><p>Rated: R</p><p>Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity which comes out of her closet. The presence, whom she calls &quot;Other Mommy,&quot; becomes increasingly threatening to her and her family.</p>"
       }
      ]
