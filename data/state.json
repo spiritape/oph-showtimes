@@ -1,8 +1,8 @@
 {
- "lastReadCount": 56,
+ "lastReadCount": 57,
  "lastPublish": {
-  "scheduleHash": "6d365c3cdd3b96354a0153193cbf37c58fe709a4f2f7c91371966625d4a6cc16",
-  "publishedAt": "2026-10-02T17:53:20.019Z"
+  "scheduleHash": "9d467be605133725b8ae23e40f454530281c11286f2224e25cc3dbdbbaf49840",
+  "publishedAt": "2026-10-02T18:18:49.208Z"
  },
  "seen": {
   "titles": {
@@ -1767,6 +1767,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmur9b3xkn6u907lhqmmooar7",
        "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p>"
+      }
+     ]
+    }
+   },
+   "michael": {
+    "lastShowtime": "2026-10-22T02:00:00.000Z",
+    "title": {
+     "key": "michael",
+     "slug": "michael",
+     "name": "Michael",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Antoine Fuqua",
+     "runtime": "2hr 7min",
+     "rating": null,
+     "synopsis": "The early life of the famous musician Michael Jackson known as the King of Pop.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmokd5kb3qoxc07mti2nu5onc",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmuraa8f2pdej07lhwr3owcm5",
+       "title": "Michael",
+       "subtitle": null,
+       "startsAt": "2026-10-22T02:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002826912209?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmokd5kb3qoxc07mti2nu5onc",
+       "infoHtml": "<p>Year: 2026<br>Director: Antoine Fuqua<br>Starring: Jaafar Jackson, Nia Long, Colman Domingo, Juliano Valdi<br>Running Time: 2hr 7min </p><p>The early life of the famous musician Michael Jackson known as the King of Pop.</p>"
       }
      ]
     }
