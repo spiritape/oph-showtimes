@@ -1,8 +1,8 @@
 {
- "lastReadCount": 54,
+ "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "ba31bb2fc93a4baef935b1069391db94c2d748c8b6556943e7f8197d56ee855f",
-  "publishedAt": "2026-10-02T14:14:45.835Z"
+  "scheduleHash": "6d365c3cdd3b96354a0153193cbf37c58fe709a4f2f7c91371966625d4a6cc16",
+  "publishedAt": "2026-10-02T17:53:20.019Z"
  },
  "seen": {
   "titles": {
@@ -1721,6 +1721,52 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdjyya3gr07n3f4zxw86v",
        "infoHtml": "<p>Year: 2026<br>Director: Viridiana Lieberman, Quinn Wilson <br>Running Time: 1hr 35min</p><p>An intimate portrait of iconic 20th-century artist Jean-Michel Basquiat, told through the eyes of those closest to him: his family.</p>"
+      }
+     ]
+    }
+   },
+   "cameron winter at carnegie hall (in 35mm)": {
+    "lastShowtime": "2026-12-24T03:00:00.000Z",
+    "title": {
+     "key": "cameron winter at carnegie hall (in 35mm)",
+     "slug": "cameron-winter-at-carnegie-hall-in-35mm",
+     "name": "Cameron Winter at Carnegie Hall (in 35mm)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Paul Thomas Anderson",
+     "runtime": "1hr 12min",
+     "rating": null,
+     "synopsis": "Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmur9b40zmun907n3jd6l139v",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmur9el1mngjt07lh0tkudgsg",
+       "title": "Cameron Winter at Carnegie Hall (in 35mm)",
+       "subtitle": null,
+       "startsAt": "2026-12-23T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1165?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmur9b40zmun907n3jd6l139v",
+       "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p>"
+      },
+      {
+       "id": "cmur9hcvbno8607lhy5n3ogpr",
+       "title": "Cameron Winter at Carnegie Hall (in 35mm)",
+       "subtitle": null,
+       "startsAt": "2026-12-24T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1166?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmur9b3xkn6u907lhqmmooar7",
+       "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p>"
       }
      ]
     }
