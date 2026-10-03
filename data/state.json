@@ -1,8 +1,8 @@
 {
  "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "f2784c6c29a3be8ead451adf51fe705ab79d3c2db9c9b81f8dd72412ba8834e7",
-  "publishedAt": "2026-10-03T15:12:43.513Z"
+  "scheduleHash": "c673bfa836066a3b98fd594780bce68f78f090a5196018c87a6d1c2d08d2132b",
+  "publishedAt": "2026-10-03T19:00:56.507Z"
  },
  "seen": {
   "titles": {
@@ -427,7 +427,7 @@
     }
    },
    "melissa villaseñor - live!": {
-    "lastShowtime": "2026-10-04T02:00:00.000Z",
+    "lastShowtime": "2026-10-04T03:00:00.000Z",
     "title": {
      "key": "melissa villaseñor - live!",
      "slug": "melissa-villasenor-live",
@@ -439,7 +439,7 @@
      "director": null,
      "runtime": null,
      "rating": null,
-     "synopsis": null,
+     "synopsis": "DOORS 7PM - SHOW 8PM",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsor6qmp3gcs07loa3y3sfow",
      "livestreamUrl": null,
      "showtimes": [
@@ -447,14 +447,14 @@
        "id": "cmsos2sh23oyl07n3dm82p726",
        "title": "Melissa Villaseñor - Live!",
        "subtitle": null,
-       "startsAt": "2026-10-04T02:00:00.000Z",
+       "startsAt": "2026-10-04T03:00:00.000Z",
        "category": "comedy",
        "ticketUrl": "https://www.ticketweb.com/event/melissa-villaseor-ojai-playhouse-tickets/15029293",
        "rsvpUrl": null,
        "livestreamUrl": null,
-       "price": "$35",
+       "price": "$35\nDOORS 7PM - SHOW 8PM",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsor6qmp3gcs07loa3y3sfow",
-       "infoHtml": "<p> </p>"
+       "infoHtml": "<p> DOORS 7PM - SHOW 8PM</p>"
       }
      ]
     }
