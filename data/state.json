@@ -1,8 +1,8 @@
 {
- "lastReadCount": 57,
+ "lastReadCount": 58,
  "lastPublish": {
-  "scheduleHash": "be22f3e6c79fcd5a26e6424fd56282a8c5fb62349572e24635fafeeb5c4e6c08",
-  "publishedAt": "2026-10-03T23:36:44.895Z"
+  "scheduleHash": "1f886d3a2fccc4f3bf276698f436ba3cd9ab9edf77b3aa82d807ad084afa941a",
+  "publishedAt": "2026-10-03T23:38:45.234Z"
  },
  "seen": {
   "titles": {
@@ -1851,7 +1851,7 @@
     }
    },
    "fjord": {
-    "lastShowtime": "2026-10-26T02:00:00.000Z",
+    "lastShowtime": "2026-11-02T03:00:00.000Z",
     "title": {
      "key": "fjord",
      "slug": "fjord",
@@ -1871,7 +1871,7 @@
        "id": "cmut13ed8dens07lh0xvocnwm",
        "title": "Fjord",
        "subtitle": null,
-       "startsAt": "2026-10-26T02:00:00.000Z",
+       "startsAt": "2026-10-25T02:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1169?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
@@ -1891,6 +1891,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zyi4dcll07lhixf7hr9n",
+       "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
+      },
+      {
+       "id": "cmut176dedh3a07lhfpogd15o",
+       "title": "Fjord",
+       "subtitle": null,
+       "startsAt": "2026-11-02T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1171?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zylmdcls07lhr0dwq0f5",
        "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
       }
      ]
