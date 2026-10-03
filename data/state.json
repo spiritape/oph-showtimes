@@ -1,8 +1,8 @@
 {
- "lastReadCount": 55,
+ "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "631197a3f2ba6933324c3703928fdaac90ff097db31e513888bf61ea87979ca4",
-  "publishedAt": "2026-10-03T20:40:51.742Z"
+  "scheduleHash": "ca4123c0b57877968658e9d85fa0631cbd8f499049dc01f4fd72d297b47b3861",
+  "publishedAt": "2026-10-03T23:34:48.515Z"
  },
  "seen": {
   "titles": {
@@ -1846,6 +1846,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmurlrt5ndscb07lhwzrs2t4r",
        "infoHtml": "<p>Year: 2026<br>Director: Rob Savage<br>Starring: Jessica Chastain, Dichen Lachman, Karen Allen, Jay Duplass<br>Running Time: 1hr 33min </p><p>Rated: R</p><p>Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity which comes out of her closet. The presence, whom she calls &quot;Other Mommy,&quot; becomes increasingly threatening to her and her family.</p>"
+      }
+     ]
+    }
+   },
+   "fjord": {
+    "lastShowtime": "2026-10-26T02:00:00.000Z",
+    "title": {
+     "key": "fjord",
+     "slug": "fjord",
+     "name": "Fjord",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Cristian Mungiu",
+     "runtime": "2hr 26min",
+     "rating": null,
+     "synopsis": "From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zyocdclz07lhh1ofpiy0",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmut13ed8dens07lh0xvocnwm",
+       "title": "Fjord",
+       "subtitle": null,
+       "startsAt": "2026-10-26T02:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1169?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zyocdclz07lhh1ofpiy0",
+       "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
       }
      ]
     }
