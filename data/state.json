@@ -1,8 +1,8 @@
 {
- "lastReadCount": 58,
+ "lastReadCount": 59,
  "lastPublish": {
-  "scheduleHash": "5af445f9c51fabd0f3ebbd7d8286c2653ebebab9d6bac635f7cd3cfffe30f532",
-  "publishedAt": "2026-10-04T20:06:44.513Z"
+  "scheduleHash": "cee983c4a3cf41aad5c1a33655d20c7202ab98748bd08d76ceb47ee16f930b7c",
+  "publishedAt": "2026-10-04T20:08:42.310Z"
  },
  "seen": {
   "titles": {
@@ -1910,7 +1910,7 @@
     }
    },
    "sense and sensibility": {
-    "lastShowtime": "2026-10-17T01:45:00.000Z",
+    "lastShowtime": "2026-10-19T01:45:00.000Z",
     "title": {
      "key": "sense and sensibility",
      "slug": "sense-and-sensibility",
@@ -1950,6 +1950,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrsm6mln07lhplc6o8ij",
+       "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
+      },
+      {
+       "id": "cmuu96bsj6q4407lhc5wguzuj",
+       "title": "Sense and Sensibility",
+       "subtitle": null,
+       "startsAt": "2026-10-19T01:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1174?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrwa6mm807lhdidtdvji",
        "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
       }
      ]
