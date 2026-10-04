@@ -1,13 +1,13 @@
 {
- "lastReadCount": 59,
+ "lastReadCount": 60,
  "lastPublish": {
-  "scheduleHash": "cee983c4a3cf41aad5c1a33655d20c7202ab98748bd08d76ceb47ee16f930b7c",
-  "publishedAt": "2026-10-04T20:08:42.310Z"
+  "scheduleHash": "02c5bd206f642aff08567700d431898d48c7d70828579db55f9eb1bb6de37007",
+  "publishedAt": "2026-10-04T20:15:18.762Z"
  },
  "seen": {
   "titles": {
    "the oldest person in the world": {
-    "lastShowtime": "2026-10-01T23:30:00.000Z",
+    "lastShowtime": "2026-10-24T23:15:00.000Z",
     "title": {
      "key": "the oldest person in the world",
      "slug": "the-oldest-person-in-the-world",
@@ -48,6 +48,19 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsw2og5j0vn207lo6x68u02z",
        "infoHtml": "<p>Year: 2026<br>Director: Sam Green<br>Starring: Ann Blackwell, Violet Brown, Genia Carter<br>Running Time: 1hr 27min</p><p>A decade-long global odyssey chronicles the ever-changing record holders of the title of oldest person alive. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.</p><p>The Oldest Person in the World is a decade-long odyssey chronicling the ever-changing record holders of the title of oldest person alive. As the title inevitably passes from one supercentenarian to the next, acclaimed filmmaker Sam Green traverses the globe to meet each new record holder, his personal fascination with what the title means becoming entangled with events and milestones in his own life. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.</p>"
+      },
+      {
+       "id": "cmuu9dr105sbs07n3z9ngx704",
+       "title": "The Oldest Person in the World",
+       "subtitle": null,
+       "startsAt": "2026-10-24T23:15:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2002918689718?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsw2og5j0vn207lo6x68u02z",
+       "infoHtml": "<p>Year: 2026<br>Director: Sam Green<br>Starring: Ann Blackwell, Violet Brown, Genia Carter<br>Running Time: 1hr 27min</p><p><strong>Q&amp;A with director Sam Green</strong></p><p>A decade-long global odyssey chronicles the ever-changing record holders of the title of oldest person alive. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.</p><p>The Oldest Person in the World is a decade-long odyssey chronicling the ever-changing record holders of the title of oldest person alive. As the title inevitably passes from one supercentenarian to the next, acclaimed filmmaker Sam Green traverses the globe to meet each new record holder, his personal fascination with what the title means becoming entangled with events and milestones in his own life. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.</p>"
       }
      ]
     }
