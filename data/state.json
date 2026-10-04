@@ -1,8 +1,8 @@
 {
- "lastReadCount": 56,
+ "lastReadCount": 58,
  "lastPublish": {
-  "scheduleHash": "ec57904273805b223ab8991840e14168193005f73fd0ce87cae53145619acafb",
-  "publishedAt": "2026-10-04T18:06:10.595Z"
+  "scheduleHash": "5af445f9c51fabd0f3ebbd7d8286c2653ebebab9d6bac635f7cd3cfffe30f532",
+  "publishedAt": "2026-10-04T20:06:44.513Z"
  },
  "seen": {
   "titles": {
@@ -1905,6 +1905,52 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zylmdcls07lhr0dwq0f5",
        "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
+      }
+     ]
+    }
+   },
+   "sense and sensibility": {
+    "lastShowtime": "2026-10-17T01:45:00.000Z",
+    "title": {
+     "key": "sense and sensibility",
+     "slug": "sense-and-sensibility",
+     "name": "Sense and Sensibility",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Georgia Oakley",
+     "runtime": "2hr 11min",
+     "rating": "PG",
+     "synopsis": "An irresistible new take on Jane Austen's iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zryz5k0n07n3dpysrh23",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmuu921ys6nkc07lh8ahymjd9",
+       "title": "Sense and Sensibility",
+       "subtitle": null,
+       "startsAt": "2026-10-14T23:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1172?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zryz5k0n07n3dpysrh23",
+       "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
+      },
+      {
+       "id": "cmuu94nir5mri07n3g9ja7exr",
+       "title": "Sense and Sensibility",
+       "subtitle": null,
+       "startsAt": "2026-10-17T01:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1173?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrsm6mln07lhplc6o8ij",
+       "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
       }
      ]
     }
