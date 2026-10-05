@@ -1,8 +1,8 @@
 {
- "lastReadCount": 56,
+ "lastReadCount": 57,
  "lastPublish": {
-  "scheduleHash": "747049ed71e2c6be72c67b5326c3b430907bb36e00d05e2196250cb9ec16af95",
-  "publishedAt": "2026-10-05T18:10:56.697Z"
+  "scheduleHash": "a5c6f1027f5fa50479012ddc0ba0a49c2c427d8c6d5360e3727b09c7d0d1ef94",
+  "publishedAt": "2026-10-05T18:14:41.309Z"
  },
  "seen": {
   "titles": {
@@ -165,7 +165,7 @@
     }
    },
    "if i go will they miss me": {
-    "lastShowtime": "2026-09-30T23:30:00.000Z",
+    "lastShowtime": "2026-10-16T23:30:00.000Z",
     "title": {
      "key": "if i go will they miss me",
      "slug": "if-i-go-will-they-miss-me",
@@ -191,6 +191,19 @@
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$13.50/12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufxhju6nq8v07lnhs0zrq19",
+       "infoHtml": "<p>Year: 2026<br>Director: Walter Thompson-Hernandez<br>Starring: J.Alphonse Nicholson, Danielle Brooks, Bodhi Dell<br>Running Time: 1hr 31min</p><p>In Watts, California, a 12-year-old boy attempts to connect with his distant father following his incarceration while sensing mysterious visions, from airplanes and Greek gods, that seem to follow him through his everyday world.</p>"
+      },
+      {
+       "id": "cmuvkhr1zmtos07n1ovgtcn48",
+       "title": "If I Go Will They Miss Me",
+       "subtitle": null,
+       "startsAt": "2026-10-16T23:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1175?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufxhju6nq8v07lnhs0zrq19",
        "infoHtml": "<p>Year: 2026<br>Director: Walter Thompson-Hernandez<br>Starring: J.Alphonse Nicholson, Danielle Brooks, Bodhi Dell<br>Running Time: 1hr 31min</p><p>In Watts, California, a 12-year-old boy attempts to connect with his distant father following his incarceration while sensing mysterious visions, from airplanes and Greek gods, that seem to follow him through his everyday world.</p>"
       }
