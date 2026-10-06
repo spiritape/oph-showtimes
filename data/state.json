@@ -1,8 +1,8 @@
 {
  "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "796512bebe1420212c139278e8024d3e375a651f3941af99fb7d9b630268718e",
-  "publishedAt": "2026-10-06T16:44:25.012Z"
+  "scheduleHash": "f3d1a8e89e7a9694598f180cb2d467eb3443f5a2aa0dc93c2a2bf921d7bfa004",
+  "publishedAt": "2026-10-06T18:46:43.263Z"
  },
  "seen": {
   "titles": {
@@ -1553,7 +1553,7 @@
      "director": "Nathan Fielder, Lance Oppenheim",
      "runtime": "2hr 54 minutes",
      "rating": null,
-     "synopsis": "Thirty-four days before she’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss. From boundary-pushing directors Nathan Fielder and Lance Oppenheim comes YOU CAN SEE EVERYTHING.",
+     "synopsis": "SOLD OUT!",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmug2ngmjy3jc07n3xmsgpad2",
      "livestreamUrl": null,
      "showtimes": [
@@ -1566,9 +1566,9 @@
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1152?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
-       "price": "$20",
+       "price": "$20\nSOLD OUT!",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmug2ngmjy3jc07n3xmsgpad2",
-       "infoHtml": "<p>Year: 2026<br>Director: Nathan Fielder, Lance Oppenheim<br>Running Time: 2hr 54 minutes</p><p>Thirty-four days before she’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss. From boundary-pushing directors Nathan Fielder and Lance Oppenheim comes YOU CAN SEE EVERYTHING.</p>"
+       "infoHtml": "<p>SOLD OUT!</p><p>Year: 2026<br>Director: Nathan Fielder, Lance Oppenheim<br>Running Time: 2hr 54 minutes</p><p>Thirty-four days before she’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss. From boundary-pushing directors Nathan Fielder and Lance Oppenheim comes YOU CAN SEE EVERYTHING.</p>"
       }
      ]
     }
