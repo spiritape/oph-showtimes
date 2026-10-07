@@ -1,8 +1,8 @@
 {
- "lastReadCount": 54,
+ "lastReadCount": 55,
  "lastPublish": {
-  "scheduleHash": "223d44508844a451e04a9ed261541918faadfeda5738a49d3095867c3679d9a5",
-  "publishedAt": "2026-10-07T22:44:44.210Z"
+  "scheduleHash": "e406e48b2f8b2713fe849d5dc20b1eb6ae80e1903588da271f8401e05ffadeaa",
+  "publishedAt": "2026-10-07T22:46:46.828Z"
  },
  "seen": {
   "titles": {
@@ -1982,7 +1982,7 @@
     }
    },
    "possible love": {
-    "lastShowtime": "2026-10-23T01:45:00.000Z",
+    "lastShowtime": "2026-10-24T20:00:00.000Z",
     "title": {
      "key": "possible love",
      "slug": "possible-love",
@@ -2009,6 +2009,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuyonzsg4xcn07lrk0dpygxf",
+       "infoHtml": "<p>Year: 2026<br>Director: Lee Chang-dong<br>Starring: Jeon Do-yeon, Sul Kyung-gu, Zo In-sung, Cho Yeo-jeong, Ha Lim Lee, Jo Yuri<br>Running Time: 2hr 44min</p><p>Rated: R</p><p><strong>Silver Lion Grand Jury Prize</strong></p><p><strong>Venice International Film Festival</strong></p><p>A story of two married couples - a laid-off worker and his spouse and a documentary filmmaker and her spouse - crossing paths to film a documentary and facing their different lives and hidden desires.</p><p>Possible Love is a meditation on connection, class, and desire. The film follows Mi-ok (Jeon) and her laid-off husband, Ho-seok (Sul), as they have a chance encounter with Ye-ji (Cho), a documentarian working on a project about labor and working people, and Ye-ji’s businessman husband, Sang-woo (Zo). Mi-ok agrees to be part of Ye-ji’s film, and the two couples, who are from opposite economic backgrounds, suddenly find their lives intertwined. The lines between the professional and the personal, between hidden desires and outward actions, and admiration and resentment begin to blur. </p>"
+      },
+      {
+       "id": "cmuyp3ryy6d5k07lrh9a2vv7y",
+       "title": "Possible Love",
+       "subtitle": null,
+       "startsAt": "2026-10-24T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1178?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuyonzpz51ka08mvhaxlvhza",
        "infoHtml": "<p>Year: 2026<br>Director: Lee Chang-dong<br>Starring: Jeon Do-yeon, Sul Kyung-gu, Zo In-sung, Cho Yeo-jeong, Ha Lim Lee, Jo Yuri<br>Running Time: 2hr 44min</p><p>Rated: R</p><p><strong>Silver Lion Grand Jury Prize</strong></p><p><strong>Venice International Film Festival</strong></p><p>A story of two married couples - a laid-off worker and his spouse and a documentary filmmaker and her spouse - crossing paths to film a documentary and facing their different lives and hidden desires.</p><p>Possible Love is a meditation on connection, class, and desire. The film follows Mi-ok (Jeon) and her laid-off husband, Ho-seok (Sul), as they have a chance encounter with Ye-ji (Cho), a documentarian working on a project about labor and working people, and Ye-ji’s businessman husband, Sang-woo (Zo). Mi-ok agrees to be part of Ye-ji’s film, and the two couples, who are from opposite economic backgrounds, suddenly find their lives intertwined. The lines between the professional and the personal, between hidden desires and outward actions, and admiration and resentment begin to blur. </p>"
       }
      ]
