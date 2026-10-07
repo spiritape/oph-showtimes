@@ -1,8 +1,8 @@
 {
- "lastReadCount": 53,
+ "lastReadCount": 54,
  "lastPublish": {
-  "scheduleHash": "946ee235af45566a4ab78fecd29468b8a4d7378cfb25bb8e219994dd1f972b19",
-  "publishedAt": "2026-10-07T22:18:46.933Z"
+  "scheduleHash": "223d44508844a451e04a9ed261541918faadfeda5738a49d3095867c3679d9a5",
+  "publishedAt": "2026-10-07T22:44:44.210Z"
  },
  "seen": {
   "titles": {
@@ -1977,6 +1977,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrwa6mm807lhdidtdvji",
        "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
+      }
+     ]
+    }
+   },
+   "possible love": {
+    "lastShowtime": "2026-10-23T01:45:00.000Z",
+    "title": {
+     "key": "possible love",
+     "slug": "possible-love",
+     "name": "Possible Love",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Lee Chang-dong",
+     "runtime": "2hr 44min",
+     "rating": "R",
+     "synopsis": "A story of two married couples - a laid-off worker and his spouse and a documentary filmmaker and her spouse - crossing paths to film a documentary and facing their different lives and hidden desires.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuyonzsg4xcn07lrk0dpygxf",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmuyp1oa065hr07lrj05atr4q",
+       "title": "Possible Love",
+       "subtitle": null,
+       "startsAt": "2026-10-23T01:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1177?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuyonzsg4xcn07lrk0dpygxf",
+       "infoHtml": "<p>Year: 2026<br>Director: Lee Chang-dong<br>Starring: Jeon Do-yeon, Sul Kyung-gu, Zo In-sung, Cho Yeo-jeong, Ha Lim Lee, Jo Yuri<br>Running Time: 2hr 44min</p><p>Rated: R</p><p><strong>Silver Lion Grand Jury Prize</strong></p><p><strong>Venice International Film Festival</strong></p><p>A story of two married couples - a laid-off worker and his spouse and a documentary filmmaker and her spouse - crossing paths to film a documentary and facing their different lives and hidden desires.</p><p>Possible Love is a meditation on connection, class, and desire. The film follows Mi-ok (Jeon) and her laid-off husband, Ho-seok (Sul), as they have a chance encounter with Ye-ji (Cho), a documentarian working on a project about labor and working people, and Ye-ji’s businessman husband, Sang-woo (Zo). Mi-ok agrees to be part of Ye-ji’s film, and the two couples, who are from opposite economic backgrounds, suddenly find their lives intertwined. The lines between the professional and the personal, between hidden desires and outward actions, and admiration and resentment begin to blur. </p>"
       }
      ]
     }
