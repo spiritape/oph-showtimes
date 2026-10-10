@@ -1,8 +1,8 @@
 {
- "lastReadCount": 51,
+ "lastReadCount": 52,
  "lastPublish": {
-  "scheduleHash": "f978ff26c9d5433b23cd00a1257167016739bf556951787f654c612fe6a726a9",
-  "publishedAt": "2026-10-10T18:54:43.286Z"
+  "scheduleHash": "64fcded374c3be71e77a3a4869236ded16d48315a32ac89af9623e794710869b",
+  "publishedAt": "2026-10-10T19:18:41.270Z"
  },
  "seen": {
   "titles": {
@@ -2076,6 +2076,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20uw9rub08myiwyxbpv7",
        "infoHtml": "<p>Year: 1955<br>Director: Charles Laughton<br>Starring: Robert Mitchum, Shelley Winters, Lillian Gish, James Gleason<br>Running Time: 1hr 32min</p><p>A self-proclaimed preacher marries a gullible widow whose young children are reluctant to tell him where their real dad hid the $10,000 he&#39;d stolen in a robbery.</p>"
+      }
+     ]
+    }
+   },
+   "beetlejuice": {
+    "lastShowtime": "2026-10-31T21:00:00.000Z",
+    "title": {
+     "key": "beetlejuice",
+     "slug": "beetlejuice",
+     "name": "Beetlejuice",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1988",
+     "director": "Tim Burton",
+     "runtime": "1hr 32min",
+     "rating": "PG",
+     "synopsis": "The spirits of a deceased couple are harassed by an unbearable family that has moved into their home, and hire a malicious spirit to drive them out.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20sfae1607k6o08apng8",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv2rzcz2aejs08myqf40x4ju",
+       "title": "Beetlejuice",
+       "subtitle": null,
+       "startsAt": "2026-10-31T21:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2003242322713?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20sfae1607k6o08apng8",
+       "infoHtml": "<p>Year: 1988<br>Director: Tim Burton<br>Starring: Michael Keaton, Alec Baldwin, Geena Davis, Winona Ryder<br>Running Time: 1hr 32min</p><p>Rated: PG</p><p>The spirits of a deceased couple are harassed by an unbearable family that has moved into their home, and hire a malicious spirit to drive them out.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
