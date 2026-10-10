@@ -1,8 +1,8 @@
 {
- "lastReadCount": 53,
+ "lastReadCount": 54,
  "lastPublish": {
-  "scheduleHash": "848f95c9bbdf377fd0f41f7583220f541f1610c0a05af10eb377c21848a2df2a",
-  "publishedAt": "2026-10-10T19:20:52.055Z"
+  "scheduleHash": "9cd9f74cc3e25de5defcf7a8d05d36fcdf194abbe100e6ca026f9da7b85fcf28",
+  "publishedAt": "2026-10-10T19:24:41.363Z"
  },
  "seen": {
   "titles": {
@@ -2142,6 +2142,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrwof1nbun707lur5uu6du7",
        "infoHtml": "<p>Year: 2025<br>Director: Curry Barker<br>Starring: Michael Johnston, Inde Navarrete, Cooper Tomlinson, Megan Lawless<br>Running Time: 1hr 48min</p><p>Rated: R</p><p>After breaking the mysterious &quot;One Wish Willow&quot; to win his crush&#39;s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "the exorcist (director’s cut)": {
+    "lastShowtime": "2026-11-01T04:00:00.000Z",
+    "title": {
+     "key": "the exorcist (director’s cut)",
+     "slug": "the-exorcist-directors-cut",
+     "name": "The Exorcist (Director’s Cut)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1973",
+     "director": "William Friedkin",
+     "runtime": "2hr 2min",
+     "rating": "R",
+     "synopsis": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2rhba5a1mx08my8m0u321j",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv2s76nlajwv08mylkhtdua3",
+       "title": "The Exorcist (Director’s Cut)",
+       "subtitle": null,
+       "startsAt": "2026-11-01T04:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2003242551397?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2rhba5a1mx08my8m0u321j",
+       "infoHtml": "<p>Year: 1973<br>Director: William Friedkin<br>Starring: Ellen Burstyn, Max von Sydow, Linda Blair<br>Running Time: 2hr 2min</p><p>Rated: R</p><p>When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
