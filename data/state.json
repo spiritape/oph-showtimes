@@ -1,8 +1,8 @@
 {
  "lastReadCount": 50,
  "lastPublish": {
-  "scheduleHash": "662fd4dd1f05d860e5752f549e4171cdc8a36ad1b7b05d5b33c471c9a0de014d",
-  "publishedAt": "2026-10-10T14:50:45.506Z"
+  "scheduleHash": "4f810dcf5f152dad36444666437ebeaa35fb0e9da4b901ee9cbe398f311098e6",
+  "publishedAt": "2026-10-10T17:54:45.188Z"
  },
  "seen": {
   "titles": {
@@ -730,7 +730,7 @@
     }
    },
    "dr. brown: beturns": {
-    "lastShowtime": "2026-10-18T03:00:00.000Z",
+    "lastShowtime": "2026-10-15T03:00:00.000Z",
     "title": {
      "key": "dr. brown: beturns",
      "slug": "dr-brown-beturns",
@@ -766,19 +766,6 @@
        "startsAt": "2026-10-15T03:00:00.000Z",
        "category": "comedy",
        "ticketUrl": "https://www.ticketweb.com/event/dr-brown-beturns-ojai-playhouse-tickets/14289824",
-       "rsvpUrl": null,
-       "livestreamUrl": null,
-       "price": "$20",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtby73g19yqt07k5d5gm5jj7",
-       "infoHtml": "<p> </p>"
-      },
-      {
-       "id": "cmtau1xtn9y5v07k5p2wh8ye3",
-       "title": "Dr. Brown: Beturns",
-       "subtitle": null,
-       "startsAt": "2026-10-18T03:00:00.000Z",
-       "category": "comedy",
-       "ticketUrl": "https://www.ticketweb.com/event/dr-brown-beturns-ojai-playhouse-tickets/14289834",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$20",
@@ -2010,6 +1997,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuyonzpz51ka08mvhaxlvhza",
        "infoHtml": "<p>Year: 2026<br>Director: Lee Chang-dong<br>Starring: Jeon Do-yeon, Sul Kyung-gu, Zo In-sung, Cho Yeo-jeong, Ha Lim Lee, Jo Yuri<br>Running Time: 2hr 44min</p><p>Rated: R</p><p><strong>Silver Lion Grand Jury Prize</strong></p><p><strong>Venice International Film Festival</strong></p><p>A story of two married couples - a laid-off worker and his spouse and a documentary filmmaker and her spouse - crossing paths to film a documentary and facing their different lives and hidden desires.</p><p>Possible Love is a meditation on connection, class, and desire. The film follows Mi-ok (Jeon) and her laid-off husband, Ho-seok (Sul), as they have a chance encounter with Ye-ji (Cho), a documentarian working on a project about labor and working people, and Ye-ji’s businessman husband, Sang-woo (Zo). Mi-ok agrees to be part of Ye-ji’s film, and the two couples, who are from opposite economic backgrounds, suddenly find their lives intertwined. The lines between the professional and the personal, between hidden desires and outward actions, and admiration and resentment begin to blur. </p>"
+      }
+     ]
+    }
+   },
+   "cole saleh: where's my son & dr. brown: beturns": {
+    "lastShowtime": "2026-10-18T03:00:00.000Z",
+    "title": {
+     "key": "cole saleh: where's my son & dr. brown: beturns",
+     "slug": "cole-saleh-wheres-my-son-and-dr-brown-beturns",
+     "name": "Cole Saleh: Where's My Son & Dr. Brown: Beturns",
+     "subtitle": null,
+     "category": "comedy",
+     "isFilm": false,
+     "year": null,
+     "director": null,
+     "runtime": null,
+     "rating": null,
+     "synopsis": "8PM - Cole Saleh: Where's My Son",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtby73g19yqt07k5d5gm5jj7",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmtau1xtn9y5v07k5p2wh8ye3",
+       "title": "Cole Saleh: Where's My Son & Dr. Brown: Beturns",
+       "subtitle": null,
+       "startsAt": "2026-10-18T03:00:00.000Z",
+       "category": "comedy",
+       "ticketUrl": "https://www.ticketweb.com/event/dr-brown-beturns-ojai-playhouse-tickets/14289834",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$20",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtby73g19yqt07k5d5gm5jj7",
+       "infoHtml": "<p><strong> DOUBLE FEATURE!</strong></p><p>8PM - Cole Saleh: Where&#39;s My Son</p><p>9PM - Dr. Brown: Beturns</p>"
       }
      ]
     }
