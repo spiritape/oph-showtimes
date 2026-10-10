@@ -1,8 +1,8 @@
 {
- "lastReadCount": 49,
+ "lastReadCount": 50,
  "lastPublish": {
-  "scheduleHash": "1f6ff7ad6b353c76603912725dbb71a0f69d24e587924cf13cb7ed7fd508a5d9",
-  "publishedAt": "2026-10-10T18:42:46.194Z"
+  "scheduleHash": "989efe6d595976c2b93fb0e68612290f21c7b5c0b9c6c7f5fb479dd2769aab01",
+  "publishedAt": "2026-10-10T18:50:51.215Z"
  },
  "seen": {
   "titles": {
@@ -1086,7 +1086,7 @@
     }
    },
    "shaun the sheep: the beast of mossy bottom": {
-    "lastShowtime": "2026-10-04T19:00:00.000Z",
+    "lastShowtime": "2026-10-31T19:00:00.000Z",
     "title": {
      "key": "shaun the sheep: the beast of mossy bottom",
      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
@@ -1114,6 +1114,19 @@
        "price": "$13.50/$12 (child 12 & under - senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
        "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker<br>Starring: Justin Fletcher, John Spakes, Nina Sosanya<br>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
+      },
+      {
+       "id": "cmv2qt6gsa92t07k62hv4hyxf",
+       "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+       "subtitle": null,
+       "startsAt": "2026-10-31T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1179?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (child 12 & under - senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
+       "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker</p><p>Starring: Justin Fletcher, John Spakes, Nina Sosanya</p><p>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
       }
      ]
     }
