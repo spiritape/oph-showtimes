@@ -1,8 +1,8 @@
 {
- "lastReadCount": 52,
+ "lastReadCount": 53,
  "lastPublish": {
-  "scheduleHash": "64fcded374c3be71e77a3a4869236ded16d48315a32ac89af9623e794710869b",
-  "publishedAt": "2026-10-10T19:18:41.270Z"
+  "scheduleHash": "848f95c9bbdf377fd0f41f7583220f541f1610c0a05af10eb377c21848a2df2a",
+  "publishedAt": "2026-10-10T19:20:52.055Z"
  },
  "seen": {
   "titles": {
@@ -2109,6 +2109,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20sfae1607k6o08apng8",
        "infoHtml": "<p>Year: 1988<br>Director: Tim Burton<br>Starring: Michael Keaton, Alec Baldwin, Geena Davis, Winona Ryder<br>Running Time: 1hr 32min</p><p>Rated: PG</p><p>The spirits of a deceased couple are harassed by an unbearable family that has moved into their home, and hire a malicious spirit to drive them out.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "obsession": {
+    "lastShowtime": "2026-11-01T01:45:00.000Z",
+    "title": {
+     "key": "obsession",
+     "slug": "obsession",
+     "name": "Obsession",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2025",
+     "director": "Curry Barker",
+     "runtime": "1hr 48min",
+     "rating": "R",
+     "synopsis": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrwof1nbun707lur5uu6du7",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv2s305lb1ui07k69ixmxj70",
+       "title": "Obsession",
+       "subtitle": null,
+       "startsAt": "2026-11-01T01:45:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2003242390917?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrwof1nbun707lur5uu6du7",
+       "infoHtml": "<p>Year: 2025<br>Director: Curry Barker<br>Starring: Michael Johnston, Inde Navarrete, Cooper Tomlinson, Megan Lawless<br>Running Time: 1hr 48min</p><p>Rated: R</p><p>After breaking the mysterious &quot;One Wish Willow&quot; to win his crush&#39;s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
