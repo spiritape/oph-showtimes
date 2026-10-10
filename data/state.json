@@ -1,8 +1,8 @@
 {
- "lastReadCount": 50,
+ "lastReadCount": 51,
  "lastPublish": {
-  "scheduleHash": "989efe6d595976c2b93fb0e68612290f21c7b5c0b9c6c7f5fb479dd2769aab01",
-  "publishedAt": "2026-10-10T18:50:51.215Z"
+  "scheduleHash": "f978ff26c9d5433b23cd00a1257167016739bf556951787f654c612fe6a726a9",
+  "publishedAt": "2026-10-10T18:54:43.286Z"
  },
  "seen": {
   "titles": {
@@ -1126,7 +1126,7 @@
        "livestreamUrl": null,
        "price": "$13.50/$12 (child 12 & under - senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulp7oofrqqk07lmdmvp0itq",
-       "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker</p><p>Starring: Justin Fletcher, John Spakes, Nina Sosanya</p><p>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
+       "infoHtml": "<p>Year: 2026<br>Director: Steve Cox, Matthew Walker<br>Starring: Justin Fletcher, John Spakes, Nina Sosanya<br>Running Time: 1hr 21min</p><p>Rated: PG</p><p>On Halloween Eve at Mossy Bottom Farm, excitement turns to dismay when the clumsy Farmer ruins the pumpkin patch. Shaun tries fixing it with science experiments, but things go wrong when a wild beast appears in the woods.</p>"
       }
      ]
     }
@@ -2043,6 +2043,39 @@
        "price": "$20",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2p8bby919y07k66wb9f6v5",
        "infoHtml": "<p><strong> DOUBLE FEATURE!</strong></p><p>8PM - Cole Saleh: Where&#39;s My Son</p><p>9PM - Dr. Brown: Beturns</p>"
+      }
+     ]
+    }
+   },
+   "the night of the hunter": {
+    "lastShowtime": "2026-10-31T23:15:00.000Z",
+    "title": {
+     "key": "the night of the hunter",
+     "slug": "the-night-of-the-hunter",
+     "name": "The Night of the Hunter",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1955",
+     "director": "Charles Laughton",
+     "runtime": "1hr 32min",
+     "rating": null,
+     "synopsis": "A self-proclaimed preacher marries a gullible widow whose young children are reluctant to tell him where their real dad hid the $10,000 he'd stolen in a robbery.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20uw9rub08myiwyxbpv7",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv2r5o4tag3g07k6glgxcwwh",
+       "title": "The Night of the Hunter",
+       "subtitle": null,
+       "startsAt": "2026-10-31T23:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1180?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2r20uw9rub08myiwyxbpv7",
+       "infoHtml": "<p>Year: 1955<br>Director: Charles Laughton<br>Starring: Robert Mitchum, Shelley Winters, Lillian Gish, James Gleason<br>Running Time: 1hr 32min</p><p>A self-proclaimed preacher marries a gullible widow whose young children are reluctant to tell him where their real dad hid the $10,000 he&#39;d stolen in a robbery.</p>"
       }
      ]
     }
