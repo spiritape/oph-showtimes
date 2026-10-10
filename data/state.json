@@ -1,8 +1,8 @@
 {
- "lastReadCount": 55,
+ "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "c746e629f4d91bde290c2a9808d12a3fc32a57b6660d82790a71fe89258f8bd2",
-  "publishedAt": "2026-10-10T19:54:47.183Z"
+  "scheduleHash": "ba632bcc0a85b70050dc4074909748902258033d5ed46c360702c273db242071",
+  "publishedAt": "2026-10-10T20:06:49.311Z"
  },
  "seen": {
   "titles": {
@@ -283,7 +283,7 @@
     }
    },
    "digger": {
-    "lastShowtime": "2026-10-10T23:15:00.000Z",
+    "lastShowtime": "2026-10-11T04:15:00.000Z",
     "title": {
      "key": "digger",
      "slug": "digger",
@@ -401,6 +401,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmucxu1gzngas07lsi1mfuyat",
+       "infoHtml": "<p>Year: 2026<br>Director: Alejandro G. Iñárritu<br>Starring: Tom Cruise, Riz Ahmed, John Goodman, Sandra Huller<br>Running Time: 2hr 8min</p><p>The most powerful man in the world embarks on a frantic mission to prove he is humanity&#39;s savior before the disaster he&#39;s unleashed destroys everything. </p>"
+      },
+      {
+       "id": "cmv2t6eskbplb07k67zcd77gj",
+       "title": "Digger",
+       "subtitle": null,
+       "startsAt": "2026-10-11T04:15:00.000Z",
+       "category": "misc",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1181?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu787g8s3hs007lqqp1s5fo4",
        "infoHtml": "<p>Year: 2026<br>Director: Alejandro G. Iñárritu<br>Starring: Tom Cruise, Riz Ahmed, John Goodman, Sandra Huller<br>Running Time: 2hr 8min</p><p>The most powerful man in the world embarks on a frantic mission to prove he is humanity&#39;s savior before the disaster he&#39;s unleashed destroys everything. </p>"
       }
      ]
