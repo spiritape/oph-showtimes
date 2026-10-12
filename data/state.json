@@ -1,8 +1,8 @@
 {
- "lastReadCount": 47,
+ "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "0dcf088f905dc38c6c5eab0e861b9f8a41061ef4f531399881da58c25a1e4d4b",
-  "publishedAt": "2026-10-12T17:00:49.712Z"
+  "scheduleHash": "d8a7b68fdee637bf6a8dcc95cc7e3d3651be4c1797d988cc699adbe361129236",
+  "publishedAt": "2026-10-12T17:26:44.490Z"
  },
  "seen": {
   "titles": {
@@ -618,7 +618,7 @@
     }
    },
    "primetime": {
-    "lastShowtime": "2026-10-11T02:00:00.000Z",
+    "lastShowtime": "2026-10-17T04:15:00.000Z",
     "title": {
      "key": "primetime",
      "slug": "primetime",
@@ -631,7 +631,7 @@
      "runtime": "1hr 50min",
      "rating": "R",
      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtvknwmc4yvc07n1r0v35re3",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtvknwq64yvs07n1gzyziz4j",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -658,6 +658,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtvknwmc4yvc07n1r0v35re3",
+       "infoHtml": "<p>Year: 2026<br>Director: Lance Oppenheim<br>Starring: Robert Pattinson, Merritt Wever, Skyler Gisondo, Phoebe Bridgers, Matthew Maher, Bokeem Woodbine<br>Running Time: 1hr 50min</p><p>Rated: R</p><p>In 2006, To Catch a Predator host Chris Hansen sets out to make television history.</p>"
+      },
+      {
+       "id": "cmv5iwv48c2n607k65gmx7i48",
+       "title": "Primetime",
+       "subtitle": null,
+       "startsAt": "2026-10-17T04:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1184?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtvknwq64yvs07n1gzyziz4j",
        "infoHtml": "<p>Year: 2026<br>Director: Lance Oppenheim<br>Starring: Robert Pattinson, Merritt Wever, Skyler Gisondo, Phoebe Bridgers, Matthew Maher, Bokeem Woodbine<br>Running Time: 1hr 50min</p><p>Rated: R</p><p>In 2006, To Catch a Predator host Chris Hansen sets out to make television history.</p>"
       }
      ]
