@@ -1,8 +1,8 @@
 {
- "lastReadCount": 49,
+ "lastReadCount": 50,
  "lastPublish": {
-  "scheduleHash": "e06849df937d38c861509e5e297f9ab2a6b052bc1959ffd008e3eb436ba03449",
-  "publishedAt": "2026-10-12T17:50:52.929Z"
+  "scheduleHash": "c1ac4e2e5da7cb1ad272e196f505071cf592fd67d152c11ee6edd6783a93cdee",
+  "publishedAt": "2026-10-12T17:54:47.897Z"
  },
  "seen": {
   "titles": {
@@ -2267,6 +2267,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopz7ch0208myz5lw0qvc",
        "infoHtml": "<p>Year: 1995<br>Director: Douglas Keeve<br>Starring: Isaac Mizrahi<br>Running Time: 1hr 13min</p><p>Designer Isaac Mizrahi proved a force of nature on the road to his legendary fall 1994 collection, a career-defining triumph that was documented with an effervescent intimacy by Douglas Keeve, Mizrahi’s then-partner. Both a time capsule of the buoyant, raucous 1990s, when pop culture and high art became interchangeable, and a vérité-style, in-the-trenches report on the daily agonies and ecstasies of the creative process, this seminal artistic portrait - sumptuously shot by Ellen Kuras and Robert Leacock- transcends glitz and glamour to offer an extraordinary view of the charisma and force of will inherent to genius, as well as its personal costs.</p>"
+      }
+     ]
+    }
+   },
+   "spirited away (25th anniversary)": {
+    "lastShowtime": "2026-10-18T19:00:00.000Z",
+    "title": {
+     "key": "spirited away (25th anniversary)",
+     "slug": "spirited-away-25th-anniversary",
+     "name": "Spirited Away (25th Anniversary)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2001",
+     "director": "Hayao Miyazaki",
+     "runtime": "2hr 4min",
+     "rating": "PG (DUBBED IN ENGLISH)",
+     "synopsis": "Winner of the Academy Award® for Best Animated Feature, Hayao Miyazaki‘s wondrous fantasy adventure is a dazzling masterpiece from one of the most celebrated filmmakers in the history of animation.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopw5cgzv08myduiyz11d",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv5jvbkwcqqd08my620bpd64",
+       "title": "Spirited Away (25th Anniversary)",
+       "subtitle": null,
+       "startsAt": "2026-10-18T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1182?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopw5cgzv08myduiyz11d",
+       "infoHtml": "<p>Year: 2001<br>Director: Hayao Miyazaki<br>Running Time: 2hr 4min</p><p>Rated: PG (DUBBED IN ENGLISH)</p><p>Winner of the Academy Award® for Best Animated Feature, Hayao Miyazaki‘s wondrous fantasy adventure is a dazzling masterpiece from one of the most celebrated filmmakers in the history of animation. </p><p>Chihiro’s family is moving to a new house, but when they stop on the way to explore an abandoned village, her parents undergo a mysterious transformation and Chihiro is whisked into a world of fantastic spirits ruled over by the sorceress Yubaba. Put to work in a magical bathhouse for spirits and demons, Chihiro must use all her wits to survive in this strange new place, find a way to free her parents and return to the normal world. Overflowing with imaginative creatures and thrilling storytelling, Spirited Away became a worldwide smash hit, and is one of the most critically-acclaimed films of all time. </p>"
       }
      ]
     }
