@@ -1,8 +1,8 @@
 {
- "lastReadCount": 48,
+ "lastReadCount": 49,
  "lastPublish": {
-  "scheduleHash": "e19a041b52ad69b85e47cd3e9efa78b779df674a7174fe46b2e5b600a1ff5826",
-  "publishedAt": "2026-10-12T17:36:50.989Z"
+  "scheduleHash": "e06849df937d38c861509e5e297f9ab2a6b052bc1959ffd008e3eb436ba03449",
+  "publishedAt": "2026-10-12T17:50:52.929Z"
  },
  "seen": {
   "titles": {
@@ -2234,6 +2234,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv2rhb83amjt07k68b2x2j38",
        "infoHtml": "<p>Year: 1999<br>Director: Daniel Myrick, Eduardo Sanchez<br>Starring: Heather Donahue, Michael C. Williams, Joshua Leonard<br>Running Time: 1hr 21min</p><p>Rated: R</p><p>Three film students vanish after traveling into a Maryland forest to film a documentary on the local Blair Witch legend, leaving only their footage behind.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "unzipped (4k restored)": {
+    "lastShowtime": "2026-10-18T21:30:00.000Z",
+    "title": {
+     "key": "unzipped (4k restored)",
+     "slug": "unzipped-4k-restored",
+     "name": "Unzipped (4k restored)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1995",
+     "director": "Douglas Keeve",
+     "runtime": "1hr 13min",
+     "rating": null,
+     "synopsis": "Designer Isaac Mizrahi proved a force of nature on the road to his legendary fall 1994 collection, a career-defining triumph that was documented with an effervescent intimacy by Douglas Keeve, Mizrahi’s then-partner. Both a time capsule of the buoyant, raucous 1990s, when pop culture and high art became interchangeable, and a vérité-style, in-the-trenches report on the daily agonies and ecstasies of the creative process, this seminal artistic portrait - sumptuously shot by Ellen Kuras and Robert Leacock- transcends glitz and glamour to offer an extraordinary view of the charisma and force of will inherent to genius, as well as its personal costs.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopz7ch0208myz5lw0qvc",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv5jruercl7g08myzfvc49bz",
+       "title": "Unzipped (4k restored)",
+       "subtitle": null,
+       "startsAt": "2026-10-18T21:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1183?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopz7ch0208myz5lw0qvc",
+       "infoHtml": "<p>Year: 1995<br>Director: Douglas Keeve<br>Starring: Isaac Mizrahi<br>Running Time: 1hr 13min</p><p>Designer Isaac Mizrahi proved a force of nature on the road to his legendary fall 1994 collection, a career-defining triumph that was documented with an effervescent intimacy by Douglas Keeve, Mizrahi’s then-partner. Both a time capsule of the buoyant, raucous 1990s, when pop culture and high art became interchangeable, and a vérité-style, in-the-trenches report on the daily agonies and ecstasies of the creative process, this seminal artistic portrait - sumptuously shot by Ellen Kuras and Robert Leacock- transcends glitz and glamour to offer an extraordinary view of the charisma and force of will inherent to genius, as well as its personal costs.</p>"
       }
      ]
     }
