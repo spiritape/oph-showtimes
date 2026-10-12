@@ -1,8 +1,8 @@
 {
- "lastReadCount": 47,
+ "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "4b5b9cf33b552d9760e71603536c3c43ff47245dbae5a5d0175be0373a3f7ea7",
-  "publishedAt": "2026-10-12T17:32:45.243Z"
+  "scheduleHash": "e19a041b52ad69b85e47cd3e9efa78b779df674a7174fe46b2e5b600a1ff5826",
+  "publishedAt": "2026-10-12T17:36:50.989Z"
  },
  "seen": {
   "titles": {
@@ -572,7 +572,7 @@
     }
    },
    "naza": {
-    "lastShowtime": "2026-10-11T23:15:00.000Z",
+    "lastShowtime": "2026-10-15T23:30:00.000Z",
     "title": {
      "key": "naza",
      "slug": "naza",
@@ -585,7 +585,7 @@
      "runtime": "1hr 20min",
      "rating": null,
      "synopsis": "In secret conversations on the rooftops of Tel Aviv at night, the systems behind Israel’s calculated mass killing of Palestinian civilians in Gaza are revealed by the people who designed and operated them.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7eo077ksla07mzbkuf1npw",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7eo09hkslh07mzwe5dri5u",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -612,6 +612,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7eo077ksla07mzbkuf1npw",
+       "infoHtml": "<p>Year: 2026<br>Director: Yuval Abraham and Rachel Szor<br>Starring: Yuval Abraham<br>Running Time: 1hr 20min</p><p><strong>Winner, Special Jury Prize - 2026 Venice Film Festival </strong></p><p>In secret conversations on the rooftops of Tel Aviv at night, the systems behind Israel’s calculated mass killing of Palestinian civilians in Gaza are revealed by the people who designed and operated them.</p>"
+      },
+      {
+       "id": "cmv5j8uqgcjtb07k6s5d8smgn",
+       "title": "NAZA",
+       "subtitle": null,
+       "startsAt": "2026-10-15T23:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1181?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7eo09hkslh07mzwe5dri5u",
        "infoHtml": "<p>Year: 2026<br>Director: Yuval Abraham and Rachel Szor<br>Starring: Yuval Abraham<br>Running Time: 1hr 20min</p><p><strong>Winner, Special Jury Prize - 2026 Venice Film Festival </strong></p><p>In secret conversations on the rooftops of Tel Aviv at night, the systems behind Israel’s calculated mass killing of Palestinian civilians in Gaza are revealed by the people who designed and operated them.</p>"
       }
      ]
