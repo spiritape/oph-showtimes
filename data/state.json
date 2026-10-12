@@ -1,8 +1,8 @@
 {
  "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "d8a7b68fdee637bf6a8dcc95cc7e3d3651be4c1797d988cc699adbe361129236",
-  "publishedAt": "2026-10-12T17:26:44.490Z"
+  "scheduleHash": "5cca37896dec04e323cc57fe125f0fb37e9c4d0571d4ab73eaf2ddce0c4e4da1",
+  "publishedAt": "2026-10-12T17:28:43.079Z"
  },
  "seen": {
   "titles": {
@@ -1039,7 +1039,7 @@
      "slug": "twin-peaks-conversation-with-the-stars",
      "name": "Twin Peaks: Conversation With The Stars",
      "subtitle": null,
-     "category": "music",
+     "category": "misc",
      "isFilm": false,
      "year": null,
      "director": null,
@@ -1054,7 +1054,7 @@
        "title": "Twin Peaks: Conversation With The Stars",
        "subtitle": null,
        "startsAt": "2027-01-24T04:00:00.000Z",
-       "category": "music",
+       "category": "misc",
        "ticketUrl": "https://www.ticketmaster.com/event/09006513C063B08E",
        "rsvpUrl": null,
        "livestreamUrl": null,
