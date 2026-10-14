@@ -35,6 +35,14 @@ node scripts/serve.mjs                               # http://localhost:8080
 
 A local build writes `data/state.json`. Don't commit one built from the fixture.
 
+## iOS app
+
+`ios/` holds the native SwiftUI app ([ADR 0003](docs/adr/0003-native-ios-app-from-json-feed.md)), which reads the feed at `api/v1/schedule.json`. `ios/project.yml` is the source of truth for the Xcode project: after changing it, run `xcodegen` in `ios/` (`brew install xcodegen`), then open `ios/Playhouse.xcodeproj`. Run the app's tests with:
+
+```bash
+xcodebuild test -project ios/Playhouse.xcodeproj -scheme Playhouse -destination 'platform=iOS Simulator,name=iPhone 18 Pro'
+```
+
 ## Setup
 
 1. **Cloudflare Pages**: a Pages project named `oph-showtimes` (Direct Upload), and an API token with *Cloudflare Pages: Edit*. The domain `ojaishowtimes.com` (registered with Cloudflare) and its `www.` are added under the project's *Custom domains*; pages send visitors from `www.` and the old `oph-showtimes.pages.dev` address to it.

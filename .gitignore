@@ -2,3 +2,5 @@ node_modules/
 dist/
 data/pending-notification.json
 .wrangler/
+ios/build/
+xcuserdata/

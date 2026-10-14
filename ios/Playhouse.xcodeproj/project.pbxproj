@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37046D74D31D00CBD7A91B8C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66EC7FDB7FD773756FF5D4 /* Feed.swift */; };
+		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
+		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
+		A578D19260E9B79C0770E03A /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483212570BB1330E953787D /* FeedTests.swift */; };
+		CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */; };
+		DA84A3963627F733363A6991 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8703096D88355A5D13A31 /* TitleView.swift */; };
+		DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC41856D54314A01CB98A8 /* ScheduleView.swift */; };
+		FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023924190AF1899EF13AD182 /* FeedStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B27CC1BC306A9DD0006B52E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EACD96D5B28850AFA773656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2CEF5D3BA1910D58D019257;
+			remoteInfo = Playhouse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023924190AF1899EF13AD182 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
+		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
+		1A66EC7FDB7FD773756FF5D4 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBEC41856D54314A01CB98A8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCalendarSheet.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		27FFD3FB7AF06A6209FAECAB = {
+			isa = PBXGroup;
+			children = (
+				A2B7B389309381679FAFF37C /* Playhouse */,
+				642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */,
+				E8B746786D6E1661E6CF3D6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */ = {
+			isa = PBXGroup;
+			children = (
+				8483212570BB1330E953787D /* FeedTests.swift */,
+			);
+			path = PlayhouseTests;
+			sourceTree = "<group>";
+		};
+		A2B7B389309381679FAFF37C /* Playhouse */ = {
+			isa = PBXGroup;
+			children = (
+				D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */,
+				A5B2329E61FF2F6D94881C7B /* Assets.xcassets */,
+				1A66EC7FDB7FD773756FF5D4 /* Feed.swift */,
+				023924190AF1899EF13AD182 /* FeedStore.swift */,
+				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
+				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
+				75E8703096D88355A5D13A31 /* TitleView.swift */,
+			);
+			path = Playhouse;
+			sourceTree = "<group>";
+		};
+		E8B746786D6E1661E6CF3D6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B10EFD6785A3600EE990DDF /* Playhouse.app */,
+				B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2CEF5D3BA1910D58D019257 /* Playhouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E991E4F36C96E3EC48124AFB /* Build configuration list for PBXNativeTarget "Playhouse" */;
+			buildPhases = (
+				E170F2185FE9DC77DAFED86C /* Sources */,
+				F0C7E1E0A489B4B294B1202B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Playhouse;
+			packageProductDependencies = (
+			);
+			productName = Playhouse;
+			productReference = 3B10EFD6785A3600EE990DDF /* Playhouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E882D17B50A19F50992EBD66 /* PlayhouseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A76A070EEDEFA4B2288F4ACA /* Build configuration list for PBXNativeTarget "PlayhouseTests" */;
+			buildPhases = (
+				B36BB486AC8EA48ADD6B9731 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				402742C484A272BC811C711A /* PBXTargetDependency */,
+			);
+			name = PlayhouseTests;
+			packageProductDependencies = (
+			);
+			productName = PlayhouseTests;
+			productReference = B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EACD96D5B28850AFA773656 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D2CEF5D3BA1910D58D019257 = {
+						DevelopmentTeam = 5GL46QLKSS;
+						ProvisioningStyle = Automatic;
+					};
+					E882D17B50A19F50992EBD66 = {
+						DevelopmentTeam = 5GL46QLKSS;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1751EF9A864D8EFAAA4BF35C /* Build configuration list for PBXProject "Playhouse" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 27FFD3FB7AF06A6209FAECAB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E8B746786D6E1661E6CF3D6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2CEF5D3BA1910D58D019257 /* Playhouse */,
+				E882D17B50A19F50992EBD66 /* PlayhouseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0C7E1E0A489B4B294B1202B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B36BB486AC8EA48ADD6B9731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A578D19260E9B79C0770E03A /* FeedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E170F2185FE9DC77DAFED86C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */,
+				37046D74D31D00CBD7A91B8C /* Feed.swift in Sources */,
+				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
+				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
+				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
+				DA84A3963627F733363A6991 /* TitleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		402742C484A272BC811C711A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2CEF5D3BA1910D58D019257 /* Playhouse */;
+			targetProxy = 9B27CC1BC306A9DD0006B52E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		271CD7B1D44E5EFF81734F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playhouse;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app;
+				PRODUCT_NAME = Playhouse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		52E60727D48C895A155FB7F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playhouse;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app;
+				PRODUCT_NAME = Playhouse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		61CA6B96E6A0E1D391E3119D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.PlayhouseTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playhouse.app/Playhouse";
+			};
+			name = Debug;
+		};
+		9926FC6C50253AD219866216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.PlayhouseTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playhouse.app/Playhouse";
+			};
+			name = Release;
+		};
+		B17BB92F33216F8A87D778E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5GL46QLKSS;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B362DC5785733ED2B772133D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GL46QLKSS;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1751EF9A864D8EFAAA4BF35C /* Build configuration list for PBXProject "Playhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17BB92F33216F8A87D778E1 /* Debug */,
+				B362DC5785733ED2B772133D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A76A070EEDEFA4B2288F4ACA /* Build configuration list for PBXNativeTarget "PlayhouseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61CA6B96E6A0E1D391E3119D /* Debug */,
+				9926FC6C50253AD219866216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E991E4F36C96E3EC48124AFB /* Build configuration list for PBXNativeTarget "Playhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				271CD7B1D44E5EFF81734F1B /* Debug */,
+				52E60727D48C895A155FB7F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EACD96D5B28850AFA773656 /* Project object */;
+}

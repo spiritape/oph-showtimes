@@ -1,0 +1,50 @@
+# The iOS app (docs/adr/0003). This file is the source of truth for the Xcode
+# project: edit it, then run `xcodegen` in ios/ to regenerate Playhouse.xcodeproj.
+name: Playhouse
+options:
+  bundleIdPrefix: com.ojaishowtimes
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    # The Apple team that signs the app. It changes when the app moves to the Playhouse's account.
+    DEVELOPMENT_TEAM: 5GL46QLKSS
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  Playhouse:
+    type: application
+    platform: iOS
+    sources: [Playhouse]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app
+        PRODUCT_NAME: Playhouse
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Playhouse
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.entertainment
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+  PlayhouseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [PlayhouseTests]
+    dependencies:
+      - target: Playhouse
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Playhouse:
+    build:
+      targets:
+        Playhouse: all
+    test:
+      targets: [PlayhouseTests]
