@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     @Environment(FeedStore.self) private var store
+    @Environment(Notifications.self) private var notifications
     @State private var filter = ScheduleFilter.everything
     @State private var path: [Title] = []
     /// A Title a link asked for before the schedule had loaded.
@@ -20,7 +21,20 @@ struct ScheduleView: View {
                         .pickerStyle(.segmented)
                         .fixedSize()
                     }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            Task { await notifications.toggle() }
+                        } label: {
+                            Image(systemName: notifications.isOn ? "bell.fill" : "bell")
+                        }
+                        .disabled(notifications.isBusy)
+                        .accessibilityLabel(notifications.isOn ? "Turn off New Title Notifications" : "Notify me of new titles")
+                    }
                 }
+                .alert(
+                    notifications.message ?? "",
+                    isPresented: Binding(get: { notifications.message != nil }, set: { if !$0 { notifications.message = nil } })
+                ) {}
                 .refreshable { await store.refresh() }
         }
         .onOpenURL { url in

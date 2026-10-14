@@ -1,8 +1,9 @@
 // The watcher (docs/adr/0002): reads the Source every 2 minutes and starts the
-// GitHub build when the schedule changes; stores Subscribers and sends New
-// Title Notifications when the build asks.
+// GitHub build when the schedule changes; stores Subscribers (browsers and app
+// installs, docs/adr/0003) and sends New Title Notifications when the build asks.
 import { buildPushHTTPRequest } from "@pushforge/builder";
 import type { NewTitleNotification } from "../src/notification.ts";
+import { apnsToken, isAppSubscription, sendToApp, type ApnsConfig, type AppSubscription } from "./apns.ts";
 import { fetchSource, readSource } from "../src/source.ts";
 
 export interface Env {
@@ -16,6 +17,12 @@ export interface Env {
   GITHUB_TOKEN: string;
   NOTIFY_SECRET: string;
   VAPID_PRIVATE_JWK: string;
+  /** The app's bundle ID. */
+  APNS_TOPIC: string;
+  /** The team's APNs key; until it's set, app installs are skipped. */
+  APNS_KEY?: string;
+  APNS_KEY_ID?: string;
+  APNS_TEAM_ID?: string;
 }
 
 const SCHEDULE_HASH_KEY = "schedule-hash";
@@ -24,6 +31,8 @@ const SUBSCRIBER_PREFIX = "sub:";
 const SUBSCRIBERS_PER_PAGE = 40;
 
 type Subscription = { endpoint: string; keys: { p256dh: string; auth: string } };
+/** What's stored for each Subscriber: a browser's push subscription, or an app install's token. */
+type SubscriberMetadata = Subscription | { apns: AppSubscription };
 type PushTarget = Parameters<typeof buildPushHTTPRequest>[0]["subscription"];
 
 async function sha256(text: string): Promise<string> {
@@ -67,8 +76,33 @@ function isSubscription(value: unknown): value is Subscription {
   );
 }
 
+/** Browsers are keyed by their endpoint, app installs by their token. */
+const subscriberKey = async (s: Subscription | { apns: AppSubscription }) =>
+  SUBSCRIBER_PREFIX + (await sha256("apns" in s ? `apns:${s.apns.token}` : s.endpoint));
+
+function apnsConfig(env: Env): ApnsConfig | null {
+  const { APNS_KEY: key, APNS_KEY_ID: keyId, APNS_TEAM_ID: teamId, APNS_TOPIC: topic } = env;
+  return key && keyId && teamId ? { key, keyId, teamId, topic } : null;
+}
+
+async function sendToBrowser(env: Env, subscription: Subscription, notification: NewTitleNotification) {
+  const request = await buildPushHTTPRequest({
+    privateJWK: env.VAPID_PRIVATE_JWK,
+    subscription: subscription as unknown as PushTarget,
+    message: { payload: notification, adminContact: `mailto:${env.CONTACT_EMAIL}`, options: { ttl: 86_400 } },
+  });
+  const res = await fetch(request.endpoint, { method: "POST", headers: request.headers, body: request.body });
+  // 404 and 410 mean the browser dropped this subscription.
+  if (res.status === 404 || res.status === 410) return "gone";
+  if (res.ok) return "sent";
+  console.error(`Push to ${new URL(request.endpoint).host} failed: ${res.status}`);
+  return "failed";
+}
+
 async function notify(env: Env, notification: NewTitleNotification, cursor: string | null) {
-  const page = await env.WATCHER.list<Subscription>({
+  const apns = apnsConfig(env);
+  const token = apns && (await apnsToken(apns, Math.floor(Date.now() / 1000)));
+  const page = await env.WATCHER.list<SubscriberMetadata>({
     prefix: SUBSCRIBER_PREFIX,
     limit: SUBSCRIBERS_PER_PAGE,
     cursor: cursor ?? undefined,
@@ -78,20 +112,18 @@ async function notify(env: Env, notification: NewTitleNotification, cursor: stri
   await Promise.all(
     page.keys.map(async ({ name, metadata }) => {
       if (!metadata) return;
-      const request = await buildPushHTTPRequest({
-        privateJWK: env.VAPID_PRIVATE_JWK,
-        subscription: metadata as unknown as PushTarget,
-        message: { payload: notification, adminContact: `mailto:${env.CONTACT_EMAIL}`, options: { ttl: 86_400 } },
-      });
-      const res = await fetch(request.endpoint, { method: "POST", headers: request.headers, body: request.body });
-      if (res.status === 404 || res.status === 410) {
-        // The browser dropped this subscription.
+      let result: "sent" | "gone" | "failed";
+      if ("apns" in metadata) {
+        if (!apns || !token) return;
+        result = await sendToApp(metadata.apns, notification, apns, token);
+      } else {
+        result = await sendToBrowser(env, metadata, notification);
+      }
+      if (result === "gone") {
         await env.WATCHER.delete(name);
         removed++;
-      } else if (res.ok) {
+      } else if (result === "sent") {
         sent++;
-      } else {
-        console.error(`Push to ${new URL(request.endpoint).host} failed: ${res.status}`);
       }
     }),
   );
@@ -121,15 +153,24 @@ export default {
     const body = await request.json().catch(() => null);
 
     if (path === "/subscribe") {
-      if (!isSubscription(body)) return json({ error: "Not a push subscription" }, 400);
-      const { endpoint, keys } = body;
-      await env.WATCHER.put(SUBSCRIBER_PREFIX + (await sha256(endpoint)), "", { metadata: { endpoint, keys } });
+      // The app sends { apns: { token, environment } }; browsers send their push subscription.
+      const app = (body as { apns?: unknown })?.apns;
+      let metadata: SubscriberMetadata;
+      if (isAppSubscription(app)) metadata = { apns: { token: app.token, environment: app.environment } };
+      else if (isSubscription(body)) metadata = { endpoint: body.endpoint, keys: body.keys };
+      else return json({ error: "Not a push subscription" }, 400);
+      await env.WATCHER.put(await subscriberKey(metadata), "", { metadata });
       return json({ ok: true });
     }
     if (path === "/unsubscribe") {
-      const endpoint = (body as { endpoint?: unknown })?.endpoint;
-      if (typeof endpoint !== "string") return json({ error: "Missing endpoint" }, 400);
-      await env.WATCHER.delete(SUBSCRIBER_PREFIX + (await sha256(endpoint)));
+      const { endpoint, apns } = (body ?? {}) as { endpoint?: unknown; apns?: { token?: unknown } };
+      if (typeof apns?.token === "string") {
+        await env.WATCHER.delete(await subscriberKey({ apns: { token: apns.token, environment: "production" } }));
+      } else if (typeof endpoint === "string") {
+        await env.WATCHER.delete(SUBSCRIBER_PREFIX + (await sha256(endpoint)));
+      } else {
+        return json({ error: "Missing endpoint or token" }, 400);
+      }
       return json({ ok: true });
     }
     if (path === "/notify") {

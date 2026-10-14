@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19BF016E89AB2BCB96A1E5BB /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 15F6F30B649B35EF4900A6B2 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		202D5BF568748AD626D59462 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E4A5FE957C0364B07F92A /* NotificationService.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
 		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
 		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
+		89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EAD2811560EFD04DF3FE02 /* Notifications.swift */; };
 		A578D19260E9B79C0770E03A /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483212570BB1330E953787D /* FeedTests.swift */; };
 		B4253BACFFC73EAB143A391E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
 		BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 079217AD0A775F6D2ADB4100 /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -36,6 +39,13 @@
 			remoteGlobalIDString = D2CEF5D3BA1910D58D019257;
 			remoteInfo = Playhouse;
 		};
+		F4CF1BA2BE8EC53524C24172 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EACD96D5B28850AFA773656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31A89518A5D851F0C793B0FD;
+			remoteInfo = NotificationService;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +56,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */,
+				19BF016E89AB2BCB96A1E5BB /* NotificationService.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,16 +67,20 @@
 		023924190AF1899EF13AD182 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		079217AD0A775F6D2ADB4100 /* Widgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		08501A0F400D44D07664ACCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		15F6F30B649B35EF4900A6B2 /* NotificationService.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
 		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC3CFCBC94EF62EEA2AA1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3EE60B41160858391439CFDB /* Playhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playhouse.entitlements; sourceTree = "<group>"; };
+		49EAD2811560EFD04DF3FE02 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5DFB3B32C925134B76E8AC59 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
 		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextShowtimesWidget.swift; sourceTree = "<group>"; };
 		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		94461A96001EC8761E4D24EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A93E4A5FE957C0364B07F92A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC41856D54314A01CB98A8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		C1F69DA2AAE438D5964A4A3A /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
@@ -76,6 +91,7 @@
 		27FFD3FB7AF06A6209FAECAB = {
 			isa = PBXGroup;
 			children = (
+				6309439E7D3F2111FCB4A42F /* NotificationService */,
 				A2B7B389309381679FAFF37C /* Playhouse */,
 				642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */,
 				50E2733902DEFAA60BC8FEB3 /* Shared */,
@@ -90,6 +106,15 @@
 				C1F69DA2AAE438D5964A4A3A /* Feed.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		6309439E7D3F2111FCB4A42F /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				94461A96001EC8761E4D24EB /* Info.plist */,
+				A93E4A5FE957C0364B07F92A /* NotificationService.swift */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */ = {
@@ -107,6 +132,7 @@
 				A5B2329E61FF2F6D94881C7B /* Assets.xcassets */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
 				08501A0F400D44D07664ACCE /* Info.plist */,
+				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
 				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
 				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
@@ -118,6 +144,7 @@
 		E8B746786D6E1661E6CF3D6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				15F6F30B649B35EF4900A6B2 /* NotificationService.appex */,
 				3B10EFD6785A3600EE990DDF /* Playhouse.app */,
 				B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */,
 				079217AD0A775F6D2ADB4100 /* Widgets.appex */,
@@ -139,6 +166,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		31A89518A5D851F0C793B0FD /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94A02D56E12656D2DF9A60BC /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				BD3F8B4F450D74A148DCD05D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			packageProductDependencies = (
+			);
+			productName = NotificationService;
+			productReference = 15F6F30B649B35EF4900A6B2 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B086421D74A00F7DBB3A173C /* Widgets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3901C7B1F61267FD0FA4205F /* Build configuration list for PBXNativeTarget "Widgets" */;
@@ -169,6 +213,7 @@
 			);
 			dependencies = (
 				44EC7EADCFD8D6814BB7DEE4 /* PBXTargetDependency */,
+				FBF2AD60DA59DBC01F5D3D4D /* PBXTargetDependency */,
 			);
 			name = Playhouse;
 			packageProductDependencies = (
@@ -204,6 +249,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					31A89518A5D851F0C793B0FD = {
+						DevelopmentTeam = 5GL46QLKSS;
+						ProvisioningStyle = Automatic;
+					};
 					B086421D74A00F7DBB3A173C = {
 						DevelopmentTeam = 5GL46QLKSS;
 						ProvisioningStyle = Automatic;
@@ -234,6 +283,7 @@
 			targets = (
 				D2CEF5D3BA1910D58D019257 /* Playhouse */,
 				B086421D74A00F7DBB3A173C /* Widgets */,
+				31A89518A5D851F0C793B0FD /* NotificationService */,
 				E882D17B50A19F50992EBD66 /* PlayhouseTests */,
 			);
 		};
@@ -276,6 +326,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD3F8B4F450D74A148DCD05D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202D5BF568748AD626D59462 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E170F2185FE9DC77DAFED86C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +341,7 @@
 				CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */,
 				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
+				89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
 				DA84A3963627F733363A6991 /* TitleView.swift in Sources */,
@@ -301,6 +360,11 @@
 			isa = PBXTargetDependency;
 			target = B086421D74A00F7DBB3A173C /* Widgets */;
 			targetProxy = 99C9E347D6C736FD5378845D /* PBXContainerItemProxy */;
+		};
+		FBF2AD60DA59DBC01F5D3D4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31A89518A5D851F0C793B0FD /* NotificationService */;
+			targetProxy = F4CF1BA2BE8EC53524C24172 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,6 +439,24 @@
 			};
 			name = Release;
 		};
+		596B8053643FBFAFA866E607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app.notifications;
+				PRODUCT_NAME = NotificationService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		61CA6B96E6A0E1D391E3119D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +508,24 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playhouse.app/Playhouse";
+			};
+			name = Release;
+		};
+		A67205E0495215FDD2056830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app.notifications;
+				PRODUCT_NAME = NotificationService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -573,6 +673,15 @@
 			buildConfigurations = (
 				76C1647140F684875B6D92C5 /* Debug */,
 				31F47A7BF7657B29E1098F10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		94A02D56E12656D2DF9A60BC /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596B8053643FBFAFA866E607 /* Debug */,
+				A67205E0495215FDD2056830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

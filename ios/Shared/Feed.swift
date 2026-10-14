@@ -207,7 +207,11 @@ enum AppLink {
     static let scheme = "ojaiplayhouse"
 
     static func title(_ title: Title) -> URL {
-        URL(string: "\(scheme)://title/\(title.slug)")!
+        Self.title(slug: title.slug)
+    }
+
+    static func title(slug: String) -> URL {
+        URL(string: "\(scheme)://title/\(slug)")!
     }
 
     /// The Title slug a link points at, if any.

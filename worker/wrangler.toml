@@ -4,6 +4,9 @@
 #   NOTIFY_SECRET      shared with the GitHub repo secret of the same name
 #   VAPID_PRIVATE_JWK  Web Push signing key (its public half is the VAPID_PUBLIC_KEY repo variable)
 #   CONTACT_EMAIL      sent to the Source in the User-Agent and to push services
+#   APNS_KEY           the app's APNs auth key (.p8 file contents); app installs are skipped until it's set
+#   APNS_KEY_ID        that key's ID
+#   APNS_TEAM_ID       the Apple team that owns the app (changes if the app is transferred, docs/adr/0003)
 name = "oph-showtimes-watcher"
 main = "index.ts"
 compatibility_date = "2026-09-01"
@@ -20,6 +23,8 @@ id = "a83341b6b3494913b8657b6ecf027635"
 SITE_ORIGINS = "https://ojaishowtimes.com https://www.ojaishowtimes.com https://oph-showtimes.pages.dev"
 GITHUB_REPO = "spiritape/oph-showtimes"
 GITHUB_WORKFLOW = "update.yml"
+# The iOS app's bundle ID, which its notifications are addressed to.
+APNS_TOPIC = "com.ojaishowtimes.app"
 
 [observability]
 enabled = true

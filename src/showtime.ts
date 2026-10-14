@@ -55,8 +55,8 @@ export function googleCalendarUrl(scheduled: ScheduledShowtime, siteUrl: string)
   return `https://calendar.google.com/calendar/render?${params}`;
 }
 
-/** A small (128px wide) version of a Source image, or null if its host can't resize. */
-export function thumbnailUrl(imageUrl: string | null): string | null {
+/** A smaller (128px wide by default) version of a Source image, or null if its host can't resize. */
+export function thumbnailUrl(imageUrl: string | null, width = 128): string | null {
   const match = imageUrl?.match(/^(https:\/\/[\w-]+\.graphassets\.com\/[\w-]+)\/([\w-]+)$/);
-  return match ? `${match[1]}/resize=width:128/${match[2]}` : null;
+  return match ? `${match[1]}/resize=width:${width}/${match[2]}` : null;
 }

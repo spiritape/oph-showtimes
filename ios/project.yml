@@ -21,6 +21,7 @@ targets:
     sources: [Playhouse, Shared]
     dependencies:
       - target: Widgets
+      - target: NotificationService
     info:
       path: Playhouse/Info.plist
       properties:
@@ -33,6 +34,8 @@ targets:
       properties:
         # Shares the saved schedule with the widgets (re-register it after a transfer).
         com.apple.security.application-groups: [group.com.ojaishowtimes.app]
+        # New Title Notifications. Xcode switches this to production when exporting for TestFlight.
+        aps-environment: development
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app
@@ -67,6 +70,24 @@ targets:
         TARGETED_DEVICE_FAMILY: "1"
         GENERATE_INFOPLIST_FILE: YES
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SKIP_INSTALL: YES
+  NotificationService:
+    type: app-extension
+    platform: iOS
+    sources: [NotificationService]
+    info:
+      path: NotificationService/Info.plist
+      properties:
+        CFBundleDisplayName: Playhouse
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.usernotifications.service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).NotificationService
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app.notifications
+        PRODUCT_NAME: NotificationService
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
         SKIP_INSTALL: YES
   PlayhouseTests:
     type: bundle.unit-test

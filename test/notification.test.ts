@@ -41,6 +41,7 @@ describe("composeNotification", () => {
       title: "New at the Playhouse: Digger",
       body: "Film · first showing Thu, Oct 1, 7:00 PM",
       url: "https://oph-showtimes.pages.dev/t/digger/",
+      titleSlug: "digger",
     });
   });
 
@@ -60,5 +61,13 @@ describe("composeNotification", () => {
       body: "Digger, Pecker, Serial Mom",
       url: "https://oph-showtimes.pages.dev/",
     });
+  });
+
+  it("carries the first New Title's poster that has one, for the app", () => {
+    const titles = [
+      title("Digger", true, "film", "2026-10-02T02:00:00.000Z"),
+      { ...title("Pecker", true, "film", "2026-10-07T01:00:00.000Z"), imageUrl: "https://img.example/pecker" },
+    ];
+    expect(composeNotification(titles, site).imageUrl).toBe("https://img.example/pecker");
   });
 });
