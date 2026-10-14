@@ -20,6 +20,7 @@
 		DA84A3963627F733363A6991 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8703096D88355A5D13A31 /* TitleView.swift */; };
 		DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC41856D54314A01CB98A8 /* ScheduleView.swift */; };
 		DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
+		EC26668B384EE65CFB90C7E0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */; };
 		F2AF27854886382F7A13E97E /* NextShowtimesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */; };
 		FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023924190AF1899EF13AD182 /* FeedStore.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A93E4A5FE957C0364B07F92A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC41856D54314A01CB98A8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		C1F69DA2AAE438D5964A4A3A /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
 				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
 				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
+				B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */,
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
 				75E8703096D88355A5D13A31 /* TitleView.swift */,
 			);
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */,
+				EC26668B384EE65CFB90C7E0 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

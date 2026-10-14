@@ -43,6 +43,15 @@ A local build writes `data/state.json`. Don't commit one built from the fixture.
 xcodebuild test -project ios/Playhouse.xcodeproj -scheme Playhouse -destination 'platform=iOS Simulator,name=iPhone 18 Pro'
 ```
 
+To send a build to TestFlight, archive it and upload it ([ios/ExportOptions.plist](ios/ExportOptions.plist) bumps the build number on each upload). Xcode must be signed in to the Apple account under Settings → Accounts:
+
+```bash
+xcodebuild archive -project ios/Playhouse.xcodeproj -scheme Playhouse -configuration Release -destination generic/platform=iOS -archivePath ios/build/Playhouse.xcarchive -allowProvisioningUpdates
+xcodebuild -exportArchive -archivePath ios/build/Playhouse.xcarchive -exportOptionsPlist ios/ExportOptions.plist -exportPath ios/build/export -allowProvisioningUpdates
+```
+
+The app's push notifications go through the watcher's APNs secrets (see [worker/wrangler.toml](worker/wrangler.toml)). To test them without messaging website Subscribers, run **Send test notification** with *Who gets it* set to `app`.
+
 ## Setup
 
 1. **Cloudflare Pages**: a Pages project named `oph-showtimes` (Direct Upload), and an API token with *Cloudflare Pages: Edit*. The domain `ojaishowtimes.com` (registered with Cloudflare) and its `www.` are added under the project's *Custom domains*; pages send visitors from `www.` and the old `oph-showtimes.pages.dev` address to it.
