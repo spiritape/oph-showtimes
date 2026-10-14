@@ -18,7 +18,21 @@ targets:
   Playhouse:
     type: application
     platform: iOS
-    sources: [Playhouse]
+    sources: [Playhouse, Shared]
+    dependencies:
+      - target: Widgets
+    info:
+      path: Playhouse/Info.plist
+      properties:
+        CFBundleURLTypes:
+          # Links from the widgets: ojaiplayhouse://title/<slug>
+          - CFBundleURLName: com.ojaishowtimes.app
+            CFBundleURLSchemes: [ojaiplayhouse]
+    entitlements:
+      path: Playhouse/Playhouse.entitlements
+      properties:
+        # Shares the saved schedule with the widgets (re-register it after a transfer).
+        com.apple.security.application-groups: [group.com.ojaishowtimes.app]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app
@@ -32,6 +46,28 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+  Widgets:
+    type: app-extension
+    platform: iOS
+    sources: [Widgets, Shared]
+    info:
+      path: Widgets/Info.plist
+      properties:
+        CFBundleDisplayName: Playhouse
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: Widgets/Widgets.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.ojaishowtimes.app]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app.widgets
+        PRODUCT_NAME: Widgets
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SKIP_INSTALL: YES
   PlayhouseTests:
     type: bundle.unit-test
     platform: iOS

@@ -3,9 +3,12 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(FeedStore.self) private var store
     @State private var filter = ScheduleFilter.everything
+    @State private var path: [Title] = []
+    /// A Title a link asked for before the schedule had loaded.
+    @State private var linkedSlug: String?
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             content
                 .navigationTitle("Ojai Playhouse")
                 .navigationDestination(for: Title.self) { TitleView(title: $0) }
@@ -20,6 +23,17 @@ struct ScheduleView: View {
                 }
                 .refreshable { await store.refresh() }
         }
+        .onOpenURL { url in
+            linkedSlug = AppLink.titleSlug(url)
+            openLinkedTitle()
+        }
+        .onChange(of: store.feed) { openLinkedTitle() }
+    }
+
+    private func openLinkedTitle() {
+        guard let slug = linkedSlug, let title = store.feed?.titles.first(where: { $0.slug == slug }) else { return }
+        linkedSlug = nil
+        path = [title]
     }
 
     @ViewBuilder private var content: some View {
@@ -33,10 +47,10 @@ struct ScheduleView: View {
                     Text("Nothing scheduled right now.").foregroundStyle(.secondary)
                 }
                 ForEach(days) { day in
-                    Section(dayHeading(day, calendar: feed.calendar)) {
+                    Section(feed.calendar.date(from: day.day).map { feed.dayLabel($0) } ?? "") {
                         ForEach(day.showtimes) { item in
                             NavigationLink(value: item.title) {
-                                ShowtimeRow(item: item, timeZone: feed.calendar.timeZone)
+                                ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
                             }
                         }
                     }
@@ -55,24 +69,15 @@ struct ScheduleView: View {
             ProgressView()
         }
     }
-
-    private func dayHeading(_ day: ScheduleDay, calendar: Calendar) -> String {
-        guard let date = calendar.date(from: day.day) else { return "" }
-        if calendar.isDateInToday(date) { return "Today" }
-        if calendar.isDateInTomorrow(date) { return "Tomorrow" }
-        var style = Date.FormatStyle.dateTime.weekday(.wide).month(.abbreviated).day()
-        style.timeZone = calendar.timeZone
-        return date.formatted(style)
-    }
 }
 
 struct ShowtimeRow: View {
     let item: ScheduledShowtime
-    let timeZone: TimeZone
+    let time: String
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Text(showtimeTime(item.showtime.startsAt, timeZone: timeZone))
+            Text(time)
                 .font(.subheadline.monospacedDigit().weight(.semibold))
                 .frame(width: 72, alignment: .leading)
             Poster(url: item.title.thumbnailUrl ?? item.title.imageUrl)
@@ -101,11 +106,4 @@ struct Poster: View {
         }
         .clipShape(.rect(cornerRadius: 4))
     }
-}
-
-/// "7:30 PM" in the theater's time zone.
-func showtimeTime(_ date: Date, timeZone: TimeZone) -> String {
-    var style = Date.FormatStyle.dateTime.hour().minute()
-    style.timeZone = timeZone
-    return date.formatted(style)
 }

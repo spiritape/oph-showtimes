@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37046D74D31D00CBD7A91B8C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66EC7FDB7FD773756FF5D4 /* Feed.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
+		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
 		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
 		A578D19260E9B79C0770E03A /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483212570BB1330E953787D /* FeedTests.swift */; };
+		B4253BACFFC73EAB143A391E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
+		BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 079217AD0A775F6D2ADB4100 /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */; };
 		DA84A3963627F733363A6991 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8703096D88355A5D13A31 /* TitleView.swift */; };
 		DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC41856D54314A01CB98A8 /* ScheduleView.swift */; };
+		DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
+		F2AF27854886382F7A13E97E /* NextShowtimesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */; };
 		FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023924190AF1899EF13AD182 /* FeedStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		99C9E347D6C736FD5378845D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EACD96D5B28850AFA773656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B086421D74A00F7DBB3A173C;
+			remoteInfo = Widgets;
+		};
 		9B27CC1BC306A9DD0006B52E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EACD96D5B28850AFA773656 /* Project object */;
@@ -27,16 +38,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		28946332031ADCF7BC197B98 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		023924190AF1899EF13AD182 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
+		079217AD0A775F6D2ADB4100 /* Widgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		08501A0F400D44D07664ACCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
-		1A66EC7FDB7FD773756FF5D4 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CC3CFCBC94EF62EEA2AA1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3EE60B41160858391439CFDB /* Playhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playhouse.entitlements; sourceTree = "<group>"; };
+		5DFB3B32C925134B76E8AC59 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
 		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextShowtimesWidget.swift; sourceTree = "<group>"; };
 		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC41856D54314A01CB98A8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		C1F69DA2AAE438D5964A4A3A /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCalendarSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,8 +78,18 @@
 			children = (
 				A2B7B389309381679FAFF37C /* Playhouse */,
 				642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */,
+				50E2733902DEFAA60BC8FEB3 /* Shared */,
+				F1CE721078C86F7ABBB56048 /* Widgets */,
 				E8B746786D6E1661E6CF3D6A /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		50E2733902DEFAA60BC8FEB3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C1F69DA2AAE438D5964A4A3A /* Feed.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		642B8AC9D8C96CBEB2B39DFB /* PlayhouseTests */ = {
@@ -63,8 +105,9 @@
 			children = (
 				D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */,
 				A5B2329E61FF2F6D94881C7B /* Assets.xcassets */,
-				1A66EC7FDB7FD773756FF5D4 /* Feed.swift */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
+				08501A0F400D44D07664ACCE /* Info.plist */,
+				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
 				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
 				75E8703096D88355A5D13A31 /* TitleView.swift */,
@@ -77,23 +120,55 @@
 			children = (
 				3B10EFD6785A3600EE990DDF /* Playhouse.app */,
 				B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */,
+				079217AD0A775F6D2ADB4100 /* Widgets.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F1CE721078C86F7ABBB56048 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				9524C15AA6715F80420C8F64 /* Assets.xcassets */,
+				3CC3CFCBC94EF62EEA2AA1F0 /* Info.plist */,
+				7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */,
+				5DFB3B32C925134B76E8AC59 /* Widgets.entitlements */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B086421D74A00F7DBB3A173C /* Widgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3901C7B1F61267FD0FA4205F /* Build configuration list for PBXNativeTarget "Widgets" */;
+			buildPhases = (
+				311D47BA0B232E5D304FA104 /* Sources */,
+				E1976059A2DB2D7B0263FC75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Widgets;
+			packageProductDependencies = (
+			);
+			productName = Widgets;
+			productReference = 079217AD0A775F6D2ADB4100 /* Widgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D2CEF5D3BA1910D58D019257 /* Playhouse */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E991E4F36C96E3EC48124AFB /* Build configuration list for PBXNativeTarget "Playhouse" */;
 			buildPhases = (
 				E170F2185FE9DC77DAFED86C /* Sources */,
 				F0C7E1E0A489B4B294B1202B /* Resources */,
+				28946332031ADCF7BC197B98 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				44EC7EADCFD8D6814BB7DEE4 /* PBXTargetDependency */,
 			);
 			name = Playhouse;
 			packageProductDependencies = (
@@ -129,6 +204,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					B086421D74A00F7DBB3A173C = {
+						DevelopmentTeam = 5GL46QLKSS;
+						ProvisioningStyle = Automatic;
+					};
 					D2CEF5D3BA1910D58D019257 = {
 						DevelopmentTeam = 5GL46QLKSS;
 						ProvisioningStyle = Automatic;
@@ -154,12 +233,21 @@
 			projectRoot = "";
 			targets = (
 				D2CEF5D3BA1910D58D019257 /* Playhouse */,
+				B086421D74A00F7DBB3A173C /* Widgets */,
 				E882D17B50A19F50992EBD66 /* PlayhouseTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E1976059A2DB2D7B0263FC75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0C7E1E0A489B4B294B1202B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +259,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		311D47BA0B232E5D304FA104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4253BACFFC73EAB143A391E /* Feed.swift in Sources */,
+				F2AF27854886382F7A13E97E /* NextShowtimesWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B36BB486AC8EA48ADD6B9731 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */,
-				37046D74D31D00CBD7A91B8C /* Feed.swift in Sources */,
+				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
@@ -200,6 +297,11 @@
 			target = D2CEF5D3BA1910D58D019257 /* Playhouse */;
 			targetProxy = 9B27CC1BC306A9DD0006B52E /* PBXContainerItemProxy */;
 		};
+		44EC7EADCFD8D6814BB7DEE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B086421D74A00F7DBB3A173C /* Widgets */;
+			targetProxy = 99C9E347D6C736FD5378845D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -208,8 +310,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Playhouse/Playhouse.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Playhouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Playhouse;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -226,13 +330,35 @@
 			};
 			name = Debug;
 		};
+		31F47A7BF7657B29E1098F10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app.widgets;
+				PRODUCT_NAME = Widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		52E60727D48C895A155FB7F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Playhouse/Playhouse.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Playhouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Playhouse;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -263,6 +389,26 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playhouse.app/Playhouse";
+			};
+			name = Debug;
+		};
+		76C1647140F684875B6D92C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ojaishowtimes.app.widgets;
+				PRODUCT_NAME = Widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -418,6 +564,15 @@
 			buildConfigurations = (
 				B17BB92F33216F8A87D778E1 /* Debug */,
 				B362DC5785733ED2B772133D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3901C7B1F61267FD0FA4205F /* Build configuration list for PBXNativeTarget "Widgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76C1647140F684875B6D92C5 /* Debug */,
+				31F47A7BF7657B29E1098F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

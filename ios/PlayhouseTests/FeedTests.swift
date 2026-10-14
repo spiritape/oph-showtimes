@@ -42,3 +42,25 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     #expect(feed.days(.liveShows, now: date("2026-10-13T20:00:00Z")).flatMap(\.showtimes).map(\.id) == ["c"])
     #expect(feed.days(.films, now: date("2026-10-14T02:31:00Z")).flatMap(\.showtimes).map(\.id) == ["b"])
 }
+
+@Test func labelsDaysRelativeToNowInTheTheatersTime() {
+    let now = date("2026-10-13T20:00:00Z") // 1 PM Tuesday in Ojai
+    #expect(feed.dayLabel(date("2026-10-14T02:00:00Z"), now: now) == "Today")
+    #expect(feed.dayLabel(date("2026-10-15T06:30:00Z"), now: now) == "Tomorrow")
+    #expect(feed.dayLabel(date("2026-10-16T20:00:00Z"), now: now, short: true) == "Fri, Oct 16")
+    #expect(feed.timeLabel(date("2026-10-14T02:00:00Z")) == "7:00\u{202F}PM") // narrow no-break space
+}
+
+@Test func widgetsChangeAsShowtimesDropOffAndAtMidnight() {
+    let changes = feed.listChanges(after: date("2026-10-13T20:00:00Z"), within: 24 * 60 * 60)
+    #expect(changes == [
+        date("2026-10-14T02:30:00Z"), // a drops off
+        date("2026-10-14T03:30:00Z"), // c drops off
+        date("2026-10-14T07:00:00Z"), // midnight in Ojai
+    ])
+}
+
+@Test func readsTitleLinks() {
+    #expect(AppLink.titleSlug(AppLink.title(feed.titles[1])) == "dr-brown")
+    #expect(AppLink.titleSlug(URL(string: "https://ojaishowtimes.com/t/dr-brown/")!) == nil)
+}

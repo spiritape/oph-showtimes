@@ -1,8 +1,9 @@
 import Foundation
 import Observation
+import WidgetKit
 
-/// Loads the Feed, keeping the last good copy on disk so the schedule still
-/// shows offline.
+/// Loads the Feed, keeping the last good copy (shared with the widgets) so the
+/// schedule still shows offline.
 @MainActor @Observable
 final class FeedStore {
     private(set) var feed: Feed?
@@ -13,16 +14,10 @@ final class FeedStore {
     private let cacheFile: URL
     private let session: URLSession
 
-    init(cacheFile: URL = FeedStore.defaultCacheFile, session: URLSession = .shared) {
+    init(cacheFile: URL = FeedCache.file, session: URLSession = .shared) {
         self.cacheFile = cacheFile
         self.session = session
-        if let data = try? Data(contentsOf: cacheFile) {
-            feed = try? Feed.decode(data)
-        }
-    }
-
-    static var defaultCacheFile: URL {
-        URL.applicationSupportDirectory.appending(path: "schedule.json")
+        feed = FeedCache.load(from: cacheFile)
     }
 
     func refresh() async {
@@ -30,14 +25,12 @@ final class FeedStore {
         isLoading = true
         defer { isLoading = false }
         do {
-            var request = URLRequest(url: Feed.url)
-            request.cachePolicy = .reloadIgnoringLocalCacheData
-            let (data, response) = try await session.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
-            feed = try Feed.decode(data)
+            let (latest, data) = try await FeedCache.fetch(session: session)
+            let changed = latest.titles != feed?.titles
+            feed = latest
             error = nil
-            try? FileManager.default.createDirectory(at: cacheFile.deletingLastPathComponent(), withIntermediateDirectories: true)
-            try? data.write(to: cacheFile, options: .atomic)
+            FeedCache.save(data, to: cacheFile)
+            if changed { WidgetCenter.shared.reloadAllTimelines() }
         } catch {
             self.error = feed == nil ? "Couldn't load the schedule. Check your connection and pull to retry." : "Showing the last saved schedule."
         }

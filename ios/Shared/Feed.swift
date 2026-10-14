@@ -118,18 +118,21 @@ extension Feed {
         return calendar
     }
 
-    /// Every Showtime still listed at `now` (until 30 minutes after it starts,
-    /// like the site), grouped by day in the theater's time zone.
-    func days(_ filter: ScheduleFilter, now: Date = .now) -> [ScheduleDay] {
-        let cutoff = now.addingTimeInterval(-30 * 60)
-        let listed = titles
+    /// Every Showtime still listed at `now`, soonest first. Like the site, a
+    /// Showtime stays listed until 30 minutes after it starts.
+    func listed(_ filter: ScheduleFilter = .everything, now: Date = .now) -> [ScheduledShowtime] {
+        titles
             .filter(filter.includes)
             .flatMap { title in title.showtimes.map { ScheduledShowtime(title: title, showtime: $0) } }
-            .filter { $0.showtime.startsAt > cutoff }
+            .filter { $0.showtime.startsAt > now.addingTimeInterval(-Showtime.listedAfterStart) }
             .sorted { $0.showtime.startsAt < $1.showtime.startsAt }
+    }
+
+    /// Listed Showtimes grouped by day in the theater's time zone.
+    func days(_ filter: ScheduleFilter, now: Date = .now) -> [ScheduleDay] {
         let calendar = self.calendar
         var days: [ScheduleDay] = []
-        for item in listed {
+        for item in listed(filter, now: now) {
             let day = calendar.dateComponents([.year, .month, .day], from: item.showtime.startsAt)
             if days.last?.day == day {
                 days[days.count - 1].showtimes.append(item)
@@ -138,5 +141,89 @@ extension Feed {
             }
         }
         return days
+    }
+}
+
+extension Showtime {
+    /// How long a Showtime stays listed after it starts, like the site.
+    static let listedAfterStart: TimeInterval = 30 * 60
+}
+
+extension Feed {
+    /// "Today", "Tomorrow", or the weekday, in the theater's time zone.
+    func dayLabel(_ date: Date, now: Date = .now, short: Bool = false) -> String {
+        let calendar = self.calendar
+        if calendar.isDate(date, inSameDayAs: now) { return "Today" }
+        if let tomorrow = calendar.date(byAdding: .day, value: 1, to: now), calendar.isDate(date, inSameDayAs: tomorrow) {
+            return "Tomorrow"
+        }
+        var style = short
+            ? Date.FormatStyle.dateTime.weekday(.abbreviated).month(.abbreviated).day()
+            : Date.FormatStyle.dateTime.weekday(.wide).month(.abbreviated).day()
+        style.timeZone = calendar.timeZone
+        return date.formatted(style)
+    }
+
+    /// "7:30 PM" in the theater's time zone.
+    func timeLabel(_ date: Date) -> String {
+        var style = Date.FormatStyle.dateTime.hour().minute()
+        style.timeZone = calendar.timeZone
+        return date.formatted(style)
+    }
+}
+
+/// The last good Feed, saved where both the app and its widgets can read it.
+enum FeedCache {
+    static let appGroup = "group.com.ojaishowtimes.app"
+
+    static var file: URL {
+        let container = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)
+            ?? URL.applicationSupportDirectory
+        return container.appending(path: "schedule.json")
+    }
+
+    static func load(from file: URL = file) -> Feed? {
+        (try? Data(contentsOf: file)).flatMap { try? Feed.decode($0) }
+    }
+
+    static func save(_ data: Data, to file: URL = file) {
+        try? FileManager.default.createDirectory(at: file.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try? data.write(to: file, options: .atomic)
+    }
+
+    /// Fetches the latest Feed, returning it with the raw data to save.
+    static func fetch(session: URLSession = .shared) async throws -> (Feed, Data) {
+        var request = URLRequest(url: Feed.url)
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        request.timeoutInterval = 20
+        let (data, response) = try await session.data(for: request)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+        return (try Feed.decode(data), data)
+    }
+}
+
+/// Links into the app, e.g. from a widget: ojaiplayhouse://title/<slug>
+enum AppLink {
+    static let scheme = "ojaiplayhouse"
+
+    static func title(_ title: Title) -> URL {
+        URL(string: "\(scheme)://title/\(title.slug)")!
+    }
+
+    /// The Title slug a link points at, if any.
+    static func titleSlug(_ url: URL) -> String? {
+        guard url.scheme == scheme, url.host() == "title" else { return nil }
+        return url.pathComponents.dropFirst().first
+    }
+}
+
+extension Feed {
+    /// When what's listed (or how it's labeled) changes without a new Feed: as
+    /// each Showtime drops off the list, and at midnight when "Tomorrow" becomes "Today".
+    func listChanges(after now: Date, within interval: TimeInterval) -> [Date] {
+        let horizon = now.addingTimeInterval(interval)
+        let dropOffs = listed(now: now).map { $0.showtime.startsAt.addingTimeInterval(Showtime.listedAfterStart) }
+        let midnights = (1...2).compactMap { calendar.date(byAdding: .day, value: $0, to: calendar.startOfDay(for: now)) }
+        return Set(dropOffs + midnights).filter { $0 > now && $0 <= horizon }.sorted()
     }
 }
