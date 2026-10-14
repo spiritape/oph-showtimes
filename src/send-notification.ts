@@ -12,6 +12,8 @@ if (!existsSync(NOTIFICATION_FILE)) {
 const notification: NewTitleNotification = JSON.parse(readFileSync(NOTIFICATION_FILE, "utf8"));
 rmSync(NOTIFICATION_FILE);
 
+/** AUDIENCE=app sends only to app installs (see the test notification workflow). */
+const audience = process.env.AUDIENCE === "app" ? "app" : "everyone";
 const watcherUrl = process.env.WATCHER_URL;
 const secret = process.env.NOTIFY_SECRET;
 if (!watcherUrl || !secret) {
@@ -22,16 +24,21 @@ if (!watcherUrl || !secret) {
 let cursor: string | null = null;
 let sent = 0;
 let removed = 0;
+let failed = 0;
 do {
   const res = await fetch(`${watcherUrl}/notify`, {
     method: "POST",
     headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ notification, cursor }),
+    body: JSON.stringify({ notification, cursor, audience }),
   });
   if (!res.ok) throw new Error(`Watcher responded ${res.status}: ${await res.text()}`);
-  const page = (await res.json()) as { sent: number; removed: number; cursor: string | null };
+  const page = (await res.json()) as { sent: number; removed: number; failed?: number; cursor: string | null };
   sent += page.sent;
   removed += page.removed;
+  failed += page.failed ?? 0;
   cursor = page.cursor;
 } while (cursor);
-console.log(`Sent "${notification.title}" to ${sent} Subscribers (${removed} expired subscriptions removed).`);
+console.log(
+  `Sent "${notification.title}" to ${sent} ${audience === "app" ? "app " : ""}Subscribers ` +
+    `(${removed} expired subscriptions removed, ${failed} failed; the watcher's log says why).`,
+);

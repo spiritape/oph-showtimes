@@ -2,7 +2,9 @@ name: Send test notification
 
 # Sends a notification to every Subscriber, through the same path as a real
 # New Title Notification. With no inputs it's a test, useful after setting up
-# a new phone; fill them in to send an announcement by hand.
+# a new phone; fill them in to send an announcement by hand. Choose "app" to
+# reach only app installs, e.g. to test an app build without bothering
+# browser Subscribers.
 on:
   workflow_dispatch:
     inputs:
@@ -15,6 +17,11 @@ on:
       path:
         description: Page to open when tapped, e.g. / or /films/
         default: /
+      audience:
+        description: Who gets it
+        type: choice
+        options: [everyone, app]
+        default: everyone
 
 jobs:
   send:
@@ -40,3 +47,4 @@ jobs:
         env:
           WATCHER_URL: ${{ vars.WATCHER_URL }}
           NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
+          AUDIENCE: ${{ inputs.audience }}

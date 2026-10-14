@@ -99,7 +99,10 @@ async function sendToBrowser(env: Env, subscription: Subscription, notification:
   return "failed";
 }
 
-async function notify(env: Env, notification: NewTitleNotification, cursor: string | null) {
+/** "app" sends only to app installs, for testing app builds without bothering browser Subscribers. */
+type Audience = "everyone" | "app";
+
+async function notify(env: Env, notification: NewTitleNotification, cursor: string | null, audience: Audience) {
   const apns = apnsConfig(env);
   const token = apns && (await apnsToken(apns, Math.floor(Date.now() / 1000)));
   const page = await env.WATCHER.list<SubscriberMetadata>({
@@ -109,6 +112,7 @@ async function notify(env: Env, notification: NewTitleNotification, cursor: stri
   });
   let sent = 0;
   let removed = 0;
+  let failed = 0;
   await Promise.all(
     page.keys.map(async ({ name, metadata }) => {
       if (!metadata) return;
@@ -117,6 +121,7 @@ async function notify(env: Env, notification: NewTitleNotification, cursor: stri
         if (!apns || !token) return;
         result = await sendToApp(metadata.apns, notification, apns, token);
       } else {
+        if (audience === "app") return;
         result = await sendToBrowser(env, metadata, notification);
       }
       if (result === "gone") {
@@ -124,10 +129,12 @@ async function notify(env: Env, notification: NewTitleNotification, cursor: stri
         removed++;
       } else if (result === "sent") {
         sent++;
+      } else {
+        failed++;
       }
     }),
   );
-  return { sent, removed, cursor: page.list_complete ? null : page.cursor };
+  return { sent, removed, failed, cursor: page.list_complete ? null : page.cursor };
 }
 
 export default {
@@ -177,9 +184,13 @@ export default {
       if (request.headers.get("Authorization") !== `Bearer ${env.NOTIFY_SECRET}`) {
         return json({ error: "Unauthorized" }, 401);
       }
-      const { notification, cursor } = (body ?? {}) as { notification?: NewTitleNotification; cursor?: string | null };
+      const { notification, cursor, audience } = (body ?? {}) as {
+        notification?: NewTitleNotification;
+        cursor?: string | null;
+        audience?: Audience;
+      };
       if (!notification?.title || !notification.url) return json({ error: "Missing notification" }, 400);
-      return json(await notify(env, notification, cursor ?? null));
+      return json(await notify(env, notification, cursor ?? null, audience === "app" ? "app" : "everyone"));
     }
     return json({ error: "Not found" }, 404);
   },
