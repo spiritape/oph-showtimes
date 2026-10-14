@@ -14,7 +14,7 @@ Two pieces ([ADR 0002](docs/adr/0002-cloudflare-watcher-for-fast-updates.md)):
 
 1. Reads the schedule from the homepage's embedded data ([ADR 0001](docs/adr/0001-read-schedule-from-nuxt-payload.md)).
 2. Refuses to publish if the read looks broken, and opens an issue instead.
-3. If the schedule changed, or the site hasn't been refreshed for 3 hours, builds static HTML into `dist/` and deploys it to Cloudflare Pages.
+3. If the schedule changed, or the site hasn't been refreshed for 3 hours, builds static HTML, and the iOS app's JSON feed `api/v1/schedule.json` ([ADR 0003](docs/adr/0003-native-ios-app-from-json-feed.md)), into `dist/` and deploys it to Cloudflare Pages.
 4. Commits `data/state.json`: the Titles seen recently, with their played Showtimes (for New Title detection, 60-day finished pages, the Past list and stable URLs) and a fingerprint of the published schedule.
 5. Sends a New Title Notification through the watcher if any New Titles appeared. If most of the schedule looks new, it holds the notification back and opens an issue, because that usually means a misread.
 

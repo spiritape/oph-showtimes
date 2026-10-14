@@ -37,9 +37,9 @@ A Title that appears on the schedule and wasn't there at any point in the previo
 _Avoid_: New screening, new film (a New Title can be a Live Show)
 
 **New Title Notification**:
-The one browser notification sent to every Subscriber when a check finds one or more New Titles.
+The one notification sent to every Subscriber when a check finds one or more New Titles.
 _Avoid_: Alert, push, email
 
 **Subscriber**:
-A browser that has turned on New Title Notifications.
+A browser or app install that has turned on New Title Notifications.
 _Avoid_: User, member, follower

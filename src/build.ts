@@ -3,6 +3,7 @@
 // nothing, when the read looks wrong.
 import { appendFileSync, cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
+import { FEED_FILE, renderFeed } from "./feed.ts";
 import { guardNotification, guardRead } from "./guard.ts";
 import { composeNotification } from "./notification.ts";
 import { NOTIFICATION_FILE, OUT_DIR, STATE_FILE } from "./paths.ts";
@@ -73,6 +74,7 @@ for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles
 write("past/index.html", renderPast(past, config));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
+write(FEED_FILE, JSON.stringify(renderFeed(titles, config.siteUrl, now)));
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });
 const state: BuildState = {

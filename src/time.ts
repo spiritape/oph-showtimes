@@ -1,4 +1,4 @@
-const TZ = "America/Los_Angeles";
+export const TZ = "America/Los_Angeles";
 
 const dayKeyFmt = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" });
 const dayLabelFmt = new Intl.DateTimeFormat("en-US", { timeZone: TZ, weekday: "short", month: "short", day: "numeric" });
