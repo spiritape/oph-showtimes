@@ -10,6 +10,9 @@ struct Feed: Codable, Equatable, Sendable {
     var theater: Theater
     /// Titles with at least one upcoming Showtime, soonest first.
     var titles: [Title]
+    /// Titles that played in the last 60 days, most recent first, each with only
+    /// its played Showtimes. Missing from Feeds saved before it was added.
+    var past: [Title]?
 
     static func decode(_ data: Data) throws -> Feed {
         let decoder = JSONDecoder()
@@ -84,7 +87,8 @@ struct ScheduledShowtime: Identifiable, Hashable, Sendable {
 
 /// Which Titles the schedule shows, matching the site's filters.
 enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
-    case everything, films, liveShows
+    /// Past isn't a kind of Title: the schedule shows `Feed.pastDays` for it.
+    case everything, films, liveShows, past
     var id: Self { self }
 
     var label: String {
@@ -92,6 +96,7 @@ enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
         case .everything: "Everything"
         case .films: "Films"
         case .liveShows: "Live shows"
+        case .past: "Past"
         }
     }
 
@@ -100,6 +105,7 @@ enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
         case .everything: true
         case .films: title.kind == .film
         case .liveShows: title.kind == .liveShow
+        case .past: false
         }
     }
 }
@@ -154,6 +160,9 @@ extension Feed {
     func dayLabel(_ date: Date, now: Date = .now, short: Bool = false) -> String {
         let calendar = self.calendar
         if calendar.isDate(date, inSameDayAs: now) { return "Today" }
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: now), calendar.isDate(date, inSameDayAs: yesterday) {
+            return "Yesterday"
+        }
         if let tomorrow = calendar.date(byAdding: .day, value: 1, to: now), calendar.isDate(date, inSameDayAs: tomorrow) {
             return "Tomorrow"
         }
@@ -229,5 +238,41 @@ extension Feed {
         let dropOffs = listed(now: now).map { $0.showtime.startsAt.addingTimeInterval(Showtime.listedAfterStart) }
         let midnights = (1...2).compactMap { calendar.date(byAdding: .day, value: $0, to: calendar.startOfDay(for: now)) }
         return Set(dropOffs + midnights).filter { $0 > now && $0 <= horizon }.sorted()
+    }
+}
+
+extension Feed {
+    /// What has played recently, most recent first, grouped by day in the
+    /// theater's time zone. Adds Showtimes that dropped off the schedule since
+    /// the Feed was published, so nothing goes missing between the two lists.
+    func pastDays(now: Date = .now) -> [ScheduleDay] {
+        let cutoff = now.addingTimeInterval(-Showtime.listedAfterStart)
+        let dropped = titles.flatMap { title in
+            title.showtimes.filter { $0.startsAt <= cutoff }.map { ScheduledShowtime(title: title, showtime: $0) }
+        }
+        let published = (past ?? []).flatMap { title in
+            title.showtimes.map { ScheduledShowtime(title: title, showtime: $0) }
+        }
+        var seen = Set<String>()
+        let played = (dropped + published)
+            .filter { seen.insert($0.id).inserted }
+            .sorted { $0.showtime.startsAt > $1.showtime.startsAt }
+        let calendar = self.calendar
+        var days: [ScheduleDay] = []
+        for item in played {
+            let day = calendar.dateComponents([.year, .month, .day], from: item.showtime.startsAt)
+            if days.last?.day == day {
+                days[days.count - 1].showtimes.append(item)
+            } else {
+                days.append(ScheduleDay(day: day, showtimes: [item]))
+            }
+        }
+        return days
+    }
+
+    /// The Title to open from the Past list: the current one if it's still on
+    /// the schedule, otherwise the past one without its played Showtimes.
+    func titleToOpen(_ title: Title) -> Title {
+        titles.first { $0.key == title.key } ?? { var finished = title; finished.showtimes = []; return finished }()
     }
 }

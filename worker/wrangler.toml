@@ -7,6 +7,8 @@
 #   APNS_KEY           the app's APNs auth key (.p8 file contents); app installs are skipped until it's set
 #   APNS_KEY_ID        that key's ID
 #   APNS_TEAM_ID       the Apple team that owns the app (changes if the app is transferred, docs/adr/0003)
+#   TMDB_API_KEY       TMDB API key or read access token, for Film Requests
+#   REQUESTS_SECRET    random string; the Film Requests page is at /requests/<REQUESTS_SECRET>
 name = "oph-showtimes-watcher"
 main = "index.ts"
 compatibility_date = "2026-09-01"

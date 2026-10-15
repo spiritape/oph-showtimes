@@ -43,3 +43,9 @@ _Avoid_: Alert, push, email
 **Subscriber**:
 A browser or app install that has turned on New Title Notifications.
 _Avoid_: User, member, follower
+
+### Requests
+
+**Film Request**:
+A film someone would like the Playhouse to show, asked for from the app. Requests for the same film are counted together, one per app install, and only the Playhouse sees the totals.
+_Avoid_: Movie request, vote, suggestion, wishlist

@@ -2,11 +2,12 @@ import SwiftUI
 
 struct ScheduleView: View {
     @Environment(FeedStore.self) private var store
-    @Environment(Notifications.self) private var notifications
     @State private var filter = ScheduleFilter.everything
     @State private var path: [Title] = []
     /// A Title a link asked for before the schedule had loaded.
     @State private var linkedSlug: String?
+    @State private var showsSettings = false
+    @State private var showsRequests = false
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -14,27 +15,15 @@ struct ScheduleView: View {
                 .navigationTitle("Ojai Playhouse")
                 .navigationDestination(for: Title.self) { TitleView(title: $0) }
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Picker("Show", selection: $filter) {
-                            ForEach(ScheduleFilter.allCases) { Text($0.label).tag($0) }
-                        }
-                        .pickerStyle(.segmented)
-                        .fixedSize()
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Request a movie", systemImage: "popcorn") { showsRequests = true }
                     }
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            Task { await notifications.toggle() }
-                        } label: {
-                            Image(systemName: notifications.isOn ? "bell.fill" : "bell")
-                        }
-                        .disabled(notifications.isBusy)
-                        .accessibilityLabel(notifications.isOn ? "Turn off New Title Notifications" : "Notify me of new titles")
+                        Button("Settings", systemImage: "gearshape") { showsSettings = true }
                     }
                 }
-                .alert(
-                    notifications.message ?? "",
-                    isPresented: Binding(get: { notifications.message != nil }, set: { if !$0 { notifications.message = nil } })
-                ) {}
+                .sheet(isPresented: $showsSettings) { SettingsView() }
+                .sheet(isPresented: $showsRequests) { RequestFilmView() }
                 .refreshable { await store.refresh() }
         }
         .onOpenURL { url in
@@ -52,18 +41,22 @@ struct ScheduleView: View {
 
     @ViewBuilder private var content: some View {
         if let feed = store.feed {
-            let days = feed.days(filter)
+            let isPast = filter == .past
+            let days = isPast ? feed.pastDays() : feed.days(filter)
             List {
+                FilterChips(selection: $filter)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
                 if let error = store.error {
                     Text(error).font(.footnote).foregroundStyle(.secondary)
                 }
                 if days.isEmpty {
-                    Text("Nothing scheduled right now.").foregroundStyle(.secondary)
+                    Text(isPast ? "Nothing has played recently." : "Nothing scheduled right now.").foregroundStyle(.secondary)
                 }
                 ForEach(days) { day in
                     Section(feed.calendar.date(from: day.day).map { feed.dayLabel($0) } ?? "") {
                         ForEach(day.showtimes) { item in
-                            NavigationLink(value: item.title) {
+                            NavigationLink(value: isPast ? feed.titleToOpen(item.title) : item.title) {
                                 ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
                             }
                         }
@@ -81,6 +74,31 @@ struct ScheduleView: View {
             }
         } else {
             ProgressView()
+        }
+    }
+}
+
+/// Everything / Films / Live shows / Past, like the site's buttons. Scrolls
+/// sideways when the screen is too narrow to fit them all.
+struct FilterChips: View {
+    @Binding var selection: ScheduleFilter
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(ScheduleFilter.allCases) { filter in
+                    let selected = filter == selection
+                    Button(filter.label) { selection = filter }
+                        .font(.subheadline.weight(.medium))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 7)
+                        .foregroundStyle(selected ? Color.white : Color.primary)
+                        .background(selected ? Color.accentColor : Color(.secondarySystemFill), in: .capsule)
+                        .accessibilityAddTraits(selected ? .isSelected : [])
+                }
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
         }
     }
 }

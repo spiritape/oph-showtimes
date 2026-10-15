@@ -42,6 +42,7 @@ describe("renderFeed", () => {
   it("lists only upcoming Showtimes, with an end time and booking link", () => {
     const feed = renderFeed(
       [title("Digger", [showtime("old", "2026-10-12T02:00:00Z"), showtime("next", "2026-10-14T02:00:00Z")])],
+      [],
       site,
       now,
     );
@@ -64,6 +65,7 @@ describe("renderFeed", () => {
         title("Gone", [showtime("b", "2026-10-01T02:00:00Z")]),
         title("Sooner", [showtime("c", "2026-10-15T02:00:00Z")], { isFilm: false, category: "comedy" }),
       ],
+      [],
       site,
       now,
     );
@@ -74,6 +76,22 @@ describe("renderFeed", () => {
   });
 
   it("says which time zone Showtimes should be shown in", () => {
-    expect(renderFeed([], site, now)).toMatchObject({ version: 1, theater: { timeZone: "America/Los_Angeles" } });
+    expect(renderFeed([], [], site, now)).toMatchObject({ version: 1, theater: { timeZone: "America/Los_Angeles" } });
+  });
+
+  it("lists what played recently, grouped by Title, most recent first", () => {
+    const digger = title("Digger", [showtime("d1", "2026-10-01T02:00:00Z"), showtime("d2", "2026-10-10T02:00:00Z")]);
+    const comic = title("Comic", [showtime("c1", "2026-10-05T03:00:00Z")], { isFilm: false, category: "comedy" });
+    // The order pastShowtimes gives: most recent first.
+    const past = [
+      { title: digger, showtime: digger.showtimes[1]! },
+      { title: comic, showtime: comic.showtimes[0]! },
+      { title: digger, showtime: digger.showtimes[0]! },
+    ];
+    const feed = renderFeed([], past, site, now);
+    expect(feed.past.map((t) => [t.name, t.showtimes.map((s) => s.id)])).toEqual([
+      ["Digger", ["d2", "d1"]],
+      ["Comic", ["c1"]],
+    ]);
   });
 });

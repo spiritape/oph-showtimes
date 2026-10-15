@@ -74,7 +74,7 @@ for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles
 write("past/index.html", renderPast(past, config));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
-write(FEED_FILE, JSON.stringify(renderFeed(titles, config.siteUrl, now)));
+write(FEED_FILE, JSON.stringify(renderFeed(titles, past, config.siteUrl, now)));
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });
 const state: BuildState = {

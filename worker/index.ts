@@ -3,6 +3,14 @@
 // installs, docs/adr/0003) and sends New Title Notifications when the build asks.
 import { buildPushHTTPRequest } from "@pushforge/builder";
 import type { NewTitleNotification } from "../src/notification.ts";
+import {
+  addRequest,
+  loadRanking,
+  parseRequest,
+  renderRequestsPage,
+  searchFilms,
+  withdrawRequest,
+} from "./requests.ts";
 import { apnsToken, isAppSubscription, sendToApp, type ApnsConfig, type AppSubscription } from "./apns.ts";
 import { fetchSource, readSource } from "../src/source.ts";
 
@@ -23,6 +31,10 @@ export interface Env {
   APNS_KEY?: string;
   APNS_KEY_ID?: string;
   APNS_TEAM_ID?: string;
+  /** For Film Requests: searching films and saving their details. */
+  TMDB_API_KEY?: string;
+  /** The private part of the Film Requests page's link: /requests/<secret>. */
+  REQUESTS_SECRET?: string;
 }
 
 const SCHEDULE_HASH_KEY = "schedule-hash";
@@ -154,10 +166,36 @@ export default {
     const json = (body: unknown, status = 200) =>
       new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
     if (request.method === "OPTIONS") return new Response(null, { headers: cors });
+    const url = new URL(request.url);
+    const path = url.pathname;
+
+    if (request.method === "GET") {
+      if (path === "/films/search") {
+        const query = url.searchParams.get("q")?.trim() ?? "";
+        if (!env.TMDB_API_KEY) return json({ error: "Film search isn't set up" }, 503);
+        if (query.length < 2 || query.length > 100) return json({ films: [] });
+        return json({ films: await searchFilms(env.TMDB_API_KEY, query) });
+      }
+      if (env.REQUESTS_SECRET && path === `/requests/${env.REQUESTS_SECRET}`) {
+        const page = renderRequestsPage(await loadRanking(env.WATCHER), new Date());
+        return new Response(page, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
+      }
+      return json({ error: "Not found" }, 404);
+    }
     if (request.method !== "POST") return json({ error: "Not found" }, 404);
 
-    const path = new URL(request.url).pathname;
     const body = await request.json().catch(() => null);
+
+    if (path === "/requests" || path === "/requests/withdraw") {
+      const parsed = parseRequest(body);
+      if (!parsed) return json({ error: "Expected { installId, tmdbId }" }, 400);
+      if (path === "/requests/withdraw") {
+        await withdrawRequest(env.WATCHER, parsed.installId, parsed.tmdbId);
+        return json({ ok: true });
+      }
+      if (!env.TMDB_API_KEY) return json({ error: "Film Requests aren't set up" }, 503);
+      return json({ film: await addRequest(env.WATCHER, env.TMDB_API_KEY, parsed.installId, parsed.tmdbId) });
+    }
 
     if (path === "/subscribe") {
       // The app sends { apns: { token, environment } }; browsers send their push subscription.

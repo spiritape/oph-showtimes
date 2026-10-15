@@ -64,3 +64,27 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     #expect(AppLink.titleSlug(AppLink.title(feed.titles[1])) == "dr-brown")
     #expect(AppLink.titleSlug(URL(string: "https://ojaishowtimes.com/t/dr-brown/")!) == nil)
 }
+
+@Test func pastListsPublishedAndJustDroppedShowtimesMostRecentFirst() throws {
+    var withPast = feed
+    var played = feed.titles[1]
+    played.key = "earlier"
+    played.showtimes = [Showtime(id: "old", startsAt: date("2026-10-10T03:00:00Z"), endsAt: date("2026-10-10T05:00:00Z"))]
+    withPast.past = [played]
+    // At 03:31 UTC on the 14th, "a" (02:00) and "c" (03:00) have dropped off the schedule
+    // but aren't in the published Past list yet.
+    let days = withPast.pastDays(now: date("2026-10-14T03:31:00Z"))
+    #expect(days.flatMap(\.showtimes).map(\.id) == ["c", "a", "old"])
+    #expect(days.map(\.day.day) == [13, 9])
+}
+
+@Test func opensTheCurrentTitleFromThePastList() {
+    var finished = feed.titles[0]
+    finished.key = "gone"
+    #expect(feed.titleToOpen(feed.titles[0]).showtimes.count == 2)
+    #expect(feed.titleToOpen(finished).showtimes.isEmpty)
+}
+
+@Test func labelsYesterday() {
+    #expect(feed.dayLabel(date("2026-10-13T03:00:00Z"), now: date("2026-10-13T20:00:00Z")) == "Yesterday")
+}

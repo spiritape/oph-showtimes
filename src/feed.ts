@@ -4,7 +4,7 @@
 import { bookingLink, calendarEntry, categoryLabel, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
 import { THEATER } from "./theater.ts";
 import { TZ } from "./time.ts";
-import type { Title } from "./types.ts";
+import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
 
 export const FEED_FILE = "api/v1/schedule.json";
 
@@ -45,42 +45,58 @@ export type Feed = {
   theater: { name: string; address: string; phone: string; timeZone: string };
   /** Titles with at least one upcoming Showtime, soonest first. */
   titles: FeedTitle[];
+  /**
+   * Titles that played in the last 60 days, most recent first, each with only
+   * its played Showtimes (most recent first). Matches the site's Past list.
+   */
+  past: FeedTitle[];
 };
 
-export function renderFeed(titles: Title[], siteUrl: string, now: Date): Feed {
+function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string): FeedTitle {
+  return {
+    key: title.key,
+    slug: title.slug,
+    name: title.name,
+    subtitle: title.subtitle,
+    kind: title.isFilm ? "film" : "liveShow",
+    categoryLabel: categoryLabel(title),
+    year: title.year,
+    director: title.director,
+    runtime: title.runtime,
+    rating: title.rating,
+    synopsis: title.synopsis,
+    imageUrl: title.imageUrl,
+    thumbnailUrl: thumbnailUrl(title.imageUrl),
+    livestreamUrl: title.livestreamUrl,
+    url: siteUrl + titlePath(title),
+    showtimes: showtimes.map((showtime) => ({
+      id: showtime.id,
+      startsAt: showtime.startsAt,
+      endsAt: calendarEntry({ title, showtime }, siteUrl).end.toISOString(),
+      price: showtime.price,
+      booking: bookingLink(showtime),
+    })),
+  };
+}
+
+/** `past` is the site's Past list (pastShowtimes): played in the last 60 days, most recent first. */
+export function renderFeed(titles: Title[], past: ScheduledShowtime[], siteUrl: string, now: Date): Feed {
   const feedTitles = titles
-    .map((title): FeedTitle => ({
-      key: title.key,
-      slug: title.slug,
-      name: title.name,
-      subtitle: title.subtitle,
-      kind: title.isFilm ? "film" : "liveShow",
-      categoryLabel: categoryLabel(title),
-      year: title.year,
-      director: title.director,
-      runtime: title.runtime,
-      rating: title.rating,
-      synopsis: title.synopsis,
-      imageUrl: title.imageUrl,
-      thumbnailUrl: thumbnailUrl(title.imageUrl),
-      livestreamUrl: title.livestreamUrl,
-      url: siteUrl + titlePath(title),
-      showtimes: title.showtimes
-        .filter((s) => isListed(s, now))
-        .map((showtime) => ({
-          id: showtime.id,
-          startsAt: showtime.startsAt,
-          endsAt: calendarEntry({ title, showtime }, siteUrl).end.toISOString(),
-          price: showtime.price,
-          booking: bookingLink(showtime),
-        })),
-    }))
+    .map((title) => feedTitle(title, title.showtimes.filter((s) => isListed(s, now)), siteUrl))
     .filter((t) => t.showtimes.length)
     .sort((a, b) => Date.parse(a.showtimes[0]!.startsAt) - Date.parse(b.showtimes[0]!.startsAt));
+  // Group the Past list by Title, keeping its most-recent-first order.
+  const played = new Map<string, { title: Title; showtimes: Showtime[] }>();
+  for (const { title, showtime } of past) {
+    const entry = played.get(title.key) ?? { title, showtimes: [] };
+    entry.showtimes.push(showtime);
+    played.set(title.key, entry);
+  }
   return {
     version: 1,
     generatedAt: now.toISOString(),
     theater: { name: THEATER.name, address: THEATER.address, phone: THEATER.phone, timeZone: TZ },
     titles: feedTitles,
+    past: [...played.values()].map(({ title, showtimes }) => feedTitle(title, showtimes, siteUrl)),
   };
 }

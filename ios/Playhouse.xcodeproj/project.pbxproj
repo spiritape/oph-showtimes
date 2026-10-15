@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		19BF016E89AB2BCB96A1E5BB /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 15F6F30B649B35EF4900A6B2 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		202D5BF568748AD626D59462 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E4A5FE957C0364B07F92A /* NotificationService.swift */; };
+		2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404885DDDBC74270119939F0 /* TicketPageView.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
+		4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EC7C4537093AF97DBE301 /* SettingsView.swift */; };
 		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
 		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
+		88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */; };
 		89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EAD2811560EFD04DF3FE02 /* Notifications.swift */; };
+		8DA6A237D49F9751BB889FAE /* RequestFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */; };
 		A578D19260E9B79C0770E03A /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483212570BB1330E953787D /* FeedTests.swift */; };
 		B4253BACFFC73EAB143A391E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
 		BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 079217AD0A775F6D2ADB4100 /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -73,19 +77,23 @@
 		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC3CFCBC94EF62EEA2AA1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3EE60B41160858391439CFDB /* Playhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playhouse.entitlements; sourceTree = "<group>"; };
+		404885DDDBC74270119939F0 /* TicketPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPageView.swift; sourceTree = "<group>"; };
 		49EAD2811560EFD04DF3FE02 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5DFB3B32C925134B76E8AC59 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
+		757EC7C4537093AF97DBE301 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextShowtimesWidget.swift; sourceTree = "<group>"; };
+		805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFilmView.swift; sourceTree = "<group>"; };
 		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		94461A96001EC8761E4D24EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A93E4A5FE957C0364B07F92A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B6139B967EF3164F3C4CC014 /* PlayhouseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC41856D54314A01CB98A8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		C1F69DA2AAE438D5964A4A3A /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRequests.swift; sourceTree = "<group>"; };
 		D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCalendarSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,12 +141,16 @@
 				D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */,
 				A5B2329E61FF2F6D94881C7B /* Assets.xcassets */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
+				D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */,
 				08501A0F400D44D07664ACCE /* Info.plist */,
 				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
 				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
 				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
 				B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */,
+				805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */,
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
+				757EC7C4537093AF97DBE301 /* SettingsView.swift */,
+				404885DDDBC74270119939F0 /* TicketPageView.swift */,
 				75E8703096D88355A5D13A31 /* TitleView.swift */,
 			);
 			path = Playhouse;
@@ -345,9 +357,13 @@
 				CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */,
 				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
+				88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */,
 				89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
+				8DA6A237D49F9751BB889FAE /* RequestFilmView.swift in Sources */,
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
+				4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */,
+				2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */,
 				DA84A3963627F733363A6991 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
