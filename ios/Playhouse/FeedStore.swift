@@ -31,6 +31,9 @@ final class FeedStore {
             error = nil
             FeedCache.save(data, to: cacheFile)
             if changed { WidgetCenter.shared.reloadAllTimelines() }
+        } catch let error as URLError where error.code == .cancelled {
+            // Cancelled, e.g. by leaving the screen mid-refresh: not a failure.
+        } catch is CancellationError {
         } catch {
             self.error = feed == nil ? "Couldn't load the schedule. Check your connection and pull to retry." : "Showing the last saved schedule."
         }

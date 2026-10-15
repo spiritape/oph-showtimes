@@ -77,9 +77,10 @@ struct RequestFilmView: View {
 
     @ViewBuilder private func requestButton(_ film: Film) -> some View {
         if requests.isRequested(film) {
-            Label("Requested", systemImage: "checkmark")
-                .font(.subheadline.weight(.semibold))
+            Image(systemName: "checkmark.circle.fill")
+                .font(.title2)
                 .foregroundStyle(Color.accentColor)
+                .accessibilityLabel("Requested")
         } else if requests.pending.contains(film.tmdbId) {
             ProgressView()
         } else {
