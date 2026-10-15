@@ -1,8 +1,8 @@
 {
  "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "090f74eca12a509d57e4b41b0f37aab810713761ed638a5c8508e269e635d79f",
-  "publishedAt": "2026-10-15T21:35:15.383Z"
+  "scheduleHash": "98ba2696eddd4b8f1c67c80b0e033d5d9601c0aec09f985d70ed314f72eb82f0",
+  "publishedAt": "2026-10-15T21:39:14.678Z"
  },
  "seen": {
   "titles": {
@@ -1877,7 +1877,7 @@
     }
    },
    "fjord": {
-    "lastShowtime": "2026-11-02T03:00:00.000Z",
+    "lastShowtime": "2026-11-02T00:00:00.000Z",
     "title": {
      "key": "fjord",
      "slug": "fjord",
@@ -1923,7 +1923,7 @@
        "id": "cmut176dedh3a07lhfpogd15o",
        "title": "Fjord",
        "subtitle": null,
-       "startsAt": "2026-11-02T03:00:00.000Z",
+       "startsAt": "2026-11-02T00:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1171?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
