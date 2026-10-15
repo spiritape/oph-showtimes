@@ -1,8 +1,8 @@
 {
  "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "98ba2696eddd4b8f1c67c80b0e033d5d9601c0aec09f985d70ed314f72eb82f0",
-  "publishedAt": "2026-10-15T21:39:14.678Z"
+  "scheduleHash": "2263f3300368eaca86bd90b5a6e1fd190014b894426480bdbf7f5275accea268",
+  "publishedAt": "2026-10-15T21:45:19.070Z"
  },
  "seen": {
   "titles": {
@@ -1000,7 +1000,7 @@
     }
    },
    "the only living pickpocket in new york": {
-    "lastShowtime": "2026-11-05T03:00:00.000Z",
+    "lastShowtime": "2026-11-05T00:30:00.000Z",
     "title": {
      "key": "the only living pickpocket in new york",
      "slug": "the-only-living-pickpocket-in-new-york",
@@ -1033,7 +1033,7 @@
        "id": "cmu7ce3h3fh8707lqg5xl31d8",
        "title": "The Only Living Pickpocket in New York",
        "subtitle": null,
-       "startsAt": "2026-11-05T03:00:00.000Z",
+       "startsAt": "2026-11-05T00:30:00.000Z",
        "category": "film",
        "ticketUrl": "https://www.ojaiplayhouse.com/events/all",
        "rsvpUrl": null,
