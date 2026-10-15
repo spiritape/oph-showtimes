@@ -1,8 +1,8 @@
 {
- "lastReadCount": 47,
+ "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "0525b6675831e0b9ca6e63f32232802b74bb06964d44d1411a28b27414cefcd4",
-  "publishedAt": "2026-10-15T20:35:16.106Z"
+  "scheduleHash": "ed74b57b32b673dbc87734eb107e60e53cea0dcd62e8e309b092a950b635b0b2",
+  "publishedAt": "2026-10-15T21:31:18.704Z"
  },
  "seen": {
   "titles": {
@@ -2300,6 +2300,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv5jopw5cgzv08myduiyz11d",
        "infoHtml": "<p>Year: 2001<br>Director: Hayao Miyazaki<br>Running Time: 2hr 4min</p><p>Rated: PG (DUBBED IN ENGLISH)</p><p>Winner of the Academy Award® for Best Animated Feature, Hayao Miyazaki‘s wondrous fantasy adventure is a dazzling masterpiece from one of the most celebrated filmmakers in the history of animation. </p><p>Chihiro’s family is moving to a new house, but when they stop on the way to explore an abandoned village, her parents undergo a mysterious transformation and Chihiro is whisked into a world of fantastic spirits ruled over by the sorceress Yubaba. Put to work in a magical bathhouse for spirits and demons, Chihiro must use all her wits to survive in this strange new place, find a way to free her parents and return to the normal world. Overflowing with imaginative creatures and thrilling storytelling, Spirited Away became a worldwide smash hit, and is one of the most critically-acclaimed films of all time. </p>"
+      }
+     ]
+    }
+   },
+   "stewart copeland - have i said too much?": {
+    "lastShowtime": "2026-10-26T02:30:00.000Z",
+    "title": {
+     "key": "stewart copeland - have i said too much?",
+     "slug": "stewart-copeland-have-i-said-too-much",
+     "name": "Stewart Copeland - Have I Said Too Much?",
+     "subtitle": null,
+     "category": "misc",
+     "isFilm": false,
+     "year": null,
+     "director": null,
+     "runtime": null,
+     "rating": null,
+     "synopsis": "ON SALE 10.16 at NOON!",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv9z6sknihs407mv5kfvqupv",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmv9zlpbrj9mf07mvmtggc9vd",
+       "title": "Stewart Copeland - Have I Said Too Much?",
+       "subtitle": null,
+       "startsAt": "2026-10-26T02:30:00.000Z",
+       "category": "misc",
+       "ticketUrl": "https://www.ticketweb.com/event/stewart-copeland-have-ojai-playhouse-tickets/14384494",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$37.50 + fees",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmv9z6sknihs407mv5kfvqupv",
+       "infoHtml": "<p>ON SALE 10.16 at NOON!</p><p>An evening of conversation with the hall of fame rock star!</p><p>This is a 2 hour event with a 20 minute intermission.</p>"
       }
      ]
     }
