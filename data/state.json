@@ -1,8 +1,8 @@
 {
- "lastReadCount": 54,
+ "lastReadCount": 55,
  "lastPublish": {
-  "scheduleHash": "5436458e48704086cc07cdcf0a4bb9b4c9b3e4bd6c63151140699fada432959c",
-  "publishedAt": "2026-10-16T18:11:16.285Z"
+  "scheduleHash": "8cc120e4cf5db3ee3fecc27cffba244ab05c3013510dcaa925e14e7229722839",
+  "publishedAt": "2026-10-16T18:47:15.080Z"
  },
  "seen": {
   "titles": {
@@ -2576,6 +2576,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73dgp750v07mvjsztx2bm",
        "infoHtml": "<p>Year: 2026<br>Director: Travis Knight<br>Starring: Peyton Elizabeth Smith, Jacob Tremblay, Carey Mulligan, Mahershala Ali, Awkwafina, Angela Bassett<br>Running Time: 2hr 12min</p><p>Rated: PG-13</p><p>The adventures of Prue McKeel as she sets off to the forests outside Portland to find her kidnapped brother.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "groundswell": {
+    "lastShowtime": "2026-11-08T00:30:00.000Z",
+    "title": {
+     "key": "groundswell",
+     "slug": "groundswell",
+     "name": "Groundswell",
+     "subtitle": null,
+     "category": null,
+     "isFilm": true,
+     "year": "2026",
+     "director": "Rebecca Harrell Tickell, Joshua Tickell",
+     "runtime": "1hr 34min",
+     "rating": "PG",
+     "synopsis": "Across five continents, the film encounters farmers, scientists, and Indigenous leaders reshaping humanity's relationship to land.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d2q793v07mvx5r5yzre",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvb80o2u8s2i07mvnw8prqzz",
+       "title": "Groundswell",
+       "subtitle": null,
+       "startsAt": "2026-11-08T00:30:00.000Z",
+       "category": null,
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1195?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d2q793v07mvx5r5yzre",
+       "infoHtml": "<p>Year: 2026<br>Director: Rebecca Harrell Tickell, Joshua Tickell<br>Starring: Demi Moore, Woody Harrelson, Jay Famiglietti<br>Running Time: 1hr 34min</p><p>Rated: PG</p><p>Across five continents, the film encounters farmers, scientists, and Indigenous leaders reshaping humanity&#39;s relationship to land.</p>"
       }
      ]
     }
