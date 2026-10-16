@@ -1,8 +1,8 @@
 {
  "lastReadCount": 54,
  "lastPublish": {
-  "scheduleHash": "3bd5197aa73dd5480d6221f8504e60379503b031740b1800a33da11ff4b2310d",
-  "publishedAt": "2026-10-16T18:01:21.979Z"
+  "scheduleHash": "a9013e1a5d5166b8696d6abeaf992d92991ff1db85c838a5b364132ecd01d754",
+  "publishedAt": "2026-10-16T18:03:15.176Z"
  },
  "seen": {
   "titles": {
@@ -756,7 +756,7 @@
     }
    },
    "dr. brown: beturns": {
-    "lastShowtime": "2026-10-15T03:00:00.000Z",
+    "lastShowtime": "2026-10-18T03:00:00.000Z",
     "title": {
      "key": "dr. brown: beturns",
      "slug": "dr-brown-beturns",
@@ -769,7 +769,7 @@
      "runtime": null,
      "rating": null,
      "synopsis": null,
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtby73g19yqt07k5d5gm5jj7",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtaro4a28n1o07lnzfp8cvmp",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -796,6 +796,19 @@
        "livestreamUrl": null,
        "price": "$20",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtby73g19yqt07k5d5gm5jj7",
+       "infoHtml": "<p> </p>"
+      },
+      {
+       "id": "cmtau1xtn9y5v07k5p2wh8ye3",
+       "title": "Dr. Brown: Beturns",
+       "subtitle": null,
+       "startsAt": "2026-10-18T03:00:00.000Z",
+       "category": "comedy",
+       "ticketUrl": "https://www.ticketweb.com/event/dr-brown-beturns-ojai-playhouse-tickets/14289834",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$20",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtaro4a28n1o07lnzfp8cvmp",
        "infoHtml": "<p> </p>"
       }
      ]
