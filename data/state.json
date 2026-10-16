@@ -1,8 +1,8 @@
 {
- "lastReadCount": 51,
+ "lastReadCount": 52,
  "lastPublish": {
-  "scheduleHash": "359f6041c7f7a2a303c800f13538943ed15ed76afa5eed14227a9d2d6cd7375f",
-  "publishedAt": "2026-10-16T16:53:13.139Z"
+  "scheduleHash": "1d4d5e6e9d85c957ab44a1e4dc94ad168ff74aeb15b5ac880f376725dae504eb",
+  "publishedAt": "2026-10-16T16:57:14.397Z"
  },
  "seen": {
   "titles": {
@@ -2464,6 +2464,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d8e794207mvqkkozgo4",
        "infoHtml": "<p>Year: 1990<br>Director: David Lynch<br>Starring: Nicolas Cage, Laura Dern, Dianne Ladd, William Dafoe, Harry Dean Stanton, Sheryl Lee<br>Running Time: 2hr 5min</p><p>Rated: Unrated</p><p><strong>New 4k restoration + unrated version</strong></p><p>Young lovers Sailor and Lula run from the variety of weirdos that Lula&#39;s mom has hired to kill Sailor.</p>"
+      }
+     ]
+    }
+   },
+   "wicker": {
+    "lastShowtime": "2026-11-08T03:30:00.000Z",
+    "title": {
+     "key": "wicker",
+     "slug": "wicker",
+     "name": "Wicker",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Alex Huston Fischer, Eleanor Wilson",
+     "runtime": "1hr 45min",
+     "rating": "R",
+     "synopsis": "An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvb7kh6j7yl007mvgbmlj8hp",
+       "title": "Wicker",
+       "subtitle": null,
+       "startsAt": "2026-11-08T03:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1194?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
+       "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
       }
      ]
     }
