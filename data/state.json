@@ -1,8 +1,8 @@
 {
- "lastReadCount": 52,
+ "lastReadCount": 53,
  "lastPublish": {
-  "scheduleHash": "1d4d5e6e9d85c957ab44a1e4dc94ad168ff74aeb15b5ac880f376725dae504eb",
-  "publishedAt": "2026-10-16T16:57:14.397Z"
+  "scheduleHash": "65ffc9845dae99ce9812b025c9dcf1a6636210fa21c9130a1bcfd40eaa2db885",
+  "publishedAt": "2026-10-16T16:59:15.162Z"
  },
  "seen": {
   "titles": {
@@ -2497,6 +2497,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
        "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
+      }
+     ]
+    }
+   },
+   "the cycle of love": {
+    "lastShowtime": "2026-10-21T23:30:00.000Z",
+    "title": {
+     "key": "the cycle of love",
+     "slug": "the-cycle-of-love",
+     "name": "The Cycle of Love",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2025",
+     "director": "Orlando Von Einsiedel",
+     "runtime": "1hr 35min",
+     "rating": null,
+     "synopsis": "In 1977, PK, a 23-year-old Delhi street artist from a poor, ‘untouchable’ family, picked up a handful of paintbrushes and a second-hand bicycle and set off on a 6000-mile cross-continent mission - to find Lotta, the woman who had captured his heart. A love story like no other, THE CYCLE OF LOVE is an inspiring, heart-warming, epic true-life adventure about the search for self-belief and risking everything for what your heart tells you.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmts20ijcn7x307n3mtzj58mp",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvb7o8dn89nh07mvl68459c3",
+       "title": "The Cycle of Love",
+       "subtitle": null,
+       "startsAt": "2026-10-21T23:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1193?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmts20ijcn7x307n3mtzj58mp",
+       "infoHtml": "<p>Year: 2025<br>Director: Orlando Von Einsiedel<br>Starring: PK Mahanandia, Lotta von Schedvin, Chirag Benedict Lobo, Mina Dale<br>Running Time: 1hr 35min</p><p>In 1977, PK, a 23-year-old Delhi street artist from a poor, ‘untouchable’ family, picked up a handful of paintbrushes and a second-hand bicycle and set off on a 6000-mile cross-continent mission - to find Lotta, the woman who had captured his heart. A love story like no other, THE CYCLE OF LOVE is an inspiring, heart-warming, epic true-life adventure about the search for self-belief and risking everything for what your heart tells you.</p>"
       }
      ]
     }
