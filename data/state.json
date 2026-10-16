@@ -1,8 +1,8 @@
 {
  "lastReadCount": 55,
  "lastPublish": {
-  "scheduleHash": "43250b773af61be3be1cab827821c2aa98b249c8781e8e317d9b7179575c4556",
-  "publishedAt": "2026-10-16T19:11:17.891Z"
+  "scheduleHash": "767bd43a56fd76b3380fe690aa78768598f32baf3c98999317efd61e276d0bb4",
+  "publishedAt": "2026-10-16T22:51:16.139Z"
  },
  "seen": {
   "titles": {
@@ -2593,7 +2593,7 @@
      "director": "Rebecca Harrell Tickell, Joshua Tickell",
      "runtime": "1hr 34min",
      "rating": "PG",
-     "synopsis": "Across five continents, the film encounters farmers, scientists, and Indigenous leaders reshaping humanity's relationship to land.",
+     "synopsis": null,
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d2q793v07mvx5r5yzre",
      "livestreamUrl": null,
      "showtimes": [
@@ -2608,7 +2608,7 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d2q793v07mvx5r5yzre",
-       "infoHtml": "<p>Year: 2026<br>Director: Rebecca Harrell Tickell, Joshua Tickell<br>Starring: Demi Moore, Woody Harrelson, Jay Famiglietti<br>Running Time: 1hr 34min</p><p>Rated: PG</p><p><strong>Post screening Q&amp;A with director Rebecca Harrell Tickell</strong></p><p>Across five continents, the film encounters farmers, scientists, and Indigenous leaders reshaping humanity&#39;s relationship to land.</p>"
+       "infoHtml": "<p>Year: 2026<br>Director: Rebecca Harrell Tickell, Joshua Tickell<br>Starring: Demi Moore, Woody Harrelson, Jay Famiglietti<br>Running Time: 1hr 34min</p><p>Rated: PG</p><p><strong>Post screening Q&amp;A with director Rebecca Harrell Tickell</strong></p><p><strong>Groundswell</strong> is the final chapter in the acclaimed trilogy that began with <strong>Kiss the Ground</strong> and <strong>Common Ground</strong>. Narrated by Demi Moore and Woody Harrelson and filmed across five continents, the documentary follows farmers, scientists, Indigenous leaders, and ranchers demonstrating how regenerative agriculture can rebuild soil, restore biodiversity, strengthen food systems, and improve climate resilience.</p>"
       }
      ]
     }
