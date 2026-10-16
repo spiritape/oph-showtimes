@@ -1,8 +1,8 @@
 {
  "lastReadCount": 54,
  "lastPublish": {
-  "scheduleHash": "a9013e1a5d5166b8696d6abeaf992d92991ff1db85c838a5b364132ecd01d754",
-  "publishedAt": "2026-10-16T18:03:15.176Z"
+  "scheduleHash": "5436458e48704086cc07cdcf0a4bb9b4c9b3e4bd6c63151140699fada432959c",
+  "publishedAt": "2026-10-16T18:11:16.285Z"
  },
  "seen": {
   "titles": {
@@ -2370,7 +2370,7 @@
      "runtime": null,
      "rating": null,
      "synopsis": "ON SALE 10.16 at NOON!",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmva2k0g4p9fy07mwe0rpmbln",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvba7pfne5td07mv9wd6txka",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -2383,7 +2383,7 @@
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$37.50 + fees",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmva2k0g4p9fy07mwe0rpmbln",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvba7pfne5td07mv9wd6txka",
        "infoHtml": "<p>ON SALE 10.16 at NOON!</p><p>An evening of conversation with the hall of fame rock star!</p><p>This is a 2 hour event with a 20 minute intermission.</p>"
       }
      ]
