@@ -1,8 +1,8 @@
 {
- "lastReadCount": 50,
+ "lastReadCount": 47,
  "lastPublish": {
-  "scheduleHash": "e72d7436b75d18821df9bdd1307ed97c351bae39cc0765cc12c2dbf9eadc21c7",
-  "publishedAt": "2026-10-16T14:33:22.310Z"
+  "scheduleHash": "9cf12bd892dbd1d3d393d124f7e87df56a6a6741d858c68b19b4e2e537ce43a4",
+  "publishedAt": "2026-10-16T16:45:13.837Z"
  },
  "seen": {
   "titles": {
@@ -2001,7 +2001,7 @@
      "runtime": "2hr 11min",
      "rating": "PG",
      "synopsis": "An irresistible new take on Jane Austen's iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrsm6mln07lhplc6o8ij",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrwa6mm807lhdidtdvji",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -2015,19 +2015,6 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zryz5k0n07n3dpysrh23",
-       "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
-      },
-      {
-       "id": "cmuu94nir5mri07n3g9ja7exr",
-       "title": "Sense and Sensibility",
-       "subtitle": null,
-       "startsAt": "2026-10-17T01:45:00.000Z",
-       "category": "film",
-       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1173?siteToken=0zv2d2xep31txszrx28cn3r0t4",
-       "rsvpUrl": null,
-       "livestreamUrl": null,
-       "price": "$15/$13.50 (senior 60+)",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zrsm6mln07lhplc6o8ij",
        "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
       },
       {
