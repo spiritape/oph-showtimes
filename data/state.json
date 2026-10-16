@@ -1,8 +1,8 @@
 {
  "lastReadCount": 55,
  "lastPublish": {
-  "scheduleHash": "34b713478dcee3cfdd9b72fc5df41f51a167252469bdee2b7e92c543771b4da2",
-  "publishedAt": "2026-10-16T18:55:13.053Z"
+  "scheduleHash": "91dd9df37ed90c85e81b41fbce69d7c6dcc77dccbc202dd9a9c8f55627fdd1af",
+  "publishedAt": "2026-10-16T19:05:14.298Z"
  },
  "seen": {
   "titles": {
@@ -2369,7 +2369,7 @@
      "director": null,
      "runtime": null,
      "rating": null,
-     "synopsis": "ON SALE 10.16 at NOON!",
+     "synopsis": "An evening of live conversation with the hall of fame rock star!",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvba7pfne5td07mv9wd6txka",
      "livestreamUrl": null,
      "showtimes": [
@@ -2384,7 +2384,7 @@
        "livestreamUrl": null,
        "price": "$37.50 + fees",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvba7pfne5td07mv9wd6txka",
-       "infoHtml": "<p>ON SALE 10.16 at NOON!</p><p>An evening of conversation with the hall of fame rock star!</p><p>This is a 2 hour event with a 20 minute intermission.</p>"
+       "infoHtml": "<p>An evening of live conversation with the hall of fame rock star!</p><p>This is a 2 hour event with a 20 minute intermission.</p>"
       }
      ]
     }
