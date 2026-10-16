@@ -12,6 +12,7 @@ struct PlayhouseApp: App {
             ScheduleView()
                 .environment(store)
                 .environment(Notifications.shared)
+                .appTextSize()
                 // Set on the windows rather than with preferredColorScheme, which
                 // doesn't update open sheets or reliably return to the system setting.
                 .onChange(of: appearance, initial: true) { _, appearance in appearance.apply() }

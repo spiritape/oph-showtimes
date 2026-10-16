@@ -48,6 +48,8 @@ struct SettingsView: View {
                     Text("Widgets and notifications follow your iPhone's own setting.")
                 }
 
+                TextSizeSettings()
+
                 Section {
                     Toggle(isOn: Binding(get: { notifications.isOn }, set: { _ in Task { await notifications.toggle() } })) {
                         Label("New Title Notifications", systemImage: "bell")
@@ -60,6 +62,19 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    VStack(spacing: 14) {
+                        Image("Emblem")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 44)
+                            .foregroundStyle(Color.accentColor)
+                        Wordmark().frame(height: 14)
+                        Text("145 E Ojai Ave, Ojai")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
                     Link(destination: URL(string: "https://ojaishowtimes.com")!) {
                         Label("ojaishowtimes.com", systemImage: "safari")
                     }
@@ -70,6 +85,7 @@ struct SettingsView: View {
                     Text(FilmRequests.credit)
                 }
             }
+            .tint(Color.accentColor)
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

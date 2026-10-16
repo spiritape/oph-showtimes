@@ -12,9 +12,13 @@ struct ScheduleView: View {
     var body: some View {
         NavigationStack(path: $path) {
             content
-                .navigationTitle("Ojai Playhouse")
+                .navigationTitle("Schedule")
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: Title.self) { TitleView(title: $0) }
                 .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Wordmark().frame(height: 15)
+                    }
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Request a movie", systemImage: "popcorn") { showsRequests = true }
                     }
@@ -22,8 +26,8 @@ struct ScheduleView: View {
                         Button("Settings", systemImage: "gearshape") { showsSettings = true }
                     }
                 }
-                .sheet(isPresented: $showsSettings) { SettingsView() }
-                .sheet(isPresented: $showsRequests) { RequestFilmView() }
+                .sheet(isPresented: $showsSettings) { SettingsView().appTextSize() }
+                .sheet(isPresented: $showsRequests) { RequestFilmView().appTextSize() }
                 .refreshable { await store.refresh() }
         }
         .onOpenURL { url in
@@ -78,6 +82,17 @@ struct ScheduleView: View {
     }
 }
 
+/// The Playhouse's own "OJAI PLAYHOUSE" lettering, in the accent blue.
+struct Wordmark: View {
+    var body: some View {
+        Image("Wordmark")
+            .resizable()
+            .scaledToFit()
+            .foregroundStyle(Color.accentColor)
+            .accessibilityLabel("Ojai Playhouse")
+    }
+}
+
 /// Everything / Films / Live shows / Past, like the site's buttons. Scrolls
 /// sideways when the screen is too narrow to fit them all.
 struct FilterChips: View {
@@ -106,12 +121,14 @@ struct FilterChips: View {
 struct ShowtimeRow: View {
     let item: ScheduledShowtime
     let time: String
+    /// Grows with the text size so "12:00 PM" never wraps.
+    @ScaledMetric(relativeTo: .subheadline) private var timeWidth = 72
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Text(time)
                 .font(.subheadline.monospacedDigit().weight(.semibold))
-                .frame(width: 72, alignment: .leading)
+                .frame(width: timeWidth, alignment: .leading)
             Poster(url: item.title.thumbnailUrl ?? item.title.imageUrl)
                 .frame(width: 48)
             VStack(alignment: .leading, spacing: 2) {
@@ -119,7 +136,10 @@ struct ShowtimeRow: View {
                 if let subtitle = item.title.subtitle {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
-                Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary)
+                    BookingBadge(booking: item.showtime.booking)
+                }
             }
         }
         .padding(.vertical, 2)

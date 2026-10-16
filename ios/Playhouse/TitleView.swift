@@ -5,6 +5,8 @@ struct TitleView: View {
     let title: Title
     @State private var calendarItem: ScheduledShowtime?
     @State private var ticketPage: TicketPage?
+    /// The date block grows with the text size.
+    @ScaledMetric(relativeTo: .title2) private var dateBlockWidth = 56
 
     private var feed: Feed? { store.feed }
     private var timeZone: TimeZone { feed?.calendar.timeZone ?? .current }
@@ -111,11 +113,16 @@ struct TitleView: View {
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
-                .frame(width: 56, height: 64)
+                .frame(width: dateBlockWidth)
+                .padding(.vertical, 8)
                 .background(Color(.tertiarySystemFill), in: .rect(cornerRadius: 12))
 
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(format(showtime.startsAt, .dateTime.hour().minute())).font(.headline)
+                    // Side by side when they fit, stacked at large text sizes.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 8) { timeAndBadge(showtime) }
+                        VStack(alignment: .leading, spacing: 4) { timeAndBadge(showtime) }
+                    }
                     if let price = showtime.price {
                         Text(price).font(.subheadline).foregroundStyle(.secondary)
                     }
@@ -144,6 +151,11 @@ struct TitleView: View {
         }
         .padding(14)
         .background(Color(.secondarySystemBackground), in: .rect(cornerRadius: 18))
+    }
+
+    @ViewBuilder private func timeAndBadge(_ showtime: Showtime) -> some View {
+        Text(format(showtime.startsAt, .dateTime.hour().minute())).font(.headline).fixedSize()
+        BookingBadge(booking: showtime.booking)
     }
 
     /// Formats a date in the theater's time zone.
