@@ -1,8 +1,8 @@
 {
  "lastReadCount": 56,
  "lastPublish": {
-  "scheduleHash": "97a421bc1e4720788032c80bd49d2181e94ab595c279779e50404d193a31c3b5",
-  "publishedAt": "2026-10-18T19:11:14.887Z"
+  "scheduleHash": "6519dc24815e32d29e1df0e0ae594066e6ca36e61d12062e932618d698a25a4c",
+  "publishedAt": "2026-10-18T21:41:13.632Z"
  },
  "seen": {
   "titles": {
@@ -2014,7 +2014,7 @@
     }
    },
    "sense and sensibility": {
-    "lastShowtime": "2026-10-21T02:00:00.000Z",
+    "lastShowtime": "2026-10-20T23:30:00.000Z",
     "title": {
      "key": "sense and sensibility",
      "slug": "sense-and-sensibility",
@@ -2060,7 +2060,7 @@
        "id": "cmve74q8shl8z07mvn4c8ci2r",
        "title": "Sense and Sensibility",
        "subtitle": null,
-       "startsAt": "2026-10-21T02:00:00.000Z",
+       "startsAt": "2026-10-20T23:30:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1196?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
