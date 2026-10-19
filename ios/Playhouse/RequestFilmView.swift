@@ -9,6 +9,9 @@ struct RequestFilmView: View {
     /// Most Requested starts closed; a tap opens it.
     @State private var showsTop = false
     @FocusState private var searchFocused: Bool
+    /// A film whose checkmark was tapped, waiting for "Withdraw" to be confirmed.
+    @State private var confirmingWithdraw: Film?
+    @State private var editMode = EditMode.inactive
 
     var body: some View {
         NavigationStack {
@@ -18,12 +21,24 @@ struct RequestFilmView: View {
                 Section { searchField }
                 if query.trimmingCharacters(in: .whitespaces).count < 2 {
                     if !requests.mine.isEmpty {
-                        Section("Your requests") {
+                        Section {
                             ForEach(requests.mine) { film in
-                                CompactFilmRow(film: film)
-                                    .swipeActions {
-                                    Button("Withdraw", role: .destructive) { Task { await requests.withdraw(film) } }
+                                CompactFilmRow(film: film) { confirmingWithdraw = film }
+                            }
+                            // Swipe left, or tap Edit for the red minus buttons.
+                            .onDelete { offsets in
+                                let films = offsets.map { requests.mine[$0] }
+                                Task { for film in films { await requests.withdraw(film) } }
+                            }
+                        } header: {
+                            HStack {
+                                Text("Your requests")
+                                Spacer()
+                                Button(editMode.isEditing ? "Done" : "Edit") {
+                                    withAnimation { editMode = editMode.isEditing ? .inactive : .active }
                                 }
+                                .font(.subheadline.weight(.semibold))
+                                .textCase(nil)
                             }
                         }
                     }
@@ -78,6 +93,17 @@ struct RequestFilmView: View {
                     Button("Done") { dismiss() }
                 }
             }
+            .environment(\.editMode, $editMode)
+            // Leave Edit when there's nothing left to edit.
+            .onChange(of: requests.mine.isEmpty) { _, empty in if empty { editMode = .inactive } }
+            .confirmationDialog(
+                confirmingWithdraw.map { "Withdraw your request for \($0.title)?" } ?? "",
+                isPresented: Binding(get: { confirmingWithdraw != nil }, set: { if !$0 { confirmingWithdraw = nil } }),
+                titleVisibility: .visible,
+                presenting: confirmingWithdraw
+            ) { film in
+                Button("Withdraw Request", role: .destructive) { Task { await requests.withdraw(film) } }
+            }
             .alert(
                 requests.message ?? "",
                 isPresented: Binding(get: { requests.message != nil }, set: { if !$0 { requests.message = nil } })
@@ -119,10 +145,14 @@ struct RequestFilmView: View {
 
     @ViewBuilder private func requestButton(_ film: Film) -> some View {
         if requests.isRequested(film) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.title2)
-                .foregroundStyle(Color.accentColor)
-                .accessibilityLabel("Requested")
+            Button { confirmingWithdraw = film } label: {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title2)
+                    .foregroundStyle(Color.accentColor)
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Requested")
+            .accessibilityHint("Withdraws your request")
         } else if requests.pending.contains(film.tmdbId) {
             ProgressView()
         } else {
@@ -137,6 +167,8 @@ struct RequestFilmView: View {
 /// A tighter row for "Your requests": small poster, title and year on one line.
 private struct CompactFilmRow: View {
     let film: Film
+    /// Tapping the checkmark asks to withdraw the request.
+    let onWithdraw: () -> Void
 
     var body: some View {
         HStack(spacing: 10) {
@@ -151,10 +183,14 @@ private struct CompactFilmRow: View {
                 + Text(film.year.map { "  \($0)" } ?? "").font(.footnote).foregroundStyle(.secondary))
                 .lineLimit(1)
             Spacer(minLength: 6)
-            Image(systemName: "checkmark.circle.fill")
-                .font(.subheadline)
-                .foregroundStyle(Color.accentColor)
-                .accessibilityLabel("Requested")
+            Button(action: onWithdraw) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(Color.accentColor)
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Requested")
+            .accessibilityHint("Withdraws your request")
         }
     }
 }
