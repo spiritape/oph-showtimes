@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { googleCalendarUrl, thumbnailUrl } from "../src/showtime.ts";
+import { googleCalendarUrl, isSoldOut, thumbnailUrl } from "../src/showtime.ts";
 import type { Showtime, Title } from "../src/types.ts";
 
 const showtime: Showtime = {
@@ -58,5 +58,14 @@ describe("thumbnailUrl", () => {
   it("skips images it can't shrink, rather than loading a full-size one", () => {
     expect(thumbnailUrl("https://example.com/poster.jpg")).toBeNull();
     expect(thumbnailUrl(null)).toBeNull();
+  });
+});
+
+describe("isSoldOut", () => {
+  it("reads the Source's sold-out note in the price, and nothing else", () => {
+    expect(isSoldOut({ ...showtime, price: "$20\nSOLD OUT!" })).toBe(true);
+    expect(isSoldOut({ ...showtime, price: "Sold-out" })).toBe(true);
+    expect(isSoldOut({ ...showtime, price: "$150 + fees\nLIMITED TICKETS AVAILABLE AT THE DOOR" })).toBe(false);
+    expect(isSoldOut({ ...showtime, price: null })).toBe(false);
   });
 });

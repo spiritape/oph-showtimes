@@ -16,6 +16,9 @@ export function bookingLink(s: Showtime): { label: "RSVP" | "Tickets"; url: stri
   return null;
 }
 
+/** The Source marks a sold-out Showtime only in its price text, e.g. "$20\nSOLD OUT!". */
+export const isSoldOut = (s: Showtime) => /\bsold[\s-]*out\b/i.test(s.price ?? "");
+
 export const titlePath = (title: Title) => `/t/${title.slug}/`;
 
 /** "Film", or a Live Show's Category: "Comedy", "Music"… */

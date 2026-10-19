@@ -20,7 +20,7 @@ struct AddToCalendarSheet: UIViewControllerRepresentable {
             event.location = "\(theater.name), \(theater.address)"
             event.timeZone = TimeZone(identifier: theater.timeZone)
         }
-        event.notes = [item.showtime.price, item.showtime.booking.map { "\($0.label): \($0.url.absoluteString)" }]
+        event.notes = [item.showtime.isSoldOut ? "Sold out" : nil, item.showtime.displayPrice, item.showtime.booking.map { "\($0.label): \($0.url.absoluteString)" }]
             .compactMap(\.self)
             .joined(separator: "\n")
 

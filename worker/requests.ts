@@ -1,6 +1,7 @@
 // Film Requests (see CONTEXT.md): people search TMDB from the app and request
 // films they'd like the Playhouse to show. Each app install counts once per
-// film. Only the Playhouse sees the totals, on a page at a secret link.
+// film. The app shows everyone the most requested few; the Playhouse sees the
+// full list on a page at a secret link.
 //
 // Stored in the watcher's KV:
 //   film:<tmdbId>                  the film's details (JSON), saved on its first request
@@ -157,3 +158,12 @@ ${films.length ? `<table>${rows}</table>` : "<p>No requests yet.</p>"}
 <footer>Keep this link private: anyone with it can see the list. ${TMDB_CREDIT}</footer>
 </main></body></html>`;
 }
+
+/** How many of the most requested films the app shows everyone. */
+export const TOP_FILMS = 5;
+
+/** The most requested films, for everyone in the app: the details the app shows, and the count. */
+export function topFilms(ranked: RankedFilm[], limit = TOP_FILMS) {
+  return ranked.slice(0, limit).map(({ tmdbId, title, year, posterUrl, requests }) => ({ tmdbId, title, year, posterUrl, requests }));
+}
+

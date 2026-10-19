@@ -11,6 +11,7 @@
 		202D5BF568748AD626D59462 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E4A5FE957C0364B07F92A /* NotificationService.swift */; };
 		2B01EBDF904087B03F029D82 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB9FE0722B39F2C2067546 /* TextSize.swift */; };
 		2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404885DDDBC74270119939F0 /* TicketPageView.swift */; };
+		34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
 		4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EC7C4537093AF97DBE301 /* SettingsView.swift */; };
 		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		08501A0F400D44D07664ACCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		15F6F30B649B35EF4900A6B2 /* NotificationService.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
+		201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCalendar.swift; sourceTree = "<group>"; };
 		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC3CFCBC94EF62EEA2AA1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3EE60B41160858391439CFDB /* Playhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playhouse.entitlements; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				BD4445C17726A22F08BFFB6C /* BookingBadge.swift */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
 				D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */,
+				201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */,
 				08501A0F400D44D07664ACCE /* Info.plist */,
 				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
 				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
@@ -365,6 +368,7 @@
 				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
 				88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */,
+				34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */,
 				89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
 				8DA6A237D49F9751BB889FAE /* RequestFilmView.swift in Sources */,

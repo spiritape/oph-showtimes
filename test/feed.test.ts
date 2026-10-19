@@ -53,6 +53,7 @@ describe("renderFeed", () => {
         endsAt: "2026-10-14T03:30:00.000Z",
         price: "$15",
         booking: { label: "Tickets", url: "https://tickets.example/next", free: false },
+        soldOut: false,
       },
     ]);
     expect(feed.titles[0]!.url).toBe("https://ojaishowtimes.com/t/digger/");

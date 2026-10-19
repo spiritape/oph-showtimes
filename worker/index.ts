@@ -9,6 +9,7 @@ import {
   parseRequest,
   renderRequestsPage,
   searchFilms,
+  topFilms,
   withdrawRequest,
 } from "./requests.ts";
 import { apnsToken, isAppSubscription, sendToApp, type ApnsConfig, type AppSubscription } from "./apns.ts";
@@ -175,6 +176,13 @@ export default {
         if (!env.TMDB_API_KEY) return json({ error: "Film search isn't set up" }, 503);
         if (query.length < 2 || query.length > 100) return json({ films: [] });
         return json({ films: await searchFilms(env.TMDB_API_KEY, query) });
+      }
+      if (path === "/requests/top") {
+        const films = topFilms(await loadRanking(env.WATCHER));
+        // A minute's caching keeps busy moments cheap; a new request shows soon after.
+        return new Response(JSON.stringify({ films }), {
+          headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "public, max-age=60" },
+        });
       }
       if (env.REQUESTS_SECRET && path === `/requests/${env.REQUESTS_SECRET}`) {
         const page = renderRequestsPage(await loadRanking(env.WATCHER), new Date());

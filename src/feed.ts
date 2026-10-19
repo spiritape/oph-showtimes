@@ -1,7 +1,7 @@
 // The schedule as JSON for the iOS app (docs/adr/0003). Installed apps keep
 // reading this for a long time: only add fields here. A breaking change goes
 // to a new path (api/v2/) while v1 keeps being published.
-import { bookingLink, calendarEntry, categoryLabel, isListed, thumbnailUrl, titlePath } from "./showtime.ts";
+import { bookingLink, calendarEntry, categoryLabel, isListed, isSoldOut, thumbnailUrl, titlePath } from "./showtime.ts";
 import { THEATER } from "./theater.ts";
 import { TZ } from "./time.ts";
 import type { ScheduledShowtime, Showtime, Title } from "./types.ts";
@@ -15,6 +15,8 @@ export type FeedShowtime = {
   endsAt: string;
   price: string | null;
   booking: { label: "RSVP" | "Tickets"; url: string; free: boolean } | null;
+  /** The Playhouse says it's sold out (its price text says so; the price is left as written). */
+  soldOut: boolean;
 };
 
 export type FeedTitle = {
@@ -75,6 +77,7 @@ function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string): FeedTi
       endsAt: calendarEntry({ title, showtime }, siteUrl).end.toISOString(),
       price: showtime.price,
       booking: bookingLink(showtime),
+      soldOut: isSoldOut(showtime),
     })),
   };
 }

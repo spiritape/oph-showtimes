@@ -1,22 +1,33 @@
 import SwiftUI
 
-/// Shows at a glance whether a Showtime is free (an RSVP) or needs a ticket.
-/// Showtimes with no booking link show nothing.
+/// Shows at a glance whether a Showtime is sold out, free (an RSVP) or needs
+/// a ticket. Showtimes with no booking link and not sold out show nothing.
 struct BookingBadge: View {
-    let booking: Showtime.Booking?
+    let showtime: Showtime
+    /// Free films are "Free Screening"; free live shows are "Free Event".
+    let kind: Title.Kind
 
     var body: some View {
-        if let booking {
+        if showtime.isSoldOut {
+            Label("Sold out", systemImage: "ticket.fill")
+                .font(.caption.weight(.semibold))
+                .labelStyle(.titleAndIcon)
+                .foregroundStyle(Color.red)
+                .padding(.horizontal, 7)
+                .padding(.vertical, 2)
+                .background(Color.red.opacity(0.15), in: .capsule)
+                .fixedSize()
+                .accessibilityLabel("Sold out")
+        } else if let booking = showtime.booking {
             if booking.free {
-                Label("Free", systemImage: "gift.fill")
+                Text(kind == .film ? "Free Screening" : "Free Event")
                     .font(.caption.weight(.semibold))
-                    .labelStyle(.titleAndIcon)
                     .foregroundStyle(Color.green)
                     .padding(.horizontal, 7)
                     .padding(.vertical, 2)
                     .background(Color.green.opacity(0.15), in: .capsule)
                     .fixedSize()
-                    .accessibilityLabel("Free, RSVP")
+                    .accessibilityHint("RSVP required")
             } else {
                 Image(systemName: "ticket.fill")
                     .font(.caption)

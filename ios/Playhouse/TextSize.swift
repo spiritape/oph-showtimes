@@ -45,41 +45,46 @@ extension View {
     func appTextSize() -> some View { modifier(AppTextSize()) }
 }
 
-/// The Text Size section of Settings: follow the iPhone, or pick a size.
+/// The Text Size section of Settings: a slider that's always there, and a
+/// switch to follow the iPhone instead. Moving the slider switches that off.
 struct TextSizeSettings: View {
     @AppStorage(TextSize.storageKey) private var size = TextSize.system
+    /// What the iPhone itself is set to, shown on the slider while following it.
+    @Environment(\.dynamicTypeSize) private var phoneSize
+
+    /// The slider position: the chosen size, or the nearest one to the iPhone's.
+    private var step: Int {
+        if let index = TextSize.steps.firstIndex(of: size) { return index }
+        return TextSize.steps.lastIndex { $0.range.lowerBound <= phoneSize } ?? 1
+    }
 
     var body: some View {
         Section {
+            HStack(spacing: 12) {
+                Image(systemName: "textformat.size.smaller").accessibilityHidden(true)
+                Slider(
+                    value: Binding(
+                        get: { Double(step) },
+                        set: { size = TextSize.steps[Int($0.rounded())] }
+                    ),
+                    in: 0...Double(TextSize.steps.count - 1),
+                    step: 1
+                ) {
+                    Text("Text Size")
+                }
+                .accessibilityValue(size == .system ? "Matching iPhone" : size.label)
+                Image(systemName: "textformat.size.larger").font(.title3).accessibilityHidden(true)
+            }
             Toggle("Match iPhone Setting", isOn: Binding(
                 get: { size == .system },
-                set: { size = $0 ? .system : .standard }
+                set: { size = $0 ? .system : TextSize.steps[step] }
             ))
-            if size != .system {
-                HStack(spacing: 12) {
-                    Image(systemName: "textformat.size.smaller").accessibilityHidden(true)
-                    Slider(
-                        value: Binding(
-                            get: { Double(TextSize.steps.firstIndex(of: size) ?? 1) },
-                            set: { size = TextSize.steps[Int($0.rounded())] }
-                        ),
-                        in: 0...Double(TextSize.steps.count - 1),
-                        step: 1
-                    ) {
-                        Text("Text Size")
-                    }
-                    .accessibilityValue(size.label)
-                    Image(systemName: "textformat.size.larger").font(.title3).accessibilityHidden(true)
-                }
-                Text("\(size.label): Showtimes, titles and details appear at this size.")
-                    .foregroundStyle(.secondary)
-            }
         } header: {
             Text("Text Size")
         } footer: {
-            if size == .system {
-                Text("Uses the text size from your iPhone's Display & Brightness settings.")
-            }
+            Text(size == .system
+                 ? "Following the text size in your iPhone's Display & Brightness settings. Move the slider to choose a size for this app."
+                 : "\(size.label). Turn on Match iPhone Setting to follow your iPhone's text size again.")
         }
     }
 }

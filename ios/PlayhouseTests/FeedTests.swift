@@ -88,3 +88,36 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
 @Test func labelsYesterday() {
     #expect(feed.dayLabel(date("2026-10-13T03:00:00Z"), now: date("2026-10-13T20:00:00Z")) == "Yesterday")
 }
+
+@Test func readsSoldOutFromTheFeedOrThePrice() {
+    let soldOutText = Showtime(id: "x", startsAt: .now, endsAt: .now, price: "$20\nSOLD OUT!")
+    #expect(soldOutText.isSoldOut)
+    #expect(soldOutText.displayPrice == "$20")
+    let flagged = Showtime(id: "y", startsAt: .now, endsAt: .now, price: "$15", soldOut: true)
+    #expect(flagged.isSoldOut)
+    let limited = Showtime(id: "z", startsAt: .now, endsAt: .now, price: "$150 + fees\nLIMITED TICKETS AVAILABLE AT THE DOOR", soldOut: false)
+    #expect(!limited.isSoldOut)
+    #expect(limited.displayPrice == "$150 + fees · LIMITED TICKETS AVAILABLE AT THE DOOR")
+}
+
+@Test func prefillsGoogleCalendarLikeTheWebsite() {
+    let item = ScheduledShowtime(title: feed.titles[0], showtime: feed.titles[0].showtimes[0])
+    let url = GoogleCalendar.url(for: item, theater: feed.theater)
+    let query = Dictionary(uniqueKeysWithValues: URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        .queryItems!.map { ($0.name, $0.value ?? "") })
+    #expect(url.host() == "calendar.google.com")
+    #expect(query["text"] == "Digger")
+    #expect(query["dates"] == "20261014T020000Z/20261014T033000Z")
+    #expect(query["location"] == "Ojai Playhouse, 145 E Ojai Ave, Ojai, CA 93023")
+    #expect(query["details"] == "$15\nTickets: https://tickets.example/a\nhttps://ojaishowtimes.com/t/digger/")
+}
+
+@Test func searchMatchesNameCategoryAndDirectorIgnoringCaseAndAccents() {
+    let digger = feed.titles[0]
+    #expect(digger.matches("dig"))
+    #expect(digger.matches("DIGGER film"))
+    #expect(!digger.matches("digger comedy"))
+    #expect(feed.titles[1].matches("comédy"))
+    let days = feed.days(.everything, now: date("2026-10-13T20:00:00Z")).matching("brown")
+    #expect(days.flatMap(\.showtimes).map(\.id) == ["c"])
+}

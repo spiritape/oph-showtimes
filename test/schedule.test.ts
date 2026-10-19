@@ -105,4 +105,16 @@ describe("buildSchedule", () => {
     });
     expect(next?.slug).toBe("solaris-1972");
   });
+
+  it("doesn't take a sold-out note for the synopsis", () => {
+    const [title] = buildSchedule([
+      showtime({
+        title: "You Can See Everything",
+        infoHtml: "<p>Year: 2026</p><p>SOLD OUT!</p><p>A film about seeing.</p>",
+      }),
+    ]);
+    expect(title?.synopsis).toBe("A film about seeing.");
+    expect(title?.year).toBe("2026");
+  });
 });
+

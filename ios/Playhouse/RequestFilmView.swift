@@ -12,6 +12,18 @@ struct RequestFilmView: View {
             List {
                 if query.trimmingCharacters(in: .whitespaces).count < 2 {
                     intro
+                    if !requests.top.isEmpty {
+                        Section {
+                            ForEach(Array(requests.top.enumerated()), id: \.element.id) { index, ranked in
+                                FilmRow(film: ranked.film, rank: index + 1,
+                                        detail: ranked.requests == 1 ? "1 request" : "\(ranked.requests) requests") {
+                                    requestButton(ranked.film)
+                                }
+                            }
+                        } header: {
+                            Text("Most Requested").foregroundStyle(Color.accentColor)
+                        }
+                    }
                     if !requests.mine.isEmpty {
                         Section("Your requests") {
                             ForEach(requests.mine) { film in
@@ -40,6 +52,7 @@ struct RequestFilmView: View {
                 if requests.isSearching && requests.results.isEmpty { ProgressView() }
             }
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search films")
+            .task { await requests.loadTop() }
             .task(id: query) {
                 // Wait for a pause in typing before searching.
                 try? await Task.sleep(for: .milliseconds(350))
@@ -94,10 +107,20 @@ struct RequestFilmView: View {
 
 private struct FilmRow<Trailing: View>: View {
     let film: Film
+    /// The place in the Most Requested list, if it's in it.
+    var rank: Int? = nil
+    /// A line under the year, e.g. "12 requests".
+    var detail: String? = nil
     @ViewBuilder let trailing: Trailing
 
     var body: some View {
         HStack(spacing: 12) {
+            if let rank {
+                Text("\(rank)")
+                    .font(.title3.weight(.bold).monospacedDigit())
+                    .foregroundStyle(Color.accentColor)
+                    .frame(minWidth: 18)
+            }
             AsyncImage(url: film.posterUrl) { image in
                 image.resizable().aspectRatio(2 / 3, contentMode: .fill)
             } placeholder: {
@@ -108,6 +131,7 @@ private struct FilmRow<Trailing: View>: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(film.title).font(.headline).lineLimit(2)
                 if let year = film.year { Text(year).font(.subheadline).foregroundStyle(.secondary) }
+                if let detail { Text(detail).font(.caption.weight(.medium)).foregroundStyle(.secondary) }
             }
             Spacer(minLength: 8)
             trailing

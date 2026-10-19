@@ -5,6 +5,7 @@ struct TitleView: View {
     let title: Title
     @State private var calendarItem: ScheduledShowtime?
     @State private var ticketPage: TicketPage?
+    @Environment(\.openURL) private var openURL
     /// The date block grows with the text size.
     @ScaledMetric(relativeTo: .title2) private var dateBlockWidth = 56
 
@@ -123,16 +124,24 @@ struct TitleView: View {
                         HStack(spacing: 8) { timeAndBadge(showtime) }
                         VStack(alignment: .leading, spacing: 4) { timeAndBadge(showtime) }
                     }
-                    if let price = showtime.price {
+                    if let price = showtime.displayPrice {
                         Text(price).font(.subheadline).foregroundStyle(.secondary)
                     }
                 }
                 Spacer(minLength: 0)
-                Button {
-                    calendarItem = ScheduledShowtime(title: title, showtime: showtime)
+                Menu {
+                    Button("Apple Calendar", systemImage: "calendar") {
+                        calendarItem = ScheduledShowtime(title: title, showtime: showtime)
+                    }
+                    if let theater = feed?.theater {
+                        Button("Google Calendar", systemImage: "globe") {
+                            openURL(GoogleCalendar.url(for: ScheduledShowtime(title: title, showtime: showtime), theater: theater))
+                        }
+                    }
                 } label: {
                     Image(systemName: "calendar.badge.plus").font(.title3)
                 }
+                .menuStyle(.button)
                 .buttonStyle(.borderless)
                 .accessibilityLabel("Add to Calendar")
             }
@@ -140,12 +149,13 @@ struct TitleView: View {
                 Button {
                     ticketPage = TicketPage(url: booking.url)
                 } label: {
-                    Text(booking.free ? "RSVP · Free" : booking.label)
+                    Text(bookingLabel(showtime, booking))
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 4)
                 }
-                .buttonStyle(.borderedProminent)
+                // Sold out: still opens the ticket page, in case seats come back.
+                .buttonStyle(BookingButtonStyle(soldOut: showtime.isSoldOut))
                 .buttonBorderShape(.capsule)
             }
         }
@@ -153,9 +163,14 @@ struct TitleView: View {
         .background(Color(.secondarySystemBackground), in: .rect(cornerRadius: 18))
     }
 
+    private func bookingLabel(_ showtime: Showtime, _ booking: Showtime.Booking) -> String {
+        if showtime.isSoldOut { return "Sold Out · Check for Seats" }
+        return booking.free ? "RSVP · Free" : booking.label
+    }
+
     @ViewBuilder private func timeAndBadge(_ showtime: Showtime) -> some View {
         Text(format(showtime.startsAt, .dateTime.hour().minute())).font(.headline).fixedSize()
-        BookingBadge(booking: showtime.booking)
+        BookingBadge(showtime: showtime, kind: title.kind)
     }
 
     /// Formats a date in the theater's time zone.
@@ -163,5 +178,21 @@ struct TitleView: View {
         var style = style
         style.timeZone = timeZone
         return date.formatted(style)
+    }
+}
+
+/// The prominent Tickets/RSVP button, or a quieter grey one when sold out.
+private struct BookingButtonStyle: PrimitiveButtonStyle {
+    let soldOut: Bool
+
+    func makeBody(configuration: Configuration) -> some View {
+        if soldOut {
+            Button(role: nil, action: configuration.trigger) { configuration.label }
+                .buttonStyle(.bordered)
+                .tint(.secondary)
+        } else {
+            Button(role: nil, action: configuration.trigger) { configuration.label }
+                .buttonStyle(.borderedProminent)
+        }
     }
 }

@@ -61,7 +61,8 @@ export function slugify(text: string): string {
 const FIELDS = { year: /^year$/i, director: /^directors?$/i, runtime: /^running time$/i, rating: /^rated$/i };
 
 // The Source writes details as "Key: value" lines, followed by synopsis
-// paragraphs and sometimes bold house notes, which we skip.
+// paragraphs and sometimes house notes (bold, or a bare "SOLD OUT!"), which we skip.
+const HOUSE_NOTE = /^\W*sold[\s-]*out\W*$/i;
 function readDetails(html: string | null) {
   const details = { year: null, director: null, runtime: null, rating: null, synopsis: null } as Record<
     keyof typeof FIELDS | "synopsis",
@@ -76,7 +77,7 @@ function readDetails(html: string | null) {
         const field = (Object.keys(FIELDS) as (keyof typeof FIELDS)[]).find((f) => FIELDS[f].test(key!.trim()));
         if (field) details[field] = value!.trim();
       }
-    } else if (!details.synopsis && !/^\s*<p>\s*<strong>/i.test(para)) {
+    } else if (!details.synopsis && !/^\s*<p>\s*<strong>/i.test(para) && !HOUSE_NOTE.test(text)) {
       details.synopsis = text;
     }
   }

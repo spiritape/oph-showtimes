@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { filmFromTmdb, parseRequest, rankFilms, renderRequestsPage, type Film } from "../worker/requests.ts";
+import { filmFromTmdb, parseRequest, rankFilms, renderRequestsPage, topFilms, type Film } from "../worker/requests.ts";
 
 describe("filmFromTmdb", () => {
   it("keeps what the app shows, with a sized poster", () => {
@@ -68,3 +68,13 @@ describe("renderRequestsPage", () => {
     expect(html).toContain("not endorsed or certified by TMDB");
   });
 });
+
+describe("topFilms", () => {
+  it("shares the five most requested, without IMDb IDs or dates", () => {
+    const ranked = Array.from({ length: 7 }, (_, i) => ({ ...film(i, `Film ${i}`), requests: 7 - i, lastAt: "2026-10-01T00:00:00Z" }));
+    expect(topFilms(ranked)).toEqual(
+      [0, 1, 2, 3, 4].map((i) => ({ tmdbId: i, title: `Film ${i}`, year: "1999", posterUrl: null, requests: 7 - i })),
+    );
+  });
+});
+

@@ -8,6 +8,7 @@ struct ScheduleView: View {
     @State private var linkedSlug: String?
     @State private var showsSettings = false
     @State private var showsRequests = false
+    @State private var query = ""
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -25,7 +26,10 @@ struct ScheduleView: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Settings", systemImage: "gearshape") { showsSettings = true }
                     }
+                    // The search field sits at the bottom of the screen, within thumb's reach.
+                    DefaultToolbarItem(kind: .search, placement: .bottomBar)
                 }
+                .searchable(text: $query, prompt: "Search films and shows")
                 .sheet(isPresented: $showsSettings) { SettingsView().appTextSize() }
                 .sheet(isPresented: $showsRequests) { RequestFilmView().appTextSize() }
                 .refreshable { await store.refresh() }
@@ -46,7 +50,8 @@ struct ScheduleView: View {
     @ViewBuilder private var content: some View {
         if let feed = store.feed {
             let isPast = filter == .past
-            let days = isPast ? feed.pastDays() : feed.days(filter)
+            let days = (isPast ? feed.pastDays() : feed.days(filter)).matching(query)
+            let searching = !query.trimmingCharacters(in: .whitespaces).isEmpty
             List {
                 FilterChips(selection: $filter)
                     .listRowInsets(EdgeInsets())
@@ -55,15 +60,19 @@ struct ScheduleView: View {
                     Text(error).font(.footnote).foregroundStyle(.secondary)
                 }
                 if days.isEmpty {
-                    Text(isPast ? "Nothing has played recently." : "Nothing scheduled right now.").foregroundStyle(.secondary)
+                    Text(searching ? "No results for \u{201C}\(query)\u{201D}." : isPast ? "Nothing has played recently." : "Nothing scheduled right now.")
+                        .foregroundStyle(.secondary)
                 }
                 ForEach(days) { day in
-                    Section(feed.calendar.date(from: day.day).map { feed.dayLabel($0) } ?? "") {
+                    Section {
                         ForEach(day.showtimes) { item in
                             NavigationLink(value: isPast ? feed.titleToOpen(item.title) : item.title) {
                                 ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
                             }
                         }
+                    } header: {
+                        Text(feed.calendar.date(from: day.day).map { feed.dayLabel($0) } ?? "")
+                            .foregroundStyle(Color.accentColor)
                     }
                 }
             }
@@ -112,7 +121,7 @@ struct FilterChips: View {
                         .accessibilityAddTraits(selected ? .isSelected : [])
                 }
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 24)
             .padding(.vertical, 8)
         }
     }
@@ -136,13 +145,19 @@ struct ShowtimeRow: View {
                 if let subtitle = item.title.subtitle {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
-                HStack(spacing: 6) {
-                    Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary)
-                    BookingBadge(booking: item.showtime.booking)
+                // Side by side when they fit, stacked at large text sizes.
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 6) { categoryAndBadge }
+                    VStack(alignment: .leading, spacing: 3) { categoryAndBadge }
                 }
             }
         }
         .padding(.vertical, 2)
+    }
+
+    @ViewBuilder private var categoryAndBadge: some View {
+        Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary).fixedSize()
+        BookingBadge(showtime: item.showtime, kind: item.title.kind)
     }
 }
 

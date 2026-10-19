@@ -10,15 +10,28 @@ struct Film: Codable, Hashable, Identifiable, Sendable {
     var id: Int { tmdbId }
 }
 
+/// A film in the most requested list, with how many installs asked for it.
+struct RankedFilm: Decodable, Identifiable, Sendable {
+    var tmdbId: Int
+    var title: String
+    var year: String?
+    var posterUrl: URL?
+    var requests: Int
+    var id: Int { tmdbId }
+    var film: Film { Film(tmdbId: tmdbId, title: title, year: year, posterUrl: posterUrl) }
+}
+
 /// Film Requests (see CONTEXT.md): searching films and requesting the ones
-/// someone would like the Playhouse to show. Only the Playhouse sees the
-/// totals; this install remembers its own requests to show in "Your requests".
+/// someone would like the Playhouse to show. Everyone sees the most requested
+/// few; this install remembers its own requests to show in "Your requests".
 @MainActor @Observable
 final class FilmRequests {
     static let shared = FilmRequests()
     static let credit = "This product uses the TMDB API but is not endorsed or certified by TMDB."
 
     private(set) var results: [Film] = []
+    /// The most requested films across everyone, with how many asked for each.
+    private(set) var top: [RankedFilm] = []
     private(set) var isSearching = false
     /// This install's requests, most recent first.
     private(set) var mine: [Film] {
@@ -43,6 +56,15 @@ final class FilmRequests {
     }
 
     func isRequested(_ film: Film) -> Bool { mine.contains { $0.tmdbId == film.tmdbId } }
+
+    func loadTop() async {
+        let url = Notifications.watcherURL.appending(path: "requests/top")
+        guard let (data, response) = try? await URLSession.shared.data(from: url),
+              (response as? HTTPURLResponse)?.statusCode == 200,
+              let decoded = try? JSONDecoder().decode(TopResponse.self, from: data)
+        else { return } // Keep what's showing; the list is a nice-to-have.
+        top = decoded.films
+    }
 
     func search(_ query: String) async {
         let query = query.trimmingCharacters(in: .whitespaces)
@@ -69,6 +91,7 @@ final class FilmRequests {
         do {
             try await post("requests", film)
             mine.insert(film, at: 0)
+            await loadTop()
         } catch {
             message = "Couldn't send your request. Please try again."
         }
@@ -80,12 +103,14 @@ final class FilmRequests {
         do {
             try await post("requests/withdraw", film)
             mine.removeAll { $0.tmdbId == film.tmdbId }
+            await loadTop()
         } catch {
             message = "Couldn't withdraw your request. Please try again."
         }
     }
 
     private struct SearchResponse: Decodable { var films: [Film] }
+    private struct TopResponse: Decodable { var films: [RankedFilm] }
     private struct RequestBody: Encodable { var installId: String; var tmdbId: Int }
 
     private func post(_ path: String, _ film: Film) async throws {

@@ -76,6 +76,22 @@ struct Showtime: Codable, Equatable, Hashable, Identifiable, Sendable {
     var endsAt: Date
     var price: String?
     var booking: Booking?
+    /// Missing from Feeds published before it was added.
+    var soldOut: Bool?
+
+    /// Sold out, going by the feed, or by the price text for older saved Feeds.
+    var isSoldOut: Bool {
+        soldOut ?? (price?.range(of: #"\bsold[\s-]*out\b"#, options: [.regularExpression, .caseInsensitive]) != nil)
+    }
+
+    /// The price as written, without the sold-out note (shown as a badge instead).
+    var displayPrice: String? {
+        let lines = (price ?? "")
+            .split(separator: "\n")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { $0.range(of: #"^sold[\s-]*out\W*$"#, options: [.regularExpression, .caseInsensitive]) == nil && !$0.isEmpty }
+        return lines.isEmpty ? nil : lines.joined(separator: " · ")
+    }
 }
 
 /// A Showtime together with the Title it belongs to.
@@ -93,9 +109,9 @@ enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
 
     var label: String {
         switch self {
-        case .everything: "Everything"
-        case .films: "Films"
-        case .liveShows: "Live shows"
+        case .everything: "All"
+        case .films: "Movies"
+        case .liveShows: "Live Shows"
         case .past: "Past"
         }
     }
@@ -276,3 +292,27 @@ extension Feed {
         titles.first { $0.key == title.key } ?? { var finished = title; finished.showtimes = []; return finished }()
     }
 }
+
+extension Title {
+    /// Whether a search matches this Title: every word must appear in its name,
+    /// subtitle, category or director, ignoring case and accents.
+    func matches(_ query: String) -> Bool {
+        let words = query.split(whereSeparator: \.isWhitespace)
+        guard !words.isEmpty else { return true }
+        let haystack = [name, subtitle, categoryLabel, director].compactMap(\.self).joined(separator: " ")
+        return words.allSatisfy { haystack.range(of: $0, options: [.caseInsensitive, .diacriticInsensitive]) != nil }
+    }
+}
+
+extension [ScheduleDay] {
+    /// Only the Showtimes whose Title matches the search, dropping days left empty.
+    func matching(_ query: String) -> [ScheduleDay] {
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else { return self }
+        return compactMap { day in
+            var day = day
+            day.showtimes = day.showtimes.filter { $0.title.matches(query) }
+            return day.showtimes.isEmpty ? nil : day
+        }
+    }
+}
+
