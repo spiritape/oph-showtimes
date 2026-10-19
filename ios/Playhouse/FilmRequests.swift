@@ -10,13 +10,12 @@ struct Film: Codable, Hashable, Identifiable, Sendable {
     var id: Int { tmdbId }
 }
 
-/// A film in the most requested list, with how many installs asked for it.
+/// A film in the most requested list. How many asked for it stays private to the Playhouse.
 struct RankedFilm: Decodable, Identifiable, Sendable {
     var tmdbId: Int
     var title: String
     var year: String?
     var posterUrl: URL?
-    var requests: Int
     var id: Int { tmdbId }
     var film: Film { Film(tmdbId: tmdbId, title: title, year: year, posterUrl: posterUrl) }
 }
@@ -30,7 +29,7 @@ final class FilmRequests {
     static let credit = "This product uses the TMDB API but is not endorsed or certified by TMDB."
 
     private(set) var results: [Film] = []
-    /// The most requested films across everyone, with how many asked for each.
+    /// The most requested films across everyone, most requested first.
     private(set) var top: [RankedFilm] = []
     private(set) var isSearching = false
     /// This install's requests, most recent first.

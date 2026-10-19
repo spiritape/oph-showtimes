@@ -47,5 +47,5 @@ _Avoid_: User, member, follower
 ### Requests
 
 **Film Request**:
-A film someone would like the Playhouse to show, asked for from the app. Requests for the same film are counted together, one per app install. Everyone sees the five most requested; only the Playhouse sees the full list.
+A film someone would like the Playhouse to show, asked for from the app. Requests for the same film are counted together, one per app install. Everyone sees which five films are most requested, but only the Playhouse sees how many requests each has, or the full list.
 _Avoid_: Movie request, vote, suggestion, wishlist

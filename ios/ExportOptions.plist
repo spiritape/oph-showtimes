@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!-- How an archive is exported: signed for the App Store and uploaded to App
-     Store Connect, where it appears in TestFlight. Xcode bumps the build
-     number on each upload. The team changes if the app moves to the Playhouse. -->
+     Store Connect, where it appears in TestFlight. The build number comes from
+     CURRENT_PROJECT_VERSION in project.yml, so the app shows the same one. The team changes if the app moves to the Playhouse. -->
 <plist version="1.0">
 <dict>
 	<key>method</key>
@@ -14,7 +14,7 @@
 	<key>signingStyle</key>
 	<string>automatic</string>
 	<key>manageAppVersionAndBuildNumber</key>
-	<true/>
+	<false/>
 	<key>uploadSymbols</key>
 	<true/>
 </dict>

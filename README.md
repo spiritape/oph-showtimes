@@ -43,7 +43,7 @@ A local build writes `data/state.json`. Don't commit one built from the fixture.
 xcodebuild test -project ios/Playhouse.xcodeproj -scheme Playhouse -destination 'platform=iOS Simulator,name=iPhone 18 Pro'
 ```
 
-To send a build to TestFlight, archive it and upload it ([ios/ExportOptions.plist](ios/ExportOptions.plist) bumps the build number on each upload). Xcode must be signed in to the Apple account under Settings → Accounts:
+To send a build to TestFlight, raise `CURRENT_PROJECT_VERSION` in [ios/project.yml](ios/project.yml) by one (App Store Connect refuses a build number it has seen), run `xcodegen` in `ios/`, then archive and upload. Xcode must be signed in to the Apple account under Settings → Accounts:
 
 ```bash
 xcodebuild archive -project ios/Playhouse.xcodeproj -scheme Playhouse -configuration Release -destination generic/platform=iOS -archivePath ios/build/Playhouse.xcarchive -allowProvisioningUpdates

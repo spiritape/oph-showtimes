@@ -21,7 +21,7 @@ struct ScheduleView: View {
                         Wordmark().frame(height: 15)
                     }
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Request a movie", systemImage: "popcorn") { showsRequests = true }
+                        Button("By Popular Demand", systemImage: "popcorn") { showsRequests = true }
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Settings", systemImage: "gearshape") { showsSettings = true }

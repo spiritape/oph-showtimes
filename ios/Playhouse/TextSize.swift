@@ -6,6 +6,8 @@ enum TextSize: String, CaseIterable, Identifiable {
     var id: Self { self }
 
     static let storageKey = "textSize"
+    /// Until someone chooses: the smallest size, which suits the dense schedule.
+    static let defaultSize = TextSize.small
     /// The sizes the Settings slider steps through, smallest first.
     static let steps: [TextSize] = [.small, .standard, .large, .larger, .largest]
 
@@ -36,7 +38,7 @@ enum TextSize: String, CaseIterable, Identifiable {
 /// Applies the text size chosen in Settings. Always the same modifier, so
 /// changing it doesn't rebuild the screen (which would close open sheets).
 private struct AppTextSize: ViewModifier {
-    @AppStorage(TextSize.storageKey) private var size = TextSize.system
+    @AppStorage(TextSize.storageKey) private var size = TextSize.defaultSize
     func body(content: Content) -> some View { content.dynamicTypeSize(size.range) }
 }
 
@@ -48,7 +50,7 @@ extension View {
 /// The Text Size section of Settings: a slider that's always there, and a
 /// switch to follow the iPhone instead. Moving the slider switches that off.
 struct TextSizeSettings: View {
-    @AppStorage(TextSize.storageKey) private var size = TextSize.system
+    @AppStorage(TextSize.storageKey) private var size = TextSize.defaultSize
     /// What the iPhone itself is set to, shown on the slider while following it.
     @Environment(\.dynamicTypeSize) private var phoneSize
 

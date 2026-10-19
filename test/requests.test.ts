@@ -70,10 +70,10 @@ describe("renderRequestsPage", () => {
 });
 
 describe("topFilms", () => {
-  it("shares the five most requested, without IMDb IDs or dates", () => {
+  it("shares the five most requested in order, without counts, IMDb IDs or dates", () => {
     const ranked = Array.from({ length: 7 }, (_, i) => ({ ...film(i, `Film ${i}`), requests: 7 - i, lastAt: "2026-10-01T00:00:00Z" }));
     expect(topFilms(ranked)).toEqual(
-      [0, 1, 2, 3, 4].map((i) => ({ tmdbId: i, title: `Film ${i}`, year: "1999", posterUrl: null, requests: 7 - i })),
+      [0, 1, 2, 3, 4].map((i) => ({ tmdbId: i, title: `Film ${i}`, year: "1999", posterUrl: null })),
     );
   });
 });
