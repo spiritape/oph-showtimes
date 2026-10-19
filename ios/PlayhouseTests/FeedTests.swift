@@ -65,17 +65,24 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     #expect(AppLink.titleSlug(URL(string: "https://ojaishowtimes.com/t/dr-brown/")!) == nil)
 }
 
-@Test func pastListsPublishedAndJustDroppedShowtimesMostRecentFirst() throws {
+@Test func timelineRunsFromWhatPlayedToWhatsComingUp() throws {
     var withPast = feed
     var played = feed.titles[1]
     played.key = "earlier"
     played.showtimes = [Showtime(id: "old", startsAt: date("2026-10-10T03:00:00Z"), endsAt: date("2026-10-10T05:00:00Z"))]
     withPast.past = [played]
-    // At 03:31 UTC on the 14th, "a" (02:00) and "c" (03:00) have dropped off the schedule
-    // but aren't in the published Past list yet.
-    let days = withPast.pastDays(now: date("2026-10-14T03:31:00Z"))
-    #expect(days.flatMap(\.showtimes).map(\.id) == ["c", "a", "old"])
-    #expect(days.map(\.day.day) == [13, 9])
+    let now = date("2026-10-14T03:31:00Z")
+    // "old" was published as past; "a" (02:00) and "c" (03:00) have played since; "b" is still to come.
+    let days = withPast.timeline(.everything, now: now)
+    #expect(days.flatMap(\.showtimes).map(\.id) == ["old", "a", "c", "b"])
+    #expect(days.flatMap(\.showtimes).map { $0.showtime.hasPlayed(now: now) } == [true, true, true, false])
+    #expect(withPast.timeline(.liveShows, now: now).flatMap(\.showtimes).map(\.id) == ["old", "c"])
+}
+
+@Test func freeShowsOnlyFreeShowtimes() {
+    var withFree = feed
+    withFree.titles[0].showtimes[1].booking = .init(label: "RSVP", url: URL(string: "https://rsvp.example")!, free: true)
+    #expect(withFree.days(.free, now: date("2026-10-13T20:00:00Z")).flatMap(\.showtimes).map(\.id) == ["b"])
 }
 
 @Test func opensTheCurrentTitleFromThePastList() {

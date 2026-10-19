@@ -33,12 +33,22 @@ struct ScheduleView: View {
                 .sheet(isPresented: $showsSettings) { SettingsView().appTextSize() }
                 .sheet(isPresented: $showsRequests) { RequestFilmView().appTextSize() }
                 .refreshable { await store.refresh() }
+                // Pinned, so the filters are in reach wherever the list is scrolled.
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    if store.feed != nil { FilterChips(selection: $filter) }
+                }
         }
         .onOpenURL { url in
             linkedSlug = AppLink.titleSlug(url)
             openLinkedTitle()
         }
         .onChange(of: store.feed) { openLinkedTitle() }
+    }
+
+    /// Brings today (or the next day with Showtimes) to the top; earlier ones are a scroll up.
+    private func scroll(_ proxy: ScrollViewProxy, to id: String?) {
+        guard let id else { return }
+        Task { @MainActor in proxy.scrollTo(id, anchor: .top) }
     }
 
     private func openLinkedTitle() {
@@ -49,34 +59,43 @@ struct ScheduleView: View {
 
     @ViewBuilder private var content: some View {
         if let feed = store.feed {
-            let isPast = filter == .past
-            let days = (isPast ? feed.pastDays() : feed.days(filter)).matching(query)
+            let now = Date.now
+            let days = feed.timeline(filter, now: now).matching(query)
             let searching = !query.trimmingCharacters(in: .whitespaces).isEmpty
-            List {
-                FilterChips(selection: $filter)
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
-                if let error = store.error {
-                    Text(error).font(.footnote).foregroundStyle(.secondary)
-                }
-                if days.isEmpty {
-                    Text(searching ? "No results for \u{201C}\(query)\u{201D}." : isPast ? "Nothing has played recently." : "Nothing scheduled right now.")
-                        .foregroundStyle(.secondary)
-                }
-                ForEach(days) { day in
-                    Section {
-                        ForEach(day.showtimes) { item in
-                            NavigationLink(value: isPast ? feed.titleToOpen(item.title) : item.title) {
-                                ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
+            // Where the list opens: the first day with something still to come.
+            let firstUpcoming = days.first { $0.showtimes.contains { !$0.showtime.hasPlayed(now: now) } }?.id
+            ScrollViewReader { proxy in
+                List {
+                    if let error = store.error {
+                        Text(error).font(.footnote).foregroundStyle(.secondary)
+                    }
+                    if days.isEmpty {
+                        Text(searching ? "No results for \u{201C}\(query)\u{201D}." : "Nothing scheduled right now.")
+                            .foregroundStyle(.secondary)
+                    }
+                    ForEach(days) { day in
+                        let dayPlayed = day.showtimes.allSatisfy { $0.showtime.hasPlayed(now: now) }
+                        Section {
+                            ForEach(day.showtimes) { item in
+                                let played = item.showtime.hasPlayed(now: now)
+                                NavigationLink(value: played ? feed.titleToOpen(item.title) : item.title) {
+                                    ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
+                                }
+                                // Already played: greyed, like the website's past list.
+                                .opacity(played ? 0.45 : 1)
                             }
+                        } header: {
+                            Text(feed.calendar.date(from: day.day).map { feed.dayLabel($0, now: now) } ?? "")
+                                .foregroundStyle(dayPlayed ? Color.secondary : Color.accentColor)
                         }
-                    } header: {
-                        Text(feed.calendar.date(from: day.day).map { feed.dayLabel($0) } ?? "")
-                            .foregroundStyle(Color.accentColor)
+                        .id(day.id)
                     }
                 }
+                .listStyle(.plain)
+                .onAppear { scroll(proxy, to: firstUpcoming) }
+                .onChange(of: filter) { scroll(proxy, to: firstUpcoming) }
+                .onChange(of: query) { scroll(proxy, to: firstUpcoming) }
             }
-            .listStyle(.plain)
         } else if let error = store.error {
             ContentUnavailableView {
                 Label("No schedule", systemImage: "wifi.slash")
@@ -102,28 +121,37 @@ struct Wordmark: View {
     }
 }
 
-/// Everything / Films / Live shows / Past, like the site's buttons. Scrolls
+/// All / Movies / Live Shows / Free, pinned above the schedule. Scrolls
 /// sideways when the screen is too narrow to fit them all.
 struct FilterChips: View {
     @Binding var selection: ScheduleFilter
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(ScheduleFilter.allCases) { filter in
-                    let selected = filter == selection
-                    Button(filter.label) { selection = filter }
-                        .font(.subheadline.weight(.medium))
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 7)
-                        .foregroundStyle(selected ? Color.white : Color.primary)
-                        .background(selected ? Color.accentColor : Color(.secondarySystemFill), in: .capsule)
-                        .accessibilityAddTraits(selected ? .isSelected : [])
-                }
+        // Centered when they fit; otherwise a row that scrolls sideways.
+        ViewThatFits(in: .horizontal) {
+            chips.padding(.horizontal, 24).frame(maxWidth: .infinity)
+            ScrollView(.horizontal, showsIndicators: false) {
+                chips.padding(.horizontal, 24)
             }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 8)
         }
+        .padding(.vertical, 6)
+        .background(.bar)
+    }
+
+    private var chips: some View {
+        HStack(spacing: 6) {
+            ForEach(ScheduleFilter.allCases) { filter in
+                let selected = filter == selection
+                Button(filter.label) { selection = filter }
+                    .font(.footnote.weight(.semibold))
+                    .padding(.horizontal, 11)
+                    .padding(.vertical, 5)
+                    .foregroundStyle(selected ? Color.white : Color.primary)
+                    .background(selected ? Color.accentColor : Color(.secondarySystemFill), in: .capsule)
+                    .accessibilityAddTraits(selected ? .isSelected : [])
+            }
+        }
+        .fixedSize()
     }
 }
 

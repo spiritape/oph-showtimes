@@ -18,7 +18,7 @@ settings:
     MARKETING_VERSION: "1.0"
     # The build number shown in Settings and TestFlight. Raise it by one before
     # each TestFlight upload; App Store Connect refuses a number it has seen.
-    CURRENT_PROJECT_VERSION: "7"
+    CURRENT_PROJECT_VERSION: "8"
     # Xcode's recommended settings.
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     STRING_CATALOG_GENERATE_SYMBOLS: YES

@@ -103,8 +103,7 @@ struct ScheduledShowtime: Identifiable, Hashable, Sendable {
 
 /// Which Titles the schedule shows, matching the site's filters.
 enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
-    /// Past isn't a kind of Title: the schedule shows `Feed.pastDays` for it.
-    case everything, films, liveShows, past
+    case everything, films, liveShows, free
     var id: Self { self }
 
     var label: String {
@@ -112,16 +111,16 @@ enum ScheduleFilter: String, CaseIterable, Identifiable, Sendable {
         case .everything: "All"
         case .films: "Movies"
         case .liveShows: "Live Shows"
-        case .past: "Past"
+        case .free: "Free"
         }
     }
 
-    func includes(_ title: Title) -> Bool {
+    func includes(_ item: ScheduledShowtime) -> Bool {
         switch self {
         case .everything: true
-        case .films: title.kind == .film
-        case .liveShows: title.kind == .liveShow
-        case .past: false
+        case .films: item.title.kind == .film
+        case .liveShows: item.title.kind == .liveShow
+        case .free: item.showtime.booking?.free == true
         }
     }
 }
@@ -144,17 +143,21 @@ extension Feed {
     /// Showtime stays listed until 30 minutes after it starts.
     func listed(_ filter: ScheduleFilter = .everything, now: Date = .now) -> [ScheduledShowtime] {
         titles
-            .filter(filter.includes)
             .flatMap { title in title.showtimes.map { ScheduledShowtime(title: title, showtime: $0) } }
-            .filter { $0.showtime.startsAt > now.addingTimeInterval(-Showtime.listedAfterStart) }
+            .filter { !$0.showtime.hasPlayed(now: now) && filter.includes($0) }
             .sorted { $0.showtime.startsAt < $1.showtime.startsAt }
     }
 
     /// Listed Showtimes grouped by day in the theater's time zone.
     func days(_ filter: ScheduleFilter, now: Date = .now) -> [ScheduleDay] {
+        grouped(listed(filter, now: now))
+    }
+
+    /// Showtimes, already in order, grouped by day in the theater's time zone.
+    func grouped(_ items: [ScheduledShowtime]) -> [ScheduleDay] {
         let calendar = self.calendar
         var days: [ScheduleDay] = []
-        for item in listed(filter, now: now) {
+        for item in items {
             let day = calendar.dateComponents([.year, .month, .day], from: item.showtime.startsAt)
             if days.last?.day == day {
                 days[days.count - 1].showtimes.append(item)
@@ -169,6 +172,11 @@ extension Feed {
 extension Showtime {
     /// How long a Showtime stays listed after it starts, like the site.
     static let listedAfterStart: TimeInterval = 30 * 60
+
+    /// Over, as far as the schedule is concerned: 30 minutes after it starts.
+    func hasPlayed(now: Date = .now) -> Bool {
+        startsAt <= now.addingTimeInterval(-Self.listedAfterStart)
+    }
 }
 
 extension Feed {
@@ -258,35 +266,23 @@ extension Feed {
 }
 
 extension Feed {
-    /// What has played recently, most recent first, grouped by day in the
-    /// theater's time zone. Adds Showtimes that dropped off the schedule since
-    /// the Feed was published, so nothing goes missing between the two lists.
-    func pastDays(now: Date = .now) -> [ScheduleDay] {
-        let cutoff = now.addingTimeInterval(-Showtime.listedAfterStart)
-        let dropped = titles.flatMap { title in
-            title.showtimes.filter { $0.startsAt <= cutoff }.map { ScheduledShowtime(title: title, showtime: $0) }
-        }
+    /// The whole schedule, oldest first: what played in the last 60 days, then
+    /// what's coming up, grouped by day in the theater's time zone. Adds
+    /// Showtimes that finished since the Feed was published, so nothing goes
+    /// missing between the two.
+    func timeline(_ filter: ScheduleFilter, now: Date = .now) -> [ScheduleDay] {
+        let current = titles.flatMap { title in title.showtimes.map { ScheduledShowtime(title: title, showtime: $0) } }
         let published = (past ?? []).flatMap { title in
             title.showtimes.map { ScheduledShowtime(title: title, showtime: $0) }
         }
         var seen = Set<String>()
-        let played = (dropped + published)
-            .filter { seen.insert($0.id).inserted }
-            .sorted { $0.showtime.startsAt > $1.showtime.startsAt }
-        let calendar = self.calendar
-        var days: [ScheduleDay] = []
-        for item in played {
-            let day = calendar.dateComponents([.year, .month, .day], from: item.showtime.startsAt)
-            if days.last?.day == day {
-                days[days.count - 1].showtimes.append(item)
-            } else {
-                days.append(ScheduleDay(day: day, showtimes: [item]))
-            }
-        }
-        return days
+        let items = (current + published)
+            .filter { seen.insert($0.id).inserted && filter.includes($0) }
+            .sorted { $0.showtime.startsAt < $1.showtime.startsAt }
+        return grouped(items)
     }
 
-    /// The Title to open from the Past list: the current one if it's still on
+    /// The Title to open from a past Showtime: the current one if it's still on
     /// the schedule, otherwise the past one without its played Showtimes.
     func titleToOpen(_ title: Title) -> Title {
         titles.first { $0.key == title.key } ?? { var finished = title; finished.showtimes = []; return finished }()
