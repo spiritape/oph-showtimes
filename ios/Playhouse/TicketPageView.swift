@@ -15,7 +15,6 @@ struct TicketPageView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> SFSafariViewController {
         let controller = SFSafariViewController(url: url)
-        controller.preferredControlTintColor = UIColor(named: "AccentColor")
         controller.dismissButtonStyle = .done
         return controller
     }

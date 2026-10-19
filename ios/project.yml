@@ -6,6 +6,9 @@ options:
   deploymentTarget:
     iOS: "26.0"
   createIntermediateGroups: true
+  # Tells Xcode the project already has its recommended settings (below), so
+  # it stops offering to change them; change them here, not in Xcode.
+  xcodeVersion: "27.0"
 settings:
   base:
     SWIFT_VERSION: "6.0"
@@ -14,6 +17,9 @@ settings:
     CODE_SIGN_STYLE: Automatic
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
+    # Xcode's recommended settings.
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: YES
 targets:
   Playhouse:
     type: application
