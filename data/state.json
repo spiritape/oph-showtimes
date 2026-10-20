@@ -1,8 +1,8 @@
 {
- "lastReadCount": 51,
+ "lastReadCount": 52,
  "lastPublish": {
-  "scheduleHash": "c34d388fa79f3c9c60f70984665d3ac10db5c65767a8c9f40aaf185d612edb81",
-  "publishedAt": "2026-10-20T19:47:18.018Z"
+  "scheduleHash": "326dbf249ab2ed212c3ee8fa3b9ee38beb926c3623e3499fe2d6cb291a3661eb",
+  "publishedAt": "2026-10-20T22:19:16.290Z"
  },
  "seen": {
   "titles": {
@@ -1217,7 +1217,7 @@
     }
    },
    "musk": {
-    "lastShowtime": "2026-10-27T00:00:00.000Z",
+    "lastShowtime": "2026-11-08T20:00:00.000Z",
     "title": {
      "key": "musk",
      "slug": "musk",
@@ -1240,6 +1240,19 @@
        "startsAt": "2026-10-27T00:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1146?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufsdk0ja5qr07lnplr0c73e",
+       "infoHtml": "<p>Year: 2026<br>Director: Alex Gibney<br>Running Time: 3hr 52 minutes (with intermission)</p><p>Elon Musk has amassed so much power, he’s like a character in a Marvel comic book. A short recap of his handiwork: Tesla popularized electric vehicles; Starlink expanded the reach of the internet; Twitter bowed to his takeover; and DOGE radically transformed the US government. Musk has been at the centre of AI development and this past summer, the IPO for SpaceX made him the richest man in the world. His influence arguably touches everyone on the planet. Surely this is worth fresh scrutiny. After nearly four years of work, Oscar-winning filmmaker Alex Gibney delivers his most ambitious and epic documentary, seeking to understand the history and motivations of the ultimate tech bro. When this film was first announced, Musk immediately denounced it on Twitter and refused to participate. But that didn’t impede Gibney, who draws upon countless hours of interviews that Musk has given over the years. Even more revealingly, Gibney conducts new interviews with figures who have known Musk up close and personal, including the mogul’s father, Errol Musk. The news cycle moves so fast, it’s hard to remember that Musk was once at home among liberals, with his companies promoting clean energy and invoicing the Obama administration for hundreds of millions in tech contracts. What drove him into the world of Donald Trump? Musk frequently invokes science fiction stories and has coyly wondered aloud if we’re living in a video game–like simulation. Playing off this idea, Gibney leans visually into an innovative graphic treatment throughout the film. But make no mistake: this is really happening.</p>"
+      },
+      {
+       "id": "cmvh8v00l9nxn07mxfrd7vmbu",
+       "title": "Musk",
+       "subtitle": null,
+       "startsAt": "2026-11-08T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1198?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
