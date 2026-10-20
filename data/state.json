@@ -1,8 +1,8 @@
 {
  "lastReadCount": 51,
  "lastPublish": {
-  "scheduleHash": "01338bc8b9e8feefb1c8291fe42e0e931aad2c745760a2faef6ce7a46cf406f3",
-  "publishedAt": "2026-10-20T19:29:19.739Z"
+  "scheduleHash": "c34d388fa79f3c9c60f70984665d3ac10db5c65767a8c9f40aaf185d612edb81",
+  "publishedAt": "2026-10-20T19:47:18.018Z"
  },
  "seen": {
   "titles": {
@@ -2073,7 +2073,7 @@
     }
    },
    "possible love": {
-    "lastShowtime": "2026-10-24T20:00:00.000Z",
+    "lastShowtime": "2026-10-24T23:00:00.000Z",
     "title": {
      "key": "possible love",
      "slug": "possible-love",
@@ -2106,7 +2106,7 @@
        "id": "cmuyp3ryy6d5k07lrh9a2vv7y",
        "title": "Possible Love",
        "subtitle": null,
-       "startsAt": "2026-10-24T20:00:00.000Z",
+       "startsAt": "2026-10-24T23:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1178?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
