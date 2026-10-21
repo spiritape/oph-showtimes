@@ -1,8 +1,8 @@
 {
- "lastReadCount": 54,
+ "lastReadCount": 55,
  "lastPublish": {
-  "scheduleHash": "e69079974f8f31b76052f01fe400088154f029840b34ce66309fb4fd95c91705",
-  "publishedAt": "2026-10-21T23:11:49.159Z"
+  "scheduleHash": "81abdad3ceb61aa315d7a5bebc31d02fdfb5cd17334ad896aa17207841a523cc",
+  "publishedAt": "2026-10-21T23:19:17.406Z"
  },
  "seen": {
   "titles": {
@@ -2040,7 +2040,7 @@
     }
    },
    "sense and sensibility": {
-    "lastShowtime": "2026-10-20T23:30:00.000Z",
+    "lastShowtime": "2026-10-22T23:15:00.000Z",
     "title": {
      "key": "sense and sensibility",
      "slug": "sense-and-sensibility",
@@ -2089,6 +2089,19 @@
        "startsAt": "2026-10-20T23:30:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1196?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmuu8zryz5k0n07n3dpysrh23",
+       "infoHtml": "<p>Year: 2026<br>Director: Georgia Oakley<br>Starring: Daisy Edgar-Jones, Esmé Creed-Miles, Caitríona Balfe, George MacKay, Frank Dillane<br>Running Time: 2hr 11min</p><p>Rated: PG</p><p>An irresistible new take on Jane Austen&#39;s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood.</p>"
+      },
+      {
+       "id": "cmviqfrbu8nw507mxe1nsxrfv",
+       "title": "Sense and Sensibility",
+       "subtitle": null,
+       "startsAt": "2026-10-22T23:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1225?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$13.50/$12 (senior 60+)",
