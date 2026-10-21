@@ -1,8 +1,8 @@
 {
- "lastReadCount": 52,
+ "lastReadCount": 53,
  "lastPublish": {
-  "scheduleHash": "4bc0021e605e166cc16d6e073a87fe28b820228401bc8db9aa57a2570ddacc55",
-  "publishedAt": "2026-10-21T19:16:10.790Z"
+  "scheduleHash": "853239f16afaf17619c388ecfe4b08beb5d1470040c26c845ff1c2e6cda084ad",
+  "publishedAt": "2026-10-21T19:31:16.611Z"
  },
  "seen": {
   "titles": {
@@ -2727,6 +2727,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvihjiqhp3lt07n31en62yxc",
        "infoHtml": "<p>Year: 2026<br>Director: Sacha Baron Cohen<br>Starring: Sacha Baron Cohen, Morgana Robinson, Stewart Rodeheaver<br>Running Time: 1hr 29min</p><p>Rated: R</p><p>Hip-hop journalist Ali G returns after 20 years to make a documentary with real people. Cameras follow him for over a year as he takes classes, walks the streets, and appears on shows, often with his pregnant girlfriend.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "howl's moving castle": {
+    "lastShowtime": "2026-10-25T19:00:00.000Z",
+    "title": {
+     "key": "howl's moving castle",
+     "slug": "howls-moving-castle",
+     "name": "Howl's Moving Castle",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2004",
+     "director": "Hayao Miyazaki",
+     "runtime": "2hr",
+     "rating": "PG",
+     "synopsis": "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/zXo86DEaT82rC8cUI9I9",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvii5j6jqeyc07n3d2gy8qz9",
+       "title": "Howl's Moving Castle",
+       "subtitle": null,
+       "startsAt": "2026-10-25T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1201?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/zXo86DEaT82rC8cUI9I9",
+       "infoHtml": "<p>Year: 2004<br>Director: Hayao Miyazaki<br>Running Time: 2hr</p><p>Rated: PG</p><p>When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.</p>"
       }
      ]
     }
