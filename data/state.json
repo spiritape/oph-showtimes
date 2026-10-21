@@ -1,8 +1,8 @@
 {
  "lastReadCount": 52,
  "lastPublish": {
-  "scheduleHash": "c48436b39d6cf9a4f6a7c359b4ba32d5e090e6baaddf512f3190d8a551d04fac",
-  "publishedAt": "2026-10-21T19:15:17.397Z"
+  "scheduleHash": "4bc0021e605e166cc16d6e073a87fe28b820228401bc8db9aa57a2570ddacc55",
+  "publishedAt": "2026-10-21T19:16:10.790Z"
  },
  "seen": {
   "titles": {
@@ -2014,7 +2014,7 @@
        "id": "cmut150tddfel07lha5yualv9",
        "title": "Fjord",
        "subtitle": null,
-       "startsAt": "2026-10-25T22:00:00.000Z",
+       "startsAt": "2026-10-25T21:30:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1170?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
