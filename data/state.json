@@ -1,8 +1,8 @@
 {
- "lastReadCount": 53,
+ "lastReadCount": 54,
  "lastPublish": {
-  "scheduleHash": "853239f16afaf17619c388ecfe4b08beb5d1470040c26c845ff1c2e6cda084ad",
-  "publishedAt": "2026-10-21T19:31:16.611Z"
+  "scheduleHash": "e69079974f8f31b76052f01fe400088154f029840b34ce66309fb4fd95c91705",
+  "publishedAt": "2026-10-21T19:33:19.751Z"
  },
  "seen": {
   "titles": {
@@ -2760,6 +2760,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/zXo86DEaT82rC8cUI9I9",
        "infoHtml": "<p>Year: 2004<br>Director: Hayao Miyazaki<br>Running Time: 2hr</p><p>Rated: PG</p><p>When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.</p>"
+      }
+     ]
+    }
+   },
+   "kiki’s delivery service": {
+    "lastShowtime": "2026-10-24T19:00:00.000Z",
+    "title": {
+     "key": "kiki’s delivery service",
+     "slug": "kikis-delivery-service",
+     "name": "Kiki’s Delivery Service",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1989",
+     "director": "Hayao Miyazaki",
+     "runtime": "1hr 43min",
+     "rating": "G",
+     "synopsis": "Along with her black cat Jiji, Kiki settles in a seaside town and starts a high-flying delivery service. Here begins her magical encounter with independence and responsibility, making lifelong friends and finding her place in the world.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/ZL0isbdiQRiAgHy8sWKE",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviiddfrqvkg07n3gu2rkpsd",
+       "title": "Kiki’s Delivery Service",
+       "subtitle": null,
+       "startsAt": "2026-10-24T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1200?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/ZL0isbdiQRiAgHy8sWKE",
+       "infoHtml": "<p>Year: 1989<br>Director: Hayao Miyazaki<br>Starring: Kirsten Dunst, Minami Takayama, Rei Sakuma<br>Running Time: 1hr 43min</p><p>Rated: G</p><p>Along with her black cat Jiji, Kiki settles in a seaside town and starts a high-flying delivery service. Here begins her magical encounter with independence and responsibility, making lifelong friends and finding her place in the world.</p>"
       }
      ]
     }
