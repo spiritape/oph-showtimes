@@ -1,8 +1,8 @@
 {
- "lastReadCount": 50,
+ "lastReadCount": 51,
  "lastPublish": {
-  "scheduleHash": "42a8de93686b66f34a99e4ad30eed28ec147aededa89f5037fbee88c9d05784a",
-  "publishedAt": "2026-10-21T14:17:21.964Z"
+  "scheduleHash": "30764fe2f9a3f90e0e968567cc4b8368847da5244431f7cf41800dc717f9891c",
+  "publishedAt": "2026-10-21T16:59:22.489Z"
  },
  "seen": {
   "titles": {
@@ -2661,6 +2661,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d2q793v07mvx5r5yzre",
        "infoHtml": "<p>Year: 2026<br>Director: Rebecca Harrell Tickell, Joshua Tickell<br>Starring: Demi Moore, Woody Harrelson, Jay Famiglietti<br>Running Time: 1hr 34min</p><p>Rated: PG</p><p><strong>Post screening Q&amp;A with director Rebecca Harrell Tickell</strong></p><p><strong>Groundswell</strong> is the final chapter in the acclaimed trilogy that began with <strong>Kiss the Ground</strong> and <strong>Common Ground</strong>. Narrated by Demi Moore and Woody Harrelson and filmed across five continents, the documentary follows farmers, scientists, Indigenous leaders, and ranchers demonstrating how regenerative agriculture can rebuild soil, restore biodiversity, strengthen food systems, and improve climate resilience.</p>"
+      }
+     ]
+    }
+   },
+   "your mother your mother your mother": {
+    "lastShowtime": "2026-11-05T03:00:00.000Z",
+    "title": {
+     "key": "your mother your mother your mother",
+     "slug": "your-mother-your-mother-your-mother",
+     "name": "Your Mother Your Mother Your Mother",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Bassam Tariq",
+     "runtime": "1hr 52min",
+     "rating": "R",
+     "synopsis": "Latif, a devoutly religious hitman, embarks on a desperate journey across Houston to protect his children after his wife dies, confronting forces closing in and beliefs threatening to unravel.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvicobzgffs907mxn0fh0b28",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvicvq2kfwo407n3azzmiiug",
+       "title": "Your Mother Your Mother Your Mother",
+       "subtitle": null,
+       "startsAt": "2026-11-05T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2003721463837?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvicobzgffs907mxn0fh0b28",
+       "infoHtml": "<p>Year: 2026<br>Director: Bassam Tariq<br>Starring: Mahershala Ali, John Cho, Giancarlo Esposito<br>Running Time: 1hr 52min</p><p>Rated: R</p><p>Latif, a devoutly religious hitman, embarks on a desperate journey across Houston to protect his children after his wife dies, confronting forces closing in and beliefs threatening to unravel.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
