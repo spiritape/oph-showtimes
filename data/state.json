@@ -1,8 +1,8 @@
 {
- "lastReadCount": 55,
+ "lastReadCount": 78,
  "lastPublish": {
-  "scheduleHash": "f9dd87b97dd242a70b762fd07873a5ab77b52a1f8ee0e524b7b4ec41b15b2fe5",
-  "publishedAt": "2026-10-22T14:55:20.504Z"
+  "scheduleHash": "f455a2a8184e1b3d7ec17c0a103078c3ed55ac1b8a2aae8f6190e1a46ee8cfec",
+  "publishedAt": "2026-10-22T16:33:20.211Z"
  },
  "seen": {
   "titles": {
@@ -2806,6 +2806,765 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/ZL0isbdiQRiAgHy8sWKE",
        "infoHtml": "<p>Year: 1989<br>Director: Hayao Miyazaki<br>Starring: Kirsten Dunst, Minami Takayama, Rei Sakuma<br>Running Time: 1hr 43min</p><p>Rated: G</p><p>Along with her black cat Jiji, Kiki settles in a seaside town and starts a high-flying delivery service. Here begins her magical encounter with independence and responsibility, making lifelong friends and finding her place in the world.</p>"
+      }
+     ]
+    }
+   },
+   "tender loving care": {
+    "lastShowtime": "2026-11-10T00:30:00.000Z",
+    "title": {
+     "key": "tender loving care",
+     "slug": "tender-loving-care",
+     "name": "Tender Loving Care",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Mike Leigh",
+     "runtime": "1hr 47min",
+     "rating": "R",
+     "synopsis": "The acclaimed final film from celebrated British auteur Mike Leigh, starring Kate O’Flynn in the follow up to her Emmy-nominated role in WIDOW’S BAY. When Amy’s (O’Flynn) marriage goes south, she moves back in with her best friend and colleague, Rosie (Alice Bailey Johnson). After dealing with danger and resentment all day as social workers, there’s nothing the two friends enjoy more than winding down together over a bottle of wine. But when Amy’s aging parents take a turn for the worse, they need each other’s support more than ever.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnus6twjp07n30mqkzdge",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvijrowlu3cj07n353qh93x0",
+       "title": "Tender Loving Care",
+       "subtitle": null,
+       "startsAt": "2026-11-10T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1202?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnus6twjp07n30mqkzdge",
+       "infoHtml": "<p>Year: 2026<br>Director: Mike Leigh<br>Starring: Kate O&#39;Flynn, Alice Bailey Johnson, Marion Bailey, Paul Jesson<br>Running Time: 1hr 47min</p><p>Rated: R</p><p>The acclaimed final film from celebrated British auteur Mike Leigh, starring Kate O’Flynn in the follow up to her Emmy-nominated role in WIDOW’S BAY. When Amy’s (O’Flynn) marriage goes south, she moves back in with her best friend and colleague, Rosie (Alice Bailey Johnson). After dealing with danger and resentment all day as social workers, there’s nothing the two friends enjoy more than winding down together over a bottle of wine. But when Amy’s aging parents take a turn for the worse, they need each other’s support more than ever. </p>"
+      }
+     ]
+    }
+   },
+   "the debut": {
+    "lastShowtime": "2026-11-10T03:15:00.000Z",
+    "title": {
+     "key": "the debut",
+     "slug": "the-debut",
+     "name": "The Debut",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Jesse Eisenberg",
+     "runtime": "1hr 45min",
+     "rating": "R",
+     "synopsis": "When an unassuming housewife is unexpectedly cast in a community theater production, she loses herself in the role under the spell of a strong-willed director.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuu6u6xm07mx0im09psu",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvijud4puboz07n32muqfhyt",
+       "title": "The Debut",
+       "subtitle": null,
+       "startsAt": "2026-11-10T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1203?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuu6u6xm07mx0im09psu",
+       "infoHtml": "<p>Year: 2026<br>Director: Jesse Eisenberg<br>Starring: Julianne Moore, Paul Giamatti, Halle Bailey, Bernadette Peters<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>When an unassuming housewife is unexpectedly cast in a community theater production, she loses herself in the role under the spell of a strong-willed director.</p>"
+      }
+     ]
+    }
+   },
+   "everytime": {
+    "lastShowtime": "2026-11-11T00:15:00.000Z",
+    "title": {
+     "key": "everytime",
+     "slug": "everytime",
+     "name": "Everytime",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Sandra Wollner",
+     "runtime": "1hr 59min",
+     "rating": null,
+     "synopsis": "Germany’s submission for Best International Feature at the Academy Awards is a spellbinding journey through grief that leads to the most strange and surprising places.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu4ju6w207mx62kt4zxk",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvipk8w97a7f07mxx7swfz19",
+       "title": "Everytime",
+       "subtitle": null,
+       "startsAt": "2026-11-11T00:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1218?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu4ju6w207mx62kt4zxk",
+       "infoHtml": "<p>Year: 2026<br>Director: Sandra Wollner<br>Starring: Birgit Minichmayr, Lotte Shirin Keiling, Tristan Lopez<br>Running Time: 1hr 59min</p><p>Germany’s submission for Best International Feature at the Academy Awards is a spellbinding journey through grief that leads to the most strange and surprising places. </p>"
+      }
+     ]
+    }
+   },
+   "la bola negra": {
+    "lastShowtime": "2026-11-11T03:00:00.000Z",
+    "title": {
+     "key": "la bola negra",
+     "slug": "la-bola-negra",
+     "name": "La Bola Negra",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Javier Ambrossi, Javier Calvo",
+     "runtime": "2hr 40min",
+     "rating": "R",
+     "synopsis": "Spain’s submission for Best International Feature Film at the Academy Awards explores with extravagant style what it means to be gay in different eras, focusing on \"three existences\" that are connected through themes in the work of Federico García Lorca — sexuality, desire, pain, and inheritance.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnudttwix07n392124crm",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvijxtknuntn07n3aq0pflfi",
+       "title": "La Bola Negra",
+       "subtitle": null,
+       "startsAt": "2026-11-11T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1204?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnudttwix07n392124crm",
+       "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi, Javier Calvo<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler, Penelope Cruz, Glenn Close<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Spain’s submission for Best International Feature Film at the Academy Awards explores with extravagant style what it means to be gay in different eras, focusing on &quot;three existences&quot; that are connected through themes in the work of Federico García Lorca — sexuality, desire, pain, and inheritance.</p>"
+      }
+     ]
+    }
+   },
+   "iron boy": {
+    "lastShowtime": "2026-11-11T23:00:00.000Z",
+    "title": {
+     "key": "iron boy",
+     "slug": "iron-boy",
+     "name": "Iron Boy",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Louis Clichy",
+     "runtime": "1hr 30min",
+     "rating": null,
+     "synopsis": "In this stunning, hand-painted watercolor animation from France, Christophe, a 10-year-old boy, with balance issues, navigates life in an orthopedic brace while his family’s struggling farm faces modernization. Torn between his love of music and mending ties with his distant father, he weighs his future.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmviprmid74ns07n3wg2efuxy",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvipnzh171wb07n31ch5tasi",
+       "title": "Iron Boy",
+       "subtitle": null,
+       "startsAt": "2026-11-11T23:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1219?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (child 12 & under - senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmviprmid74ns07n3wg2efuxy",
+       "infoHtml": "<p>Year: 2026<br>Director: Louis Clichy<br>Starring: Gary Clichy, Rod Paradot, Dimitri Colas<br>Running Time: 1hr 30min</p><p>In this stunning, hand-painted watercolor animation from France, Christophe, a 10-year-old boy, with balance issues, navigates life in an orthopedic brace while his family’s struggling farm faces modernization. Torn between his love of music and mending ties with his distant father, he weighs his future.</p>"
+      }
+     ]
+    }
+   },
+   "diary of a chambermaid": {
+    "lastShowtime": "2026-11-12T00:45:00.000Z",
+    "title": {
+     "key": "diary of a chambermaid",
+     "slug": "diary-of-a-chambermaid",
+     "name": "Diary of a Chambermaid",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Radu Jude",
+     "runtime": "1hr 34min",
+     "rating": null,
+     "synopsis": "The rude boy of the Romanian New Wave, Radu Jude (BAD LUCK BANGING OR LOONY PORN; DO NOT EXPECT TOO MUCH FROM THE END OF THE WORLD), returns with a concise and poignant satire of class and migration, loosely adapting Octave Mirbeau’s erotic nineteenth-century novel of the same name. Gianina (Ana Dumitrașcu), the eponymous housemaid, is employed by a wealthy bourgeois French couple, played hilariously by Mélanie Thierry and Vincent Macaigne, to care for their home and spoiled young son in Bordeaux. Meanwhile, Gianina’s own daughter is still with family in Romania.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu0qu6vf07mx63gz13om",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvipv30s7kel07mx7unhtr0i",
+       "title": "Diary of a Chambermaid",
+       "subtitle": null,
+       "startsAt": "2026-11-12T00:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1221?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu0qu6vf07mx63gz13om",
+       "infoHtml": "<p>Year: 2026<br>Director: Radu Jude<br>Starring: Ana Dumitrascu, Melanie Thierry, Vincent Macaigne<br>Running Time: 1hr 34min</p><p>The rude boy of the Romanian New Wave, Radu Jude (BAD LUCK BANGING OR LOONY PORN; DO NOT EXPECT TOO MUCH FROM THE END OF THE WORLD), returns with a concise and poignant satire of class and migration, loosely adapting Octave Mirbeau’s erotic nineteenth-century novel of the same name. Gianina (Ana Dumitrașcu), the eponymous housemaid, is employed by a wealthy bourgeois French couple, played hilariously by Mélanie Thierry and Vincent Macaigne, to care for their home and spoiled young son in Bordeaux. Meanwhile, Gianina’s own daughter is still with family in Romania. </p>"
+      }
+     ]
+    }
+   },
+   "bucking fastard": {
+    "lastShowtime": "2026-11-12T03:15:00.000Z",
+    "title": {
+     "key": "bucking fastard",
+     "slug": "bucking-fastard",
+     "name": "Bucking Fastard",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Wernor Herzog",
+     "runtime": "1hr 49min",
+     "rating": null,
+     "synopsis": "Jean and Joan Holbrooke are two sisters who are so close they speak in unison, love the same man, and have the same dreams. In search of an imaginary land - where true love is possible - they dig through a mountain range.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntsju6uu07mx9eppu2eh",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvipzhbr7p3c07mxf9g7az3p",
+       "title": "Bucking Fastard",
+       "subtitle": null,
+       "startsAt": "2026-11-12T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1220?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntsju6uu07mx9eppu2eh",
+       "infoHtml": "<p>Year: 2026<br>Director: Wernor Herzog<br>Starring: Kate Mara, Rooney Mara, Orlando Bloom<br>Running Time: 1hr 49min</p><p>Jean and Joan Holbrooke are two sisters who are so close they speak in unison, love the same man, and have the same dreams. In search of an imaginary land -  where true love is possible - they dig through a mountain range.</p><p><strong>Post-screening Q&amp;A with editor Marco Capalbo</strong></p>"
+      }
+     ]
+    }
+   },
+   "mouse": {
+    "lastShowtime": "2026-11-12T22:30:00.000Z",
+    "title": {
+     "key": "mouse",
+     "slug": "mouse",
+     "name": "Mouse",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Kelly O’Sullivan, Alex Thompson",
+     "runtime": "2hr",
+     "rating": "R",
+     "synopsis": "Set in 2002, best friends Minnie (Katherine Mallen Kupferer) and Callie (Chloe Coleman) are on the cusp of their senior year of high school. Self-effacing Minnie comfortably resides in the long shadow of the more charismatic and assertive Callie, but when their bond is suddenly upended, the spotlight is available to Minnie in a way it never has been before. Bereft of her bearings, Minnie latches onto Callie’s poised and accomplished mother, Helen (Sophie Okonedo), who presents a stark and dreamy contrast to Minnie’s own working-class, single-parent household.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuhytwj407n3jdv8xv0e",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvikn8bnwoft07mx1120uylq",
+       "title": "Mouse",
+       "subtitle": null,
+       "startsAt": "2026-11-12T22:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1205?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuhytwj407n3jdv8xv0e",
+       "infoHtml": "<p>Year: 2026<br>Director: Kelly O’Sullivan, Alex Thompson<br>Starring: Sophie Okonedo, Katherine Mallen Kupferer, Chloe Coleman, David Hyde Pierce<br>Running Time: 2hr</p><p>Rated: R</p><p> Set in 2002, best friends Minnie (Katherine Mallen Kupferer) and Callie (Chloe Coleman) are on the cusp of their senior year of high school. Self-effacing Minnie comfortably resides in the long shadow of the more charismatic and assertive Callie, but when their bond is suddenly upended, the spotlight is available to Minnie in a way it never has been before. Bereft of her bearings, Minnie latches onto Callie’s poised and accomplished mother, Helen (Sophie Okonedo), who presents a stark and dreamy contrast to Minnie’s own working-class, single-parent household.</p>"
+      }
+     ]
+    }
+   },
+   "bitter christmas": {
+    "lastShowtime": "2026-11-13T00:45:00.000Z",
+    "title": {
+     "key": "bitter christmas",
+     "slug": "bitter-christmas",
+     "name": "Bitter Christmas",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Pedro Almodovar",
+     "runtime": "1hr 51min",
+     "rating": "R",
+     "synopsis": "Pedro Almodovar’s newest is a Russian nesting doll of stories within stories that probe his own creative process. In 2004, an ad director faces a turbulent Christmas weekend. In 2026, a filmmaker turns the ad director's story into a screenplay, blurring the lines between reality, fiction, and the people closest to him.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntqiu6un07mx6a16svrw",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvilbhj8yru107n3nau6wj8t",
+       "title": "Bitter Christmas",
+       "subtitle": null,
+       "startsAt": "2026-11-13T00:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1209?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntqiu6un07mx6a16svrw",
+       "infoHtml": "<p>Year: 2026<br>Director: Pedro Almodovar<br>Starring: Barbara Lennie, Leonardo Sbaraglia, Aitana Sanchez-Gijon<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>Pedro Almodovar’s newest is a Russian nesting doll of stories within stories that probe his own creative process. In 2004, an ad director faces a turbulent Christmas weekend. In 2026, a filmmaker turns the ad director&#39;s story into a screenplay, blurring the lines between reality, fiction, and the people closest to him.</p>"
+      }
+     ]
+    }
+   },
+   "i play rocky": {
+    "lastShowtime": "2026-11-13T03:15:00.000Z",
+    "title": {
+     "key": "i play rocky",
+     "slug": "i-play-rocky",
+     "name": "I Play Rocky",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Peter Farrelly",
+     "runtime": "2hr 8min",
+     "rating": "PG-13",
+     "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime — Rocky Balboa.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu6ptwij07n3c2f10ar5",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvilernvzdby07mxeyebzp1e",
+       "title": "I Play Rocky",
+       "subtitle": null,
+       "startsAt": "2026-11-13T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1206?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu6ptwij07n3c2f10ar5",
+       "infoHtml": "<p>Year: 2026<br>Director: Peter Farrelly<br>Starring: Anthony Ippolito, AnnaSophia Robb, P.J. Byrne<br>Running Time: 2hr 8min</p><p>Rated: PG-13</p><p>Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime — Rocky Balboa.</p>"
+      }
+     ]
+    }
+   },
+   "dernsie: the amazing life of bruce dern": {
+    "lastShowtime": "2026-11-13T22:15:00.000Z",
+    "title": {
+     "key": "dernsie: the amazing life of bruce dern",
+     "slug": "dernsie-the-amazing-life-of-bruce-dern",
+     "name": "Dernsie: The Amazing Life of Bruce Dern",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Mike Mendez",
+     "runtime": "1hr 51min",
+     "rating": null,
+     "synopsis": "A close look at Bruce Dern, a tireless, uncompromising Hollywood legend whose perseverance has defined both his tumultuous life and his lasting career. A constant runner on and off screen, he's nearly outlived the industry itself.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntyktwhy07n3pfexud4w",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviq31c17ryj07mxf56ci6lr",
+       "title": "Dernsie: The Amazing Life of Bruce Dern",
+       "subtitle": null,
+       "startsAt": "2026-11-13T22:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1222?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntyktwhy07n3pfexud4w",
+       "infoHtml": "<p>Year: 2026<br>Director: Mike Mendez<br>Starring: Bruce Dern, Laura Dern, Joe Dante<br>Running Time: 1hr 51min</p><p>A close look at Bruce Dern, a tireless, uncompromising Hollywood legend whose perseverance has defined both his tumultuous life and his lasting career. A constant runner on and off screen, he&#39;s nearly outlived the industry itself.</p>"
+      }
+     ]
+    }
+   },
+   "rose": {
+    "lastShowtime": "2026-11-14T00:30:00.000Z",
+    "title": {
+     "key": "rose",
+     "slug": "rose",
+     "name": "Rose",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Markus Schreiner",
+     "runtime": "1hr 34min",
+     "rating": null,
+     "synopsis": "In Austria’s submission for Best International Feature at the Academy Awards, a female soldier (Sandra Huller) in the early 17th century puts on a pair of trousers for a taste of freedom and the opportunity to own a bit of land.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuo1u6xf07mxnx3onrox",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviliy8jzwy307mxlvdhjfao",
+       "title": "Rose",
+       "subtitle": null,
+       "startsAt": "2026-11-14T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1217?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuo1u6xf07mxnx3onrox",
+       "infoHtml": "<p>Year: 2026<br>Director: Markus Schreiner<br>Starring: Sandra Huller, Caro Braun, Marisa Growaldt<br>Running Time: 1hr 34min </p><p>In Austria’s submission for Best International Feature at the Academy Awards, a female soldier (Sandra Huller) in the early 17th century puts on a pair of trousers for a taste of freedom and the opportunity to own a bit of land. </p>"
+      }
+     ]
+    }
+   },
+   "paper tiger": {
+    "lastShowtime": "2026-11-14T03:15:00.000Z",
+    "title": {
+     "key": "paper tiger",
+     "slug": "paper-tiger",
+     "name": "Paper Tiger",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "James Gray",
+     "runtime": "1hr 55min",
+     "rating": "R",
+     "synopsis": "Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuk2u6x807mxjcjh07yi",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvill9ggzsa907n3ddqhptt2",
+       "title": "Paper Tiger",
+       "subtitle": null,
+       "startsAt": "2026-11-14T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1207?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuk2u6x807mxjcjh07yi",
+       "infoHtml": "<p>Year: 2026<br>Director: James Gray<br>Starring: Adam Driver, Scarlett Johansson, Miles Teller<br>Running Time: 1hr 55min</p><p>Rated: R</p><p>Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.</p>"
+      }
+     ]
+    }
+   },
+   "ken russell’s the devils (in 35mm)": {
+    "lastShowtime": "2026-11-14T05:30:00.000Z",
+    "title": {
+     "key": "ken russell’s the devils (in 35mm)",
+     "slug": "ken-russells-the-devils-in-35mm",
+     "name": "Ken Russell’s The Devils (in 35mm)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1971",
+     "director": "Ken Russell",
+     "runtime": "1hr 51min",
+     "rating": "NC-17",
+     "synopsis": "In 17th-century France, Father Urbain Grandier's protection of the city of Loudun from the corrupt Cardinal Richelieu is undermined by a sexually repressed nun's accusation of witchcraft.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuw7twjx07n3rdg4cosp",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvilppd506qn07n3ggg4l9m5",
+       "title": "Ken Russell’s The Devils (in 35mm)",
+       "subtitle": null,
+       "startsAt": "2026-11-14T05:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1208?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuw7twjx07n3rdg4cosp",
+       "infoHtml": "<p>Year: 1971<br>Director: Ken Russell<br>Starring: Vanessa Redgrave, Oliver Reed, Dudley Sutton<br>Running Time: 1hr 51min</p><p>Rated: NC-17</p><p>In 17th-century France, Father Urbain Grandier&#39;s protection of the city of Loudun from the corrupt Cardinal Richelieu is undermined by a sexually repressed nun&#39;s accusation of witchcraft.</p><p><strong>Introduction by Warner Bros. Clockwork founder Christian Parkes</strong></p>"
+      }
+     ]
+    }
+   },
+   "ray gunn": {
+    "lastShowtime": "2026-11-14T20:00:00.000Z",
+    "title": {
+     "key": "ray gunn",
+     "slug": "ray-gunn",
+     "name": "Ray Gunn",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Brad Bird",
+     "runtime": "1hr 59min",
+     "rating": "PG",
+     "synopsis": "In Metropia, a gigantic city in an alternate future, private eye Raymond Gunn is drawn into a case involving aliens, murder, and a multimedia star named Venus Nova.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnulztwjb07n3rhq2r8jl",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvilsomq0j0o07n35329g4ki",
+       "title": "Ray Gunn",
+       "subtitle": null,
+       "startsAt": "2026-11-14T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1210?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnulztwjb07n3rhq2r8jl",
+       "infoHtml": "<p>Year: 2026<br>Director: Brad Bird<br>Starring: Sam Rockwell, Scarlett Johansson, Tom Waits<br>Running Time: 1hr 59min</p><p>Rated: PG</p><p>In Metropia, a gigantic city in an alternate future, private eye Raymond Gunn is drawn into a case involving aliens, murder, and a multimedia star named Venus Nova.</p>"
+      }
+     ]
+    }
+   },
+   "coward": {
+    "lastShowtime": "2026-11-14T22:15:00.000Z",
+    "title": {
+     "key": "coward",
+     "slug": "coward",
+     "name": "Coward",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Lukas Dhont",
+     "runtime": "2hr",
+     "rating": null,
+     "synopsis": "In Belgium’s submission for Best International Feature at the Academy Awards, Pierre, a young soldier, wants to prove himself on the battlefield of the First World War. But behind the frontlines, he meets Francis, the charismatic impresario of the soldiers’ acting troupe. Their chemistry tests a soldier’s duty in Lukas Dhont’s follow up to the Academy Award-nominated CLOSE.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntwrtwhk07n3pebcf3bi",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvilvxr9177907mx9ux8297o",
+       "title": "Coward",
+       "subtitle": null,
+       "startsAt": "2026-11-14T22:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1211?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntwrtwhk07n3pebcf3bi",
+       "infoHtml": "<p>Year: 2026<br>Director: Lukas Dhont<br>Starring: Valentin Campagne, Emmanuel Macchia, Willem De Schryver<br>Running Time: 2hr </p><p>In Belgium’s submission for Best International Feature at the Academy Awards, Pierre, a young soldier, wants to prove himself on the battlefield of the First World War. But behind the frontlines, he meets Francis, the charismatic impresario of the soldiers’ acting troupe. Their chemistry tests a soldier’s duty in Lukas Dhont’s follow up to the Academy Award-nominated CLOSE.</p>"
+      }
+     ]
+    }
+   },
+   "carl sagan: we are made of star stuff": {
+    "lastShowtime": "2026-11-15T00:30:00.000Z",
+    "title": {
+     "key": "carl sagan: we are made of star stuff",
+     "slug": "carl-sagan-we-are-made-of-star-stuff",
+     "name": "Carl Sagan: We Are Made of Star Stuff",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Nanette Burstein",
+     "runtime": "1hr 38min",
+     "rating": null,
+     "synopsis": "A sweeping and in-depth documentary of the world’s most famous and influential astronomer and astrophysicist Carl Sagan, who was responsible for expanding the scientific understanding of the universe and helped ordinary people grasp the wonders of the cosmos.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuq2twji07n33o389ytl",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviq63d17khi07n3d74dg5lz",
+       "title": "Carl Sagan: We Are Made of Star Stuff",
+       "subtitle": null,
+       "startsAt": "2026-11-15T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1223?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuq2twji07n33o389ytl",
+       "infoHtml": "<p>Year: 2026<br>Director: Nanette Burstein<br>Starring: Carl Sagan<br>Running Time: 1hr 38min </p><p>A sweeping and in-depth documentary of the world’s most famous and influential astronomer and astrophysicist Carl Sagan, who was responsible for expanding the scientific understanding of the universe and helped ordinary people grasp the wonders of the cosmos.</p>"
+      }
+     ]
+    }
+   },
+   "club kid": {
+    "lastShowtime": "2026-11-15T03:00:00.000Z",
+    "title": {
+     "key": "club kid",
+     "slug": "club-kid",
+     "name": "Club Kid",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Jordan Firstman",
+     "runtime": "2hr 2min",
+     "rating": "R",
+     "synopsis": "In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntuntwhd07n3rdvisijn",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvim09g61ftg07n3umwiaekb",
+       "title": "Club Kid",
+       "subtitle": null,
+       "startsAt": "2026-11-15T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1212?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntuntwhd07n3rdvisijn",
+       "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated: R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p>"
+      }
+     ]
+    }
+   },
+   "miami vice (director’s cut)": {
+    "lastShowtime": "2026-11-15T05:15:00.000Z",
+    "title": {
+     "key": "miami vice (director’s cut)",
+     "slug": "miami-vice-directors-cut",
+     "name": "Miami Vice (Director’s Cut)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2006",
+     "director": "Michael Mann",
+     "runtime": "2hr 12min",
+     "rating": "R",
+     "synopsis": "20th anniversary",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnufru6x107mx4pcvkrju",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvim2ovs233j07mx2hif9xpw",
+       "title": "Miami Vice (Director’s Cut)",
+       "subtitle": null,
+       "startsAt": "2026-11-15T05:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1213?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnufru6x107mx4pcvkrju",
+       "infoHtml": "<p>Year: 2006<br>Director: Michael Mann<br>Starring: Colin Farrell, Jamie Foxx, Gong Li, Naomie Harris<br>Running Time: 2hr 12min</p><p>Rated: R</p><p>20th anniversary </p><p>Director’s Cut + 4k restored</p><p>Vice detectives Crockett and Tubbs see their respective personal and professional lives become dangerously intertwined.</p>"
+      }
+     ]
+    }
+   },
+   "julián": {
+    "lastShowtime": "2026-11-15T19:00:00.000Z",
+    "title": {
+     "key": "julián",
+     "slug": "julian",
+     "name": "Julián",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Louise Bagnall, Guillaume Lorin",
+     "runtime": "1hr 25min",
+     "rating": null,
+     "synopsis": "From Cartoon Saloon, the celebrated animation studio that produced WOLFWALKERS and THE BREADWINNER, comes a heartwarming, fantastical adaptation of Jessica Love’s beloved children’s book JULIAN IS A MERMAID. When wide-eyed Julián spends the summer with his grandmother, he is amazed to discover her treasure-trove apartment, his own Caribbean heritage, and the lively Brooklyn community he is surrounded by. But most surprising of all, Julián discovers that he is, in fact, a mermaid!",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnubatwiq07n3xaim5786",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviq832r7r4w07n3eviuqvj7",
+       "title": "Julián",
+       "subtitle": null,
+       "startsAt": "2026-11-15T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1224?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnubatwiq07n3xaim5786",
+       "infoHtml": "<p>Year: 2026<br>Director: Louise Bagnall, Guillaume Lorin<br>Starring: Milcania Diaz-Rojas, Knyght Darius Jack, Zariah Georgia Ellis<br>Running Time: 1hr 25min </p><p>From Cartoon Saloon, the celebrated animation studio that produced WOLFWALKERS and THE BREADWINNER, comes a heartwarming, fantastical adaptation of Jessica Love’s beloved children’s book JULIAN IS A MERMAID. When wide-eyed Julián spends the summer with his grandmother, he is amazed to discover her treasure-trove apartment, his own Caribbean heritage, and the lively Brooklyn community he is surrounded by. But most surprising of all, Julián discovers that he is, in fact, a mermaid!</p>"
+      }
+     ]
+    }
+   },
+   "all of a sudden": {
+    "lastShowtime": "2026-11-15T21:00:00.000Z",
+    "title": {
+     "key": "all of a sudden",
+     "slug": "all-of-a-sudden",
+     "name": "All of a Sudden",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Ryûsuke Hamaguchi",
+     "runtime": "3hr 16min",
+     "rating": "PG-13",
+     "synopsis": "In Japan’s submission for Best International Feature Film at the Academy Awards, Ryûsuke Hamaguchi, the Academy Award-winning director of DRIVE MY CAR, decamps to France for this life-affirming tale about the resilience and patience required to truly care for another human being. Co-winners of the Best Actress Award at Cannes, Virginie Efira and Tao Okamoto star as a pair of unlikely friends, who, after a spontaneous encounter, quickly develop a deep and abiding intimacy. Marie-Lou (Efira) is the director of a nursing home in the Parisian suburbs and a devotee of an approach of caring for others, especially those with Alzheimer’s and dementia, called Humanitude, which requires continuous presence and risks the dangers of a more dynamic care unit. Her friendship with Mari (Okamoto), an avant-garde theater director, deepens her commitment to re-imagine elder care from a kinder, gentler place, resistant to the pressures to make the work fast and efficient and the patients docile and compliant.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntoetwh607n37nxc36zx",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvim6v5h2gqp07mxrn1y2v4p",
+       "title": "All of a Sudden",
+       "subtitle": null,
+       "startsAt": "2026-11-15T21:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1214?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntoetwh607n37nxc36zx",
+       "infoHtml": "<p>Year: 2026<br>Director: Ryûsuke Hamaguchi<br>Starring: Virginie Efira, Tao Okamoto, Kyoto Nagatsuka<br>Running Time: 3hr 16min</p><p>Rated: PG-13</p><p>In Japan’s submission for Best International Feature Film at the Academy Awards, Ryûsuke Hamaguchi, the Academy Award-winning director of  DRIVE MY CAR, decamps to France for this life-affirming tale about the resilience and patience required to truly care for another human being. Co-winners of the Best Actress Award at Cannes, Virginie Efira and Tao Okamoto star as a pair of unlikely friends, who, after a spontaneous encounter, quickly develop a deep and abiding intimacy. Marie-Lou (Efira) is the director of a nursing home in the Parisian suburbs and a devotee of an approach of caring for others, especially those with Alzheimer’s and dementia, called Humanitude, which requires continuous presence and risks the dangers of a more dynamic care unit. Her friendship with Mari (Okamoto), an avant-garde theater director, deepens her commitment to re-imagine elder care from a kinder, gentler place, resistant to the pressures to make the work fast and efficient and the patients docile and compliant.</p>"
+      }
+     ]
+    }
+   },
+   "ink": {
+    "lastShowtime": "2026-11-16T00:30:00.000Z",
+    "title": {
+     "key": "ink",
+     "slug": "ink",
+     "name": "Ink",
+     "subtitle": null,
+     "category": null,
+     "isFilm": true,
+     "year": "2026",
+     "director": "Danny Boyle",
+     "runtime": "1hr 56min",
+     "rating": "R",
+     "synopsis": "In 1969, as a rising media tycoon acquires the daily newspaper \"The Sun,\" his partnership with editor Larry Lamb turns the paper into Britain's most influential tabloid.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu95u6we07mx0u4953xn",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmviomwpo65qo07mx5jubduby",
+       "title": "Ink",
+       "subtitle": null,
+       "startsAt": "2026-11-16T00:30:00.000Z",
+       "category": null,
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1215?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu95u6we07mx0u4953xn",
+       "infoHtml": "<p>Year: 2026<br>Director: Danny Boyle<br>Starring: Jack O’Connell, Guy Pearce, Georgie Henley, Claire Foy<br>Running Time: 1hr 56min</p><p>Rated: R</p><p>In 1969, as a rising media tycoon acquires the daily newspaper &quot;The Sun,&quot; his partnership with editor Larry Lamb turns the paper into Britain&#39;s most influential tabloid.</p>"
+      }
+     ]
+    }
+   },
+   "elsinore": {
+    "lastShowtime": "2026-11-16T03:15:00.000Z",
+    "title": {
+     "key": "elsinore",
+     "slug": "elsinore",
+     "name": "Elsinore",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Simon Stone",
+     "runtime": "1hr 51min",
+     "rating": "R",
+     "synopsis": "A powerful, deeply moving and inspiring true-life story about the actor Ian Charleson who faced incredible odds while preparing to give the performance of a lifetime as Shakespeare’s Hamlet at the National Theatre in London.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvioq0fs6anf07mxh0buzend",
+       "title": "Elsinore",
+       "subtitle": null,
+       "startsAt": "2026-11-16T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1216?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring true-life story about the actor Ian Charleson who faced incredible odds while preparing to give the performance of a lifetime as Shakespeare’s Hamlet at the National Theatre in London.</p>"
       }
      ]
     }
