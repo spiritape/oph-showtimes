@@ -1,8 +1,8 @@
 {
- "lastReadCount": 65,
+ "lastReadCount": 66,
  "lastPublish": {
-  "scheduleHash": "c838674e49ab9b7e73e00a2129c98ae5aa1feb9b964c603b949161dc35018677",
-  "publishedAt": "2026-10-26T20:53:19.982Z"
+  "scheduleHash": "416afb88521baa8d7bd468dddef27008436bda944cb819dbd21fe9019990b85c",
+  "publishedAt": "2026-10-26T21:33:18.780Z"
  },
  "seen": {
   "titles": {
@@ -3565,6 +3565,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
        "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring true-life story about the actor Ian Charleson who faced incredible odds while preparing to give the performance of a lifetime as Shakespeare’s Hamlet at the National Theatre in London.</p>"
+      }
+     ]
+    }
+   },
+   "ojai playhouse - films - the history of concrete": {
+    "lastShowtime": "2026-11-06T00:30:00.000Z",
+    "title": {
+     "key": "ojai playhouse - films - the history of concrete",
+     "slug": "ojai-playhouse-films-the-history-of-concrete",
+     "name": "Ojai Playhouse - Films - The History of Concrete",
+     "subtitle": null,
+     "category": null,
+     "isFilm": true,
+     "year": "2026",
+     "director": "John Wilson",
+     "runtime": "1hr 42min",
+     "rating": null,
+     "synopsis": "National Concrete Day!",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmskh6c39678u08mr9329ljr5",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvprweyiph3g07n10tc6jn1r",
+       "title": "Ojai Playhouse - Films - The History of Concrete",
+       "subtitle": null,
+       "startsAt": "2026-11-06T00:30:00.000Z",
+       "category": null,
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1225?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmskh6c39678u08mr9329ljr5",
+       "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Running Time: 1hr 42min</p><p>National Concrete Day!</p><p>After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.</p>"
       }
      ]
     }
