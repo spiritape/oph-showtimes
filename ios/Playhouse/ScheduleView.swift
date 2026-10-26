@@ -130,6 +130,8 @@ private struct ScheduleList: View {
             .listStyle(.plain)
             .opacity(positioned ? 1 : 0)
             .onAppear {
+                // Only the first time: coming back from a Title keeps the place in the list.
+                guard !positioned else { return }
                 Task { @MainActor in
                     if let firstUpcoming { proxy.scrollTo(firstUpcoming, anchor: .top) }
                     withAnimation(.easeOut(duration: 0.15)) { positioned = true }
