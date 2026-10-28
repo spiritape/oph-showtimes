@@ -1,8 +1,8 @@
 {
  "lastReadCount": 63,
  "lastPublish": {
-  "scheduleHash": "f5edee6033b1847649f5e0c817c76a0cb79607a2f5fa72bb32ca1cd553f9848b",
-  "publishedAt": "2026-10-28T08:18:26.590Z"
+  "scheduleHash": "2cea0ff4afbf83d20fc45d59703c46b6c1a4b7348adbb2656d22d1fedda5de81",
+  "publishedAt": "2026-10-28T15:31:25.950Z"
  },
  "seen": {
   "titles": {
@@ -1064,7 +1064,7 @@
      "director": "Noah Segan",
      "runtime": "1hr 28min",
      "rating": null,
-     "synopsis": "ON SALE SOON",
+     "synopsis": "Harry Lehman (John Turturro) is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily canceled credit cards, and Harry struggles to make ends meet as he cares for his disabled wife, Rosie. When he unwittingly purloins and fences a valuable USB stick, Harry finds himself in a race against time to return the loot or face the rage of a vengeful crime family.",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7c9d6qfumv07mzafritg3o",
      "livestreamUrl": null,
      "showtimes": [
@@ -1074,12 +1074,12 @@
        "subtitle": null,
        "startsAt": "2026-11-01T22:00:00.000Z",
        "category": "film",
-       "ticketUrl": "https://www.ojaiplayhouse.com/events/all",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1135?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
-       "price": "$15/$13.50 (senior 60+)\nON SALE SOON",
+       "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7c9d6qfumv07mzafritg3o",
-       "infoHtml": "<p>ON SALE SOON</p><p>Year: 2026<br>Director: Noah Segan<br>Starring: John Turturro, Giancarlo Esposito, Will Price, Steve Buscemi, Jamie Lee Curtis<br>Running Time: 1hr 28min</p><p>Harry Lehman (John Turturro) is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily canceled credit cards, and Harry struggles to make ends meet as he cares for his disabled wife, Rosie. When he unwittingly purloins and fences a valuable USB stick, Harry finds himself in a race against time to return the loot or face the rage of a vengeful crime family.</p>"
+       "infoHtml": "<p>Year: 2026<br>Director: Noah Segan<br>Starring: John Turturro, Giancarlo Esposito, Will Price, Steve Buscemi, Jamie Lee Curtis<br>Running Time: 1hr 28min</p><p>Harry Lehman (John Turturro) is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily canceled credit cards, and Harry struggles to make ends meet as he cares for his disabled wife, Rosie. When he unwittingly purloins and fences a valuable USB stick, Harry finds himself in a race against time to return the loot or face the rage of a vengeful crime family.</p>"
       },
       {
        "id": "cmu7ce3h3fh8707lqg5xl31d8",
@@ -1087,12 +1087,12 @@
        "subtitle": null,
        "startsAt": "2026-11-05T00:30:00.000Z",
        "category": "film",
-       "ticketUrl": "https://www.ojaiplayhouse.com/events/all",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1136?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
-       "price": "$15/$13.50 (senior 60+)\nON SALE SOON",
+       "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu7c9d48fumo07mzsp0zpyct",
-       "infoHtml": "<p>ON SALE SOON</p><p>Year: 2026<br>Director: Noah Segan<br>Starring: John Turturro, Giancarlo Esposito, Will Price, Steve Buscemi, Jamie Lee Curtis<br>Running Time: 1hr 28min</p><p>Harry Lehman (John Turturro) is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily canceled credit cards, and Harry struggles to make ends meet as he cares for his disabled wife, Rosie. When he unwittingly purloins and fences a valuable USB stick, Harry finds himself in a race against time to return the loot or face the rage of a vengeful crime family.</p>"
+       "infoHtml": "<p>Year: 2026<br>Director: Noah Segan<br>Starring: John Turturro, Giancarlo Esposito, Will Price, Steve Buscemi, Jamie Lee Curtis<br>Running Time: 1hr 28min</p><p>Harry Lehman (John Turturro) is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily canceled credit cards, and Harry struggles to make ends meet as he cares for his disabled wife, Rosie. When he unwittingly purloins and fences a valuable USB stick, Harry finds himself in a race against time to return the loot or face the rage of a vengeful crime family.</p>"
       }
      ]
     }
