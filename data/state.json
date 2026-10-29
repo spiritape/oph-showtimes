@@ -1,8 +1,8 @@
 {
- "lastReadCount": 61,
+ "lastReadCount": 62,
  "lastPublish": {
-  "scheduleHash": "4f218190309d58139de8db94f4dbeaaedc6f8469e055edd5702a0e56430d7524",
-  "publishedAt": "2026-10-29T19:25:22.784Z"
+  "scheduleHash": "a584b384684f8a76565b49183bc31b57ecedef8f63d15aca9fd5a5f3f33c7653",
+  "publishedAt": "2026-10-29T20:39:18.134Z"
  },
  "seen": {
   "titles": {
@@ -3723,6 +3723,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvtxf7krb6bi07lq2i3aa8h4",
        "infoHtml": "<p>Year: 2025<br>Director: Morgen Neville<br>Starring: Paul McCartney<br>Running Time: 2hr 7min</p><p>After the break-up of the biggest band in the world, what comes next? Man on the Run, the new documentary featuring rare unreleased music and footage from Paul McCartney,</p><p>Man on the Run takes viewers on an intimate journey through Paul McCartney&#39;s extraordinary life following the break-up of The Beatles and the formation of Wings with his wife, Linda.  From Academy Award-winning director Morgan Neville, the film chronicles the arc of Paul&#39;s solo career as he faces down a myriad of challenges while creating new music to define a new decade.  Through unprecedented access to previously unseen footage and rare archival materials, the documentary captures Paul’s transformative post-Beatles era through a uniquely vulnerable lens.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "behemoth!": {
+    "lastShowtime": "2026-11-19T03:00:00.000Z",
+    "title": {
+     "key": "behemoth!",
+     "slug": "behemoth",
+     "name": "Behemoth!",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Tony Gilroy",
+     "runtime": "2hr 4min",
+     "rating": null,
+     "synopsis": "A gifted cellist returns home to Los Angeles after 20 years on the road. Music, which has been the constant, all-consuming river of his life, swells into an adventure that will change him forever.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvu02xb9ftiv07mytpt0tgbj",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvu056ptfzr407myio5dlslm",
+       "title": "Behemoth!",
+       "subtitle": null,
+       "startsAt": "2026-11-19T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2004092114463?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvu02xb9ftiv07mytpt0tgbj",
+       "infoHtml": "<p>Year: 2026<br>Director: Tony Gilroy<br>Starring: Pedro Pascal, Olivia Wilde, Eva Victor<br>Running Time: 2hr 4min</p><p>A gifted cellist returns home to Los Angeles after 20 years on the road. Music, which has been the constant, all-consuming river of his life, swells into an adventure that will change him forever.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
