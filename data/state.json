@@ -1,8 +1,8 @@
 {
- "lastReadCount": 57,
+ "lastReadCount": 58,
  "lastPublish": {
-  "scheduleHash": "a26fb08abd942c09808d6bbead5a496f4fe88d18d787c4e64e8a9f16ad4cc61b",
-  "publishedAt": "2026-10-29T16:11:18.906Z"
+  "scheduleHash": "977f929c50d5108caf544d9a7e3a551dbd52f575215a8b2b0a233ae90f971e27",
+  "publishedAt": "2026-10-29T16:31:17.220Z"
  },
  "seen": {
   "titles": {
@@ -3611,6 +3611,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmskh6c39678u08mr9329ljr5",
        "infoHtml": "<p>Year: 2026<br>Director: John Wilson<br>Running Time: 1hr 42min</p><p>National Concrete Day!</p><p>After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.</p>"
+      }
+     ]
+    }
+   },
+   "queen at sea": {
+    "lastShowtime": "2026-11-23T00:15:00.000Z",
+    "title": {
+     "key": "queen at sea",
+     "slug": "queen-at-sea",
+     "name": "Queen at Sea",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Lance Hammer",
+     "runtime": "2hr 1min",
+     "rating": null,
+     "synopsis": "As dementia erodes a woman's ability to communicate her inner life, her husband and daughter struggle to act in her best interest, navigating love and the fragile boundaries between care, protection, and autonomy.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvtrc7qxrcgs07lqd1acjtve",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmvtrflw4tdkz07mycmnqroe9",
+       "title": "Queen at Sea",
+       "subtitle": null,
+       "startsAt": "2026-11-23T00:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1226?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvtrc7qxrcgs07lqd1acjtve",
+       "infoHtml": "<p>Year: 2026<br>Director: Lance Hammer<br>Starring: Juliette Binoche, Tom Courtenay, Anna Calder-Marshall<br>Running Time: 2hr 1min</p><p>As dementia erodes a woman&#39;s ability to communicate her inner life, her husband and daughter struggle to act in her best interest, navigating love and the fragile boundaries between care, protection, and autonomy.</p>"
       }
      ]
     }
