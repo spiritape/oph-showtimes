@@ -1,8 +1,8 @@
 {
- "lastReadCount": 62,
+ "lastReadCount": 59,
  "lastPublish": {
-  "scheduleHash": "a584b384684f8a76565b49183bc31b57ecedef8f63d15aca9fd5a5f3f33c7653",
-  "publishedAt": "2026-10-29T20:39:18.134Z"
+  "scheduleHash": "fa49d1f5b474f4d8f8b88b62d2b5b2a406436c9f09de9ed54bd399c9fcacc1eb",
+  "publishedAt": "2026-10-29T23:41:18.469Z"
  },
  "seen": {
   "titles": {
@@ -217,14 +217,14 @@
      "slug": "the-history-of-concrete",
      "name": "The History of Concrete",
      "subtitle": null,
-     "category": "film",
+     "category": null,
      "isFilm": true,
      "year": "2026",
      "director": "John Wilson",
      "runtime": "1hr 42min",
      "rating": null,
-     "synopsis": "Following the finale of his acclaimed HBO series “How To with John Wilson”, NYC documentarian John Wilson looks to the bedrock of his beloved New York City for inspiration and structure. Concrete, the world's most widely used building material, appears as an ever-present life force, and John sets out to make the definitive documentary on the matter. After attending a workshop on how to write and sell a Hallmark movie, he decides to use the industry-approved Hallmark formula to tell this seemingly drab story and increase his movie’s appeal. But his foundation soon begins to crumble - literally and figuratively - as he struggles to balance artistic freedom with the realities of the modern film industry.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufwgpcokjjq07n3h7lpq6rv",
+     "synopsis": "National Concrete Day!",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmskh6c39678u08mr9329ljr5",
      "livestreamUrl": null,
      "showtimes": [
       {
