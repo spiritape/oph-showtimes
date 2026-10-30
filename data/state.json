@@ -1,8 +1,8 @@
 {
- "lastReadCount": 58,
+ "lastReadCount": 59,
  "lastPublish": {
-  "scheduleHash": "e594a16fdcd545a7703ed6d7ba79fd6177d04c61b26ba45a3bc5a1f80d29e5ab",
-  "publishedAt": "2026-10-30T20:59:19.640Z"
+  "scheduleHash": "fd98231132e017fd4935ee0204f6c560dae7774b67e169ed386ec3c55cd07428",
+  "publishedAt": "2026-10-30T22:21:18.719Z"
  },
  "seen": {
   "titles": {
@@ -2007,7 +2007,7 @@
     }
    },
    "fjord": {
-    "lastShowtime": "2026-11-02T00:15:00.000Z",
+    "lastShowtime": "2026-11-04T00:00:00.000Z",
     "title": {
      "key": "fjord",
      "slug": "fjord",
@@ -2060,6 +2060,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zylmdcls07lhr0dwq0f5",
+       "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
+      },
+      {
+       "id": "cmvvjcdys54kn06mvk8wg3u1z",
+       "title": "Fjord",
+       "subtitle": null,
+       "startsAt": "2026-11-04T00:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1230?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmut0zyi4dcll07lhixf7hr9n",
        "infoHtml": "<p>Year: 2026<br>Director: Cristian Mungiu<br>Starring: Sebastian Stan, Renate Reinsve, Lisa Carlehed<br>Running Time: 2hr 26min </p><p><strong>Winner</strong></p><p><strong>Palme d’Or </strong></p><p><strong>Cannes Film Festival 2026</strong></p><p>From two⁠ time Palme d’Or winner Cristian Mungiu, a Norwegian woman and her devout Romanian husband relocate with their five children to a remote, close⁠ knit, coastal town. Their teenage children form a fast bond with a neighboring family as unease begins to simmer around their rigid beliefs. When allegations of abuse emerge, they are forced to confront a system of judgment that blurs the line between concern and prejudice.</p>"
       }
      ]
