@@ -1,8 +1,8 @@
 {
- "lastReadCount": 57,
+ "lastReadCount": 58,
  "lastPublish": {
-  "scheduleHash": "9195016bad1453c22eee8afc8c7cd35b4e6ac7dde50e7129341a9d84c4a0d0e2",
-  "publishedAt": "2026-10-30T20:13:16.239Z"
+  "scheduleHash": "e594a16fdcd545a7703ed6d7ba79fd6177d04c61b26ba45a3bc5a1f80d29e5ab",
+  "publishedAt": "2026-10-30T20:59:19.640Z"
  },
  "seen": {
   "titles": {
@@ -1672,6 +1672,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmufww86glvw107ln701p7xr3",
+       "infoHtml": "<p>Year: 2026<br>Director: Nathan Fielder, Lance Oppenheim<br>Starring: Nathan Fielder, Elizabeth Holmes<br>Running Time: 2hr 54min</p><p>Rated: R</p><p>In a seemingly endless parade of documentaries, dramatizations, and exposés, Elizabeth Holmes, the inventor of a purported “miracle” medical device at her company Theranos, and sentenced to prison for fraud, has been the face of Silicon Valley hucksterism. Yet in this astounding new film from Nathan Fielder (The Rehearsal and The Curse, NYFF61) and Lance Oppenheim (Primetime), created in secret over the past four years, Holmes becomes an entirely different kind of camera subject. Inviting Fielder into their home to live with them and start recording their lives just 34 days before her incarceration, Holmes and her romantic partner, William “Billy” Evans, profess her innocence on their own, intimate terms. Is this all an elaborate ruse? Or is something even stranger afoot? Fielder and Oppenheim have created a fascinating portrait of a relationship, decimating notions of objectivity in documentary while also interrogating the limits of fiction. This blistering, head-spinning - and frequently hilarious - high-wire act of self-reflexivity keeps changing shape and uncovering surprises as it swerves headlong into the unknowable. An A24 release.</p>"
+      },
+      {
+       "id": "cmvvgdr3g0qov06mvs8h80mt1",
+       "title": "You Can See Everything",
+       "subtitle": null,
+       "startsAt": "2026-11-04T02:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1229?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmva2x05vprqe07mwbvyzprbs",
        "infoHtml": "<p>Year: 2026<br>Director: Nathan Fielder, Lance Oppenheim<br>Starring: Nathan Fielder, Elizabeth Holmes<br>Running Time: 2hr 54min</p><p>Rated: R</p><p>In a seemingly endless parade of documentaries, dramatizations, and exposés, Elizabeth Holmes, the inventor of a purported “miracle” medical device at her company Theranos, and sentenced to prison for fraud, has been the face of Silicon Valley hucksterism. Yet in this astounding new film from Nathan Fielder (The Rehearsal and The Curse, NYFF61) and Lance Oppenheim (Primetime), created in secret over the past four years, Holmes becomes an entirely different kind of camera subject. Inviting Fielder into their home to live with them and start recording their lives just 34 days before her incarceration, Holmes and her romantic partner, William “Billy” Evans, profess her innocence on their own, intimate terms. Is this all an elaborate ruse? Or is something even stranger afoot? Fielder and Oppenheim have created a fascinating portrait of a relationship, decimating notions of objectivity in documentary while also interrogating the limits of fiction. This blistering, head-spinning - and frequently hilarious - high-wire act of self-reflexivity keeps changing shape and uncovering surprises as it swerves headlong into the unknowable. An A24 release.</p>"
       },
       {
