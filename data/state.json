@@ -1,8 +1,8 @@
 {
  "lastReadCount": 50,
  "lastPublish": {
-  "scheduleHash": "c7b3251a750e13431b121a3b0cc4730d15215e2be534c123528d4f9dbf7e6657",
-  "publishedAt": "2026-11-01T16:49:17.024Z"
+  "scheduleHash": "2d611231a41569a2a1c9930500e135955e5d23fddf1264676211ab6e2e1f5f4b",
+  "publishedAt": "2026-11-01T17:31:17.494Z"
  },
  "seen": {
   "titles": {
@@ -2652,7 +2652,7 @@
     }
    },
    "wildwood": {
-    "lastShowtime": "2026-11-07T20:00:00.000Z",
+    "lastShowtime": "2026-11-07T19:30:00.000Z",
     "title": {
      "key": "wildwood",
      "slug": "wildwood",
@@ -2672,7 +2672,7 @@
        "id": "cmvb7ueab8iay07mv35y7zpq1",
        "title": "Wildwood",
        "subtitle": null,
-       "startsAt": "2026-11-07T20:00:00.000Z",
+       "startsAt": "2026-11-07T19:30:00.000Z",
        "category": "film",
        "ticketUrl": null,
        "rsvpUrl": "https://www.eventbrite.com/e/2003515490766?aff=oddtdtcreator",
