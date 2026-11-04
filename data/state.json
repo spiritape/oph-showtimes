@@ -1,8 +1,8 @@
 {
- "lastReadCount": 45,
+ "lastReadCount": 46,
  "lastPublish": {
-  "scheduleHash": "0decf9aac242a507ba17ad5b2a3db5594afd73e667dd8e51be57f9cff3b4439c",
-  "publishedAt": "2026-11-04T18:47:19.216Z"
+  "scheduleHash": "0eaca90bcfd51bfcf7a0d9a8eb9c1b69a2e841eb4dedd15498bf572f87c95a8a",
+  "publishedAt": "2026-11-04T18:51:18.915Z"
  },
  "seen": {
   "titles": {
@@ -1796,7 +1796,7 @@
     }
    },
    "once upon a time in harlem": {
-    "lastShowtime": "2026-10-31T00:00:00.000Z",
+    "lastShowtime": "2026-11-06T22:00:00.000Z",
     "title": {
      "key": "once upon a time in harlem",
      "slug": "once-upon-a-time-in-harlem",
@@ -1806,7 +1806,7 @@
      "isFilm": true,
      "year": "2026",
      "director": "William Greaves, David Greaves, Liani Greaves",
-     "runtime": "1hr 30min",
+     "runtime": "1hr 40min",
      "rating": null,
      "synopsis": "One afternoon in August 1972, at the behest of legendary, genre-defying filmmaker William Greaves, a coterie of luminaries from the Harlem Renaissance gathered - with cameras rolling - for an intimate party in Duke Ellington’s townhouse. Fifty years later, completed by Greaves’ son David, Once Upon a Time in Harlem has emerged as a rapturous living archive of one of the most important artistic movements of the 20th century and, posthumously, one of the most important works in the Greaves filmography.",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulujp1l4qmj07lm96gsjyc1",
@@ -1824,6 +1824,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulujp1l4qmj07lm96gsjyc1",
        "infoHtml": "<p>Year: 2026<br>Director: William Greaves, David Greaves, Liani Greaves<br>Running Time: 1hr 30min</p><p>One afternoon in August 1972, at the behest of legendary, genre-defying filmmaker William Greaves, a coterie of luminaries from the Harlem Renaissance gathered - with cameras rolling - for an intimate party in Duke Ellington’s townhouse. Fifty years later, completed by Greaves’ son David, <em>Once Upon a Time in Harlem</em> has emerged as a rapturous living archive of one of the most important artistic movements of the 20th century and, posthumously, one of the most important works in the Greaves filmography. </p><p>A towering constellation of artists, poets, painters, musicians, scholars, and other notables appear throughout — among them Aaron Douglas, Arna Bontemps, Richard Bruce Nugent, James Van Der Zee, and Countee Cullen’s widow, Ida Mae Cullen. Free from any institutionalized gaze and structure, they congregate around a large punch bowl to drink, reminisce, banter, and passionately debate their legacy. The conversations we’re privy to flow naturally and candidly, marked variously by humour, fervour, reflexive insight, and not a bit of melancholy, as they take stock of their achievements in their older age.</p><p>Greaves’ multiple 16mm cameras are at the heart of the action, capturing and partaking in the collegial repartee, while the deft, contemporary editing balances the original ’70s textures with an exhilarating, contemporary immediacy, tracing the urgency of these artists and their ideas from the 1920s through to the 1970s and to our present moment.</p><p>Functioning as well as a dynamic inquiry into the ways culture is actively inherited and sustained across disciplines, and creates communities of protest and survival, <em>Once Upon a Time in Harlem </em>is a monumental reclamation of cinematic and cultural memory.</p>"
+      },
+      {
+       "id": "cmw2h08nenpsl07my7r19w4xb",
+       "title": "Once Upon a Time in Harlem",
+       "subtitle": null,
+       "startsAt": "2026-11-06T22:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1232?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmulujp1l4qmj07lm96gsjyc1",
+       "infoHtml": "<p>Year: 2026<br>Director: William Greaves, David Greaves, Liani Greaves<br>Running Time: 1hr 40min</p><p>One afternoon in August 1972, at the behest of legendary, genre-defying filmmaker William Greaves, a coterie of luminaries from the Harlem Renaissance gathered - with cameras rolling - for an intimate party in Duke Ellington’s townhouse. Fifty years later, completed by Greaves’ son David, <em>Once Upon a Time in Harlem</em> has emerged as a rapturous living archive of one of the most important artistic movements of the 20th century and, posthumously, one of the most important works in the Greaves filmography. </p><p>A towering constellation of artists, poets, painters, musicians, scholars, and other notables appear throughout — among them Aaron Douglas, Arna Bontemps, Richard Bruce Nugent, James Van Der Zee, and Countee Cullen’s widow, Ida Mae Cullen. Free from any institutionalized gaze and structure, they congregate around a large punch bowl to drink, reminisce, banter, and passionately debate their legacy. The conversations we’re privy to flow naturally and candidly, marked variously by humour, fervour, reflexive insight, and not a bit of melancholy, as they take stock of their achievements in their older age.</p><p>Greaves’ multiple 16mm cameras are at the heart of the action, capturing and partaking in the collegial repartee, while the deft, contemporary editing balances the original ’70s textures with an exhilarating, contemporary immediacy, tracing the urgency of these artists and their ideas from the 1920s through to the 1970s and to our present moment.</p><p>Functioning as well as a dynamic inquiry into the ways culture is actively inherited and sustained across disciplines, and creates communities of protest and survival, <em>Once Upon a Time in Harlem </em>is a monumental reclamation of cinematic and cultural memory.</p>"
       }
      ]
     }
