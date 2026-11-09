@@ -1,8 +1,8 @@
 {
- "lastReadCount": 33,
+ "lastReadCount": 34,
  "lastPublish": {
-  "scheduleHash": "190fbf10a296768cc22edafe7511e746a1849768f3d44bd11e971181f6053bf8",
-  "publishedAt": "2026-11-09T17:39:17.327Z"
+  "scheduleHash": "c5c722d649519593b573ad16f3b0defcb3774a1d666a41a86e147ea0fc3039bb",
+  "publishedAt": "2026-11-09T17:49:15.718Z"
  },
  "seen": {
   "titles": {
@@ -1822,7 +1822,7 @@
     }
    },
    "once upon a time in harlem": {
-    "lastShowtime": "2026-11-06T22:00:00.000Z",
+    "lastShowtime": "2026-11-21T22:00:00.000Z",
     "title": {
      "key": "once upon a time in harlem",
      "slug": "once-upon-a-time-in-harlem",
@@ -1855,9 +1855,9 @@
        "id": "cmw2h08nenpsl07my7r19w4xb",
        "title": "Once Upon a Time in Harlem",
        "subtitle": null,
-       "startsAt": "2026-11-06T22:00:00.000Z",
+       "startsAt": "2026-11-21T22:00:00.000Z",
        "category": "film",
-       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1232?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1235?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$13.50/$12 (senior 60+)",
