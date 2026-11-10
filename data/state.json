@@ -1,8 +1,8 @@
 {
- "lastReadCount": 37,
+ "lastReadCount": 38,
  "lastPublish": {
-  "scheduleHash": "2a6556b13bea646ab9ee6f51117570b2c051df9fd49d72289e9d9dad0cb9516d",
-  "publishedAt": "2026-11-10T16:58:14.927Z"
+  "scheduleHash": "69485b1b45f3b0bfda5bef279d96433b527007c512141d2f106769a14bdd34ee",
+  "publishedAt": "2026-11-10T19:09:22.437Z"
  },
  "seen": {
   "titles": {
@@ -2677,7 +2677,7 @@
     }
    },
    "wicker": {
-    "lastShowtime": "2026-11-08T03:30:00.000Z",
+    "lastShowtime": "2026-11-20T03:00:00.000Z",
     "title": {
      "key": "wicker",
      "slug": "wicker",
@@ -2705,6 +2705,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
        "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p><strong>Post screening Q&amp;A with directors Alex Huston Fischer and Eleanor Wilson</strong></p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
+      },
+      {
+       "id": "cmwb2agosxae107n8x5dco6rl",
+       "title": "Wicker",
+       "subtitle": null,
+       "startsAt": "2026-11-20T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1239?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
+       "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
       }
      ]
     }
