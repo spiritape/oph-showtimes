@@ -1,8 +1,8 @@
 {
- "lastReadCount": 27,
+ "lastReadCount": 29,
  "lastPublish": {
-  "scheduleHash": "fd47c3e6c8c6927b01a3d7d7847c98bc620a7430f5c5f447e6cd3bc8a93fab09",
-  "publishedAt": "2026-11-13T16:47:18.090Z"
+  "scheduleHash": "b7884cd7b4007722abc17ec3f4fd5d3e03953e8cb723b2c1c38219cfde1884e7",
+  "publishedAt": "2026-11-13T17:59:24.659Z"
  },
  "seen": {
   "titles": {
@@ -3053,7 +3053,7 @@
     }
    },
    "la bola negra": {
-    "lastShowtime": "2026-11-11T03:00:00.000Z",
+    "lastShowtime": "2026-11-22T02:30:00.000Z",
     "title": {
      "key": "la bola negra",
      "slug": "la-bola-negra",
@@ -3062,11 +3062,11 @@
      "category": "film",
      "isFilm": true,
      "year": "2026",
-     "director": "Javier Ambrossi, Javier Calvo",
+     "director": "Javier Ambrossi",
      "runtime": "2hr 40min",
      "rating": "R",
-     "synopsis": "Spain’s submission for Best International Feature Film at the Academy Awards explores with extravagant style what it means to be gay in different eras, focusing on \"three existences\" that are connected through themes in the work of Federico García Lorca — sexuality, desire, pain, and inheritance.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnudttwix07n392124crm",
+     "synopsis": "Explores what it means to be gay throughout different eras, focusing on \"three existences\" that are connected through themes of sexuality, desire, pain, and inheritance.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfa3msup9az07lgw5ntcip7",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3081,6 +3081,32 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnudttwix07n392124crm",
        "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi, Javier Calvo<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler, Penelope Cruz, Glenn Close<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Spain’s submission for Best International Feature Film at the Academy Awards explores with extravagant style what it means to be gay in different eras, focusing on &quot;three existences&quot; that are connected through themes in the work of Federico García Lorca — sexuality, desire, pain, and inheritance.</p>"
+      },
+      {
+       "id": "cmwf9sblyolce07lt8f6iolnp",
+       "title": "La Bola Negra",
+       "subtitle": null,
+       "startsAt": "2026-11-17T02:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1240?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfa3msup9az07lgw5ntcip7",
+       "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p>"
+      },
+      {
+       "id": "cmwfa6fnnpcxl07lggddavylp",
+       "title": "La Bola Negra",
+       "subtitle": null,
+       "startsAt": "2026-11-22T02:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1241?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfa3mw8p9b607lgh5t95x6e",
+       "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p>"
       }
      ]
     }
