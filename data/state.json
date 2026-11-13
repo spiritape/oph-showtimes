@@ -1,8 +1,8 @@
 {
- "lastReadCount": 29,
+ "lastReadCount": 30,
  "lastPublish": {
-  "scheduleHash": "36ebef60f3aeb83ddebd82910dae42370e626fd6d8c5d5f9af260099b95b730f",
-  "publishedAt": "2026-11-13T19:11:17.450Z"
+  "scheduleHash": "0ca9c61f1a8042ccb5a7dc36e3d0817c588b209f2dd4dd8a874c4cd18859c2dc",
+  "publishedAt": "2026-11-13T21:09:18.166Z"
  },
  "seen": {
   "titles": {
@@ -3912,6 +3912,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvu02xb9ftiv07mytpt0tgbj",
        "infoHtml": "<p>Year: 2026<br>Director: Tony Gilroy<br>Starring: Pedro Pascal, Olivia Wilde, Eva Victor<br>Running Time: 2hr 4min</p><p>A gifted cellist returns home to Los Angeles after 20 years on the road. Music, which has been the constant, all-consuming river of his life, swells into an adventure that will change him forever.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "mr. irrelevant": {
+    "lastShowtime": "2026-11-21T03:00:00.000Z",
+    "title": {
+     "key": "mr. irrelevant",
+     "slug": "mr-irrelevant",
+     "name": "Mr. Irrelevant",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Jonathan Levine",
+     "runtime": "2hr 5min",
+     "rating": "R",
+     "synopsis": "The heartfelt story of the inspiring, enduring impact John Tuggle had on his team and teammates after being drafted by the New York Giants.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfgqlpkza5y07lguqdem6we",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwfgwo4uzfe607lg9c8lfohd",
+       "title": "Mr. Irrelevant",
+       "subtitle": null,
+       "startsAt": "2026-11-21T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2004829210136?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfgqlpkza5y07lguqdem6we",
+       "infoHtml": "<p>Year: 2026<br>Director: Jonathan Levine<br>Starring: Isabel May, Michael Shannon, David Krumholtz<br>Running Time: 2hr 5min</p><p>Rated: R</p><p><strong>Special advance screening</strong></p><p><strong>Introduction from director Jonathan Levine</strong></p><p>The heartfelt story of the inspiring, enduring impact John Tuggle had on his team and teammates after being drafted by the New York Giants.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
