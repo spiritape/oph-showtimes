@@ -1,8 +1,8 @@
 {
- "lastReadCount": 28,
+ "lastReadCount": 27,
  "lastPublish": {
-  "scheduleHash": "d43589b32cdcbfd244548a6bc92cf8a3dc8aac428706cea147aed839d85997f2",
-  "publishedAt": "2026-11-14T16:58:29.240Z"
+  "scheduleHash": "80cf29f738a6348ed26f7999664d22ce254f8ed3bb305e3c43044c399590045f",
+  "publishedAt": "2026-11-14T17:19:19.450Z"
  },
  "seen": {
   "titles": {
@@ -3945,6 +3945,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfgqlpkza5y07lguqdem6we",
        "infoHtml": "<p>Year: 2026<br>Director: Jonathan Levine<br>Starring: Isabel May, Michael Shannon, David Krumholtz<br>Running Time: 2hr 5min</p><p>Rated: R</p><p><strong>Special advance screening</strong></p><p><strong>Introduction from director Jonathan Levine</strong></p><p>Mr. Irrelevant is the inspiring true story of John Tuggle (David Corenswet), the last player selected in the last round of the 1983 NFL draft by the New York Giants. A true underdog, Tuggle defied expectations on the field and off for his then first-year head coach, Bill Parcells (Michael Shannon), his newfound love (Isabel May), and his team, proving that remarkable hope and perseverance can transcend even the greatest challenges.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "ken russell’s the devils": {
+    "lastShowtime": "2026-11-22T05:15:00.000Z",
+    "title": {
+     "key": "ken russell’s the devils",
+     "slug": "ken-russells-the-devils",
+     "name": "Ken Russell’s The Devils",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1971",
+     "director": "Ken Russell",
+     "runtime": "1hr 51min",
+     "rating": "NC-17",
+     "synopsis": "In 17th-century France, Father Urbain Grandier's protection of the city of Loudun from the corrupt Cardinal Richelieu is undermined by a sexually repressed nun's accusation of witchcraft.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuw7twjx07n3rdg4cosp",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwgo2gydsg3107lgij6p5a81",
+       "title": "Ken Russell’s The Devils",
+       "subtitle": null,
+       "startsAt": "2026-11-22T05:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1242?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuw7twjx07n3rdg4cosp",
+       "infoHtml": "<p>Year: 1971<br>Director: Ken Russell<br>Starring: Vanessa Redgrave, Oliver Reed, Dudley Sutton<br>Running Time: 1hr 51min</p><p>Rated: NC-17</p><p>In 17th-century France, Father Urbain Grandier&#39;s protection of the city of Loudun from the corrupt Cardinal Richelieu is undermined by a sexually repressed nun&#39;s accusation of witchcraft.</p>"
       }
      ]
     }
