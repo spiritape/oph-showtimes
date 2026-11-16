@@ -1,8 +1,8 @@
 {
- "lastReadCount": 21,
+ "lastReadCount": 22,
  "lastPublish": {
-  "scheduleHash": "85db33a59e47fdac153b9e87792b6567614e3966640bc714f1a5ca1d597cb427",
-  "publishedAt": "2026-11-16T22:39:16.206Z"
+  "scheduleHash": "0d37a95f518eb575430e8fd50c85f430f33ea582fc0f0be9626c0634fff4887e",
+  "publishedAt": "2026-11-16T22:41:16.774Z"
  },
  "seen": {
   "titles": {
@@ -4017,6 +4017,39 @@
        "price": "$15/13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwgo7xujsjn207lgubksg6nz",
        "infoHtml": "<p>Year: 1971<br>Director: Ken Russell<br>Starring: Vanessa Redgrave, Oliver Reed, Dudley Sutton<br>Running Time: 1hr 51min</p><p>Rated: NC-17</p><p>In 17th-century France, Father Urbain Grandier&#39;s protection of the city of Loudun from the corrupt Cardinal Richelieu is undermined by a sexually repressed nun&#39;s accusation of witchcraft.</p>"
+      }
+     ]
+    }
+   },
+   "fantastic mr. fox": {
+    "lastShowtime": "2026-11-26T19:00:00.000Z",
+    "title": {
+     "key": "fantastic mr. fox",
+     "slug": "fantastic-mr-fox",
+     "name": "Fantastic Mr. Fox",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2009",
+     "director": "Wes Anderson",
+     "runtime": "1hr 27min",
+     "rating": null,
+     "synopsis": "Rated PG",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2kajo3o0dmsr8zfkrad",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjujscsrvwx07llsnr2pz7j",
+       "title": "Fantastic Mr. Fox",
+       "subtitle": null,
+       "startsAt": "2026-11-26T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1250?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2kajo3o0dmsr8zfkrad",
+       "infoHtml": "<p>Year: 2009<br>Director: Wes Anderson<br>Starring: George Clooney, Meryl Streep, Jason Schwartzman, Bill Murray<br>Running Time: 1hr 27min</p><p>Rated PG</p><p><strong>Happy Thanksgiving!</strong></p><p>An urbane fox cannot resist returning to his farm raiding ways and then must help his community survive the farmers&#39; retaliation.</p>"
       }
      ]
     }
