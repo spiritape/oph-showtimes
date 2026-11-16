@@ -1,8 +1,8 @@
 {
- "lastReadCount": 18,
+ "lastReadCount": 19,
  "lastPublish": {
-  "scheduleHash": "2723bfc5c33f131249f5c7c4e823cbe7745fc38f6675e024e66bf4f776d91af5",
-  "publishedAt": "2026-11-16T22:27:19.762Z"
+  "scheduleHash": "adfe66d6bd35d5b236829d7a569123a60d86734f33d0ac64024e2194220e3bd2",
+  "publishedAt": "2026-11-16T22:33:16.018Z"
  },
  "seen": {
   "titles": {
@@ -2677,7 +2677,7 @@
     }
    },
    "wicker": {
-    "lastShowtime": "2026-11-20T03:00:00.000Z",
+    "lastShowtime": "2026-11-22T22:15:00.000Z",
     "title": {
      "key": "wicker",
      "slug": "wicker",
@@ -2717,6 +2717,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73d6374zr07mvrnofhf05",
+       "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
+      },
+      {
+       "id": "cmwju5xf4rsqw07lp6446jgwa",
+       "title": "Wicker",
+       "subtitle": null,
+       "startsAt": "2026-11-22T22:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1243?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwju9pi5rmda07llpbiwoas8",
        "infoHtml": "<p>Year: 2026<br>Director: Alex Huston Fischer, Eleanor Wilson<br>Starring: Alexander Skarsgard, Olivia Coleman, Peter Dinklage, Elizabeth Debicki, Richard E. Grant<br>Running Time: 1hr 45min</p><p>Rated: R</p><p>An ostracized fisherwoman commissions the local basketmaker to weave her a husband, but when her wicker creation proves unexpectedly extraordinary, his presence ignites jealousy and upheaval that threatens their quiet village.</p>"
       }
      ]
