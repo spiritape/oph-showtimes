@@ -1,8 +1,8 @@
 {
- "lastReadCount": 23,
+ "lastReadCount": 24,
  "lastPublish": {
-  "scheduleHash": "305a43fdf3cd26ae3afafa19cba7c1d5a4a8977c6e61e1c5e6936dd4867a60c3",
-  "publishedAt": "2026-11-16T22:47:25.624Z"
+  "scheduleHash": "bbc01536ab330674b22bbf94b6e4b9233d61fbfb65282521c7b3ebdcf175f8e9",
+  "publishedAt": "2026-11-16T22:51:23.021Z"
  },
  "seen": {
   "titles": {
@@ -4063,6 +4063,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjumo5ps06a07llvyamnlr3",
        "infoHtml": "<p>Year: 2009<br>Director: Wes Anderson<br>Starring: George Clooney, Meryl Streep, Jason Schwartzman, Bill Murray<br>Running Time: 1hr 27min</p><p>Rated PG</p><p><strong>Happy Thanksgiving!</strong></p><p>An urbane fox cannot resist returning to his farm raiding ways and then must help his community survive the farmers&#39; retaliation.</p>"
+      }
+     ]
+    }
+   },
+   "fantasia": {
+    "lastShowtime": "2026-11-29T19:00:00.000Z",
+    "title": {
+     "key": "fantasia",
+     "slug": "fantasia",
+     "name": "Fantasia",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1940",
+     "director": "James Algar, Samuel Armstrong, Ford Bebbe Jr.",
+     "runtime": "2hr 4min",
+     "rating": "G",
+     "synopsis": "A series of eight famous pieces of classical music, conducted by Leopold Stokowski and interpreted in animation by Walt Disney's team of artists.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjutu6bsaql07llvfxysbk3",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjux3r3spkh07lpa5ew9n3r",
+       "title": "Fantasia",
+       "subtitle": null,
+       "startsAt": "2026-11-29T19:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1258?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjutu6bsaql07llvfxysbk3",
+       "infoHtml": "<p>Year: 1940<br>Director: James Algar, Samuel Armstrong, Ford Bebbe Jr.<br>Starring: Leopold Stokowski, Deems Taylor, The Philadelphia Orchestra <br>Running Time: 2hr 4min</p><p>Rated: G</p><p>A series of eight famous pieces of classical music, conducted by Leopold Stokowski and interpreted in animation by Walt Disney&#39;s team of artists.</p>"
       }
      ]
     }
