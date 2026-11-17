@@ -1,8 +1,8 @@
 {
- "lastReadCount": 41,
+ "lastReadCount": 40,
  "lastPublish": {
-  "scheduleHash": "581ada52101b5502c574ff527a0f601d532eb8b9cdb2fbaa6843c95ce2120d21",
-  "publishedAt": "2026-11-17T13:07:37.448Z"
+  "scheduleHash": "3e9e66f9e3c3fbd191f70c79d5f0cddd628d3845f13d10bd4bdbf95cc159ec0b",
+  "publishedAt": "2026-11-17T17:19:20.706Z"
  },
  "seen": {
   "titles": {
@@ -3118,7 +3118,7 @@
     }
    },
    "la bola negra": {
-    "lastShowtime": "2026-11-22T02:30:00.000Z",
+    "lastShowtime": "2026-11-17T02:30:00.000Z",
     "title": {
      "key": "la bola negra",
      "slug": "la-bola-negra",
@@ -3158,19 +3158,6 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfco530tojn07ltjk3tvyat",
-       "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p>"
-      },
-      {
-       "id": "cmwfa6fnnpcxl07lggddavylp",
-       "title": "La Bola Negra",
-       "subtitle": null,
-       "startsAt": "2026-11-22T02:30:00.000Z",
-       "category": "film",
-       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1241?siteToken=0zv2d2xep31txszrx28cn3r0t4",
-       "rsvpUrl": null,
-       "livestreamUrl": null,
-       "price": "$15/$13.50 (senior 60+)",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfa3mw8p9b607lgh5t95x6e",
        "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p>"
       }
      ]
