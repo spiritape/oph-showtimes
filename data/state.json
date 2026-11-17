@@ -1,8 +1,8 @@
 {
- "lastReadCount": 31,
+ "lastReadCount": 32,
  "lastPublish": {
-  "scheduleHash": "8850e24d61fce14020b079d2245510690549d9adc6b9d4cec272f7f5e55936d3",
-  "publishedAt": "2026-11-17T00:25:24.464Z"
+  "scheduleHash": "d9846434dc7d10680b207706c4593dd4bf00369b8c22a2efa2009e106690a1ba",
+  "publishedAt": "2026-11-17T00:31:16.561Z"
  },
  "seen": {
   "titles": {
@@ -4227,6 +4227,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmg8jy8qba4t307mtmt9ed9mt",
        "infoHtml": "<p>Year: 1995<br>Director: Jim Jarmusch<br>Starring: Johnny Depp, Gary Farmer, Crispin Glover<br>Running Time: 2hr 1min</p><p>Rated: R</p><p>On the run after murdering a man, accountant William Blake encounters a strange Native American man named Nobody who prepares him for his journey into the spiritual world.</p>"
+      }
+     ]
+    }
+   },
+   "the wizard of oz": {
+    "lastShowtime": "2026-11-28T20:00:00.000Z",
+    "title": {
+     "key": "the wizard of oz",
+     "slug": "the-wizard-of-oz",
+     "name": "The Wizard of Oz",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1939",
+     "director": "Victor Flemming",
+     "runtime": "1hr 42min",
+     "rating": null,
+     "synopsis": "Rated PG",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/pWBxai6kS1OPyvxm8iUo",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjyfpedwjdl07ll66f08338",
+       "title": "The Wizard of Oz",
+       "subtitle": null,
+       "startsAt": "2026-11-28T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1255?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/pWBxai6kS1OPyvxm8iUo",
+       "infoHtml": "<p>Year: 1939<br>Director: Victor Flemming<br>Starring: Judy Garland, Frank Morgan, Ray Bolger<br>Running Time: 1hr 42min</p><p>Rated PG</p><p>Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others&#39; wishes.</p>"
       }
      ]
     }
