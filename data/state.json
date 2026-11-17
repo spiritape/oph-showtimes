@@ -1,8 +1,8 @@
 {
- "lastReadCount": 33,
+ "lastReadCount": 34,
  "lastPublish": {
-  "scheduleHash": "020dc83c85f1858206e54ba579346b02217d88ec98dca02bbcaa303443ae458e",
-  "publishedAt": "2026-11-17T00:39:16.378Z"
+  "scheduleHash": "1a1b8c4b466414f5f38eba6a74da30f4e294f2fffb5d9a2ff5e5e6a87cd18c2a",
+  "publishedAt": "2026-11-17T00:47:20.226Z"
  },
  "seen": {
   "titles": {
@@ -3428,7 +3428,7 @@
     }
    },
    "paper tiger": {
-    "lastShowtime": "2026-11-14T03:15:00.000Z",
+    "lastShowtime": "2026-11-29T03:00:00.000Z",
     "title": {
      "key": "paper tiger",
      "slug": "paper-tiger",
@@ -3441,7 +3441,7 @@
      "runtime": "1hr 55min",
      "rating": "R",
      "synopsis": "Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuk2u6x807mxjcjh07yi",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyw371x9xc07lplp01dyun",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3456,6 +3456,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnuk2u6x807mxjcjh07yi",
        "infoHtml": "<p>Year: 2026<br>Director: James Gray<br>Starring: Adam Driver, Scarlett Johansson, Miles Teller<br>Running Time: 1hr 55min</p><p>Rated: R</p><p>Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.</p>"
+      },
+      {
+       "id": "cmwjz1mvsxed207lp720eamve",
+       "title": "Paper Tiger",
+       "subtitle": null,
+       "startsAt": "2026-11-29T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1263?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyw371x9xc07lplp01dyun",
+       "infoHtml": "<p>Year: 2026<br>Director: James Gray<br>Starring: Adam Driver, Scarlett Johansson, Miles Teller<br>Running Time: 1hr 55min</p><p>Rated: R</p><p>Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.</p>"
       }
      ]
     }
