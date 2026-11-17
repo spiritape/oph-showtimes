@@ -1,8 +1,8 @@
 {
- "lastReadCount": 38,
+ "lastReadCount": 39,
  "lastPublish": {
-  "scheduleHash": "67ebaec4b40a245f2f12890c910b09c2aefcfab8ed3e686b0e0de06ff2515d03",
-  "publishedAt": "2026-11-17T01:15:35.594Z"
+  "scheduleHash": "1f273735b7bb6923b4acae14a253ea6cc2e597ac209a0ffeabcfdd1c215f6b24",
+  "publishedAt": "2026-11-17T01:17:22.873Z"
  },
  "seen": {
   "titles": {
@@ -3342,7 +3342,7 @@
     }
    },
    "i play rocky": {
-    "lastShowtime": "2026-11-26T03:00:00.000Z",
+    "lastShowtime": "2026-11-28T00:15:00.000Z",
     "title": {
      "key": "i play rocky",
      "slug": "i-play-rocky",
@@ -3383,6 +3383,19 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzfmaaxc6l07ll3ia0cvt3",
        "infoHtml": "<p>Year: 2026<br>Director: Peter Farrelly<br>Starring: Anthony Ippolito, AnnaSophia Robb, P.J. Byrne<br>Running Time: 2hr 8min</p><p>Rated: PG-13</p><p>Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      },
+      {
+       "id": "cmwk04vaoy5k307llk6jfl0g5",
+       "title": "I Play Rocky",
+       "subtitle": null,
+       "startsAt": "2026-11-28T00:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1259?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzfn64xc6s07llbh3ygemn",
+       "infoHtml": "<p>Year: 2026<br>Director: Peter Farrelly<br>Starring: Anthony Ippolito, AnnaSophia Robb, P.J. Byrne<br>Running Time: 2hr 8min</p><p>Rated: PG-13</p><p>Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.</p>"
       }
      ]
     }
