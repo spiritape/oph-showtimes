@@ -1,8 +1,8 @@
 {
- "lastReadCount": 29,
+ "lastReadCount": 30,
  "lastPublish": {
-  "scheduleHash": "56a6a3293e26efaa2cbad8c122c11a2b0e98d56d25e17beb5959be1e6142dec3",
-  "publishedAt": "2026-11-17T00:19:16.673Z"
+  "scheduleHash": "8ecfc592a9a7e4711c0f1a049becdbfe78e2ba2164a7ba2ecd0f12264068e4e3",
+  "publishedAt": "2026-11-17T00:21:24.576Z"
  },
  "seen": {
   "titles": {
@@ -3593,7 +3593,7 @@
     }
    },
    "club kid": {
-    "lastShowtime": "2026-11-28T03:00:00.000Z",
+    "lastShowtime": "2026-11-29T05:00:00.000Z",
     "title": {
      "key": "club kid",
      "slug": "club-kid",
@@ -3633,6 +3633,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjy02kzw6ri07llvo7a90gc",
+       "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p>"
+      },
+      {
+       "id": "cmwjy3h2dwa5y07llqhycbzl5",
+       "title": "Club Kid",
+       "subtitle": null,
+       "startsAt": "2026-11-29T05:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1252?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjy02p5wkxn07lpqif8j3zj",
        "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p>"
       }
      ]
