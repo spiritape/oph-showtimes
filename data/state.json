@@ -1,8 +1,8 @@
 {
  "lastReadCount": 40,
  "lastPublish": {
-  "scheduleHash": "3e9e66f9e3c3fbd191f70c79d5f0cddd628d3845f13d10bd4bdbf95cc159ec0b",
-  "publishedAt": "2026-11-17T17:19:20.706Z"
+  "scheduleHash": "4139348c4364f0d1100f749d20e7be77137e2070daea699fee67cae67bcbaf3f",
+  "publishedAt": "2026-11-17T17:21:35.269Z"
  },
  "seen": {
   "titles": {
@@ -4106,7 +4106,7 @@
     }
    },
    "ken russell’s the devils": {
-    "lastShowtime": "2026-11-22T05:15:00.000Z",
+    "lastShowtime": "2026-11-22T05:30:00.000Z",
     "title": {
      "key": "ken russell’s the devils",
      "slug": "ken-russells-the-devils",
@@ -4126,7 +4126,7 @@
        "id": "cmwgo2gydsg3107lgij6p5a81",
        "title": "Ken Russell’s The Devils",
        "subtitle": null,
-       "startsAt": "2026-11-22T05:15:00.000Z",
+       "startsAt": "2026-11-22T05:30:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1242?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
