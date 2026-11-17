@@ -1,8 +1,8 @@
 {
- "lastReadCount": 30,
+ "lastReadCount": 31,
  "lastPublish": {
-  "scheduleHash": "8ecfc592a9a7e4711c0f1a049becdbfe78e2ba2164a7ba2ecd0f12264068e4e3",
-  "publishedAt": "2026-11-17T00:21:24.576Z"
+  "scheduleHash": "8850e24d61fce14020b079d2245510690549d9adc6b9d4cec272f7f5e55936d3",
+  "publishedAt": "2026-11-17T00:25:24.464Z"
  },
  "seen": {
   "titles": {
@@ -4194,6 +4194,39 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac8rvhr007llinuvx2fg",
        "infoHtml": "<p>Year: 2026<br>Director: John Hamburg<br>Starring: Robert DeNiro, Ben Stiller, Ariana Grande, Skyler Gisondo<br>Running Time: 1hr 45min</p><p>Rated: PG-13</p><p>A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.</p>"
+      }
+     ]
+    }
+   },
+   "dead man": {
+    "lastShowtime": "2026-11-28T05:15:00.000Z",
+    "title": {
+     "key": "dead man",
+     "slug": "dead-man",
+     "name": "Dead Man",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1995",
+     "director": "Jim Jarmusch",
+     "runtime": "2hr 1min",
+     "rating": "R",
+     "synopsis": "On the run after murdering a man, accountant William Blake encounters a strange Native American man named Nobody who prepares him for his journey into the spiritual world.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmg8jy8qba4t307mtmt9ed9mt",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjy8okfwsu407lpjqpsue9s",
+       "title": "Dead Man",
+       "subtitle": null,
+       "startsAt": "2026-11-28T05:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1253?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmg8jy8qba4t307mtmt9ed9mt",
+       "infoHtml": "<p>Year: 1995<br>Director: Jim Jarmusch<br>Starring: Johnny Depp, Gary Farmer, Crispin Glover<br>Running Time: 2hr 1min</p><p>Rated: R</p><p>On the run after murdering a man, accountant William Blake encounters a strange Native American man named Nobody who prepares him for his journey into the spiritual world.</p>"
       }
      ]
     }
