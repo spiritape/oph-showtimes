@@ -1,8 +1,8 @@
 {
- "lastReadCount": 40,
+ "lastReadCount": 41,
  "lastPublish": {
-  "scheduleHash": "5e00aec8ed0776579478521eb652ccf5b6d865fca8c037ee161205486b140277",
-  "publishedAt": "2026-11-17T17:59:21.832Z"
+  "scheduleHash": "e2f41a78ea2142bed93ab874cbaa2102934fb44e2b42b7cbbf188d5ccd5712e2",
+  "publishedAt": "2026-11-17T20:31:23.403Z"
  },
  "seen": {
   "titles": {
@@ -4417,6 +4417,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzj0qnxesb07llh6myxqpu",
        "infoHtml": "<p>Year: 1987<br>Director: John Hughes<br>Starring: Steve Martin, John Candy, Laila Robins, Michael McKean, Kevin Bacon<br>Running Time: 1hr 33min</p><p>Rated: R</p><p>A Chicago advertising man must struggle to travel home from New York for Thanksgiving, with a lovable oaf of a shower-curtain-ring salesman as his only companion.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "addams family values": {
+    "lastShowtime": "2026-11-21T20:00:00.000Z",
+    "title": {
+     "key": "addams family values",
+     "slug": "addams-family-values",
+     "name": "Addams Family Values",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1993",
+     "director": "Barry Sonnenfeld",
+     "runtime": "1hr 34min",
+     "rating": null,
+     "synopsis": "The Addams Family try to rescue their beloved Uncle Fester from his gold-digging new love, a black widow named Debbie.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2k7jxav07k9oxw9czg1",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwl5cd77dmmq07n0lfr57myq",
+       "title": "Addams Family Values",
+       "subtitle": null,
+       "startsAt": "2026-11-21T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1265?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (child 12 & under - senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2k7jxav07k9oxw9czg1",
+       "infoHtml": "<p>Year: 1993<br>Director: Barry Sonnenfeld<br>Starring: Anjelica Huston, Raul Julia, Christopher Lloyd, Christina Ricci, Joan Cusack<br>Running Time: 1hr 34min</p><p>The Addams Family try to rescue their beloved Uncle Fester from his gold-digging new love, a black widow named Debbie.</p>"
       }
      ]
     }
