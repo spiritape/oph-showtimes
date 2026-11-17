@@ -1,8 +1,8 @@
 {
- "lastReadCount": 39,
+ "lastReadCount": 40,
  "lastPublish": {
-  "scheduleHash": "1f273735b7bb6923b4acae14a253ea6cc2e597ac209a0ffeabcfdd1c215f6b24",
-  "publishedAt": "2026-11-17T01:17:22.873Z"
+  "scheduleHash": "929ffc89656976e7ed6a14332279def7102a16f262fbedc8602734ad6bef4b3a",
+  "publishedAt": "2026-11-17T01:19:16.220Z"
  },
  "seen": {
   "titles": {
@@ -3342,7 +3342,7 @@
     }
    },
    "i play rocky": {
-    "lastShowtime": "2026-11-28T00:15:00.000Z",
+    "lastShowtime": "2026-11-29T00:15:00.000Z",
     "title": {
      "key": "i play rocky",
      "slug": "i-play-rocky",
@@ -3395,6 +3395,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzfn64xc6s07llbh3ygemn",
+       "infoHtml": "<p>Year: 2026<br>Director: Peter Farrelly<br>Starring: Anthony Ippolito, AnnaSophia Robb, P.J. Byrne<br>Running Time: 2hr 8min</p><p>Rated: PG-13</p><p>Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.</p>"
+      },
+      {
+       "id": "cmwk06g8xy74v07ll7h42awdw",
+       "title": "I Play Rocky",
+       "subtitle": null,
+       "startsAt": "2026-11-29T00:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1260?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzfncfxrmg07lpky42kv6j",
        "infoHtml": "<p>Year: 2026<br>Director: Peter Farrelly<br>Starring: Anthony Ippolito, AnnaSophia Robb, P.J. Byrne<br>Running Time: 2hr 8min</p><p>Rated: PG-13</p><p>Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.</p>"
       }
      ]
