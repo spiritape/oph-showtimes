@@ -1,8 +1,8 @@
 {
- "lastReadCount": 26,
+ "lastReadCount": 27,
  "lastPublish": {
-  "scheduleHash": "64600aecfba3bb83e51f9da27b7ae8af5e78d978da390c1027f41638c9c05bc8",
-  "publishedAt": "2026-11-17T00:03:33.248Z"
+  "scheduleHash": "7cdb9fcd396cdc2a2370782b9627e8f532c4ec2dde38f7a21699d635ee9aaec6",
+  "publishedAt": "2026-11-17T00:05:16.818Z"
  },
  "seen": {
   "titles": {
@@ -4101,7 +4101,7 @@
     }
    },
    "focker-in-law": {
-    "lastShowtime": "2026-11-26T21:00:00.000Z",
+    "lastShowtime": "2026-11-27T22:00:00.000Z",
     "title": {
      "key": "focker-in-law",
      "slug": "focker-in-law",
@@ -4114,7 +4114,7 @@
      "runtime": "1hr 45min",
      "rating": "PG-13",
      "synopsis": "A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac8rvhr007llinuvx2fg",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac5ovtwv07lputhb9nx8",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -4127,7 +4127,7 @@
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac8rvhr007llinuvx2fg",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac5ovtwv07lputhb9nx8",
        "infoHtml": "<p>Year: 2026<br>Director: John Hamburg<br>Starring: Robert DeNiro, Ben Stiller, Ariana Grande, Skyler Gisondo<br>Running Time: 1hr 45min</p><p>Rated: PG-13</p><p>A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.</p>"
       },
       {
@@ -4137,6 +4137,19 @@
        "startsAt": "2026-11-26T21:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1247?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac3avtwo07lpce03ogyq",
+       "infoHtml": "<p>Year: 2026<br>Director: John Hamburg<br>Starring: Robert DeNiro, Ben Stiller, Ariana Grande, Skyler Gisondo<br>Running Time: 1hr 45min</p><p>Rated: PG-13</p><p>A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.</p>"
+      },
+      {
+       "id": "cmwjxjbw8w33907lp38gya357",
+       "title": "Focker-in-Law",
+       "subtitle": null,
+       "startsAt": "2026-11-27T22:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1248?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
