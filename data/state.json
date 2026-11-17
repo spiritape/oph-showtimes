@@ -1,8 +1,8 @@
 {
- "lastReadCount": 34,
+ "lastReadCount": 35,
  "lastPublish": {
-  "scheduleHash": "1a1b8c4b466414f5f38eba6a74da30f4e294f2fffb5d9a2ff5e5e6a87cd18c2a",
-  "publishedAt": "2026-11-17T00:47:20.226Z"
+  "scheduleHash": "b5bcbc7296d86256d6094d5b9b6687637f802b0ec6b09ec3b5709383af556761",
+  "publishedAt": "2026-11-17T00:49:19.040Z"
  },
  "seen": {
   "titles": {
@@ -3428,7 +3428,7 @@
     }
    },
    "paper tiger": {
-    "lastShowtime": "2026-11-29T03:00:00.000Z",
+    "lastShowtime": "2026-11-30T03:15:00.000Z",
     "title": {
      "key": "paper tiger",
      "slug": "paper-tiger",
@@ -3468,6 +3468,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyw371x9xc07lplp01dyun",
+       "infoHtml": "<p>Year: 2026<br>Director: James Gray<br>Starring: Adam Driver, Scarlett Johansson, Miles Teller<br>Running Time: 1hr 55min</p><p>Rated: R</p><p>Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.</p>"
+      },
+      {
+       "id": "cmwjz43egxgtv07lp46e2qv5x",
+       "title": "Paper Tiger",
+       "subtitle": null,
+       "startsAt": "2026-11-30T03:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1257?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyw394wuuw07llre5e1qxo",
        "infoHtml": "<p>Year: 2026<br>Director: James Gray<br>Starring: Adam Driver, Scarlett Johansson, Miles Teller<br>Running Time: 1hr 55min</p><p>Rated: R</p><p>Two brothers pursuing the American Dream in 1980s New York City get entangled in a dangerous Russian mafia scheme that terrorizes their family and tests the limits of their bond before betrayal becomes inevitable.</p>"
       }
      ]
