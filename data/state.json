@@ -1,8 +1,8 @@
 {
- "lastReadCount": 24,
+ "lastReadCount": 25,
  "lastPublish": {
-  "scheduleHash": "bbc01536ab330674b22bbf94b6e4b9233d61fbfb65282521c7b3ebdcf175f8e9",
-  "publishedAt": "2026-11-16T22:51:23.021Z"
+  "scheduleHash": "f9931a5bb097208dd88b72661a1686ac16291c2c456887ee3c2b32d097dc06b0",
+  "publishedAt": "2026-11-17T00:01:20.648Z"
  },
  "seen": {
   "titles": {
@@ -4096,6 +4096,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjutu6bsaql07llvfxysbk3",
        "infoHtml": "<p>Year: 1940<br>Director: James Algar, Samuel Armstrong, Ford Bebbe Jr.<br>Starring: Leopold Stokowski, Deems Taylor, The Philadelphia Orchestra <br>Running Time: 2hr 4min</p><p>Rated: G</p><p>A series of eight famous pieces of classical music, conducted by Leopold Stokowski and interpreted in animation by Walt Disney&#39;s team of artists.</p>"
+      }
+     ]
+    }
+   },
+   "focker-in-law": {
+    "lastShowtime": "2026-11-26T00:30:00.000Z",
+    "title": {
+     "key": "focker-in-law",
+     "slug": "focker-in-law",
+     "name": "Focker-in-Law",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "John Hamburg",
+     "runtime": "1hr 45min",
+     "rating": "PG-13",
+     "synopsis": "A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac8rvhr007llinuvx2fg",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjxefqkvwzu07lpf760grog",
+       "title": "Focker-in-Law",
+       "subtitle": null,
+       "startsAt": "2026-11-26T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1246?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac8rvhr007llinuvx2fg",
+       "infoHtml": "<p>Year: 2026<br>Director: John Hamburg<br>Starring: Robert DeNiro, Ben Stiller, Ariana Grande, Skyler Gisondo<br>Running Time: 1hr 45min</p><p>Rated: PG-13</p><p>A young man named Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.</p>"
       }
      ]
     }
