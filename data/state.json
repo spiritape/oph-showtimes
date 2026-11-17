@@ -1,8 +1,8 @@
 {
- "lastReadCount": 28,
+ "lastReadCount": 29,
  "lastPublish": {
-  "scheduleHash": "ef16d67cecd9771b4f933b9417ce7157174dadd12a1cec9959fa1ef57163fdf0",
-  "publishedAt": "2026-11-17T00:07:31.006Z"
+  "scheduleHash": "56a6a3293e26efaa2cbad8c122c11a2b0e98d56d25e17beb5959be1e6142dec3",
+  "publishedAt": "2026-11-17T00:19:16.673Z"
  },
  "seen": {
   "titles": {
@@ -3593,7 +3593,7 @@
     }
    },
    "club kid": {
-    "lastShowtime": "2026-11-15T03:00:00.000Z",
+    "lastShowtime": "2026-11-28T03:00:00.000Z",
     "title": {
      "key": "club kid",
      "slug": "club-kid",
@@ -3604,9 +3604,9 @@
      "year": "2026",
      "director": "Jordan Firstman",
      "runtime": "2hr 2min",
-     "rating": "R",
-     "synopsis": "In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntuntwhd07n3rdvisijn",
+     "rating": null,
+     "synopsis": "Rated R",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjy02kzw6ri07llvo7a90gc",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3621,6 +3621,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijntuntwhd07n3rdvisijn",
        "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated: R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p>"
+      },
+      {
+       "id": "cmwjxt781we1207lpu1ppi75e",
+       "title": "Club Kid",
+       "subtitle": null,
+       "startsAt": "2026-11-28T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1251?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjy02kzw6ri07llvo7a90gc",
+       "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p>"
       }
      ]
     }
