@@ -1,8 +1,8 @@
 {
- "lastReadCount": 32,
+ "lastReadCount": 33,
  "lastPublish": {
-  "scheduleHash": "d9846434dc7d10680b207706c4593dd4bf00369b8c22a2efa2009e106690a1ba",
-  "publishedAt": "2026-11-17T00:31:16.561Z"
+  "scheduleHash": "020dc83c85f1858206e54ba579346b02217d88ec98dca02bbcaa303443ae458e",
+  "publishedAt": "2026-11-17T00:39:16.378Z"
  },
  "seen": {
   "titles": {
@@ -4260,6 +4260,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/pWBxai6kS1OPyvxm8iUo",
        "infoHtml": "<p>Year: 1939<br>Director: Victor Flemming<br>Starring: Judy Garland, Frank Morgan, Ray Bolger<br>Running Time: 1hr 42min</p><p>Rated PG</p><p>Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others&#39; wishes.</p>"
+      }
+     ]
+    }
+   },
+   "honey, i shrunk the kids": {
+    "lastShowtime": "2026-11-27T20:00:00.000Z",
+    "title": {
+     "key": "honey, i shrunk the kids",
+     "slug": "honey-i-shrunk-the-kids",
+     "name": "Honey, I Shrunk the Kids",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1989",
+     "director": "Joe Johnston",
+     "runtime": "1hr 33min",
+     "rating": null,
+     "synopsis": "Rated PG",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyok3jx4ar07lp9xf7hws7",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjyrnzqwr8f07llwkq1d77m",
+       "title": "Honey, I Shrunk the Kids",
+       "subtitle": null,
+       "startsAt": "2026-11-27T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1254?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyok3jx4ar07lp9xf7hws7",
+       "infoHtml": "<p>Year: 1989<br>Director: Joe Johnston<br>Starring: Rick Moranis, Matt Frewer, Marcia Strassman<br>Running Time: 1hr 33min</p><p>Rated PG</p><p>The scientist father of a teenage girl and boy accidentally shrinks his and two other neighborhood teens to the size of insects. Now the teens must fight diminutive dangers as the father searches for them.</p>"
       }
      ]
     }
