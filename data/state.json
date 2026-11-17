@@ -1,8 +1,8 @@
 {
- "lastReadCount": 36,
+ "lastReadCount": 37,
  "lastPublish": {
-  "scheduleHash": "b77841db558d949195200fa45f5936a7fd2808cd49f4eccc2890311060b95f61",
-  "publishedAt": "2026-11-17T00:51:16.034Z"
+  "scheduleHash": "a23384cc5eebd7fbf19dc2c5e782b19316c2f9705e3ce41ca320a0654041387c",
+  "publishedAt": "2026-11-17T01:11:17.350Z"
  },
  "seen": {
   "titles": {
@@ -4332,6 +4332,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjyok3jx4ar07lp9xf7hws7",
        "infoHtml": "<p>Year: 1989<br>Director: Joe Johnston<br>Starring: Rick Moranis, Matt Frewer, Marcia Strassman<br>Running Time: 1hr 33min</p><p>Rated PG</p><p>The scientist father of a teenage girl and boy accidentally shrinks his and two other neighborhood teens to the size of insects. Now the teens must fight diminutive dangers as the father searches for them.</p>"
+      }
+     ]
+    }
+   },
+   "planes, trains & automobiles": {
+    "lastShowtime": "2026-11-27T03:00:00.000Z",
+    "title": {
+     "key": "planes, trains & automobiles",
+     "slug": "planes-trains-and-automobiles",
+     "name": "Planes, Trains & Automobiles",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1987",
+     "director": "John Hughes",
+     "runtime": "1hr 33min",
+     "rating": "R",
+     "synopsis": "A Chicago advertising man must struggle to travel home from New York for Thanksgiving, with a lovable oaf of a shower-curtain-ring salesman as his only companion.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzj0qnxesb07llh6myxqpu",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwjzvg1ey6ym07lpgu23ylhl",
+       "title": "Planes, Trains & Automobiles",
+       "subtitle": null,
+       "startsAt": "2026-11-27T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2004929530196?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjzj0qnxesb07llh6myxqpu",
+       "infoHtml": "<p>Year: 1987<br>Director: John Hughes<br>Starring: Steve Martin, John Candy, Laila Robins, Michael McKean, Kevin Bacon<br>Running Time: 1hr 33min</p><p>Rated: R</p><p>A Chicago advertising man must struggle to travel home from New York for Thanksgiving, with a lovable oaf of a shower-curtain-ring salesman as his only companion.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
       }
      ]
     }
