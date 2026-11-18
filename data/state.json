@@ -1,8 +1,8 @@
 {
- "lastReadCount": 40,
+ "lastReadCount": 41,
  "lastPublish": {
-  "scheduleHash": "f4855a49d4108510af2aa3822c2ed7eeb32b2c575c08a5ec4f21c0db17c7096e",
-  "publishedAt": "2026-11-18T19:13:19.490Z"
+  "scheduleHash": "76e40dff2188a30a9cf22766347f1b7d46e8d81f145634f0633137b2a7e390e1",
+  "publishedAt": "2026-11-18T19:23:22.145Z"
  },
  "seen": {
   "titles": {
@@ -4450,6 +4450,39 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2k7jxav07k9oxw9czg1",
        "infoHtml": "<p>Year: 1993<br>Director: Barry Sonnenfeld<br>Starring: Anjelica Huston, Raul Julia, Christopher Lloyd, Christina Ricci, Joan Cusack<br>Running Time: 1hr 34min</p><p>The Addams Family try to rescue their beloved Uncle Fester from his gold-digging new love, a black widow named Debbie.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      }
+     ]
+    }
+   },
+   "making love with david magidoff": {
+    "lastShowtime": "2027-02-14T04:00:00.000Z",
+    "title": {
+     "key": "making love with david magidoff",
+     "slug": "making-love-with-david-magidoff",
+     "name": "Making Love with David Magidoff",
+     "subtitle": null,
+     "category": "misc",
+     "isFilm": false,
+     "year": null,
+     "director": null,
+     "runtime": null,
+     "rating": null,
+     "synopsis": "Doors 7PM / Show 8PM",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmiahbd33oo07ln29ak1go5",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwmicowy2hc207n06pg1cgmo",
+       "title": "Making Love with David Magidoff",
+       "subtitle": null,
+       "startsAt": "2027-02-14T04:00:00.000Z",
+       "category": "misc",
+       "ticketUrl": "https://www.ticketweb.com/event/making-love-with-david-magidoff-ojai-playhouse-tickets/15056593",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$30",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmiahbd33oo07ln29ak1go5",
+       "infoHtml": "<p>Doors 7PM / Show 8PM</p><p>Featuring Milana Vayntrub (Project Hail Mary), Stephanie Courtney (Mad Men), Brit Barron, Arielle Estoria, Propaganda and live music by Oscar-nominated composer Ryan Lott of Son Lux.</p><p>David Magidoff (Dexter) interviews a celebrity about a real love story – then he and his ensemble turn it into a fully improvised musical! Past guests include Tony Hale (Veep), Kristen Schaal (Flight of The Conchords), Bobby Moynihan (SNL), Edi Patterson (The Righteous Gemstones), Grammy Winner Lisa Loeb and many more.</p><p>Making Love with David Magidoff is in the middle of a three-year sold-out run in LA, a sold-out Netflix is a Joke Fest and a sold-out run at Edinburgh Fringe Festival 2026.</p><p>*COMIC GOLD* (Guardian) *BRILLIANT* (Broadway World) *GO SEE IT!* (Tig Notaro)</p>"
       }
      ]
     }
