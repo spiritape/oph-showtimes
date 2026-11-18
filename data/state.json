@@ -1,8 +1,8 @@
 {
  "lastReadCount": 40,
  "lastPublish": {
-  "scheduleHash": "dce519fa9eb2244e7d827d0cd187591667a413319dfe817746b22e46f300287b",
-  "publishedAt": "2026-11-18T19:03:17.065Z"
+  "scheduleHash": "f35152a1b76d67107d8bbcba597ae89f059e14f403517ee3fc1665610a4342bc",
+  "publishedAt": "2026-11-18T19:09:20.809Z"
  },
  "seen": {
   "titles": {
@@ -4444,10 +4444,10 @@
        "subtitle": null,
        "startsAt": "2026-11-21T20:00:00.000Z",
        "category": "film",
-       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1265?siteToken=0zv2d2xep31txszrx28cn3r0t4",
-       "rsvpUrl": null,
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2005047210180?aff=oddtdtcreator",
        "livestreamUrl": null,
-       "price": "$13.50/$12 (child 12 & under - senior 60+)",
+       "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmhv2i2k7jxav07k9oxw9czg1",
        "infoHtml": "<p>Year: 1993<br>Director: Barry Sonnenfeld<br>Starring: Anjelica Huston, Raul Julia, Christopher Lloyd, Christina Ricci, Joan Cusack<br>Running Time: 1hr 34min</p><p>The Addams Family try to rescue their beloved Uncle Fester from his gold-digging new love, a black widow named Debbie.</p>"
       }
