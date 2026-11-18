@@ -1,8 +1,8 @@
 {
- "lastReadCount": 43,
+ "lastReadCount": 44,
  "lastPublish": {
-  "scheduleHash": "1d249a52f3882e7d53d7c8f461143b6e3bfec11887d712107d2b448bf2bd5152",
-  "publishedAt": "2026-11-18T21:39:22.989Z"
+  "scheduleHash": "13831c0b4c49142feb66f8bd54f6235cbb76b9509eaee616a3d67ec91a65178b",
+  "publishedAt": "2026-11-18T21:41:15.387Z"
  },
  "seen": {
   "titles": {
@@ -4549,6 +4549,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrku2ly1pst07lt5urruoq0",
        "infoHtml": "<p>Year: 2010<br>Director: Werner Herzog<br>Starring: Werner Herzog, Jean Clottes, Julien Monney<br>Running Time: 1hr 30min</p><p>Rated: G</p><p>&#39;Cave of Forgotten Dreams&#39; Werner Herzog takes us on an incredible 3-D journey into the Chauvet caves in Southern France: enormous chambers full of the oldest prehistoric art known to man. Modern 3-D brings these ancient works of art to life like nothing else: glide through the cathedral-like cave, over cave formations and sloping passageways, across the beautiful 32,000 year old drawings. These scenes are interspersed by interviews with scientists musing on the cave&#39;s mysterious beauty, the evolution of creativity and the nature of humanity. Operatic, gorgeously accomplished and truly unforgettable: this is an extraordinary glimpse at, perhaps, the dawn of art itself.</p>"
+      }
+     ]
+    }
+   },
+   "annie": {
+    "lastShowtime": "2026-11-25T22:00:00.000Z",
+    "title": {
+     "key": "annie",
+     "slug": "annie",
+     "name": "Annie",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1982",
+     "director": "John Huston",
+     "runtime": "2hr 7min",
+     "rating": "PG",
+     "synopsis": "A spunky young orphan is taken in by a rich eccentric, much to the chagrin of the cantankerous woman who runs the orphanage.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk6aiqn907n0t6fus05o",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwmnakg6jcd307n0clpsv66v",
+       "title": "Annie",
+       "subtitle": null,
+       "startsAt": "2026-11-25T22:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1269?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk6aiqn907n0t6fus05o",
+       "infoHtml": "<p>Year: 1982<br>Director: John Huston<br>Starring: Aileen Quinn, Albert Finney, Carol Burnett, Bernadette Peters<br>Running Time: 2hr 7min</p><p>Rated: PG</p><p>A spunky young orphan is taken in by a rich eccentric, much to the chagrin of the cantankerous woman who runs the orphanage.</p>"
       }
      ]
     }
