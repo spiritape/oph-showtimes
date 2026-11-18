@@ -1,8 +1,8 @@
 {
- "lastReadCount": 41,
+ "lastReadCount": 42,
  "lastPublish": {
-  "scheduleHash": "af77a038d0b07802cff91096cb85bfe5dae34f6fc891b9057f5e08c5e33cc9f2",
-  "publishedAt": "2026-11-18T21:19:20.443Z"
+  "scheduleHash": "d54e6efa036e9f13d0cdcdcfce5c9d7fe4fba2b88f804418076920750332a197",
+  "publishedAt": "2026-11-18T21:37:23.846Z"
  },
  "seen": {
   "titles": {
@@ -4483,6 +4483,39 @@
        "price": "$30",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmgv5siudw07lngzv62kwn",
        "infoHtml": "<p>Doors 7PM / Show 8PM</p><p>Featuring Milana Vayntrub (Project Hail Mary), Stephanie Courtney (Mad Men), Brit Barron, Arielle Estoria, Propaganda and live music by Oscar-nominated composer Ryan Lott of Son Lux.</p><p>David Magidoff (Dexter) interviews a celebrity about a real love story – then he and his ensemble turn it into a fully improvised musical! Past guests include Tony Hale (Veep), Kristen Schaal (Flight of The Conchords), Bobby Moynihan (SNL), Edi Patterson (The Righteous Gemstones), Grammy Winner Lisa Loeb and many more.</p><p>Making Love with David Magidoff is in the middle of a three-year sold-out run in LA, a sold-out Netflix is a Joke Fest and a sold-out run at Edinburgh Fringe Festival 2026.</p><p>*COMIC GOLD* (Guardian) *BRILLIANT* (Broadway World) *GO SEE IT!* (Tig Notaro)</p>"
+      }
+     ]
+    }
+   },
+   "the goonies": {
+    "lastShowtime": "2026-11-24T22:00:00.000Z",
+    "title": {
+     "key": "the goonies",
+     "slug": "the-goonies",
+     "name": "The Goonies",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1985",
+     "director": "Richard Donner",
+     "runtime": "1hr 54min",
+     "rating": "PG",
+     "synopsis": "A group of young misfits called The Goonies discover an ancient map and set out on an adventure to find a legendary pirate's long-lost treasure.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk8tk22207lnadji8i1i",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwmn3wx4j0qy07n0dat5n9ih",
+       "title": "The Goonies",
+       "subtitle": null,
+       "startsAt": "2026-11-24T22:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1268?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk8tk22207lnadji8i1i",
+       "infoHtml": "<p>Year: 1985<br>Director: Richard Donner<br>Starring: Sean Astin, Josh Brolin, Jeff Cohen, Corey Feldman, Martha Plimpton, Ke Huy Quan<br>Running Time: 1hr 54min</p><p>Rated: PG</p><p>A group of young misfits called The Goonies discover an ancient map and set out on an adventure to find a legendary pirate&#39;s long-lost treasure.</p>"
       }
      ]
     }
