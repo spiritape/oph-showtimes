@@ -1,8 +1,8 @@
 {
- "lastReadCount": 42,
+ "lastReadCount": 43,
  "lastPublish": {
-  "scheduleHash": "d54e6efa036e9f13d0cdcdcfce5c9d7fe4fba2b88f804418076920750332a197",
-  "publishedAt": "2026-11-18T21:37:23.846Z"
+  "scheduleHash": "1d249a52f3882e7d53d7c8f461143b6e3bfec11887d712107d2b448bf2bd5152",
+  "publishedAt": "2026-11-18T21:39:22.989Z"
  },
  "seen": {
   "titles": {
@@ -4516,6 +4516,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk8tk22207lnadji8i1i",
        "infoHtml": "<p>Year: 1985<br>Director: Richard Donner<br>Starring: Sean Astin, Josh Brolin, Jeff Cohen, Corey Feldman, Martha Plimpton, Ke Huy Quan<br>Running Time: 1hr 54min</p><p>Rated: PG</p><p>A group of young misfits called The Goonies discover an ancient map and set out on an adventure to find a legendary pirate&#39;s long-lost treasure.</p>"
+      }
+     ]
+    }
+   },
+   "cave of forgotten dreams (in 3d)": {
+    "lastShowtime": "2026-11-25T00:30:00.000Z",
+    "title": {
+     "key": "cave of forgotten dreams (in 3d)",
+     "slug": "cave-of-forgotten-dreams-in-3d",
+     "name": "Cave of Forgotten Dreams (in 3D)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2010",
+     "director": "Werner Herzog",
+     "runtime": "1hr 30min",
+     "rating": "G",
+     "synopsis": "'Cave of Forgotten Dreams' Werner Herzog takes us on an incredible 3-D journey into the Chauvet caves in Southern France: enormous chambers full of the oldest prehistoric art known to man. Modern 3-D brings these ancient works of art to life like nothing else: glide through the cathedral-like cave, over cave formations and sloping passageways, across the beautiful 32,000 year old drawings. These scenes are interspersed by interviews with scientists musing on the cave's mysterious beauty, the evolution of creativity and the nature of humanity. Operatic, gorgeously accomplished and truly unforgettable: this is an extraordinary glimpse at, perhaps, the dawn of art itself.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrku2ly1pst07lt5urruoq0",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwmn7ubpkkkp07lnf4qv5y5s",
+       "title": "Cave of Forgotten Dreams (in 3D)",
+       "subtitle": null,
+       "startsAt": "2026-11-25T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1267?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmnrku2ly1pst07lt5urruoq0",
+       "infoHtml": "<p>Year: 2010<br>Director: Werner Herzog<br>Starring: Werner Herzog, Jean Clottes, Julien Monney<br>Running Time: 1hr 30min</p><p>Rated: G</p><p>&#39;Cave of Forgotten Dreams&#39; Werner Herzog takes us on an incredible 3-D journey into the Chauvet caves in Southern France: enormous chambers full of the oldest prehistoric art known to man. Modern 3-D brings these ancient works of art to life like nothing else: glide through the cathedral-like cave, over cave formations and sloping passageways, across the beautiful 32,000 year old drawings. These scenes are interspersed by interviews with scientists musing on the cave&#39;s mysterious beauty, the evolution of creativity and the nature of humanity. Operatic, gorgeously accomplished and truly unforgettable: this is an extraordinary glimpse at, perhaps, the dawn of art itself.</p>"
       }
      ]
     }
