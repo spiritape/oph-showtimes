@@ -1,8 +1,8 @@
 {
- "lastReadCount": 43,
+ "lastReadCount": 44,
  "lastPublish": {
-  "scheduleHash": "76c6f6d4c6dd01b84474c49b25378c1805d80b3e9da551bf6f9035c0fd6adbae",
-  "publishedAt": "2026-11-19T15:41:19.561Z"
+  "scheduleHash": "a25225e63a26fbf4d2ce709f781a72a41d2d610fe28133abfcc9b6c3feaa44ce",
+  "publishedAt": "2026-11-19T15:43:24.269Z"
  },
  "seen": {
   "titles": {
@@ -4595,6 +4595,39 @@
        "price": "$13.50",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwmmyk6aiqn907n0t6fus05o",
        "infoHtml": "<p>Year: 1982<br>Director: John Huston<br>Starring: Aileen Quinn, Albert Finney, Carol Burnett, Bernadette Peters<br>Running Time: 2hr 7min</p><p>Rated: PG</p><p>A spunky young orphan is taken in by a rich eccentric, much to the chagrin of the cantankerous woman who runs the orphanage.</p>"
+      }
+     ]
+    }
+   },
+   "minotaur": {
+    "lastShowtime": "2026-12-18T00:30:00.000Z",
+    "title": {
+     "key": "minotaur",
+     "slug": "minotaur",
+     "name": "Minotaur",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Andrey Zvyagintsev",
+     "runtime": "2hr 15min",
+     "rating": null,
+     "synopsis": "A high-powered executive's meticulously controlled existence unravels when professional crises, global chaos, and marital betrayal converge, pushing him toward a dangerous breaking point.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwnpu9f5yseu07lneww7oiil",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwnpyaylxdw407n0cbo2q3ub",
+       "title": "Minotaur",
+       "subtitle": null,
+       "startsAt": "2026-12-18T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1270?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwnpu9f5yseu07lneww7oiil",
+       "infoHtml": "<p>Year: 2026<br>Director: Andrey Zvyagintsev<br>Starring: Dmitriy Mazurov, Iris Lebedeva, Boris Kudrin, Varvara Shmykova<br>Running Time: 2hr 15min</p><p><strong>Cannes Film Festival Grand Prix winner 2026</strong></p><p>A high-powered executive&#39;s meticulously controlled existence unravels when professional crises, global chaos, and marital betrayal converge, pushing him toward a dangerous breaking point.</p>"
       }
      ]
     }
