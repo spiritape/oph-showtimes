@@ -82,7 +82,18 @@ struct SettingsView: View {
                 } header: {
                     Text("About")
                 } footer: {
-                    Text(FilmRequests.credit)
+                    // TMDB's terms ask for its logo and notice here, less prominent than the Playhouse's own marks.
+                    VStack(alignment: .leading, spacing: 8) {
+                        Link(destination: FilmRequests.tmdbURL) {
+                            Image("TMDBLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 9)
+                        }
+                        .accessibilityLabel("TMDB, The Movie Database")
+                        Text(FilmRequests.credit)
+                    }
+                    .padding(.top, 4)
                 }
             }
             .tint(Color.accentColor)

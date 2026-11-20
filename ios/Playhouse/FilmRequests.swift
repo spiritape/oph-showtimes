@@ -26,7 +26,9 @@ struct RankedFilm: Decodable, Identifiable, Sendable {
 @MainActor @Observable
 final class FilmRequests {
     static let shared = FilmRequests()
-    static let credit = "This product uses the TMDB API but is not endorsed or certified by TMDB."
+    /// The notice TMDB's API terms ask for, alongside its logo.
+    static let credit = "This app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB."
+    static let tmdbURL = URL(string: "https://www.themoviedb.org")!
 
     private(set) var results: [Film] = []
     /// The most requested films across everyone, most requested first.
@@ -35,6 +37,11 @@ final class FilmRequests {
     /// This install's requests, most recent first.
     private(set) var mine: [Film] {
         didSet { UserDefaults.standard.set(try? JSONEncoder().encode(mine), forKey: "filmRequests") }
+    }
+    /// When each of "Your requests" last came from TMDB. Its terms allow keeping its data
+    /// six months at most, so they're fetched again after five.
+    private var fetchedAt: [Int: Date] {
+        didSet { UserDefaults.standard.set(try? JSONEncoder().encode(fetchedAt), forKey: "filmRequestsFetchedAt") }
     }
     /// Films with a request or withdrawal on its way to the watcher.
     private(set) var pending: Set<Int> = []
@@ -52,6 +59,7 @@ final class FilmRequests {
             defaults.set(installId, forKey: "installId")
         }
         mine = defaults.data(forKey: "filmRequests").flatMap { try? JSONDecoder().decode([Film].self, from: $0) } ?? []
+        fetchedAt = defaults.data(forKey: "filmRequestsFetchedAt").flatMap { try? JSONDecoder().decode([Int: Date].self, from: $0) } ?? [:]
     }
 
     func isRequested(_ film: Film) -> Bool { mine.contains { $0.tmdbId == film.tmdbId } }
@@ -63,6 +71,23 @@ final class FilmRequests {
               let decoded = try? JSONDecoder().decode(TopResponse.self, from: data)
         else { return } // Keep what's showing; the list is a nice-to-have.
         top = decoded.films
+        await refreshMine()
+    }
+
+    /// Fetches "Your requests" again once they're five months old (or of unknown age), so this
+    /// install never keeps TMDB's data longer than the six months its terms allow.
+    private func refreshMine() async {
+        let due = Date.now.addingTimeInterval(-150 * 86_400)
+        for film in mine where (fetchedAt[film.tmdbId] ?? .distantPast) < due {
+            let url = Notifications.watcherURL.appending(path: "films/\(film.tmdbId)")
+            guard let (data, response) = try? await URLSession.shared.data(from: url),
+                  (response as? HTTPURLResponse)?.statusCode == 200,
+                  let fresh = try? JSONDecoder().decode(FilmResponse.self, from: data).film,
+                  let index = mine.firstIndex(where: { $0.tmdbId == film.tmdbId })
+            else { continue } // Try again next time.
+            mine[index] = fresh
+            fetchedAt[film.tmdbId] = .now
+        }
     }
 
     func search(_ query: String) async {
@@ -90,6 +115,7 @@ final class FilmRequests {
         do {
             try await post("requests", film)
             mine.insert(film, at: 0)
+            fetchedAt[film.tmdbId] = .now
             await loadTop()
         } catch {
             message = "Couldn't send your request. Please try again."
@@ -102,6 +128,7 @@ final class FilmRequests {
         do {
             try await post("requests/withdraw", film)
             mine.removeAll { $0.tmdbId == film.tmdbId }
+            fetchedAt[film.tmdbId] = nil
             await loadTop()
         } catch {
             message = "Couldn't withdraw your request. Please try again."
@@ -110,6 +137,7 @@ final class FilmRequests {
 
     private struct SearchResponse: Decodable { var films: [Film] }
     private struct TopResponse: Decodable { var films: [RankedFilm] }
+    private struct FilmResponse: Decodable { var film: Film }
     private struct RequestBody: Encodable { var installId: String; var tmdbId: Int }
 
     private func post(_ path: String, _ film: Film) async throws {

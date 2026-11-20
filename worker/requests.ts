@@ -4,17 +4,27 @@
 // the Playhouse sees the full list and totals on a page at a secret link.
 //
 // Stored in the watcher's KV:
-//   film:<tmdbId>                  the film's details (JSON), saved on its first request
+//   film:<tmdbId>                  the film's details (JSON) and when they were fetched; kept at
+//                                  most six months, as TMDB's terms require, and fetched again sooner
 //   req:<tmdbId>:<hash of install> one install's request, with { at } as metadata
 
 import type { KVNamespace } from "@cloudflare/workers-types";
 
 const TMDB = "https://api.themoviedb.org/3";
 const POSTER = "https://image.tmdb.org/t/p/w185";
-export const TMDB_CREDIT = "This product uses the TMDB API but is not endorsed or certified by TMDB.";
+export const TMDB_CREDIT =
+  "This product uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.";
+
+/** TMDB's terms allow keeping its data for six months at most, so details are fetched again after five. */
+const REFRESH_AFTER_DAYS = 150;
+const KEEP_FOR_DAYS = 180;
+const DAY = 86_400_000;
 
 /** A film as the app shows it in search results and "Your requests". */
 export type Film = { tmdbId: number; title: string; year: string | null; posterUrl: string | null; imdbId?: string | null };
+
+/** A film's details as stored, with when they came from TMDB (missing on details saved before this was tracked). */
+type StoredFilm = Film & { fetchedAt?: string };
 
 type TmdbMovie = { id: number; title: string; release_date?: string; poster_path?: string | null; imdb_id?: string | null };
 
@@ -61,13 +71,46 @@ async function sha256(text: string): Promise<string> {
 
 const requestKey = async (tmdbId: number, installId: string) => `req:${tmdbId}:${await sha256(installId)}`;
 
-/** Records a Film Request, saving the film's details the first time it's requested. */
-export async function addRequest(kv: KVNamespace, tmdbKey: string, installId: string, tmdbId: number): Promise<Film> {
-  let film = await kv.get<Film>(`film:${tmdbId}`, "json");
-  if (!film) {
-    film = filmFromTmdb((await tmdb(tmdbKey, `/movie/${tmdbId}`, { language: "en-US" })) as TmdbMovie);
-    await kv.put(`film:${tmdbId}`, JSON.stringify(film));
+const ageInDays = (stored: StoredFilm, now: Date) =>
+  stored.fetchedAt ? (now.getTime() - Date.parse(stored.fetchedAt)) / DAY : Infinity;
+
+/** Whether stored details are due to be fetched again from TMDB. */
+export const needsRefresh = (stored: StoredFilm, now: Date) => ageInDays(stored, now) >= REFRESH_AFTER_DAYS;
+
+const withoutFetchedAt = ({ fetchedAt: _, ...film }: StoredFilm): Film => film;
+
+/**
+ * A film's details: the stored copy while it's under five months old, otherwise fetched again
+ * from TMDB and stored for six months at most. If TMDB can't be reached, a copy under six months
+ * old still serves. Null when there are no usable details. With `onlyIfStored`, a film that was
+ * never stored isn't looked up.
+ */
+export async function filmDetails(
+  kv: KVNamespace,
+  tmdbKey: string | undefined,
+  tmdbId: number,
+  { now = new Date(), onlyIfStored = false } = {},
+): Promise<Film | null> {
+  const stored = await kv.get<StoredFilm>(`film:${tmdbId}`, "json");
+  if (stored && !needsRefresh(stored, now)) return withoutFetchedAt(stored);
+  if (!stored && onlyIfStored) return null;
+  if (tmdbKey) {
+    try {
+      const film = filmFromTmdb((await tmdb(tmdbKey, `/movie/${tmdbId}`, { language: "en-US" })) as TmdbMovie);
+      const record: StoredFilm = { ...film, fetchedAt: now.toISOString() };
+      await kv.put(`film:${tmdbId}`, JSON.stringify(record), { expirationTtl: KEEP_FOR_DAYS * 86_400 });
+      return film;
+    } catch {
+      // Fall back to the stored copy below.
+    }
   }
+  return stored && ageInDays(stored, now) < KEEP_FOR_DAYS ? withoutFetchedAt(stored) : null;
+}
+
+/** Records a Film Request, fetching the film's details if they aren't stored or are due a refresh. */
+export async function addRequest(kv: KVNamespace, tmdbKey: string, installId: string, tmdbId: number): Promise<Film> {
+  const film = await filmDetails(kv, tmdbKey, tmdbId);
+  if (!film) throw new Error(`No details for TMDB film ${tmdbId}`);
   await kv.put(await requestKey(tmdbId, installId), "", { metadata: { at: new Date().toISOString() } });
   return film;
 }
@@ -103,7 +146,7 @@ async function listAll<M>(kv: KVNamespace, prefix: string) {
   return keys;
 }
 
-export async function loadRanking(kv: KVNamespace): Promise<RankedFilm[]> {
+export async function loadRanking(kv: KVNamespace, tmdbKey: string | undefined): Promise<RankedFilm[]> {
   const requests = (await listAll<{ at: string }>(kv, "req:")).map(({ name, metadata }) => ({
     tmdbId: Number(name.split(":")[1]),
     at: metadata?.at ?? "",
@@ -112,7 +155,7 @@ export async function loadRanking(kv: KVNamespace): Promise<RankedFilm[]> {
   const films = new Map<number, Film>();
   await Promise.all(
     ids.map(async (id) => {
-      const film = await kv.get<Film>(`film:${id}`, "json");
+      const film = await filmDetails(kv, tmdbKey, id, { onlyIfStored: true });
       if (film) films.set(id, film);
     }),
   );
@@ -155,7 +198,7 @@ a{color:inherit}footer{margin-top:28px;font-size:.8rem;color:var(--muted)}
 <h1>Film Requests</h1>
 <p class="muted">${films.length} films, ${total} requests from the app · as of ${escape(now.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Los_Angeles" }))}</p>
 ${films.length ? `<table>${rows}</table>` : "<p>No requests yet.</p>"}
-<footer>Keep this link private: anyone with it can see the list. ${TMDB_CREDIT}</footer>
+<footer>Keep this link private: anyone with it can see the list. Film details and posters from <a href="https://www.themoviedb.org">TMDB</a>. ${TMDB_CREDIT}</footer>
 </main></body></html>`;
 }
 

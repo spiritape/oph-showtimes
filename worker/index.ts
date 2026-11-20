@@ -5,6 +5,7 @@ import { buildPushHTTPRequest } from "@pushforge/builder";
 import type { NewTitleNotification } from "../src/notification.ts";
 import {
   addRequest,
+  filmDetails,
   loadRanking,
   parseRequest,
   renderRequestsPage,
@@ -177,15 +178,21 @@ export default {
         if (query.length < 2 || query.length > 100) return json({ films: [] });
         return json({ films: await searchFilms(env.TMDB_API_KEY, query) });
       }
+      const filmId = path.match(/^\/films\/(\d{1,10})$/)?.[1];
+      if (filmId) {
+        // Refreshed details for a requested film, so the app can keep "Your requests" within TMDB's six months.
+        const film = await filmDetails(env.WATCHER, env.TMDB_API_KEY, Number(filmId), { onlyIfStored: true });
+        return film ? json({ film }) : json({ error: "Not found" }, 404);
+      }
       if (path === "/requests/top") {
-        const films = topFilms(await loadRanking(env.WATCHER));
+        const films = topFilms(await loadRanking(env.WATCHER, env.TMDB_API_KEY));
         // A minute's caching keeps busy moments cheap; a new request shows soon after.
         return new Response(JSON.stringify({ films }), {
           headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "public, max-age=60" },
         });
       }
       if (env.REQUESTS_SECRET && path === `/requests/${env.REQUESTS_SECRET}`) {
-        const page = renderRequestsPage(await loadRanking(env.WATCHER), new Date());
+        const page = renderRequestsPage(await loadRanking(env.WATCHER, env.TMDB_API_KEY), new Date());
         return new Response(page, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
       }
       return json({ error: "Not found" }, 404);
