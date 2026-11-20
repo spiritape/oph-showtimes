@@ -10,9 +10,11 @@ import {
   parseRequest,
   renderRequestsPage,
   searchFilms,
+  tmdb,
   topFilms,
   withdrawRequest,
 } from "./requests.ts";
+import { parsePosterFilms, posters } from "./posters.ts";
 import { apnsToken, isAppSubscription, sendToApp, type ApnsConfig, type AppSubscription } from "./apns.ts";
 import { fetchSource, readSource } from "../src/source.ts";
 
@@ -232,6 +234,17 @@ export default {
         return json({ error: "Missing endpoint or token" }, 400);
       }
       return json({ ok: true });
+    }
+    if (path === "/posters") {
+      // The build asks for the schedule's posters (worker/posters.ts).
+      if (request.headers.get("Authorization") !== `Bearer ${env.NOTIFY_SECRET}`) {
+        return json({ error: "Unauthorized" }, 401);
+      }
+      const films = parsePosterFilms(body);
+      if (!films) return json({ error: "Expected { films: [{ key, name, year, director }] }" }, 400);
+      const key = env.TMDB_API_KEY;
+      if (!key) return json({ posters: {} });
+      return json({ posters: await posters(env.WATCHER, films, (path, params) => tmdb(key, path, params)) });
     }
     if (path === "/notify") {
       if (request.headers.get("Authorization") !== `Bearer ${env.NOTIFY_SECRET}`) {

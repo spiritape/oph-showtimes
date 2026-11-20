@@ -11,7 +11,7 @@
 import type { KVNamespace } from "@cloudflare/workers-types";
 
 const TMDB = "https://api.themoviedb.org/3";
-const POSTER = "https://image.tmdb.org/t/p/w185";
+export const POSTER = "https://image.tmdb.org/t/p/w185";
 export const TMDB_CREDIT =
   "This product uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.";
 
@@ -39,7 +39,7 @@ export function filmFromTmdb(m: TmdbMovie): Film {
 }
 
 /** TMDB accepts either a v3 API key or a v4 read access token (a long JWT). */
-async function tmdb(key: string, path: string, params: Record<string, string> = {}) {
+export async function tmdb(key: string, path: string, params: Record<string, string> = {}) {
   const url = new URL(TMDB + path);
   const bearer = key.length > 40;
   for (const [k, v] of Object.entries({ ...params, ...(bearer ? {} : { api_key: key }) })) url.searchParams.set(k, v);

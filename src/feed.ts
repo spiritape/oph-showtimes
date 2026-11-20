@@ -34,6 +34,8 @@ export type FeedTitle = {
   synopsis: string | null;
   imageUrl: string | null;
   thumbnailUrl: string | null;
+  /** The film's poster from TMDB, for the schedule list; null when it couldn't be matched (or for Live Shows). */
+  posterUrl: string | null;
   livestreamUrl: string | null;
   /** The Title's page on the site, for sharing. */
   url: string;
@@ -54,7 +56,7 @@ export type Feed = {
   past: FeedTitle[];
 };
 
-function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string): FeedTitle {
+function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string, posters: Map<string, string>): FeedTitle {
   return {
     key: title.key,
     slug: title.slug,
@@ -69,6 +71,7 @@ function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string): FeedTi
     synopsis: title.synopsis,
     imageUrl: title.imageUrl,
     thumbnailUrl: thumbnailUrl(title.imageUrl),
+    posterUrl: posters.get(title.key) ?? null,
     livestreamUrl: title.livestreamUrl,
     url: siteUrl + titlePath(title),
     showtimes: showtimes.map((showtime) => ({
@@ -82,10 +85,19 @@ function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string): FeedTi
   };
 }
 
-/** `past` is the site's Past list (pastShowtimes): played in the last 60 days, most recent first. */
-export function renderFeed(titles: Title[], past: ScheduledShowtime[], siteUrl: string, now: Date): Feed {
+/**
+ * `past` is the site's Past list (pastShowtimes): played in the last 60 days, most recent first.
+ * `posters` are TMDB poster URLs by Title key (src/posters.ts).
+ */
+export function renderFeed(
+  titles: Title[],
+  past: ScheduledShowtime[],
+  siteUrl: string,
+  now: Date,
+  posters: Map<string, string> = new Map(),
+): Feed {
   const feedTitles = titles
-    .map((title) => feedTitle(title, title.showtimes.filter((s) => isListed(s, now)), siteUrl))
+    .map((title) => feedTitle(title, title.showtimes.filter((s) => isListed(s, now)), siteUrl, posters))
     .filter((t) => t.showtimes.length)
     .sort((a, b) => Date.parse(a.showtimes[0]!.startsAt) - Date.parse(b.showtimes[0]!.startsAt));
   // Group the Past list by Title, keeping its most-recent-first order.
@@ -100,6 +112,6 @@ export function renderFeed(titles: Title[], past: ScheduledShowtime[], siteUrl: 
     generatedAt: now.toISOString(),
     theater: { name: THEATER.name, address: THEATER.address, phone: THEATER.phone, timeZone: TZ },
     titles: feedTitles,
-    past: [...played.values()].map(({ title, showtimes }) => feedTitle(title, showtimes, siteUrl)),
+    past: [...played.values()].map(({ title, showtimes }) => feedTitle(title, showtimes, siteUrl, posters)),
   };
 }

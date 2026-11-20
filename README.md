@@ -8,7 +8,7 @@ See [CONTEXT.md](CONTEXT.md) for the vocabulary (Showtime, Title, Live Show…) 
 
 Two pieces ([ADR 0002](docs/adr/0002-cloudflare-watcher-for-fast-updates.md)):
 
-**The watcher** (`worker/`, a Cloudflare Worker) reads the Playhouse homepage every 2 minutes. When the schedule changes, it starts the GitHub build. It also stores notification Subscribers and sends New Title Notifications for the build.
+**The watcher** (`worker/`, a Cloudflare Worker) reads the Playhouse homepage every 2 minutes. When the schedule changes, it starts the GitHub build. It also stores notification Subscribers, sends New Title Notifications for the build, and matches the schedule's films to their TMDB posters for the app's schedule list.
 
 **The build** (`src/`, GitHub Actions `update.yml`) runs when the watcher starts it, and every hour as a fallback:
 

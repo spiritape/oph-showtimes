@@ -76,6 +76,18 @@ describe("renderFeed", () => {
     ]);
   });
 
+  it("adds each film's TMDB poster when there is one", () => {
+    const upcoming = [showtime("a", "2026-10-20T02:00:00Z")];
+    const feed = renderFeed(
+      [title("Heat", upcoming), title("Digger", upcoming)],
+      [],
+      site,
+      now,
+      new Map([["heat", "https://image.tmdb.org/t/p/w185/heat.jpg"]]),
+    );
+    expect(feed.titles.map((t) => t.posterUrl)).toEqual(["https://image.tmdb.org/t/p/w185/heat.jpg", null]);
+  });
+
   it("says which time zone Showtimes should be shown in", () => {
     expect(renderFeed([], [], site, now)).toMatchObject({ version: 1, theater: { timeZone: "America/Los_Angeles" } });
   });

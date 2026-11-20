@@ -53,6 +53,9 @@ struct Title: Codable, Equatable, Hashable, Identifiable, Sendable {
     var synopsis: String?
     var imageUrl: URL?
     var thumbnailUrl: URL?
+    /// The film's poster from TMDB, for the schedule list. Missing for Live Shows,
+    /// films TMDB couldn't match, and Feeds published before it was added.
+    var posterUrl: URL?
     var livestreamUrl: URL?
     /// The Title's page on the site, for sharing.
     var url: URL
@@ -226,11 +229,16 @@ enum FeedCache {
 
     /// Fetches the latest Feed, returning it with the raw data to save.
     static func fetch(session: URLSession = .shared) async throws -> (Feed, Data) {
-        var request = URLRequest(url: Feed.url)
+        var url = Feed.url
+        #if DEBUG
+        // For trying a Feed served locally: simctl launch <device> <bundle id> -feedURL file:///path/to/schedule.json
+        if let debugURL = UserDefaults.standard.string(forKey: "feedURL").flatMap(URL.init(string:)) { url = debugURL }
+        #endif
+        var request = URLRequest(url: url)
         request.cachePolicy = .reloadIgnoringLocalCacheData
         request.timeoutInterval = 20
         let (data, response) = try await session.data(for: request)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+        guard url.isFileURL || (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
         return (try Feed.decode(data), data)
     }
 }

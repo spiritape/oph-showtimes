@@ -39,6 +39,8 @@ jobs:
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
           WATCHER_URL: ${{ vars.WATCHER_URL }}
           VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          # Asks the watcher for the app's TMDB posters (src/posters.ts).
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
           # Starting a run by hand republishes; the watcher's runs don't need to.
           FORCE_PUBLISH: ${{ inputs.force && '1' || '' }}
 

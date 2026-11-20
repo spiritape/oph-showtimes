@@ -5,6 +5,7 @@ import { appendFileSync, cpSync, existsSync, mkdirSync, readFileSync, rmSync, wr
 import { dirname } from "node:path";
 import { FEED_FILE, renderFeed } from "./feed.ts";
 import { guardNotification, guardRead } from "./guard.ts";
+import { fetchPosters } from "./posters.ts";
 import { composeNotification } from "./notification.ts";
 import { NOTIFICATION_FILE, OUT_DIR, STATE_FILE } from "./paths.ts";
 import { hashSchedule, shouldPublish, type LastPublish } from "./refresh.ts";
@@ -74,7 +75,9 @@ for (const { filter, file } of SCHEDULE_PAGES) write(file, renderSchedule(titles
 write("past/index.html", renderPast(past, config));
 for (const title of [...titles, ...finished]) write(`t/${title.slug}/index.html`, renderTitle(title, config, now));
 write("404.html", renderNotFound(config));
-write(FEED_FILE, JSON.stringify(renderFeed(titles, past, config.siteUrl, now)));
+// Upcoming films first: the watcher looks up only so many new posters per build.
+const posters = await fetchPosters([...titles, ...past.map((p) => p.title)], process.env.WATCHER_URL, process.env.NOTIFY_SECRET);
+write(FEED_FILE, JSON.stringify(renderFeed(titles, past, config.siteUrl, now, posters)));
 
 mkdirSync(dirname(STATE_FILE), { recursive: true });
 const state: BuildState = {

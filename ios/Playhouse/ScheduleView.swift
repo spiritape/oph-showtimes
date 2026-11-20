@@ -120,8 +120,10 @@ private struct ScheduleList: View {
                         ForEach(day.showtimes) { item in
                             let played = item.showtime.hasPlayed(now: now)
                             NavigationLink(value: played ? feed.titleToOpen(item.title) : item.title) {
-                                ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt))
+                                ShowtimeRow(item: item, time: feed.timeLabel(item.showtime.startsAt), played: played)
                             }
+                            // The row's own button says it opens; no chevron as well.
+                            .navigationLinkIndicatorVisibility(.hidden)
                             // Already played: greyed, like the website's past list.
                             .opacity(played ? 0.45 : 1)
                         }
@@ -213,16 +215,18 @@ struct FilterChips: View {
 struct ShowtimeRow: View {
     let item: ScheduledShowtime
     let time: String
+    var played = false
     /// Grows with the text size so "12:00 PM" never wraps.
     @ScaledMetric(relativeTo: .subheadline) private var timeWidth = 72
+    @ScaledMetric(relativeTo: .headline) private var posterWidth = 46
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Text(time)
                 .font(.subheadline.monospacedDigit().weight(.semibold))
                 .frame(width: timeWidth, alignment: .leading)
-            Poster(url: item.title.thumbnailUrl ?? item.title.imageUrl)
-                .frame(width: 48)
+            RowPoster(title: item.title)
+                .frame(width: posterWidth)
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.title.name).font(.headline)
                 if let subtitle = item.title.subtitle {
@@ -233,14 +237,62 @@ struct ShowtimeRow: View {
                     HStack(spacing: 6) { categoryAndBadge }
                     VStack(alignment: .leading, spacing: 3) { categoryAndBadge }
                 }
+                OpenTitleLabel(text: openLabel, quiet: played || item.showtime.isSoldOut)
+                    .padding(.top, 6)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 4)
+    }
+
+    /// Says what's behind the row: the Title's page, with its ticket or RSVP buttons when there are any.
+    private var openLabel: String {
+        guard !played, !item.showtime.isSoldOut, let booking = item.showtime.booking else { return "Details" }
+        return booking.free ? "RSVP & Info" : "Tickets & Info"
     }
 
     @ViewBuilder private var categoryAndBadge: some View {
         Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary).fixedSize()
         BookingBadge(showtime: item.showtime, kind: item.title.kind)
+    }
+}
+
+/// Looks like the Title page's Tickets button, so it's plain that a row opens its Title.
+/// Not a button itself: the whole row is the link.
+private struct OpenTitleLabel: View {
+    let text: String
+    /// Grey instead of the accent, for sold-out and played Showtimes.
+    let quiet: Bool
+
+    var body: some View {
+        HStack(spacing: 4) {
+            Text(text)
+            Image(systemName: "chevron.right").imageScale(.small)
+        }
+        .font(.footnote.weight(.semibold))
+        .foregroundStyle(quiet ? Color.primary : Color.white)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(quiet ? AnyShapeStyle(Color(.tertiarySystemFill)) : AnyShapeStyle(Color.accentColor), in: .capsule)
+        .accessibilityHidden(true)
+    }
+}
+
+/// The film's TMDB poster in the schedule list, or the Playhouse's image cropped to the same shape.
+struct RowPoster: View {
+    let title: Title
+
+    var body: some View {
+        Color(.tertiarySystemFill)
+            .aspectRatio(2 / 3, contentMode: .fit)
+            .overlay {
+                AsyncImage(url: title.posterUrl ?? title.thumbnailUrl ?? title.imageUrl) { image in
+                    image.resizable().scaledToFill()
+                } placeholder: {
+                    Color.clear
+                }
+            }
+            .clipShape(.rect(cornerRadius: 4))
     }
 }
 
