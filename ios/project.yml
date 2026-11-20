@@ -5,6 +5,7 @@ options:
   bundleIdPrefix: com.ojaishowtimes
   deploymentTarget:
     iOS: "26.0"
+    watchOS: "26.0"
   createIntermediateGroups: true
   # Tells Xcode the project already has its recommended settings (below), so
   # it stops offering to change them; change them here, not in Xcode.
@@ -18,7 +19,7 @@ settings:
     MARKETING_VERSION: "1.0"
     # The build number shown in Settings and TestFlight. Raise it by one before
     # each TestFlight upload; App Store Connect refuses a number it has seen.
-    CURRENT_PROJECT_VERSION: "12"
+    CURRENT_PROJECT_VERSION: "13"
     # Xcode's recommended settings.
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     STRING_CATALOG_GENERATE_SYMBOLS: YES
@@ -30,9 +31,12 @@ targets:
     dependencies:
       - target: Widgets
       - target: NotificationService
+      - target: PlayhouseWatch
     info:
       path: Playhouse/Info.plist
       properties:
+        # Handoff from the watch app opens the Title here (AppLink.handoffActivity).
+        NSUserActivityTypes: [com.ojaishowtimes.app.title]
         CFBundleURLTypes:
           # Links from the widgets: ojaiplayhouse://title/<slug>
           - CFBundleURLName: com.ojaishowtimes.app
@@ -97,6 +101,60 @@ targets:
         TARGETED_DEVICE_FAMILY: "1"
         GENERATE_INFOPLIST_FILE: YES
         SKIP_INSTALL: YES
+  # The Apple Watch app (docs/adr/0004), shipped inside the iPhone app. It reads
+  # the same Feed itself; App Groups don't span devices, so this group is the watch's own copy.
+  PlayhouseWatch:
+    type: application
+    platform: watchOS
+    # The complication view too, for the debug gallery (Watch/ComplicationGallery.swift).
+    sources: [Watch, Shared, WatchWidgets/NextShowtimeComplicationView.swift]
+    dependencies:
+      - target: PlayhouseWatchWidgets
+    info:
+      path: Watch/Info.plist
+      properties:
+        CFBundleDisplayName: Playhouse
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.ojaishowtimes.app
+        WKRunsIndependentlyOfCompanionApp: false
+        CFBundleURLTypes:
+          # Links from the complications: ojaiplayhouse://title/<slug>
+          - CFBundleURLName: com.ojaishowtimes.app.watchkitapp
+            CFBundleURLSchemes: [ojaiplayhouse]
+    entitlements:
+      path: Watch/Watch.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.ojaishowtimes.app]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app.watchkitapp
+        PRODUCT_NAME: PlayhouseWatch
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+  # Watch-face complications and the Smart Stack card.
+  PlayhouseWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    sources: [WatchWidgets, Shared]
+    info:
+      path: WatchWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: Playhouse
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: WatchWidgets/WatchWidgets.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.ojaishowtimes.app]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ojaishowtimes.app.watchkitapp.widgets
+        PRODUCT_NAME: PlayhouseWatchWidgets
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
   PlayhouseTests:
     type: bundle.unit-test
     platform: iOS
@@ -113,3 +171,7 @@ schemes:
         Playhouse: all
     test:
       targets: [PlayhouseTests]
+  PlayhouseWatch:
+    build:
+      targets:
+        PlayhouseWatch: all

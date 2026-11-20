@@ -29,5 +29,9 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.ojaishowtimes.app.title</string>
+	</array>
 </dict>
 </plist>

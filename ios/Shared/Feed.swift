@@ -247,6 +247,10 @@ enum AppLink {
         URL(string: "\(scheme)://title/\(slug)")!
     }
 
+    /// Handoff from the watch app: opens the Title in the iPhone app (or its page
+    /// on the site, through `webpageURL`). The slug travels in `userInfo`.
+    static let handoffActivity = "com.ojaishowtimes.app.title"
+
     /// The Title slug a link points at, if any.
     static func titleSlug(_ url: URL) -> String? {
         guard url.scheme == scheme, url.host() == "title" else { return nil }

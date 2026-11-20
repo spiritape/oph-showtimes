@@ -37,7 +37,7 @@ A local build writes `data/state.json`. Don't commit one built from the fixture.
 
 ## iOS app
 
-`ios/` holds the native SwiftUI app ([ADR 0003](docs/adr/0003-native-ios-app-from-json-feed.md)), which reads the feed at `api/v1/schedule.json`. `ios/project.yml` is the source of truth for the Xcode project: after changing it, run `xcodegen` in `ios/` (`brew install xcodegen`), then open `ios/Playhouse.xcodeproj`. Run the app's tests with:
+`ios/` holds the native SwiftUI app ([ADR 0003](docs/adr/0003-native-ios-app-from-json-feed.md)), which reads the feed at `api/v1/schedule.json`. Its Apple Watch app and complications ship inside it ([ADR 0004](docs/adr/0004-apple-watch-app-reads-the-feed-itself.md)); build them on their own with the `PlayhouseWatch` scheme. `ios/project.yml` is the source of truth for the Xcode project: after changing it, run `xcodegen` in `ios/` (`brew install xcodegen`), then open `ios/Playhouse.xcodeproj`. Run the app's tests with:
 
 ```bash
 xcodebuild test -project ios/Playhouse.xcodeproj -scheme Playhouse -destination 'platform=iOS Simulator,name=iPhone 18 Pro'

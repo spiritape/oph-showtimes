@@ -49,6 +49,11 @@ struct ScheduleView: View {
             linkedSlug = AppLink.titleSlug(url)
             openLinkedTitle()
         }
+        // A Title handed off from the watch app.
+        .onContinueUserActivity(AppLink.handoffActivity) { activity in
+            linkedSlug = activity.userInfo?["slug"] as? String
+            openLinkedTitle()
+        }
         .onChange(of: store.feed) { openLinkedTitle() }
     }
 
