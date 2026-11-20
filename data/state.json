@@ -1,8 +1,8 @@
 {
  "lastReadCount": 44,
  "lastPublish": {
-  "scheduleHash": "a25225e63a26fbf4d2ce709f781a72a41d2d610fe28133abfcc9b6c3feaa44ce",
-  "publishedAt": "2026-11-19T21:23:41.821Z"
+  "scheduleHash": "a1415627d417e8c8d5cbeb9fa51d0e68443d5ba97e8e71d4e8add44683315cd8",
+  "publishedAt": "2026-11-20T01:29:15.220Z"
  },
  "seen": {
   "titles": {
@@ -933,7 +933,7 @@
     }
    },
    "take me home": {
-    "lastShowtime": "2026-10-18T23:15:00.000Z",
+    "lastShowtime": "2026-12-12T00:00:00.000Z",
     "title": {
      "key": "take me home",
      "slug": "take-me-home",
@@ -946,7 +946,7 @@
      "runtime": "1hr 31min",
      "rating": null,
      "synopsis": "Anna (Anna Sargent making her acting debut), a middle-aged Korean adoptee with a cognitive disability, cares for her aging parents in a fragile balance of meeting one another’s needs. Alongside her sister Emily (Ali Ahn) and her father (Victor Slezak), they must confront challenging questions about the future, but Anna remains determined to build a life where all of them can thrive.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu4nr1xl0lrm07lv0n5irb03",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwoatesewc8707n0rp1ao7nv",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -961,6 +961,19 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmu4nr1xl0lrm07lv0n5irb03",
        "infoHtml": "<p>Year: 2026<br>Director: Liz Sargent<br>Starring: Steve Way, Ali Ahn, Shane Harper<br>Running Time: 1hr 31min</p><p><strong>Post screening Q&amp;A with director Liz Sargent and executive producer Janet Yang</strong></p><p>Anna (Anna Sargent making her acting debut), a middle-aged Korean adoptee with a cognitive disability, cares for her aging parents in a fragile balance of meeting one another’s needs. Alongside her sister Emily (Ali Ahn) and her father (Victor Slezak), they must confront challenging questions about the future, but Anna remains determined to build a life where all of them can thrive.</p><p>Liz Sargent’s intimate debut drama examines the shifting demands placed on a unique - and uniquely challenged - family in a Florida suburb. Expanded from Sargent’s acclaimed short (2023 Sundance Film Festival), <em>Take Me Home</em> exposes the indignities of the American health care system and the structural challenges faced by disabled people. The film also gently and imaginatively traces a path for Anna’s independence and connection to a community of chosen family. </p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      },
+      {
+       "id": "cmwoau6asz4jo07ln27ddcxgk",
+       "title": "Take Me Home",
+       "subtitle": null,
+       "startsAt": "2026-12-12T00:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1271?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwoatesewc8707n0rp1ao7nv",
+       "infoHtml": "<p>Year: 2026<br>Director: Liz Sargent<br>Starring: Steve Way, Ali Ahn, Shane Harper<br>Running Time: 1hr 31min</p><p>Anna (Anna Sargent making her acting debut), a middle-aged Korean adoptee with a cognitive disability, cares for her aging parents in a fragile balance of meeting one another’s needs. Alongside her sister Emily (Ali Ahn) and her father (Victor Slezak), they must confront challenging questions about the future, but Anna remains determined to build a life where all of them can thrive.</p><p>Liz Sargent’s intimate debut drama examines the shifting demands placed on a unique - and uniquely challenged - family in a Florida suburb. Expanded from Sargent’s acclaimed short (2023 Sundance Film Festival), Take Me Home exposes the indignities of the American health care system and the structural challenges faced by disabled people. The film also gently and imaginatively traces a path for Anna’s independence and connection to a community of chosen family. By turns quietly devastating and bracingly optimistic, Take</p><p></p>"
       }
      ]
     }
@@ -4000,7 +4013,7 @@
      "runtime": "1hr 22min",
      "rating": null,
      "synopsis": "At the height of the Cold War, Fatherland centers on the relationship between the writer Thomas Mann and his daughter Erika - actress, writer and rally driver - as they embark on a road trip in a black Buick cruiser across a Germany in ruins.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvtrc7o9qlci07mya05vzqdz",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvtrc7kcqlcb07myowtvxcqf",
      "livestreamUrl": null,
      "showtimes": [
       {
