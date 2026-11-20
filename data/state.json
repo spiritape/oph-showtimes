@@ -1,8 +1,8 @@
 {
  "lastReadCount": 50,
  "lastPublish": {
-  "scheduleHash": "e931ee2fa107020d57fa866eaf75fdac5518a69883dc8ebd78c940f2e6e22a92",
-  "publishedAt": "2026-11-20T20:41:15.827Z"
+  "scheduleHash": "ee17bdc97aaa6d18307775585a61776cc671c18f88c1fdda0921c5a95b2209dc",
+  "publishedAt": "2026-11-20T20:47:19.559Z"
  },
  "seen": {
   "titles": {
@@ -3980,6 +3980,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
+      },
+      {
+       "id": "cmwpfu3a90f5z07n3n5nk8w71",
+       "title": "Elsinore",
+       "subtitle": null,
+       "startsAt": "2026-12-06T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1276?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahl3rkkz07n3pvs7aeav",
        "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
       },
       {
