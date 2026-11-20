@@ -1,8 +1,8 @@
 {
- "lastReadCount": 46,
+ "lastReadCount": 47,
  "lastPublish": {
-  "scheduleHash": "b2672a8ab89aa5ce276c5167165995c94331fbc5ca82f729e966c8aaddbcf2b7",
-  "publishedAt": "2026-11-20T20:33:18.420Z"
+  "scheduleHash": "e86cbae520ee97e0d2a04853ebc06448e0be69aa3a36e050af4289308b3fe4a4",
+  "publishedAt": "2026-11-20T20:35:16.336Z"
  },
  "seen": {
   "titles": {
@@ -3954,7 +3954,7 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
-       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone</p><p>Starring: Andrew Scott, Olivia Coleman, Billie Piper</p><p>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
       }
      ]
     }
@@ -4680,6 +4680,39 @@
        "price": "$13.50/$12 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwnpu9f5yseu07lneww7oiil",
        "infoHtml": "<p>Year: 2026<br>Director: Andrey Zvyagintsev<br>Starring: Dmitriy Mazurov, Iris Lebedeva, Boris Kudrin, Varvara Shmykova<br>Running Time: 2hr 15min</p><p><strong>Cannes Film Festival Grand Prix winner 2026</strong></p><p>A high-powered executive&#39;s meticulously controlled existence unravels when professional crises, global chaos, and marital betrayal converge, pushing him toward a dangerous breaking point.</p>"
+      }
+     ]
+    }
+   },
+   "elsionore": {
+    "lastShowtime": "2026-12-06T00:30:00.000Z",
+    "title": {
+     "key": "elsionore",
+     "slug": "elsionore",
+     "name": "Elsionore",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "2026",
+     "director": "Simon Stone",
+     "runtime": "1hr 51min",
+     "rating": "R",
+     "synopsis": "A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahl3rkkz07n3pvs7aeav",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwpfu3a90f5z07n3n5nk8w71",
+       "title": "Elsionore",
+       "subtitle": null,
+       "startsAt": "2026-12-06T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1276?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahl3rkkz07n3pvs7aeav",
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
       }
      ]
     }
