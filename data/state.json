@@ -1,8 +1,8 @@
 {
- "lastReadCount": 45,
+ "lastReadCount": 46,
  "lastPublish": {
-  "scheduleHash": "85e56c237963fd1161c32be176f9c6d6e88f2ea541f286b6b7e9341f097b14f6",
-  "publishedAt": "2026-11-20T19:17:24.460Z"
+  "scheduleHash": "b2672a8ab89aa5ce276c5167165995c94331fbc5ca82f729e966c8aaddbcf2b7",
+  "publishedAt": "2026-11-20T20:33:18.420Z"
  },
  "seen": {
   "titles": {
@@ -3914,7 +3914,7 @@
     }
    },
    "elsinore": {
-    "lastShowtime": "2026-11-16T03:15:00.000Z",
+    "lastShowtime": "2026-12-05T00:30:00.000Z",
     "title": {
      "key": "elsinore",
      "slug": "elsinore",
@@ -3926,7 +3926,7 @@
      "director": "Simon Stone",
      "runtime": "1hr 51min",
      "rating": "R",
-     "synopsis": "A powerful, deeply moving and inspiring true-life story about the actor Ian Charleson who faced incredible odds while preparing to give the performance of a lifetime as Shakespeare’s Hamlet at the National Theatre in London.",
+     "synopsis": "A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.",
      "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
      "livestreamUrl": null,
      "showtimes": [
@@ -3942,6 +3942,19 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
        "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring true-life story about the actor Ian Charleson who faced incredible odds while preparing to give the performance of a lifetime as Shakespeare’s Hamlet at the National Theatre in London.</p>"
+      },
+      {
+       "id": "cmwpfqs3x07d607n3vq4wa8vx",
+       "title": "Elsinore",
+       "subtitle": null,
+       "startsAt": "2026-12-05T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1275?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone</p><p>Starring: Andrew Scott, Olivia Coleman, Billie Piper</p><p>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
       }
      ]
     }
