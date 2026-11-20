@@ -1,8 +1,8 @@
 {
- "lastReadCount": 44,
+ "lastReadCount": 45,
  "lastPublish": {
-  "scheduleHash": "fb4cc785a5d7eecc99b9ae74b9e7931d9cb57f0200a00c5081e04564e83938e7",
-  "publishedAt": "2026-11-20T18:43:19.333Z"
+  "scheduleHash": "85e56c237963fd1161c32be176f9c6d6e88f2ea541f286b6b7e9341f097b14f6",
+  "publishedAt": "2026-11-20T19:17:24.460Z"
  },
  "seen": {
   "titles": {
@@ -4092,7 +4092,7 @@
     }
    },
    "behemoth!": {
-    "lastShowtime": "2026-11-19T03:00:00.000Z",
+    "lastShowtime": "2026-12-04T00:30:00.000Z",
     "title": {
      "key": "behemoth!",
      "slug": "behemoth",
@@ -4120,6 +4120,19 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvu02xb9ftiv07mytpt0tgbj",
        "infoHtml": "<p>Year: 2026<br>Director: Tony Gilroy<br>Starring: Pedro Pascal, Olivia Wilde, Eva Victor<br>Running Time: 2hr 4min</p><p>A gifted cellist returns home to Los Angeles after 20 years on the road. Music, which has been the constant, all-consuming river of his life, swells into an adventure that will change him forever.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      },
+      {
+       "id": "cmwpd16vnqbej07n3vxzrh12k",
+       "title": "Behemoth!",
+       "subtitle": null,
+       "startsAt": "2026-12-04T00:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1278?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvu02xb9ftiv07mytpt0tgbj",
+       "infoHtml": "<p>Year: 2026<br>Director: Tony Gilroy<br>Starring: Pedro Pascal, Olivia Wilde, Eva Victor<br>Running Time: 2hr 4min</p><p>A gifted cellist returns home to Los Angeles after 20 years on the road. Music, which has been the constant, all-consuming river of his life, swells into an adventure that will change him forever.</p>"
       }
      ]
     }
