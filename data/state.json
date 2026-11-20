@@ -1,8 +1,8 @@
 {
- "lastReadCount": 48,
+ "lastReadCount": 49,
  "lastPublish": {
-  "scheduleHash": "225ee232262a189b466c834296d64620a520707a5e42f847e861ab79b3ce7bd7",
-  "publishedAt": "2026-11-20T20:37:21.769Z"
+  "scheduleHash": "f4f17175a073e73fde3c031fe19aba19362210be4575bbfeb214023458b5c884",
+  "publishedAt": "2026-11-20T20:39:17.239Z"
  },
  "seen": {
   "titles": {
@@ -3624,7 +3624,7 @@
     }
    },
    "ray gunn": {
-    "lastShowtime": "2026-11-14T20:00:00.000Z",
+    "lastShowtime": "2026-12-05T20:00:00.000Z",
     "title": {
      "key": "ray gunn",
      "slug": "ray-gunn",
@@ -3637,7 +3637,7 @@
      "runtime": "1hr 59min",
      "rating": "PG",
      "synopsis": "In Metropia, a gigantic city in an alternate future, private eye Raymond Gunn is drawn into a case involving aliens, murder, and a multimedia star named Venus Nova.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnulztwjb07n3rhq2r8jl",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahr7rkn207n32yywwcoi",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3651,6 +3651,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnulztwjb07n3rhq2r8jl",
+       "infoHtml": "<p>Year: 2026<br>Director: Brad Bird<br>Starring: Sam Rockwell, Scarlett Johansson, Tom Waits<br>Running Time: 1hr 59min</p><p>Rated: PG</p><p>In Metropia, a gigantic city in an alternate future, private eye Raymond Gunn is drawn into a case involving aliens, murder, and a multimedia star named Venus Nova.</p>"
+      },
+      {
+       "id": "cmwpfyjhr1plr07n3yviwvvvg",
+       "title": "Ray Gunn",
+       "subtitle": null,
+       "startsAt": "2026-12-05T20:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1272?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahr7rkn207n32yywwcoi",
        "infoHtml": "<p>Year: 2026<br>Director: Brad Bird<br>Starring: Sam Rockwell, Scarlett Johansson, Tom Waits<br>Running Time: 1hr 59min</p><p>Rated: PG</p><p>In Metropia, a gigantic city in an alternate future, private eye Raymond Gunn is drawn into a case involving aliens, murder, and a multimedia star named Venus Nova.</p>"
       }
      ]
