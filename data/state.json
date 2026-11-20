@@ -1,8 +1,8 @@
 {
- "lastReadCount": 47,
+ "lastReadCount": 48,
  "lastPublish": {
-  "scheduleHash": "e86cbae520ee97e0d2a04853ebc06448e0be69aa3a36e050af4289308b3fe4a4",
-  "publishedAt": "2026-11-20T20:35:16.336Z"
+  "scheduleHash": "225ee232262a189b466c834296d64620a520707a5e42f847e861ab79b3ce7bd7",
+  "publishedAt": "2026-11-20T20:37:21.769Z"
  },
  "seen": {
   "titles": {
@@ -3914,7 +3914,7 @@
     }
    },
    "elsinore": {
-    "lastShowtime": "2026-12-05T00:30:00.000Z",
+    "lastShowtime": "2026-12-06T22:30:00.000Z",
     "title": {
      "key": "elsinore",
      "slug": "elsinore",
@@ -3954,6 +3954,19 @@
        "livestreamUrl": null,
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvijnu2ou6vm07mxntp1ztqd",
+       "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
+      },
+      {
+       "id": "cmwpfw8lq0k8f07n3s6j328m4",
+       "title": "Elsinore",
+       "subtitle": null,
+       "startsAt": "2026-12-06T22:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1277?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwpdahozqlp807n3h7n7qbce",
        "infoHtml": "<p>Year: 2026<br>Director: Simon Stone<br>Starring: Andrew Scott, Olivia Coleman, Billie Piper<br>Running Time: 1hr 51min</p><p>Rated: R</p><p>A powerful, deeply moving and inspiring story of the actor Ian Charleson who faced incredible odds while preparing to give the performance of his life in Hamlet at the National Theatre in London.</p>"
       }
      ]
