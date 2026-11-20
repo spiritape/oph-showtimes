@@ -1,8 +1,8 @@
 {
- "lastReadCount": 43,
+ "lastReadCount": 44,
  "lastPublish": {
-  "scheduleHash": "bb3fd589d2a83c58e36e55761241f7205214468e2ebb37ff3ecf7f1b4d3e210a",
-  "publishedAt": "2026-11-20T15:05:19.179Z"
+  "scheduleHash": "108128bf5a636e8f69f9e47e07d8a561848a423b85784bdd6ab8e893656d1f91",
+  "publishedAt": "2026-11-20T18:39:20.346Z"
  },
  "seen": {
   "titles": {
@@ -2860,7 +2860,7 @@
     }
    },
    "wildwood": {
-    "lastShowtime": "2026-11-07T19:30:00.000Z",
+    "lastShowtime": "2026-11-22T19:30:00.000Z",
     "title": {
      "key": "wildwood",
      "slug": "wildwood",
@@ -2888,6 +2888,19 @@
        "price": "REGISTRATION REQUIRED",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73dgp750v07mvjsztx2bm",
        "infoHtml": "<p>Year: 2026<br>Director: Travis Knight<br>Starring: Peyton Elizabeth Smith, Jacob Tremblay, Carey Mulligan, Mahershala Ali, Awkwafina, Angela Bassett<br>Running Time: 2hr 12min</p><p>Rated: PG-13</p><p>The adventures of Prue McKeel as she sets off to the forests outside Portland to find her kidnapped brother.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
+      },
+      {
+       "id": "cmwpblx6xlqys07n39son3o2f",
+       "title": "Wildwood",
+       "subtitle": null,
+       "startsAt": "2026-11-22T19:30:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1274?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73dgp750v07mvjsztx2bm",
+       "infoHtml": "<p>Year: 2026<br>Director: Travis Knight<br>Starring: Peyton Elizabeth Smith, Jacob Tremblay, Carey Mulligan, Mahershala Ali, Awkwafina, Angela Bassett<br>Running Time: 2hr 12min</p><p>Rated: PG-13</p><p>The adventures of Prue McKeel as she sets off to the forests outside Portland to find her kidnapped brother.</p>"
       }
      ]
     }
