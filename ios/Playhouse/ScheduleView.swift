@@ -135,7 +135,8 @@ private struct ScheduleList: View {
                         }
                     } header: {
                         Text(feed.calendar.date(from: day.day).map { feed.dayLabel($0, now: now) } ?? "")
-                            .foregroundStyle(dayPlayed ? Color.secondary : Color.accentColor)
+                            .fontWeight(.bold)
+                            .foregroundStyle(dayPlayed ? Color.secondary : Color.softBlue)
                     }
                     .id(day.id)
                 }
