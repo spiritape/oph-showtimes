@@ -391,7 +391,7 @@ private struct TicketWatermark: View {
         Image(systemName: "ticket.fill")
             .resizable()
             .scaledToFit()
-            .padding(.horizontal, 15)
+            .padding(.horizontal, 19)
             .rotationEffect(.degrees(-18))
             .foregroundStyle((free ? Color.softGreen : .softBlue).opacity(0.3))
             // Fades out toward the bottom of the row.
