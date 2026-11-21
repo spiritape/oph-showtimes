@@ -14,6 +14,15 @@ export type Showtime = {
   imageUrl: string | null;
   /** Rich-text details: year, director, running time, synopsis… */
   infoHtml: string | null;
+  /** The event's own page on the Source (ojaiplayhouse.com/event/<slug>). */
+  sourceUrl: string | null;
+};
+
+/** One paragraph of the Playhouse's write-up, as it wrote it. */
+export type AboutParagraph = {
+  text: string;
+  /** The Playhouse set it in bold: a special guest, an introduction, an award, a notice. */
+  highlight: boolean;
 };
 
 /** A Film or Live Show: every Showtime sharing the same title (ignoring case and spacing). */
@@ -29,7 +38,17 @@ export type Title = {
   director: string | null;
   runtime: string | null;
   rating: string | null;
+  starring: string | null;
+  /** The film's description: the first plain paragraph that isn't a notice. */
   synopsis: string | null;
+  /**
+   * Everything else the Playhouse wrote, in its order: notices, special guests, line-ups
+   * and the full description. Leaves out the detail lines above and the boilerplate
+   * every free screening repeats.
+   */
+  about: AboutParagraph[];
+  /** The Title's page on the Source. */
+  sourceUrl: string | null;
   imageUrl: string | null;
   livestreamUrl: string | null;
   /** Sorted by start time. */

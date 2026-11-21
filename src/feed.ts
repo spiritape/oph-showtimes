@@ -31,7 +31,14 @@ export type FeedTitle = {
   director: string | null;
   runtime: string | null;
   rating: string | null;
+  starring: string | null;
+  /** The description alone (older apps show only this). */
   synopsis: string | null;
+  /**
+   * The Playhouse's whole write-up, in its order: notices, special guests, line-ups and
+   * the description. `highlight` marks what it set in bold.
+   */
+  about: { text: string; highlight: boolean }[];
   imageUrl: string | null;
   thumbnailUrl: string | null;
   /** The film's poster from TMDB, for the schedule list; null when it couldn't be matched (or for Live Shows). */
@@ -39,6 +46,8 @@ export type FeedTitle = {
   livestreamUrl: string | null;
   /** The Title's page on the site, for sharing. */
   url: string;
+  /** The Title's page on ojaiplayhouse.com, for anything the feed leaves out. */
+  sourceUrl: string | null;
   /** Upcoming only, sorted by start time. */
   showtimes: FeedShowtime[];
 };
@@ -68,12 +77,15 @@ function feedTitle(title: Title, showtimes: Showtime[], siteUrl: string, posters
     director: title.director,
     runtime: title.runtime,
     rating: title.rating,
+    starring: title.starring,
     synopsis: title.synopsis,
+    about: title.about,
     imageUrl: title.imageUrl,
     thumbnailUrl: thumbnailUrl(title.imageUrl),
     posterUrl: posters.get(title.key) ?? null,
     livestreamUrl: title.livestreamUrl,
     url: siteUrl + titlePath(title),
+    sourceUrl: title.sourceUrl,
     showtimes: showtimes.map((showtime) => ({
       id: showtime.id,
       startsAt: showtime.startsAt,

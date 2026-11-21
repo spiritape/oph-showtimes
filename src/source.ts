@@ -77,6 +77,8 @@ function toShowtime(e: SourceRecord): Showtime {
     livestreamUrl: e.livestreamLink || null,
     price: htmlToText(e.additionalNotes?.html) || null,
     imageUrl: e.image?.url ?? null,
-    infoHtml: e.eventInformation?.html ?? null,
+    // Live shows put their line-up here; films leave it empty.
+    infoHtml: [e.eventInformation?.html, e.performerInformation?.html].filter(Boolean).join("") || null,
+    sourceUrl: typeof e.slug === "string" && e.slug ? new URL(`event/${encodeURIComponent(e.slug)}`, SOURCE_URL).href : null,
   };
 }

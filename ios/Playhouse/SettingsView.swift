@@ -70,16 +70,33 @@ struct SettingsView: View {
                                 .frame(width: 44)
                                 .foregroundStyle(Color.accentColor)
                             Wordmark().frame(height: 14)
-                            Text("145 E Ojai Ave, Ojai")
+                            Text("145 E Ojai Ave, Ojai · next to Libbey Park")
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
-                        Link(destination: URL(string: "https://ojaishowtimes.com")!) {
-                            Label("ojaishowtimes.com", systemImage: "safari")
+                        NavigationLink {
+                            PlayhouseInfoView()
+                        } label: {
+                            Label("Visiting the Playhouse", systemImage: "info.circle")
+                        }
+                        Link(destination: PlayhouseInfo.website) {
+                            Label("ojaiplayhouse.com", systemImage: "safari")
+                        }
+                        Link(destination: PlayhouseInfo.phoneURL) {
+                            Label(PlayhouseInfo.phone, systemImage: "phone")
+                        }
+                        .accessibilityLabel("Call the Playhouse, \(PlayhouseInfo.phone)")
+                        Link(destination: PlayhouseInfo.emailURL) {
+                            Label(PlayhouseInfo.email, systemImage: "envelope")
+                        }
+                        Link(destination: PlayhouseInfo.directionsURL) {
+                            Label("Directions", systemImage: "map")
                         }
                         LabeledContent("Version", value: Self.version)
+                        LabeledContent("App by", value: "Micah Van Hove")
                     } header: {
                         Text("About")
                     } footer: {

@@ -4,6 +4,7 @@ struct TitleView: View {
     @Environment(FeedStore.self) private var store
     let title: Title
     @State private var calendarItem: ScheduledShowtime?
+    @State private var inviteItem: ScheduledShowtime?
     @State private var ticketPage: TicketPage?
     @Environment(\.openURL) private var openURL
     /// The date block grows with the text size.
@@ -25,15 +26,7 @@ struct TitleView: View {
                     }
                     .buttonStyle(.bordered)
                 }
-                if let synopsis = title.synopsis {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("About").font(.title2.bold())
-                        Text(synopsis)
-                            .font(.body)
-                            .lineSpacing(3)
-                    }
-                    .frame(maxWidth: 560, alignment: .leading)
-                }
+                about
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 32)
@@ -45,6 +38,10 @@ struct TitleView: View {
         }
         .sheet(item: $calendarItem) { item in
             AddToCalendarSheet(item: item, theater: feed?.theater)
+                .ignoresSafeArea()
+        }
+        .sheet(item: $inviteItem) { item in
+            AddToCalendarSheet(item: item, theater: feed?.theater, invite: true)
                 .ignoresSafeArea()
         }
         .sheet(item: $ticketPage) { page in
@@ -77,13 +74,58 @@ struct TitleView: View {
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
+            if let starring = title.starring {
+                Text("Starring \(starring)")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+            // What the Playhouse set in bold: special guests, introductions, notices.
+            if !title.highlights.isEmpty {
+                VStack(spacing: 6) {
+                    ForEach(Array(title.highlights.enumerated()), id: \.offset) { _, line in
+                        Text(line)
+                            .font(.callout.weight(.semibold))
+                            .multilineTextAlignment(.center)
+                    }
+                }
+                .padding(.top, 6)
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 8)
     }
 
+    /// The rest of what the Playhouse wrote, in its order, then a link to its own page.
+    @ViewBuilder private var about: some View {
+        let paragraphs = title.writeUp
+        if !paragraphs.isEmpty || title.sourceUrl != nil {
+            VStack(alignment: .leading, spacing: 12) {
+                if !paragraphs.isEmpty {
+                    Text("About").font(.title2.bold())
+                }
+                ForEach(Array(paragraphs.enumerated()), id: \.offset) { _, paragraph in
+                    Text(paragraph)
+                        .lineSpacing(3)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                if let sourceUrl = title.sourceUrl {
+                    Button {
+                        ticketPage = TicketPage(url: sourceUrl)
+                    } label: {
+                        Label("More on ojaiplayhouse.com", systemImage: "safari")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.top, 4)
+                }
+            }
+            .frame(maxWidth: 560, alignment: .leading)
+        }
+    }
+
     private var facts: String {
-        [title.categoryLabel, title.year, title.director.map { "Dir. \($0)" }, title.runtime, title.rating]
+        [title.year, title.director.map { "Dir. \($0)" }, title.runtime, title.rating]
             .compactMap(\.self)
             .joined(separator: " · ")
     }
@@ -173,30 +215,39 @@ struct TitleView: View {
                     .padding(.vertical, 4)
             }
             // Sold out: still opens the ticket page, in case seats come back.
-            .buttonStyle(BookingButtonStyle(soldOut: showtime.isSoldOut))
+            .buttonStyle(BookingButtonStyle(soldOut: showtime.isSoldOut, free: booking.free))
             .buttonBorderShape(.capsule)
         }
         if invites { inviteButton(showtime, fills: showtime.booking == nil) }
     }
 
-    /// Shares this Showtime (when, where, and the Title's page) through Messages or any other app.
+    /// A calendar invite for this Showtime: Apple's or Google's new-event screen,
+    /// with notes written to the friend, who is added there as an invitee/guest.
     private func inviteButton(_ showtime: Showtime, fills: Bool) -> some View {
-        let when = "\(format(showtime.startsAt, .dateTime.weekday(.wide).month(.wide).day())) at \(format(showtime.startsAt, .dateTime.hour().minute()))"
-        return ShareLink(
-            item: title.url,
-            subject: Text(title.name),
-            message: Text("Want to see \(title.name) with me at the Ojai Playhouse? \(when)."),
-            preview: SharePreview(title.name)
-        ) {
+        let item = ScheduledShowtime(title: title, showtime: showtime)
+        return Menu {
+            Section("Send a calendar invite") {
+                Button("Apple Calendar", systemImage: "calendar") { inviteItem = item }
+                if let theater = feed?.theater {
+                    Button("Google Calendar", systemImage: "globe") {
+                        openURL(GoogleCalendar.url(for: item, theater: theater, invite: true))
+                    }
+                }
+            }
+        } label: {
             Label("Invite a friend", systemImage: "person.badge.plus")
                 .font(.headline)
                 .lineLimit(1)
                 .frame(maxWidth: fills ? .infinity : nil)
                 .padding(.vertical, 4)
         }
+        .menuStyle(.button)
         .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
+        // White in dark mode (black in light), so Tickets stays the one colored button.
+        .tint(.primary)
         .accessibilityLabel("Invite a friend")
+        .accessibilityHint("Sends a calendar invite with Apple or Google Calendar")
     }
 
     private func bookingLabel(_ showtime: Showtime, _ booking: Showtime.Booking) -> String {
@@ -217,9 +268,11 @@ struct TitleView: View {
     }
 }
 
-/// The prominent Tickets/RSVP button, or a quieter grey one when sold out.
+/// The prominent Tickets/RSVP button (green for a free RSVP, matching the Free
+/// badge), or a quieter grey one when sold out.
 private struct BookingButtonStyle: PrimitiveButtonStyle {
     let soldOut: Bool
+    let free: Bool
 
     func makeBody(configuration: Configuration) -> some View {
         if soldOut {
@@ -229,6 +282,7 @@ private struct BookingButtonStyle: PrimitiveButtonStyle {
         } else {
             Button(role: nil, action: configuration.trigger) { configuration.label }
                 .buttonStyle(.borderedProminent)
+                .tint(free ? .rsvpGreen : .playhouseBlue)
         }
     }
 }

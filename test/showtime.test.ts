@@ -14,6 +14,7 @@ const showtime: Showtime = {
   price: "REGISTRATION REQUIRED",
   imageUrl: null,
   infoHtml: null,
+  sourceUrl: null,
 };
 
 const title: Title = {
@@ -27,7 +28,10 @@ const title: Title = {
   director: "Michael Mann",
   runtime: "2hr",
   rating: null,
+  starring: null,
   synopsis: null,
+  about: [],
+  sourceUrl: null,
   imageUrl: null,
   livestreamUrl: null,
   showtimes: [showtime],

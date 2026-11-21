@@ -8,14 +8,16 @@ private let json = """
  "theater":{"name":"Ojai Playhouse","address":"145 E Ojai Ave, Ojai, CA 93023","phone":"(805) 646-1011","timeZone":"America/Los_Angeles"},
  "titles":[
   {"key":"digger","slug":"digger","name":"Digger","subtitle":null,"kind":"film","categoryLabel":"Movie",
-   "year":"2026","director":null,"runtime":"1hr 30min","rating":null,"synopsis":null,
+   "year":"2026","director":null,"runtime":"1hr 30min","rating":null,"starring":"Ann Dowd","synopsis":"A dig.",
+   "about":[{"text":"Q&A with the director","highlight":true},{"text":"A dig.","highlight":false}],
    "imageUrl":null,"thumbnailUrl":null,"livestreamUrl":null,"url":"https://ojaishowtimes.com/t/digger/",
+   "sourceUrl":"https://www.ojaiplayhouse.com/event/digger",
    "showtimes":[
     {"id":"a","startsAt":"2026-10-14T02:00:00Z","endsAt":"2026-10-14T03:30:00.000Z","price":"$15",
      "booking":{"label":"Tickets","url":"https://tickets.example/a","free":false}},
     {"id":"b","startsAt":"2026-10-15T06:30:00.000Z","endsAt":"2026-10-15T08:00:00.000Z","price":null,"booking":null}]},
   {"key":"dr. brown","slug":"dr-brown","name":"Dr. Brown","subtitle":null,"kind":"liveShow","categoryLabel":"Comedy",
-   "year":null,"director":null,"runtime":null,"rating":null,"synopsis":null,
+   "year":null,"director":null,"runtime":null,"rating":null,"synopsis":"A clown.",
    "imageUrl":null,"thumbnailUrl":null,"livestreamUrl":null,"url":"https://ojaishowtimes.com/t/dr-brown/",
    "showtimes":[{"id":"c","startsAt":"2026-10-14T03:00:00.000Z","endsAt":"2026-10-14T05:00:00.000Z","price":null,"booking":null}],
    "someFutureField":true}]}
@@ -29,6 +31,19 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     #expect(feed.titles[1].kind == .liveShow)
     #expect(feed.titles[0].showtimes[0].booking?.url.absoluteString == "https://tickets.example/a")
     #expect(feed.titles[0].showtimes[0].startsAt == date("2026-10-14T02:00:00Z"))
+}
+
+@Test func readsTheFullWriteUpOrFallsBackToTheSynopsis() {
+    #expect(feed.titles[0].starring == "Ann Dowd")
+    #expect(feed.titles[0].aboutParagraphs == [
+        AboutParagraph(text: "Q&A with the director", highlight: true),
+        AboutParagraph(text: "A dig.", highlight: false),
+    ])
+    #expect(feed.titles[0].highlights == ["Q&A with the director"])
+    #expect(feed.titles[0].writeUp == ["A dig."])
+    #expect(feed.titles[0].sourceUrl?.absoluteString == "https://www.ojaiplayhouse.com/event/digger")
+    // A Feed from before the write-up existed: just its synopsis.
+    #expect(feed.titles[1].aboutParagraphs == [AboutParagraph(text: "A clown.", highlight: false)])
 }
 
 @Test func groupsShowtimesByDayInTheTheatersTime() {

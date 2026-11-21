@@ -13,7 +13,10 @@ const title = (name: string, isFilm: boolean, category: string, startsAt: string
   director: null,
   runtime: null,
   rating: null,
+  starring: null,
   synopsis: null,
+  about: [],
+  sourceUrl: null,
   imageUrl: null,
   livestreamUrl: null,
   showtimes: [
@@ -29,6 +32,7 @@ const title = (name: string, isFilm: boolean, category: string, startsAt: string
       price: null,
       imageUrl: null,
       infoHtml: null,
+      sourceUrl: null,
     },
   ],
 });

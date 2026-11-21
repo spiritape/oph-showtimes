@@ -14,6 +14,7 @@ const showtime = (id: string, startsAt: string, extra: Partial<Showtime> = {}): 
   price: "$15",
   imageUrl: null,
   infoHtml: null,
+  sourceUrl: null,
   ...extra,
 });
 
@@ -28,7 +29,10 @@ const title = (name: string, showtimes: Showtime[], extra: Partial<Title> = {}):
   director: null,
   runtime: "1hr 30min",
   rating: null,
+  starring: null,
   synopsis: null,
+  about: [],
+  sourceUrl: null,
   imageUrl: null,
   livestreamUrl: null,
   showtimes,

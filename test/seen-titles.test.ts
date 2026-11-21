@@ -15,7 +15,10 @@ const title = (name: string, ...starts: string[]): Title => ({
   director: null,
   runtime: null,
   rating: null,
+  starring: null,
   synopsis: null,
+  about: [],
+  sourceUrl: null,
   imageUrl: null,
   livestreamUrl: null,
   showtimes: starts.map((startsAt, i) => ({
@@ -30,6 +33,7 @@ const title = (name: string, ...starts: string[]): Title => ({
     price: null,
     imageUrl: null,
     infoHtml: null,
+    sourceUrl: null,
   })),
 });
 
@@ -109,5 +113,18 @@ describe("findNewTitles", () => {
     );
     const current = [title("Collateral", "2026-10-20T02:00:00Z"), title("Heat", "2026-10-20T02:00:00Z")];
     expect(names(findNewTitles(seen, current, now))).toEqual(["Collateral"]);
+  });
+
+  it("fills in the write-up for Titles saved before it existed", () => {
+    const old = { ...title("Old Film"), synopsis: "A film from before." } as Record<string, unknown>;
+    delete old.about;
+    delete old.starring;
+    delete old.sourceUrl;
+    const seen = rememberTitles({ titles: { "old film": { lastShowtime: "2026-10-01T02:00:00.000Z", title: old as never } } }, [], new Date("2026-10-05T00:00:00Z"));
+    expect(seen.titles["old film"]?.title).toMatchObject({
+      about: [{ text: "A film from before.", highlight: false }],
+      starring: null,
+      sourceUrl: null,
+    });
   });
 });

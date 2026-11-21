@@ -203,7 +203,8 @@ struct FilterChips: View {
                 .background {
                     Capsule().fill(Color(.secondarySystemFill))
                     if selected {
-                        Capsule().fill(Color.accentColor).matchedGeometryEffect(id: "selected", in: highlight)
+                        // The Playhouse blue, like the Tickets buttons.
+                        Capsule().fill(Color.playhouseBlue).matchedGeometryEffect(id: "selected", in: highlight)
                     }
                 }
                 .buttonStyle(.plain)
@@ -221,86 +222,108 @@ struct ShowtimeRow: View {
     var played = false
     /// Grows with the text size so "12:00 PM" never wraps.
     @ScaledMetric(relativeTo: .subheadline) private var timeWidth = 72
-    @ScaledMetric(relativeTo: .headline) private var posterWidth = 46
+    @ScaledMetric(relativeTo: .headline) private var posterWidth = 52
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            // The film's year sits under the time, in space the row already has.
-            VStack(alignment: .leading, spacing: 2) {
-                Text(time)
-                    .font(.subheadline.monospacedDigit().weight(.semibold))
-                if let year = item.title.year {
-                    Text(year)
-                        .font(.caption.monospacedDigit())
-                        .foregroundStyle(.secondary)
-                        .accessibilityLabel("Released \(year)")
-                }
-            }
-            .frame(width: timeWidth, alignment: .leading)
+            Text(time)
+                .font(.subheadline.monospacedDigit().weight(.semibold))
+                .frame(width: timeWidth, alignment: .leading)
             RowPoster(title: item.title)
                 .frame(width: posterWidth)
             VStack(alignment: .leading, spacing: 2) {
-                Text(item.title.name).font(.headline)
+                Text(item.title.name)
+                    .font(.headline)
+                    // The category isn't shown on the row (the filters cover it), but VoiceOver still says it.
+                    .accessibilityLabel(([item.title.name, item.title.categoryLabel, ticketed ? "ticketed" : nil, freeRSVP ? "free, RSVP required" : nil] as [String?]).compactMap(\.self).joined(separator: ", "))
                 if let subtitle = item.title.subtitle {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
-                // The open label at the end of the category line when it fits;
-                // below it, or everything stacked, at large text sizes.
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 6) {
-                        categoryAndBadge
-                        Spacer(minLength: 8)
-                        openLabelView
-                    }
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 6) { categoryAndBadge }
-                        openLabelView
-                    }
-                    VStack(alignment: .leading, spacing: 3) {
-                        categoryAndBadge
-                        openLabelView
-                    }
-                }
+                HStack(spacing: 6) { yearAndBadge }
+                // The open label sits in the row's lower-right corner, level with
+                // the poster's bottom edge (or below the text, when that runs longer).
+                Spacer(minLength: 6)
+                openLabelView
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        // As tall as the taller of the poster and the text, so the label can reach the bottom.
+        .fixedSize(horizontal: false, vertical: true)
         .padding(.vertical, 4)
     }
 
     /// Says what's behind the row: the Title's page, with its ticket or RSVP buttons when there are any.
     private var openLabel: String {
         guard !played, !item.showtime.isSoldOut, let booking = item.showtime.booking else { return "Details" }
-        return booking.free ? "RSVP" : "Tickets"
+        // Free ones say so here rather than in a badge: Free Screening for films,
+        // Free Event for live shows.
+        if booking.free { return item.title.kind == .film ? "Free Screening" : "Free Event" }
+        return "Tickets"
+    }
+
+    /// Needs a ticket and can still get one: the Tickets label shows the ticket icon.
+    private var ticketed: Bool {
+        !played && !item.showtime.isSoldOut && item.showtime.booking.map { !$0.free } == true
+    }
+
+    /// Free and can still RSVP: the label reads Free Screening (or Free Event).
+    private var freeRSVP: Bool {
+        !played && !item.showtime.isSoldOut && item.showtime.booking?.free == true
     }
 
     private var openLabelView: some View {
-        OpenTitleLabel(text: openLabel, quiet: played || item.showtime.isSoldOut)
+        // Green for a free RSVP, matching the Free badge.
+        OpenTitleLabel(
+            text: openLabel,
+            quiet: played || item.showtime.isSoldOut,
+            free: item.showtime.booking?.free == true,
+            systemImage: ticketed ? "ticket.fill" : nil
+        )
     }
 
-    @ViewBuilder private var categoryAndBadge: some View {
-        Text(item.title.categoryLabel).font(.caption).foregroundStyle(.secondary).fixedSize()
-        BookingBadge(showtime: item.showtime, kind: item.title.kind)
+    @ViewBuilder private var yearAndBadge: some View {
+        // The film's year; the category is left to the filters above the list.
+        if let year = item.title.year {
+            Text(year)
+                .font(.caption.monospacedDigit())
+                .foregroundStyle(.secondary)
+                .fixedSize()
+                .accessibilityLabel("Released \(year)")
+        }
+        BookingBadge(showtime: item.showtime, kind: item.title.kind, short: true)
     }
 }
 
-/// A small tinted label at the end of the row, so it's plain that a row opens its Title.
+/// A small filled label at the end of the row, so it's plain that a row opens its Title.
 /// Not a button itself: the whole row is the link.
 private struct OpenTitleLabel: View {
     let text: String
     /// Grey instead of the accent, for sold-out and played Showtimes.
     let quiet: Bool
+    /// Green instead of the Playhouse blue, for a free RSVP.
+    var free = false
+    /// An icon in front of the text: the ticket, on Tickets.
+    var systemImage: String?
+
+    /// A solid fill with a white label, like the Title page's buttons.
+    private var fill: Color { free ? .rsvpGreen : .playhouseBlue }
 
     var body: some View {
         HStack(spacing: 2) {
+            if let systemImage {
+                Image(systemName: systemImage).padding(.trailing, 3)
+            }
             Text(text)
             Image(systemName: "chevron.right").font(.caption2.weight(.bold))
         }
         .font(.caption.weight(.semibold))
-        .foregroundStyle(quiet ? Color.secondary : Color.accentColor)
+        .foregroundStyle(quiet ? Color.secondary : Color.white)
         .padding(.leading, 9)
         .padding(.trailing, 7)
         .padding(.vertical, 3)
-        .background(quiet ? Color(.tertiarySystemFill) : Color.accentColor.opacity(0.15), in: .capsule)
+        .background(quiet ? Color(.tertiarySystemFill) : fill, in: .capsule)
         .fixedSize()
         .accessibilityHidden(true)
     }

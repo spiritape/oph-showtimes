@@ -13,6 +13,13 @@ extension Color {
     static let appSurface = dynamic(dark: 0x1D1B28, light: .secondarySystemBackground)
     /// Rows of grouped lists.
     static let appGroupedSurface = dynamic(dark: 0x1D1B28, light: .secondarySystemGroupedBackground)
+    /// The Ojai Playhouse's own blue (#0032E4, from its website and wordmark), for filled
+    /// Tickets buttons in both modes. White on it reads at about 8:1. Blue text and icons
+    /// use the accent color instead, which is lighter in dark mode so it shows on the dark background.
+    static let playhouseBlue = Color(red: 0x00 / 255, green: 0x32 / 255, blue: 0xE4 / 255)
+    /// Filled free-RSVP buttons: deeper than the system green so a white label stays
+    /// readable (about 5:1).
+    static let rsvpGreen = Color(red: 0.10, green: 0.50, blue: 0.22)
 
     private static func dynamic(dark hex: UInt32, light: UIColor) -> Color {
         let dark = UIColor(

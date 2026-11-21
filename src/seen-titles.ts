@@ -18,7 +18,11 @@ const isRecent = (s: Showtime, now: Date) => now.getTime() - Date.parse(s.starts
  * its played Showtimes from the last 60 days for the Past list.
  */
 export function rememberTitles(seen: SeenTitles | null, titles: Title[], now: Date): SeenTitles {
-  const next: SeenTitles = { titles: { ...seen?.titles } };
+  const next: SeenTitles = {
+    titles: Object.fromEntries(
+      Object.entries(seen?.titles ?? {}).map(([key, entry]) => [key, { ...entry, title: withNewFields(entry.title) }]),
+    ),
+  };
   for (const title of titles) {
     const current = new Set(title.showtimes.map((s) => s.id));
     const played = (seen?.titles[title.key]?.title.showtimes ?? []).filter(
@@ -32,6 +36,20 @@ export function rememberTitles(seen: SeenTitles | null, titles: Title[], now: Da
     if (now.getTime() - Date.parse(entry.lastShowtime) > KEEP_FINISHED_DAYS * DAY) delete next.titles[key];
   }
   return next;
+}
+
+/**
+ * A snapshot saved before Titles had a starring line, the full write-up and a Source link:
+ * its synopsis stands in for the write-up.
+ */
+function withNewFields(title: Title): Title {
+  const saved = title as Partial<Title> & Title;
+  return {
+    ...saved,
+    starring: saved.starring ?? null,
+    about: saved.about ?? (saved.synopsis ? [{ text: saved.synopsis, highlight: false }] : []),
+    sourceUrl: saved.sourceUrl ?? null,
+  };
 }
 
 /** Titles no longer on the schedule whose pages we still keep. */

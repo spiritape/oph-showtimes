@@ -40,7 +40,7 @@ a{color:var(--accent)}
 .title-name{font-size:1.6rem;text-transform:none;letter-spacing:-.01em;color:var(--fg);margin:16px 0 0}
 .hero{width:100%;height:auto;aspect-ratio:1280/770;object-fit:cover;border-radius:8px;margin-top:8px;background:var(--tag)}
 .facts{color:var(--muted);margin:8px 0}
-.synopsis{margin:12px 0 0}
+.synopsis{margin:12px 0 0}.synopsis.highlight{font-weight:600}.source-link{margin:12px 0 0;font-size:.9rem}
 .past li{display:grid;grid-template-columns:5.2rem 1fr;gap:0 12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
 .past .time{grid-area:auto}
 .past .name{color:var(--muted)}

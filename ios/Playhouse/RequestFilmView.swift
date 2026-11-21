@@ -163,6 +163,7 @@ struct RequestFilmView: View {
         } else {
             Button("Request") { Task { await requests.request(film) } }
                 .buttonStyle(.borderedProminent)
+                .tint(.playhouseBlue)
                 .buttonBorderShape(.capsule)
                 .font(.subheadline.weight(.semibold))
         }

@@ -219,7 +219,11 @@ ${HEADER_STYLE.backButton.position !== "bottom" ? backButton() : ""}
 ${title.subtitle ? `<p class="sub">${escapeHtml(title.subtitle)}</p>` : ""}
 ${title.imageUrl ? `<img class="hero" src="${escapeHtml(title.imageUrl)}" alt="" width="1280" height="770" decoding="async">` : ""}
 ${facts.length ? `<p class="facts">${facts.map(escapeHtml).join(" · ")}</p>` : ""}
-${title.synopsis ? `<p class="synopsis">${escapeHtml(title.synopsis)}</p>` : ""}
+${title.starring ? `<p class="facts">Starring ${escapeHtml(title.starring)}</p>` : ""}
+${[...title.about.filter((p) => p.highlight), ...title.about.filter((p) => !p.highlight)]
+  .map((p) => `<p class="synopsis${p.highlight ? " highlight" : ""}">${escapeHtml(p.text).replace(/\n/g, "<br>")}</p>`)
+  .join("\n")}
+${title.sourceUrl ? `<p class="source-link"><a href="${escapeHtml(title.sourceUrl)}" rel="noopener">More on ojaiplayhouse.com</a></p>` : ""}
 ${title.livestreamUrl ? `<p><a href="${escapeHtml(title.livestreamUrl)}" rel="noopener">Watch the livestream</a></p>` : ""}
 <h2>Showtimes</h2>
 <div data-list>${

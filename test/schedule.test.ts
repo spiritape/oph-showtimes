@@ -18,6 +18,7 @@ const showtime = (over: Partial<Showtime>): Showtime => ({
   price: null,
   imageUrl: null,
   infoHtml: null,
+  sourceUrl: null,
   ...over,
 });
 
@@ -116,5 +117,63 @@ describe("buildSchedule", () => {
     expect(title?.synopsis).toBe("A film about seeing.");
     expect(title?.year).toBe("2026");
   });
+
+  // Mr. Irrelevant's write-up on ojaiplayhouse.com, shortened.
+  const MR_IRRELEVANT =
+    "<p>REGISTRATION IS CURRENTLY FULL - PLEASE CHECK AT DOORS AT SHOW TIME FOR STANDBY LIST SHOULD ANY SEATS OPEN UP</p>" +
+    "<p>Year: 2026<br>Director: Jonathan Levine<br>Starring: Isabel May, Michael Shannon, David Krumholtz<br>Running Time: 2hr 5min</p>" +
+    "<p>Rated: PG-13</p>" +
+    "<p><strong>Special advance screening</strong></p>" +
+    "<p><strong>Introduction from director Jonathan Levine</strong></p>" +
+    "<p>Mr. Irrelevant is the inspiring true story of John Tuggle.</p>" +
+    "<p><strong>We look forward to seeing you at the historic Ojai Playhouse. Please visit the concession stand.</strong></p>" +
+    "<p><strong>Important note:</strong></p>" +
+    "<p><strong>If you can't make it, click 'cancel my order' so your tickets go to someone else.</strong></p>" +
+    "<p><strong>Thank you! See you at the movies.</strong></p>";
+
+  it("keeps the Playhouse's whole write-up, in order, without the free-screening boilerplate", () => {
+    const [title] = buildSchedule([showtime({ title: "Mr. Irrelevant", infoHtml: MR_IRRELEVANT })]);
+    expect(title).toMatchObject({
+      year: "2026",
+      director: "Jonathan Levine",
+      starring: "Isabel May, Michael Shannon, David Krumholtz",
+      runtime: "2hr 5min",
+      rating: "PG-13",
+      synopsis: "Mr. Irrelevant is the inspiring true story of John Tuggle.",
+    });
+    expect(title?.about).toEqual([
+      {
+        text: "REGISTRATION IS CURRENTLY FULL - PLEASE CHECK AT DOORS AT SHOW TIME FOR STANDBY LIST SHOULD ANY SEATS OPEN UP",
+        highlight: false,
+      },
+      { text: "Special advance screening", highlight: true },
+      { text: "Introduction from director Jonathan Levine", highlight: true },
+      { text: "Mr. Irrelevant is the inspiring true story of John Tuggle.", highlight: false },
+    ]);
+  });
+
+  it("keeps detail lines it has no field for", () => {
+    const [title] = buildSchedule([
+      showtime({ title: "Paris, Texas", infoHtml: "<p>Year: 1984<br>Format: 35mm print</p><p>A man walks out of the desert.</p>" }),
+    ]);
+    expect(title?.year).toBe("1984");
+    expect(title?.about[0]).toEqual({ text: "Format: 35mm print", highlight: false });
+  });
+
+  it("drops a paragraph three or more Titles repeat", () => {
+    const shared = "<p>Bring a blanket for the patio.</p>";
+    const titles = buildSchedule(
+      ["A", "B", "C"].map((name, i) =>
+        showtime({ id: name, title: name, infoHtml: `<p>Film ${name}.</p>${shared}`, startsAt: `2026-10-0${i + 1}T02:00:00.000Z` }),
+      ),
+    );
+    expect(titles.map((t) => t.about.map((p) => p.text))).toEqual([["Film A."], ["Film B."], ["Film C."]]);
+  });
 });
 
+describe("readSource", () => {
+  it("links each event's own page on the Source", () => {
+    const linked = showtimes.find((s) => s.sourceUrl);
+    expect(linked?.sourceUrl).toMatch(/^https:\/\/www\.ojaiplayhouse\.com\/event\/[a-z0-9-]+$/);
+  });
+});

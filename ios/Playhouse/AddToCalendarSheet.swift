@@ -3,10 +3,13 @@ import EventKitUI
 import SwiftUI
 
 /// Apple's own "New Event" screen, prefilled with the Showtime. The person
-/// saves it themselves, so the app never asks for calendar access.
+/// saves it themselves, so the app never asks for calendar access. For an
+/// invite, the notes are written to the friend, who is added under Invitees
+/// (apps can't add invitees themselves).
 struct AddToCalendarSheet: UIViewControllerRepresentable {
     let item: ScheduledShowtime
     let theater: Theater?
+    var invite = false
     @Environment(\.dismiss) private var dismiss
 
     func makeUIViewController(context: Context) -> EKEventEditViewController {
@@ -20,9 +23,7 @@ struct AddToCalendarSheet: UIViewControllerRepresentable {
             event.location = "\(theater.name), \(theater.address)"
             event.timeZone = TimeZone(identifier: theater.timeZone)
         }
-        event.notes = [item.showtime.isSoldOut ? "Sold out" : nil, item.showtime.displayPrice, item.showtime.booking.map { "\($0.label): \($0.url.absoluteString)" }]
-            .compactMap(\.self)
-            .joined(separator: "\n")
+        event.notes = CalendarNotes.lines(for: item, invite: invite, includePage: invite).joined(separator: "\n")
 
         let controller = EKEventEditViewController()
         controller.eventStore = store
@@ -42,5 +43,22 @@ struct AddToCalendarSheet: UIViewControllerRepresentable {
         func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
             dismiss()
         }
+    }
+}
+
+/// The event description both calendars get.
+enum CalendarNotes {
+    static func lines(for item: ScheduledShowtime, invite: Bool, includePage: Bool) -> [String] {
+        let showtime = item.showtime
+        let booking = showtime.booking.map { booking in
+            invite && !booking.free ? "Get your ticket: \(booking.url.absoluteString)" : "\(booking.label): \(booking.url.absoluteString)"
+        }
+        return [
+            invite ? "Join me for \(item.title.name) at the Ojai Playhouse!" : nil,
+            showtime.isSoldOut ? "Sold out" : nil,
+            showtime.displayPrice,
+            booking,
+            includePage ? item.title.url.absoluteString : nil,
+        ].compactMap(\.self)
     }
 }

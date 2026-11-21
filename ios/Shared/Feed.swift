@@ -50,7 +50,13 @@ struct Title: Codable, Equatable, Hashable, Identifiable, Sendable {
     var director: String?
     var runtime: String?
     var rating: String?
+    /// Missing from Feeds published before it was added.
+    var starring: String?
+    /// The description alone.
     var synopsis: String?
+    /// The Playhouse's whole write-up, in its order: notices, special guests,
+    /// line-ups and the description. Missing from Feeds published before it was added.
+    var about: [AboutParagraph]?
     var imageUrl: URL?
     var thumbnailUrl: URL?
     /// The film's poster from TMDB, for the schedule list. Missing for Live Shows,
@@ -59,10 +65,32 @@ struct Title: Codable, Equatable, Hashable, Identifiable, Sendable {
     var livestreamUrl: URL?
     /// The Title's page on the site, for sharing.
     var url: URL
+    /// The Title's page on ojaiplayhouse.com. Missing from Feeds published before it was added.
+    var sourceUrl: URL?
     /// Upcoming only, sorted by start time.
     var showtimes: [Showtime]
 
     var id: String { key }
+
+    /// The write-up to show: the full one, or just the synopsis from an older Feed.
+    var aboutParagraphs: [AboutParagraph] {
+        if let about, !about.isEmpty { return about }
+        return synopsis.map { [AboutParagraph(text: $0, highlight: false)] } ?? []
+    }
+
+    /// What the Playhouse set in bold (special guests, introductions, notices),
+    /// shown up top under the name.
+    var highlights: [String] { aboutParagraphs.filter(\.highlight).map(\.text) }
+
+    /// The rest of the write-up, for the About section.
+    var writeUp: [String] { aboutParagraphs.filter { !$0.highlight }.map(\.text) }
+}
+
+/// One paragraph of the Playhouse's write-up.
+struct AboutParagraph: Codable, Equatable, Hashable, Sendable {
+    var text: String
+    /// The Playhouse set it in bold: a special guest, an introduction, an award, a notice.
+    var highlight: Bool
 }
 
 /// One scheduled occurrence of a Title.
