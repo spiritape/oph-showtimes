@@ -6,8 +6,8 @@ struct BookingBadge: View {
     let showtime: Showtime
     /// Free films are "Free Screening"; free live shows are "Free Event".
     let kind: Title.Kind
-    /// For the schedule rows: only Sold out. The row's Free Screening and Tickets
-    /// labels say the rest.
+    /// For the schedule rows: Sold out and Free Screening, but no ticket icon, since
+    /// the row's Tickets pill says that.
     var short = false
 
     private var freeLabel: String { kind == .film ? "Free Screening" : "Free Event" }
@@ -24,7 +24,7 @@ struct BookingBadge: View {
                 .fixedSize()
                 .accessibilityLabel("Sold out")
         } else if let booking = showtime.booking {
-            if booking.free, !short {
+            if booking.free {
                 Text(freeLabel)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Color.green)

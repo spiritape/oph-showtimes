@@ -220,19 +220,17 @@ struct ShowtimeRow: View {
     let item: ScheduledShowtime
     let time: String
     var played = false
-    /// Grows with the text size so "12:00 PM" never wraps.
-    @ScaledMetric(relativeTo: .subheadline) private var timeWidth = 72
     @ScaledMetric(relativeTo: .headline) private var posterWidth = 52
+    /// Grows with the text size, so the pill's label still fits.
+    @ScaledMetric(relativeTo: .caption) private var buttonWidth = 84
 
-    /// The time, the poster, and the name, year and label, all centered on the poster.
+    /// The poster, the name and year, and on the right the time over the Tickets /
+    /// RSVP / Details pill, with a faint ticket fading out below it.
     var body: some View {
-        HStack(alignment: .center, spacing: 12) {
-            Text(time)
-                .font(.subheadline.monospacedDigit().weight(.semibold))
-                .frame(width: timeWidth, alignment: .leading)
+        HStack(alignment: .top, spacing: 12) {
             RowPoster(title: item.title)
                 .frame(width: posterWidth)
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(item.title.name)
                     .font(.headline)
                     // The category isn't shown on the row (the filters cover it), but VoiceOver still says it.
@@ -241,19 +239,48 @@ struct ShowtimeRow: View {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
                 HStack(spacing: 6) { yearAndBadge }
-                openLabelView.padding(.top, 4)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            // The time, the pill under it, and the ticket printed in the space below.
+            VStack(spacing: 6) {
+                timeView
+                openLabelView
+                if ticketed || freeRSVP {
+                    TicketWatermark(free: freeRSVP)
+                } else {
+                    Spacer(minLength: 0)
+                }
+            }
+            .frame(width: buttonWidth)
+            .frame(maxHeight: .infinity)
         }
+        // As tall as the taller of the poster and the text, so the ticket reaches the bottom.
+        .fixedSize(horizontal: false, vertical: true)
         .padding(.vertical, 4)
+    }
+
+    /// "7:00" and "PM", sized apart.
+    private var timeParts: (String, String) {
+        let parts = time.split(maxSplits: 1, whereSeparator: \.isWhitespace).map(String.init)
+        return (parts.first ?? time, parts.count > 1 ? parts[1] : "")
+    }
+
+    /// The showtime above the pill: big digits, with a small grey AM/PM after them.
+    private var timeView: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 2) {
+            Text(timeParts.0).font(.title3.monospacedDigit().weight(.bold))
+            Text(timeParts.1).font(.caption.weight(.bold)).foregroundStyle(.secondary)
+        }
+        .lineLimit(1)
+        .minimumScaleFactor(0.8)
+        .accessibilityElement(children: .combine)
     }
 
     /// Says what's behind the row: the Title's page, with its ticket or RSVP buttons when there are any.
     private var openLabel: String {
         guard !played, !item.showtime.isSoldOut, let booking = item.showtime.booking else { return "Details" }
-        // Free ones say so here rather than in a badge: Free Screening for films,
-        // Free Event for live shows.
-        if booking.free { return item.title.kind == .film ? "Free Screening" : "Free Event" }
+        // Free ones RSVP; the Free Screening (or Free Event) badge sits by the year.
+        if booking.free { return "RSVP" }
         return "Tickets"
     }
 
@@ -262,7 +289,7 @@ struct ShowtimeRow: View {
         !played && !item.showtime.isSoldOut && item.showtime.booking.map { !$0.free } == true
     }
 
-    /// Free and can still RSVP: the label reads Free Screening (or Free Event).
+    /// Free and can still RSVP: the pill reads RSVP.
     private var freeRSVP: Bool {
         !played && !item.showtime.isSoldOut && item.showtime.booking?.free == true
     }
@@ -272,8 +299,7 @@ struct ShowtimeRow: View {
         OpenTitleLabel(
             text: openLabel,
             quiet: played || item.showtime.isSoldOut,
-            free: item.showtime.booking?.free == true,
-            systemImage: ticketed ? "ticket.fill" : nil
+            free: item.showtime.booking?.free == true
         )
     }
 
@@ -290,36 +316,50 @@ struct ShowtimeRow: View {
     }
 }
 
-/// A small filled label at the end of the row, so it's plain that a row opens its Title.
+/// The pill at the top right of a row, so it's plain that a row opens its Title.
 /// Not a button itself: the whole row is the link.
 private struct OpenTitleLabel: View {
     let text: String
     /// Grey instead of the accent, for sold-out and played Showtimes.
     let quiet: Bool
-    /// Green instead of the Playhouse blue, for a free RSVP.
+    /// Green instead of blue, for a free RSVP.
     var free = false
-    /// An icon in front of the text: the ticket, on Tickets.
-    var systemImage: String?
 
-    /// A solid fill with a white label, like the Title page's buttons.
-    private var fill: Color { free ? .rsvpGreen : .playhouseBlue }
+    private var fill: Color { quiet ? Color(.tertiarySystemFill) : free ? .softGreen : .softBlue }
 
     var body: some View {
-        HStack(spacing: 2) {
-            if let systemImage {
-                Image(systemName: systemImage).padding(.trailing, 3)
-            }
-            Text(text)
-            Image(systemName: "chevron.right").font(.caption2.weight(.bold))
-        }
-        .font(.caption.weight(.semibold))
-        .foregroundStyle(quiet ? Color.secondary : Color.white)
-        .padding(.leading, 9)
-        .padding(.trailing, 7)
-        .padding(.vertical, 3)
-        .background(quiet ? Color(.tertiarySystemFill) : fill, in: .capsule)
-        .fixedSize()
-        .accessibilityHidden(true)
+        // "Free" over "Screening": one word per line, shrunk a little rather than hyphenated.
+        Text(text.replacingOccurrences(of: " ", with: "\n"))
+            .font(.footnote.weight(.semibold))
+            .multilineTextAlignment(.center)
+            // A single word never breaks; it shrinks instead.
+            .lineLimit(text.contains(" ") ? 2 : 1)
+            .minimumScaleFactor(0.6)
+            .allowsTightening(true)
+            .foregroundStyle(quiet ? Color.secondary : .white)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .frame(maxWidth: .infinity)
+            .background(fill, in: .capsule)
+            .accessibilityHidden(true)
+    }
+}
+
+/// A faint, tilted ticket printed under the pill, fading out toward the bottom.
+private struct TicketWatermark: View {
+    let free: Bool
+
+    var body: some View {
+        Image(systemName: "ticket.fill")
+            .resizable()
+            .scaledToFit()
+            .padding(.horizontal, 15)
+            .rotationEffect(.degrees(-18))
+            .foregroundStyle((free ? Color.softGreen : .softBlue).opacity(0.3))
+            // Fades out toward the bottom of the row.
+            .mask(LinearGradient(colors: [.black, .black.opacity(0)], startPoint: .top, endPoint: .bottom))
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .accessibilityHidden(true)
     }
 }
 

@@ -20,6 +20,9 @@ extension Color {
     /// Filled free-RSVP buttons: deeper than the system green so a white label stays
     /// readable (about 5:1).
     static let rsvpGreen = Color(red: 0.10, green: 0.50, blue: 0.22)
+    /// Lighter shades for the schedule's tickets: the Playhouse blue lifted, and a brighter green.
+    static let softBlue = Color(red: 0x4A / 255, green: 0x66 / 255, blue: 0xFF / 255)
+    static let softGreen = Color(red: 0x2F / 255, green: 0x9A / 255, blue: 0x55 / 255)
 
     private static func dynamic(dark hex: UInt32, light: UIColor) -> Color {
         let dark = UIColor(
