@@ -21,7 +21,12 @@ struct ScheduleView: View {
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Button { backToToday += 1 } label: {
-                            Wordmark().frame(height: 15)
+                            HStack(spacing: 8) {
+                                PlayhouseMark()
+                                    .fill(Color.accentColor)
+                                    .frame(width: 20, height: 20)
+                                Wordmark().frame(height: 15)
+                            }
                         }
                         .buttonStyle(.plain)
                         .accessibilityLabel("Ojai Playhouse")
@@ -166,6 +171,24 @@ struct Wordmark: View {
             .scaledToFit()
             .foregroundStyle(Color.accentColor)
             .accessibilityLabel("Ojai Playhouse")
+    }
+}
+
+/// The Playhouse's four-lobed mark: a square with a half-circle on each side.
+struct PlayhouseMark: Shape {
+    func path(in rect: CGRect) -> Path {
+        let side = min(rect.width, rect.height)
+        // Each lobe's radius is 16% of the whole mark; the square fills the rest.
+        let r = side * 0.16
+        let square = CGRect(x: rect.midX - side / 2 + r, y: rect.midY - side / 2 + r, width: side - 2 * r, height: side - 2 * r)
+        var lobes = Path()
+        for center in [
+            CGPoint(x: square.midX, y: square.minY), CGPoint(x: square.maxX, y: square.midY),
+            CGPoint(x: square.midX, y: square.maxY), CGPoint(x: square.minX, y: square.midY),
+        ] {
+            lobes.addEllipse(in: CGRect(x: center.x - r, y: center.y - r, width: 2 * r, height: 2 * r))
+        }
+        return Path(square).union(lobes)
     }
 }
 
