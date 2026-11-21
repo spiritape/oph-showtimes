@@ -224,14 +224,15 @@ struct ShowtimeRow: View {
     @ScaledMetric(relativeTo: .subheadline) private var timeWidth = 72
     @ScaledMetric(relativeTo: .headline) private var posterWidth = 52
 
+    /// The time, the poster, and the name, year and label, all centered on the poster.
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .center, spacing: 12) {
             Text(time)
                 .font(.subheadline.monospacedDigit().weight(.semibold))
                 .frame(width: timeWidth, alignment: .leading)
             RowPoster(title: item.title)
                 .frame(width: posterWidth)
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(item.title.name)
                     .font(.headline)
                     // The category isn't shown on the row (the filters cover it), but VoiceOver still says it.
@@ -240,17 +241,10 @@ struct ShowtimeRow: View {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
                 HStack(spacing: 6) { yearAndBadge }
-                // The open label sits in the row's lower-right corner, level with
-                // the poster's bottom edge (or below the text, when that runs longer).
-                Spacer(minLength: 6)
-                openLabelView
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                openLabelView.padding(.top, 4)
             }
-            .frame(maxHeight: .infinity, alignment: .top)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        // As tall as the taller of the poster and the text, so the label can reach the bottom.
-        .fixedSize(horizontal: false, vertical: true)
         .padding(.vertical, 4)
     }
 
