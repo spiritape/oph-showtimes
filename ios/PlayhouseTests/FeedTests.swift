@@ -7,7 +7,7 @@ private let json = """
 {"version":1,"generatedAt":"2026-10-14T04:16:21.872Z",
  "theater":{"name":"Ojai Playhouse","address":"145 E Ojai Ave, Ojai, CA 93023","phone":"(805) 646-1011","timeZone":"America/Los_Angeles"},
  "titles":[
-  {"key":"digger","slug":"digger","name":"Digger","subtitle":null,"kind":"film","categoryLabel":"Film",
+  {"key":"digger","slug":"digger","name":"Digger","subtitle":null,"kind":"film","categoryLabel":"Movie",
    "year":"2026","director":null,"runtime":"1hr 30min","rating":null,"synopsis":null,
    "imageUrl":null,"thumbnailUrl":null,"livestreamUrl":null,"url":"https://ojaishowtimes.com/t/digger/",
    "showtimes":[
@@ -122,7 +122,7 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
 @Test func searchMatchesNameCategoryAndDirectorIgnoringCaseAndAccents() {
     let digger = feed.titles[0]
     #expect(digger.matches("dig"))
-    #expect(digger.matches("DIGGER film"))
+    #expect(digger.matches("DIGGER movie"))
     #expect(!digger.matches("digger comedy"))
     #expect(feed.titles[1].matches("comédy"))
     let days = feed.days(.everything, now: date("2026-10-13T20:00:00Z")).matching("brown")

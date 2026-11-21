@@ -126,7 +126,7 @@ export type ScheduleFilter = "all" | "films" | "live";
 
 const FILTERS: Record<ScheduleFilter, { label: string; path: string; pageTitle: string; include: (t: Title) => boolean }> = {
   all: { label: "Everything", path: "/", pageTitle: "OPH Showtimes", include: () => true },
-  films: { label: "Films", path: "/films/", pageTitle: "Films · OPH Showtimes", include: (t) => t.isFilm },
+  films: { label: "Movies", path: "/films/", pageTitle: "Movies · OPH Showtimes", include: (t) => t.isFilm },
   live: { label: "Live shows", path: "/live/", pageTitle: "Live shows · OPH Showtimes", include: (t) => !t.isFilm },
 };
 
@@ -170,7 +170,7 @@ export function renderSchedule(
     .flatMap((title) => title.showtimes.filter((s) => isListed(s, now)).map((showtime) => ({ title, showtime })))
     .sort((a, b) => a.showtime.startsAt.localeCompare(b.showtime.startsAt));
 
-  // A Films-only list doesn't need a "Film" tag on every row.
+  // A Movies-only list doesn't need a "Movie" tag on every row.
   const style: RowStyle = { showTitle: true, showTag: opts.filter !== "films" };
   const list = [...groupByDay(listed)]
     .map(([day, entries]) => {

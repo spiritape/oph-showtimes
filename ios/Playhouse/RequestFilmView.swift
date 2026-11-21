@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// "By Popular Demand": search for a film and request it. Shows this install's
+/// "Request a Movie": search for a film and request it. Shows this install's
 /// own requests when the search is empty; nobody sees anyone else's.
 struct RequestFilmView: View {
     @Environment(\.dismiss) private var dismiss
@@ -16,67 +16,72 @@ struct RequestFilmView: View {
     var body: some View {
         NavigationStack {
             List {
-                // Out of the way while searching, so results show above the keyboard.
-                if !searchFocused && query.isEmpty { intro }
-                Section { searchField }
-                if query.trimmingCharacters(in: .whitespaces).count < 2 {
-                    if !requests.mine.isEmpty {
-                        Section {
-                            ForEach(requests.mine) { film in
-                                CompactFilmRow(film: film) { confirmingWithdraw = film }
-                            }
-                            // Swipe left, or tap Edit for the red minus buttons.
-                            .onDelete { offsets in
-                                let films = offsets.map { requests.mine[$0] }
-                                Task { for film in films { await requests.withdraw(film) } }
-                            }
-                        } header: {
-                            HStack {
-                                Text("Your requests")
-                                Spacer()
-                                Button(editMode.isEditing ? "Done" : "Edit") {
-                                    withAnimation { editMode = editMode.isEditing ? .inactive : .active }
+                Group {
+                    // Out of the way while searching, so results show above the keyboard.
+                    if !searchFocused && query.isEmpty { intro }
+                    Section { searchField }
+                    if query.trimmingCharacters(in: .whitespaces).count < 2 {
+                        if !requests.mine.isEmpty {
+                            Section {
+                                ForEach(requests.mine) { film in
+                                    CompactFilmRow(film: film) { confirmingWithdraw = film }
                                 }
-                                .font(.subheadline.weight(.semibold))
-                                .textCase(nil)
-                            }
-                        }
-                    }
-                    if !requests.top.isEmpty {
-                        Section {
-                            DisclosureGroup(isExpanded: $showsTop) {
-                                ForEach(Array(requests.top.enumerated()), id: \.element.id) { index, ranked in
-                                    FilmRow(film: ranked.film, rank: index + 1) {
-                                        requestButton(ranked.film)
+                                // Swipe left, or tap Edit for the red minus buttons.
+                                .onDelete { offsets in
+                                    let films = offsets.map { requests.mine[$0] }
+                                    Task { for film in films { await requests.withdraw(film) } }
+                                }
+                            } header: {
+                                HStack {
+                                    Text("Your requests")
+                                    Spacer()
+                                    Button(editMode.isEditing ? "Done" : "Edit") {
+                                        withAnimation { editMode = editMode.isEditing ? .inactive : .active }
                                     }
+                                    .font(.subheadline.weight(.semibold))
+                                    .textCase(nil)
                                 }
-                            } label: {
-                                Label("Most Requested", systemImage: "chart.bar.fill")
-                                    .font(.headline)
-                                    .foregroundStyle(Color.accentColor)
+                            }
+                        }
+                        if !requests.top.isEmpty {
+                            Section {
+                                DisclosureGroup(isExpanded: $showsTop) {
+                                    ForEach(Array(requests.top.enumerated()), id: \.element.id) { index, ranked in
+                                        FilmRow(film: ranked.film, rank: index + 1) {
+                                            requestButton(ranked.film)
+                                        }
+                                    }
+                                } label: {
+                                    Label("Most Requested", systemImage: "chart.bar.fill")
+                                        .font(.headline)
+                                        .foregroundStyle(Color.accentColor)
+                                }
+                            }
+                        }
+                    } else if requests.results.isEmpty {
+                        Section {
+                            if requests.isSearching {
+                                ProgressView().frame(maxWidth: .infinity)
+                            } else {
+                                Text("No films found.").foregroundStyle(.secondary)
+                            }
+                        }
+                    } else {
+                        Section {
+                            ForEach(requests.results) { film in
+                                FilmRow(film: film) { requestButton(film) }
                             }
                         }
                     }
-                } else if requests.results.isEmpty {
                     Section {
-                        if requests.isSearching {
-                            ProgressView().frame(maxWidth: .infinity)
-                        } else {
-                            Text("No films found.").foregroundStyle(.secondary)
-                        }
+                    } footer: {
+                        Text(FilmRequests.credit).font(.caption2)
                     }
-                } else {
-                    Section {
-                        ForEach(requests.results) { film in
-                            FilmRow(film: film) { requestButton(film) }
-                        }
-                    }
+            
                 }
-                Section {
-                } footer: {
-                    Text(FilmRequests.credit).font(.caption2)
-                }
+                .listRowBackground(Color.appGroupedSurface)
             }
+            .appGroupedBackground()
             .scrollDismissesKeyboard(.immediately)
             .animation(.default, value: searchFocused)
             .task { await requests.loadTop() }
@@ -86,7 +91,7 @@ struct RequestFilmView: View {
                 guard !Task.isCancelled else { return }
                 await requests.search(query)
             }
-            .navigationTitle("By Popular Demand")
+            .navigationTitle("Request a Movie")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

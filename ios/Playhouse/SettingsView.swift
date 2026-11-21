@@ -36,66 +36,71 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Picker("Appearance", selection: $appearance) {
-                        ForEach(Appearance.allCases) { Text($0.label).tag($0) }
+                Group {
+                    Section {
+                        Picker("Appearance", selection: $appearance) {
+                            ForEach(Appearance.allCases) { Text($0.label).tag($0) }
+                        }
+                        .pickerStyle(.inline)
+                        .labelsHidden()
+                    } header: {
+                        Text("Appearance")
+                    } footer: {
+                        Text("Widgets and notifications follow your iPhone's own setting.")
                     }
-                    .pickerStyle(.inline)
-                    .labelsHidden()
-                } header: {
-                    Text("Appearance")
-                } footer: {
-                    Text("Widgets and notifications follow your iPhone's own setting.")
-                }
 
-                TextSizeSettings()
+                    TextSizeSettings()
 
-                Section {
-                    Toggle(isOn: Binding(get: { notifications.isOn }, set: { _ in Task { await notifications.toggle() } })) {
-                        Label("New Title Notifications", systemImage: "bell")
+                    Section {
+                        Toggle(isOn: Binding(get: { notifications.isOn }, set: { _ in Task { await notifications.toggle() } })) {
+                            Label("New Title Notifications", systemImage: "bell")
+                        }
+                        .disabled(notifications.isBusy)
+                    } header: {
+                        Text("Notifications")
+                    } footer: {
+                        Text("Get a notification when a new film or live show is announced.")
                     }
-                    .disabled(notifications.isBusy)
-                } header: {
-                    Text("Notifications")
-                } footer: {
-                    Text("Get a notification when a new film or live show is announced.")
-                }
 
-                Section {
-                    VStack(spacing: 14) {
-                        Image("Emblem")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 44)
-                            .foregroundStyle(Color.accentColor)
-                        Wordmark().frame(height: 14)
-                        Text("145 E Ojai Ave, Ojai")
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-                    Link(destination: URL(string: "https://ojaishowtimes.com")!) {
-                        Label("ojaishowtimes.com", systemImage: "safari")
-                    }
-                    LabeledContent("Version", value: Self.version)
-                } header: {
-                    Text("About")
-                } footer: {
-                    // TMDB's terms ask for its logo and notice here, less prominent than the Playhouse's own marks.
-                    VStack(alignment: .leading, spacing: 8) {
-                        Link(destination: FilmRequests.tmdbURL) {
-                            Image("TMDBLogo")
+                    Section {
+                        VStack(spacing: 14) {
+                            Image("Emblem")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: 9)
+                                .frame(width: 44)
+                                .foregroundStyle(Color.accentColor)
+                            Wordmark().frame(height: 14)
+                            Text("145 E Ojai Ave, Ojai")
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
                         }
-                        .accessibilityLabel("TMDB, The Movie Database")
-                        Text(FilmRequests.credit)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        Link(destination: URL(string: "https://ojaishowtimes.com")!) {
+                            Label("ojaishowtimes.com", systemImage: "safari")
+                        }
+                        LabeledContent("Version", value: Self.version)
+                    } header: {
+                        Text("About")
+                    } footer: {
+                        // TMDB's terms ask for its logo and notice here, less prominent than the Playhouse's own marks.
+                        VStack(alignment: .leading, spacing: 8) {
+                            Link(destination: FilmRequests.tmdbURL) {
+                                Image("TMDBLogo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 9)
+                            }
+                            .accessibilityLabel("TMDB, The Movie Database")
+                            Text(FilmRequests.credit)
+                        }
+                        .padding(.top, 4)
                     }
-                    .padding(.top, 4)
+            
                 }
+                .listRowBackground(Color.appGroupedSurface)
             }
+            .appGroupedBackground()
             .tint(Color.accentColor)
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

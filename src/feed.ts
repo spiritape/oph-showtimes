@@ -25,7 +25,7 @@ export type FeedTitle = {
   name: string;
   subtitle: string | null;
   kind: "film" | "liveShow";
-  /** "Film", "Comedy", "Live show"… as the site shows it. */
+  /** "Movie", "Comedy", "Live show"… as the site shows it. */
   categoryLabel: string;
   year: string | null;
   director: string | null;

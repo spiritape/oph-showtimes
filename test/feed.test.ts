@@ -72,7 +72,7 @@ describe("renderFeed", () => {
     );
     expect(feed.titles.map((t) => [t.name, t.kind, t.categoryLabel])).toEqual([
       ["Sooner", "liveShow", "Comedy"],
-      ["Later", "film", "Film"],
+      ["Later", "film", "Movie"],
     ]);
   });
 

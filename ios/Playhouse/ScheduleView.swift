@@ -28,7 +28,7 @@ struct ScheduleView: View {
                         .accessibilityHint("Scrolls back to today")
                     }
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("By Popular Demand", systemImage: "popcorn") { showsRequests = true }
+                        Button("Request a Movie", systemImage: "popcorn") { showsRequests = true }
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Settings", systemImage: "gearshape") { showsSettings = true }
@@ -126,6 +126,7 @@ private struct ScheduleList: View {
                             .navigationLinkIndicatorVisibility(.hidden)
                             // Already played: greyed, like the website's past list.
                             .opacity(played ? 0.45 : 1)
+                            .listRowBackground(Color.appBackground)
                         }
                     } header: {
                         Text(feed.calendar.date(from: day.day).map { feed.dayLabel($0, now: now) } ?? "")
@@ -135,6 +136,8 @@ private struct ScheduleList: View {
                 }
             }
             .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(Color.appBackground)
             .opacity(positioned ? 1 : 0)
             .onAppear {
                 // Only the first time: coming back from a Title keeps the place in the list.
@@ -182,7 +185,7 @@ struct FilterChips: View {
             }
         }
         .padding(.vertical, 6)
-        .background(.bar)
+        .background(Color.appBackground)
         .sensoryFeedback(.selection, trigger: selection)
     }
 
@@ -222,9 +225,18 @@ struct ShowtimeRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Text(time)
-                .font(.subheadline.monospacedDigit().weight(.semibold))
-                .frame(width: timeWidth, alignment: .leading)
+            // The film's year sits under the time, in space the row already has.
+            VStack(alignment: .leading, spacing: 2) {
+                Text(time)
+                    .font(.subheadline.monospacedDigit().weight(.semibold))
+                if let year = item.title.year {
+                    Text(year)
+                        .font(.caption.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                        .accessibilityLabel("Released \(year)")
+                }
+            }
+            .frame(width: timeWidth, alignment: .leading)
             RowPoster(title: item.title)
                 .frame(width: posterWidth)
             VStack(alignment: .leading, spacing: 2) {
@@ -232,13 +244,23 @@ struct ShowtimeRow: View {
                 if let subtitle = item.title.subtitle {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
                 }
-                // Side by side when they fit, stacked at large text sizes.
+                // The open label at the end of the category line when it fits;
+                // below it, or everything stacked, at large text sizes.
                 ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 6) { categoryAndBadge }
-                    VStack(alignment: .leading, spacing: 3) { categoryAndBadge }
+                    HStack(spacing: 6) {
+                        categoryAndBadge
+                        Spacer(minLength: 8)
+                        openLabelView
+                    }
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(spacing: 6) { categoryAndBadge }
+                        openLabelView
+                    }
+                    VStack(alignment: .leading, spacing: 3) {
+                        categoryAndBadge
+                        openLabelView
+                    }
                 }
-                OpenTitleLabel(text: openLabel, quiet: played || item.showtime.isSoldOut)
-                    .padding(.top, 6)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -248,7 +270,11 @@ struct ShowtimeRow: View {
     /// Says what's behind the row: the Title's page, with its ticket or RSVP buttons when there are any.
     private var openLabel: String {
         guard !played, !item.showtime.isSoldOut, let booking = item.showtime.booking else { return "Details" }
-        return booking.free ? "RSVP & Info" : "Tickets & Info"
+        return booking.free ? "RSVP" : "Tickets"
+    }
+
+    private var openLabelView: some View {
+        OpenTitleLabel(text: openLabel, quiet: played || item.showtime.isSoldOut)
     }
 
     @ViewBuilder private var categoryAndBadge: some View {
@@ -257,7 +283,7 @@ struct ShowtimeRow: View {
     }
 }
 
-/// Looks like the Title page's Tickets button, so it's plain that a row opens its Title.
+/// A small tinted label at the end of the row, so it's plain that a row opens its Title.
 /// Not a button itself: the whole row is the link.
 private struct OpenTitleLabel: View {
     let text: String
@@ -265,15 +291,17 @@ private struct OpenTitleLabel: View {
     let quiet: Bool
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 2) {
             Text(text)
-            Image(systemName: "chevron.right").imageScale(.small)
+            Image(systemName: "chevron.right").font(.caption2.weight(.bold))
         }
-        .font(.footnote.weight(.semibold))
-        .foregroundStyle(quiet ? Color.primary : Color.white)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(quiet ? AnyShapeStyle(Color(.tertiarySystemFill)) : AnyShapeStyle(Color.accentColor), in: .capsule)
+        .font(.caption.weight(.semibold))
+        .foregroundStyle(quiet ? Color.secondary : Color.accentColor)
+        .padding(.leading, 9)
+        .padding(.trailing, 7)
+        .padding(.vertical, 3)
+        .background(quiet ? Color(.tertiarySystemFill) : Color.accentColor.opacity(0.15), in: .capsule)
+        .fixedSize()
         .accessibilityHidden(true)
     }
 }

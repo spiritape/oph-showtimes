@@ -31,7 +31,7 @@ struct BookingBadge: View {
             } else {
                 Image(systemName: "ticket.fill")
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.accentColor)
                     .accessibilityLabel("Ticketed")
             }
         }

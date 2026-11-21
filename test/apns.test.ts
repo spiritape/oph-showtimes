@@ -6,14 +6,14 @@ describe("apnsPayload", () => {
     expect(
       apnsPayload({
         title: "New at the Playhouse: Digger",
-        body: "Film · first showing Thu, Oct 1, 7:00 PM",
+        body: "Movie · first showing Thu, Oct 1, 7:00 PM",
         url: "https://ojaishowtimes.com/t/digger/",
         titleSlug: "digger",
         imageUrl: "https://img.example/digger",
       }),
     ).toEqual({
       aps: {
-        alert: { title: "New at the Playhouse: Digger", body: "Film · first showing Thu, Oct 1, 7:00 PM" },
+        alert: { title: "New at the Playhouse: Digger", body: "Movie · first showing Thu, Oct 1, 7:00 PM" },
         sound: "default",
         "mutable-content": 1,
       },

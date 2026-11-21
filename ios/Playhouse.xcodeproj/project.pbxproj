@@ -12,6 +12,7 @@
 		188F897016A3C144B533969E /* ComplicationGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379807FC88EF4B18A6FB84DF /* ComplicationGallery.swift */; };
 		19BF016E89AB2BCB96A1E5BB /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 15F6F30B649B35EF4900A6B2 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		202D5BF568748AD626D59462 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E4A5FE957C0364B07F92A /* NotificationService.swift */; };
+		20B09F682616ACBE1BDCFF5F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8CC47430F629A8E89F93E /* Theme.swift */; };
 		2B01EBDF904087B03F029D82 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB9FE0722B39F2C2067546 /* TextSize.swift */; };
 		2CD0266245479CBC28A62EF9 /* PlayhouseWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 144E1CE9FF459213BA08DC75 /* PlayhouseWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404885DDDBC74270119939F0 /* TicketPageView.swift */; };
@@ -160,6 +161,7 @@
 		BD4445C17726A22F08BFFB6C /* BookingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingBadge.swift; sourceTree = "<group>"; };
 		C1F69DA2AAE438D5964A4A3A /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C3D4F9677C43C7DE0CBD7105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBC8CC47430F629A8E89F93E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRequests.swift; sourceTree = "<group>"; };
 		D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCalendarSheet.swift; sourceTree = "<group>"; };
 		DC55C694C492832C9C8B6BC7 /* Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watch.entitlements; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
 				757EC7C4537093AF97DBE301 /* SettingsView.swift */,
 				61AB9FE0722B39F2C2067546 /* TextSize.swift */,
+				CBC8CC47430F629A8E89F93E /* Theme.swift */,
 				404885DDDBC74270119939F0 /* TicketPageView.swift */,
 				75E8703096D88355A5D13A31 /* TitleView.swift */,
 			);
@@ -557,6 +560,7 @@
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
 				4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */,
 				2B01EBDF904087B03F029D82 /* TextSize.swift in Sources */,
+				20B09F682616ACBE1BDCFF5F /* Theme.swift in Sources */,
 				2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */,
 				DA84A3963627F733363A6991 /* TitleView.swift in Sources */,
 			);

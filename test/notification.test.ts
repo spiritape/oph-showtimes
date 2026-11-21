@@ -39,7 +39,7 @@ describe("composeNotification", () => {
   it("names a single New Title and links to its page", () => {
     expect(composeNotification([title("Digger", true, "film", "2026-10-02T02:00:00.000Z")], site)).toEqual({
       title: "New at the Playhouse: Digger",
-      body: "Film · first showing Thu, Oct 1, 7:00 PM",
+      body: "Movie · first showing Thu, Oct 1, 7:00 PM",
       url: "https://oph-showtimes.pages.dev/t/digger/",
       titleSlug: "digger",
     });

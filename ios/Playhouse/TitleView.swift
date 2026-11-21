@@ -14,25 +14,31 @@ struct TitleView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
+            // Showtimes come straight after the name, so tickets are close to the top;
+            // the synopsis follows.
+            VStack(spacing: 20) {
                 header
-                if let synopsis = title.synopsis {
-                    Text(synopsis)
-                        .font(.body)
-                        .lineSpacing(3)
-                        .frame(maxWidth: 560, alignment: .leading)
-                }
+                showtimes
                 if let livestream = title.livestreamUrl {
                     Button("Watch the livestream", systemImage: "dot.radiowaves.left.and.right") {
                         ticketPage = TicketPage(url: livestream)
                     }
                     .buttonStyle(.bordered)
                 }
-                showtimes
+                if let synopsis = title.synopsis {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("About").font(.title2.bold())
+                        Text(synopsis)
+                            .font(.body)
+                            .lineSpacing(3)
+                    }
+                    .frame(maxWidth: 560, alignment: .leading)
+                }
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 32)
         }
+        .background(Color.appBackground)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ShareLink(item: title.url, subject: Text(title.name))
@@ -47,21 +53,17 @@ struct TitleView: View {
         }
     }
 
-    /// The poster, then the name and details, centered.
+    /// The Playhouse's still, then the name and details, centered.
     private var header: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             if title.imageUrl != nil {
                 Poster(url: title.imageUrl)
                     .frame(maxWidth: 560)
                     .shadow(color: .black.opacity(0.25), radius: 12, y: 6)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 6)
             }
-            Text(title.categoryLabel.uppercased())
-                .font(.caption.weight(.semibold))
-                .tracking(1.2)
-                .foregroundStyle(Color.accentColor)
             Text(title.name)
-                .font(.largeTitle.bold())
+                .font(.title.bold())
                 .multilineTextAlignment(.center)
             if let subtitle = title.subtitle {
                 Text(subtitle)
@@ -81,7 +83,7 @@ struct TitleView: View {
     }
 
     private var facts: String {
-        [title.year, title.director.map { "Dir. \($0)" }, title.runtime, title.rating]
+        [title.categoryLabel, title.year, title.director.map { "Dir. \($0)" }, title.runtime, title.rating]
             .compactMap(\.self)
             .joined(separator: " · ")
     }
@@ -145,22 +147,56 @@ struct TitleView: View {
                 .buttonStyle(.borderless)
                 .accessibilityLabel("Add to Calendar")
             }
-            if let booking = showtime.booking {
-                Button {
-                    ticketPage = TicketPage(url: booking.url)
-                } label: {
-                    Text(bookingLabel(showtime, booking))
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 4)
+            let invites = !showtime.hasPlayed(now: .now) && !showtime.isSoldOut
+            if showtime.booking != nil || invites {
+                // Side by side; stacked when the text is too large to fit.
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 10) { bookingButtons(showtime, invites: invites) }
+                    VStack(spacing: 10) { bookingButtons(showtime, invites: invites) }
                 }
-                // Sold out: still opens the ticket page, in case seats come back.
-                .buttonStyle(BookingButtonStyle(soldOut: showtime.isSoldOut))
-                .buttonBorderShape(.capsule)
             }
         }
         .padding(14)
-        .background(Color(.secondarySystemBackground), in: .rect(cornerRadius: 18))
+        .background(Color.appSurface, in: .rect(cornerRadius: 18))
+    }
+
+    /// Tickets/RSVP, then Invite a friend.
+    @ViewBuilder private func bookingButtons(_ showtime: Showtime, invites: Bool) -> some View {
+        if let booking = showtime.booking {
+            Button {
+                ticketPage = TicketPage(url: booking.url)
+            } label: {
+                Text(bookingLabel(showtime, booking))
+                    .font(.headline)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 4)
+            }
+            // Sold out: still opens the ticket page, in case seats come back.
+            .buttonStyle(BookingButtonStyle(soldOut: showtime.isSoldOut))
+            .buttonBorderShape(.capsule)
+        }
+        if invites { inviteButton(showtime, fills: showtime.booking == nil) }
+    }
+
+    /// Shares this Showtime (when, where, and the Title's page) through Messages or any other app.
+    private func inviteButton(_ showtime: Showtime, fills: Bool) -> some View {
+        let when = "\(format(showtime.startsAt, .dateTime.weekday(.wide).month(.wide).day())) at \(format(showtime.startsAt, .dateTime.hour().minute()))"
+        return ShareLink(
+            item: title.url,
+            subject: Text(title.name),
+            message: Text("Want to see \(title.name) with me at the Ojai Playhouse? \(when)."),
+            preview: SharePreview(title.name)
+        ) {
+            Label("Invite a friend", systemImage: "person.badge.plus")
+                .font(.headline)
+                .lineLimit(1)
+                .frame(maxWidth: fills ? .infinity : nil)
+                .padding(.vertical, 4)
+        }
+        .buttonStyle(.bordered)
+        .buttonBorderShape(.capsule)
+        .accessibilityLabel("Invite a friend")
     }
 
     private func bookingLabel(_ showtime: Showtime, _ booking: Showtime.Booking) -> String {
@@ -196,3 +232,4 @@ private struct BookingButtonStyle: PrimitiveButtonStyle {
         }
     }
 }
+

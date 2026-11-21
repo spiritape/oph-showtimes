@@ -21,9 +21,12 @@ export const isSoldOut = (s: Showtime) => /\bsold[\s-]*out\b/i.test(s.price ?? "
 
 export const titlePath = (title: Title) => `/t/${title.slug}/`;
 
-/** "Film", or a Live Show's Category: "Comedy", "Music"… */
+/**
+ * "Movie", or a Live Show's Category: "Comedy", "Music"… Not "Film", which could be read as the
+ * screening format (35mm) when most showings are digital.
+ */
 export function categoryLabel(title: Title): string {
-  if (title.isFilm) return "Film";
+  if (title.isFilm) return "Movie";
   // The Source files talks and one-offs under "misc", which says nothing to a visitor.
   if (!title.category || title.category === "misc") return "Live show";
   return title.category.replace(/^./, (c) => c.toUpperCase());
