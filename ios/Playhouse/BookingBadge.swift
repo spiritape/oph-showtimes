@@ -27,10 +27,10 @@ struct BookingBadge: View {
             if booking.free {
                 Text(freeLabel)
                     .font(.caption.weight(.semibold))
-                    .foregroundStyle(Color.green)
+                    .foregroundStyle(Color.softGreen)
                     .padding(.horizontal, 7)
                     .padding(.vertical, 2)
-                    .background(Color.green.opacity(0.15), in: .capsule)
+                    .background(Color.softGreen.opacity(0.18), in: .capsule)
                     .fixedSize()
                     .accessibilityLabel(freeLabel)
                     .accessibilityHint("RSVP required")

@@ -183,7 +183,11 @@ struct TitleView: View {
                         }
                     }
                 } label: {
-                    Image(systemName: "calendar.badge.plus").font(.title3)
+                    // In color: a blue calendar with a green plus.
+                    Image(systemName: "calendar.badge.plus")
+                        .font(.title2)
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.softGreen, Color.softBlue)
                 }
                 .menuStyle(.button)
                 .buttonStyle(.borderless)
@@ -282,7 +286,7 @@ private struct BookingButtonStyle: PrimitiveButtonStyle {
         } else {
             Button(role: nil, action: configuration.trigger) { configuration.label }
                 .buttonStyle(.borderedProminent)
-                .tint(free ? .rsvpGreen : .playhouseBlue)
+                .tint(free ? .softGreen : .softBlue)
         }
     }
 }
