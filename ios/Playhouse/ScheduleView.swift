@@ -207,31 +207,38 @@ struct FilterChips: View {
                 chips.padding(.horizontal, 24)
             }
         }
-        .padding(.vertical, 6)
+        // The chips' own tap margins add the rest of the space above and below.
+        .padding(.vertical, 2)
         .background(Color.appBackground)
         .sensoryFeedback(.selection, trigger: selection)
     }
 
     private var chips: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 0) {
             ForEach(ScheduleFilter.allCases) { filter in
                 let selected = filter == selection
-                Button(filter.label) {
+                Button {
                     withAnimation(.snappy(duration: 0.25)) { selection = filter }
-                }
-                .font(.footnote.weight(.semibold))
-                .padding(.horizontal, 11)
-                .padding(.vertical, 5)
-                .foregroundStyle(selected ? Color.white : Color.primary)
-                .background {
-                    Capsule().fill(Color(.secondarySystemFill))
-                    if selected {
-                        // The Playhouse blue, like the Tickets buttons.
-                        Capsule().fill(Color.playhouseBlue).matchedGeometryEffect(id: "selected", in: highlight)
-                    }
+                } label: {
+                    Text(filter.label)
+                        .font(.footnote.weight(.semibold))
+                        // As tall as the Tickets pills on the rows.
+                        .padding(.horizontal, 13)
+                        .padding(.vertical, 7)
+                        .foregroundStyle(selected ? Color.white : Color.primary)
+                        .background {
+                            Capsule().fill(Color(.secondarySystemFill))
+                            if selected {
+                                // The lighter Playhouse blue, like the Tickets pills.
+                                Capsule().fill(Color.softBlue).matchedGeometryEffect(id: "selected", in: highlight)
+                            }
+                        }
+                        // A tap a little outside the chip still counts.
+                        .padding(.horizontal, 3)
+                        .padding(.vertical, 4)
+                        .contentShape(.rect)
                 }
                 .buttonStyle(.plain)
-                .contentShape(.capsule)
                 .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
@@ -247,7 +254,7 @@ struct ShowtimeRow: View {
     /// Grows with the text size, so the pill's label still fits.
     @ScaledMetric(relativeTo: .caption) private var buttonWidth = 84
 
-    /// The poster, the name and year, and on the right the time over the Tickets /
+    /// The poster, the name, director and year, and on the right the time over the Tickets /
     /// RSVP / Details pill, with a faint ticket fading out below it.
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -260,6 +267,14 @@ struct ShowtimeRow: View {
                     .accessibilityLabel(([item.title.name, item.title.categoryLabel, ticketed ? "ticketed" : nil, freeRSVP ? "free, RSVP required" : nil] as [String?]).compactMap(\.self).joined(separator: ", "))
                 if let subtitle = item.title.subtitle {
                     Text(subtitle).font(.subheadline).foregroundStyle(.secondary)
+                }
+                // The director, in grey like the year.
+                if let director = item.title.director {
+                    Text(director)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .accessibilityLabel("Directed by \(director)")
                 }
                 HStack(spacing: 6) { yearAndBadge }
             }
