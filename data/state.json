@@ -1,8 +1,8 @@
 {
- "lastReadCount": 38,
+ "lastReadCount": 39,
  "lastPublish": {
-  "scheduleHash": "150664df21bcbf93d6ce7e20878af4dd12306475e78c471e48d11c0755c028a1",
-  "publishedAt": "2026-11-23T21:57:25.373Z"
+  "scheduleHash": "0363ea8d68af7377c710f6f4e61be39d9332d115a716beb5eb9ae2e1bd3b4490",
+  "publishedAt": "2026-11-23T22:11:18.365Z"
  },
  "seen": {
   "titles": {
@@ -3158,7 +3158,7 @@
     }
    },
    "wild horse nine": {
-    "lastShowtime": "2026-11-23T03:00:00.000Z",
+    "lastShowtime": "2026-11-25T22:15:00.000Z",
     "title": {
      "key": "wild horse nine",
      "slug": "wild-horse-nine",
@@ -3178,8 +3178,8 @@
        "highlight": false
       }
      ],
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73dd9794p07mvbg98wdfi",
-     "sourceUrl": "https://www.ojaiplayhouse.com/event/wild-horse-nine3",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtlukx34iz8q07n3ftan7gia",
+     "sourceUrl": "https://www.ojaiplayhouse.com/event/wild-horse-nine",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3261,6 +3261,20 @@
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmvb73dd9794p07mvbg98wdfi",
        "infoHtml": "<p>Year: 2026<br>Director: Martin McDonagh<br>Starring: John Malkovich, Sam Rockwell, Steve Buscemi, Mariana Di Girolamo, Ailin Salas, Tom Waits, Parker Posey<br>Running Time: 1hr 58min</p><p>Rated: R</p><p>Shortly before the 1973 Chilean coup, CIA agents Chris (John Malkovich) and Lee (Sam Rockwell) are dispatched from Santiago to Easter Island by their bureau chief, MJ (Steve Buscemi). Amongst the Island&#39;s iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris&#39;s newfound bond with a pair of rebellious students (Mariana di Girolamo and Ailín Salas) threatens to send everyone’s trip to this remote paradise sideways.</p><p> </p>",
        "sourceUrl": "https://www.ojaiplayhouse.com/event/wild-horse-nine3"
+      },
+      {
+       "id": "cmwttj8xb89rw07n1ae57ud5e",
+       "title": "Wild Horse Nine",
+       "subtitle": null,
+       "startsAt": "2026-11-25T22:15:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1279?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmtlukx34iz8q07n3ftan7gia",
+       "infoHtml": "<p>Year: 2026<br>Director: Martin McDonagh<br>Starring: John Malkovich, Sam Rockwell, Steve Buscemi, Mariana Di Girolamo, Ailin Salas, Tom Waits, Parker Posey<br>Running Time: 1hr 58min</p><p>Rated: R</p><p>Shortly before the 1973 Chilean coup, CIA agents Chris (John Malkovich) and Lee (Sam Rockwell) are dispatched from Santiago to Easter Island by their bureau chief, MJ (Steve Buscemi). Amongst the Island&#39;s iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris&#39;s newfound bond with a pair of rebellious students (Mariana di Girolamo and Ailín Salas) threatens to send everyone’s trip to this remote paradise sideways.</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/wild-horse-nine"
       }
      ]
     }
