@@ -1,8 +1,8 @@
 {
- "lastReadCount": 40,
+ "lastReadCount": 41,
  "lastPublish": {
-  "scheduleHash": "651d948e95efc8232843f68114c334829492506bac7dc530b1588ceac7f835a3",
-  "publishedAt": "2026-11-23T22:13:16.049Z"
+  "scheduleHash": "77278cd0c45d8d80907f7342e7b015d288c8c487500786d5a2af25dbbcf2724c",
+  "publishedAt": "2026-11-23T22:21:21.018Z"
  },
  "seen": {
   "titles": {
@@ -4521,7 +4521,7 @@
     }
    },
    "club kid": {
-    "lastShowtime": "2026-11-29T05:00:00.000Z",
+    "lastShowtime": "2026-12-01T03:00:00.000Z",
     "title": {
      "key": "club kid",
      "slug": "club-kid",
@@ -4589,6 +4589,20 @@
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjy02p5wkxn07lpqif8j3zj",
        "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p><p> </p>",
        "sourceUrl": "https://www.ojaiplayhouse.com/event/club-kid2"
+      },
+      {
+       "id": "cmwttrxs18zwn07n1w54v0jvx",
+       "title": "Club Kid",
+       "subtitle": null,
+       "startsAt": "2026-12-01T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1281?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwtts8hq90vo07n1olyifg1l",
+       "infoHtml": "<p>Year: 2026<br>Director: Jordan Firstman<br>Starring: Jordan Firstman, Cara Delevingne, Kirby Howell-Baptiste<br>Running Time: 2hr 2min</p><p>Rated R</p><p>In Jordan Firstman’s critically acclaimed feature debut, a hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/club-kid3"
       }
      ]
     }
