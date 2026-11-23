@@ -1,8 +1,8 @@
 {
  "lastReadCount": 38,
  "lastPublish": {
-  "scheduleHash": "7b966d329c15f7eb6540238eac4a4af725fd65db5f13fb190b1a5a7f7c3d5fdc",
-  "publishedAt": "2026-11-23T21:13:17.592Z"
+  "scheduleHash": "150664df21bcbf93d6ce7e20878af4dd12306475e78c471e48d11c0755c028a1",
+  "publishedAt": "2026-11-23T21:57:25.373Z"
  },
  "seen": {
   "titles": {
@@ -5672,7 +5672,7 @@
     }
    },
    "annie": {
-    "lastShowtime": "2026-11-25T22:00:00.000Z",
+    "lastShowtime": "2026-11-25T20:00:00.000Z",
     "title": {
      "key": "annie",
      "slug": "annie",
@@ -5700,7 +5700,7 @@
        "id": "cmwmnakg6jcd307n0clpsv66v",
        "title": "Annie",
        "subtitle": null,
-       "startsAt": "2026-11-25T22:00:00.000Z",
+       "startsAt": "2026-11-25T20:00:00.000Z",
        "category": "film",
        "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1269?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
