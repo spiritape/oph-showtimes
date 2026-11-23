@@ -1,8 +1,8 @@
 {
- "lastReadCount": 41,
+ "lastReadCount": 42,
  "lastPublish": {
-  "scheduleHash": "77278cd0c45d8d80907f7342e7b015d288c8c487500786d5a2af25dbbcf2724c",
-  "publishedAt": "2026-11-23T22:21:21.018Z"
+  "scheduleHash": "e7d02f1f10ff3be4653119d4e0a18dd746935a6e137707abd5bc6069be0d303a",
+  "publishedAt": "2026-11-23T22:25:29.165Z"
  },
  "seen": {
   "titles": {
@@ -3822,7 +3822,7 @@
     }
    },
    "la bola negra": {
-    "lastShowtime": "2026-11-17T02:30:00.000Z",
+    "lastShowtime": "2026-12-02T00:00:00.000Z",
     "title": {
      "key": "la bola negra",
      "slug": "la-bola-negra",
@@ -3832,10 +3832,18 @@
      "isFilm": true,
      "year": "2026",
      "director": "Javier Ambrossi",
+     "starring": "Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler",
      "runtime": "2hr 40min",
      "rating": "R",
      "synopsis": "Explores what it means to be gay throughout different eras, focusing on \"three existences\" that are connected through themes of sexuality, desire, pain, and inheritance.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfco530tojn07ltjk3tvyat",
+     "about": [
+      {
+       "text": "Explores what it means to be gay throughout different eras, focusing on \"three existences\" that are connected through themes of sexuality, desire, pain, and inheritance.",
+       "highlight": false
+      }
+     ],
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwttzwcp9ns007n1ilppcapk",
+     "sourceUrl": "https://www.ojaiplayhouse.com/event/la-bola-negra",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -3863,16 +3871,22 @@
        "price": "$15/$13.50 (senior 60+)",
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwfco530tojn07ltjk3tvyat",
        "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p>"
-      }
-     ],
-     "starring": null,
-     "about": [
+      },
       {
-       "text": "Explores what it means to be gay throughout different eras, focusing on \"three existences\" that are connected through themes of sexuality, desire, pain, and inheritance.",
-       "highlight": false
+       "id": "cmwtu2ave9z3h07myy5rzuh4p",
+       "title": "La Bola Negra",
+       "subtitle": null,
+       "startsAt": "2026-12-02T00:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1282?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$13.50/$12 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwttzwcp9ns007n1ilppcapk",
+       "infoHtml": "<p>Year: 2026<br>Director: Javier Ambrossi<br>Starring: Guitarricadelafuente, Lorenzo Zurzolo, Javier Butler<br>Running Time: 2hr 40min</p><p>Rated: R</p><p>Explores what it means to be gay throughout different eras, focusing on &quot;three existences&quot; that are connected through themes of sexuality, desire, pain, and inheritance.</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/la-bola-negra"
       }
-     ],
-     "sourceUrl": null
+     ]
     }
    },
    "iron boy": {
