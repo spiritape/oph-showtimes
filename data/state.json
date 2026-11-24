@@ -1,8 +1,8 @@
 {
- "lastReadCount": 43,
+ "lastReadCount": 45,
  "lastPublish": {
-  "scheduleHash": "97c7d4ad272504dd09b05185e6e7773f3b9d6d2abce677a646a7dc3f63db1bec",
-  "publishedAt": "2026-11-24T17:29:56.094Z"
+  "scheduleHash": "979c82e823b16b6192e0e42e788cafefcc14d65c491b3b4d5fbbceee0ae781a5",
+  "publishedAt": "2026-11-24T18:01:27.738Z"
  },
  "seen": {
   "titles": {
@@ -2420,7 +2420,7 @@
     }
    },
    "cameron winter at carnegie hall (in 35mm)": {
-    "lastShowtime": "2026-12-24T03:00:00.000Z",
+    "lastShowtime": "2026-12-24T05:00:00.000Z",
     "title": {
      "key": "cameron winter at carnegie hall (in 35mm)",
      "slug": "cameron-winter-at-carnegie-hall-in-35mm",
@@ -2463,6 +2463,20 @@
        "sourceUrl": "https://www.ojaiplayhouse.com/event/cameron-winter-at-carnegie-hall-in-35mm"
       },
       {
+       "id": "cmwv01iyv4bvf07n1ee4wkhe8",
+       "title": "Cameron Winter at Carnegie Hall (in 35mm)",
+       "subtitle": null,
+       "startsAt": "2026-12-23T05:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1285?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwuzygoj41z907n187nc0zsw",
+       "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/cameron-winter-at-carnegie-hall-in-35mm3"
+      },
+      {
        "id": "cmur9hcvbno8607lhy5n3ogpr",
        "title": "Cameron Winter at Carnegie Hall (in 35mm)",
        "subtitle": null,
@@ -2475,6 +2489,20 @@
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmur9b3xkn6u907lhqmmooar7",
        "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p><p> </p>",
        "sourceUrl": "https://www.ojaiplayhouse.com/event/cameron-winter-at-carnegie-hall-in-35mm2"
+      },
+      {
+       "id": "cmwv03n9x5a7f07myhe0tx1x4",
+       "title": "Cameron Winter at Carnegie Hall (in 35mm)",
+       "subtitle": null,
+       "startsAt": "2026-12-24T05:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1284?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15/$13.50 (senior 60+)",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwuzygtg4tri07myks70g76x",
+       "infoHtml": "<p>Year: 2026<br>Director: Paul Thomas Anderson<br>Starring: Cameron Winter<br>Running Time: 1hr 12min</p><p>Cameron Winter, in December 2025, after a months-long sold-out tour with his band Geese, returned to New York to play a single show at Carnegie Hall. This is the movie.</p><p>Directed and shot on 35mm and 16mm by Oscar-winning filmmaker Paul Thomas Anderson (One Battle After Another), the crew includes filmmaker and actor Benny Safdie (The Smashing Machine) and music producer Ariel Rechtshaid (Grammy winner for albums with Vampire Weekend and Adele).</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/cameron-winter-at-carnegie-hall-in-35mm4"
       }
      ]
     }
