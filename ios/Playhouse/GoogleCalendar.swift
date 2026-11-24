@@ -2,12 +2,11 @@ import Foundation
 
 /// Google Calendar's "new event" screen, prefilled with a Showtime, like the
 /// website's link (src/showtime.ts googleCalendarUrl). Opens the Google
-/// Calendar app if it's installed, otherwise the web page. For an invite, the
-/// description is written to the friend, who gets it once they're added as a guest.
+/// Calendar app if it's installed, otherwise the web page.
 enum GoogleCalendar {
-    static func url(for item: ScheduledShowtime, theater: Theater, invite: Bool = false) -> URL {
+    static func url(for item: ScheduledShowtime, theater: Theater) -> URL {
         let showtime = item.showtime
-        let details = CalendarNotes.lines(for: item, invite: invite, includePage: true).joined(separator: "\n")
+        let details = CalendarNotes.lines(for: item, includePage: true).joined(separator: "\n")
         var components = URLComponents(string: "https://calendar.google.com/calendar/render")!
         components.queryItems = [
             URLQueryItem(name: "action", value: "TEMPLATE"),

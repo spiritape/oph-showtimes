@@ -1,13 +1,12 @@
 import SwiftUI
 
 /// "Request a Movie": search for a film and request it. Shows this install's
-/// own requests when the search is empty; nobody sees anyone else's.
+/// own requests when the search is empty, each with a button to share it by
+/// text; nobody sees anyone else's.
 struct RequestFilmView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var requests = FilmRequests.shared
     @State private var query = ""
-    /// Most Requested starts closed; a tap opens it.
-    @State private var showsTop = false
     @FocusState private var searchFocused: Bool
     /// A film whose checkmark was tapped, waiting for "Withdraw" to be confirmed.
     @State private var confirmingWithdraw: Film?
@@ -43,21 +42,6 @@ struct RequestFilmView: View {
                                 }
                             }
                         }
-                        if !requests.top.isEmpty {
-                            Section {
-                                DisclosureGroup(isExpanded: $showsTop) {
-                                    ForEach(Array(requests.top.enumerated()), id: \.element.id) { index, ranked in
-                                        FilmRow(film: ranked.film, rank: index + 1) {
-                                            requestButton(ranked.film)
-                                        }
-                                    }
-                                } label: {
-                                    Label("Most Requested", systemImage: "chart.bar.fill")
-                                        .font(.headline)
-                                        .foregroundStyle(Color.accentColor)
-                                }
-                            }
-                        }
                     } else if requests.results.isEmpty {
                         Section {
                             if requests.isSearching {
@@ -84,7 +68,8 @@ struct RequestFilmView: View {
             .appGroupedBackground()
             .scrollDismissesKeyboard(.immediately)
             .animation(.default, value: searchFocused)
-            .task { await requests.loadTop() }
+            // Keeps "Your requests" within TMDB's six months.
+            .task { await requests.refreshMine() }
             .task(id: query) {
                 // Wait for a pause in typing before searching.
                 try? await Task.sleep(for: .milliseconds(350))
@@ -189,6 +174,19 @@ private struct CompactFilmRow: View {
                 + Text(film.year.map { "  \($0)" } ?? "").font(.footnote).foregroundStyle(.secondary))
                 .lineLimit(1)
             Spacer(minLength: 6)
+            ShareLink(
+                item: film.page,
+                subject: Text(film.title),
+                message: Text(film.shareMessage),
+                preview: SharePreview(film.title)
+            ) {
+                Image(systemName: "square.and.arrow.up")
+                    .font(.title3)
+                    .foregroundStyle(Color.accentColor)
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Share \(film.title)")
+            .accessibilityHint("Sends this film to a friend by text or another app")
             Button(action: onWithdraw) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.title3)
@@ -203,18 +201,10 @@ private struct CompactFilmRow: View {
 
 private struct FilmRow<Trailing: View>: View {
     let film: Film
-    /// The place in the Most Requested list, if it's in it.
-    var rank: Int? = nil
     @ViewBuilder let trailing: Trailing
 
     var body: some View {
         HStack(spacing: 12) {
-            if let rank {
-                Text("\(rank)")
-                    .font(.title3.weight(.bold).monospacedDigit())
-                    .foregroundStyle(Color.accentColor)
-                    .frame(minWidth: 18)
-            }
             AsyncImage(url: film.posterUrl) { image in
                 image.resizable().aspectRatio(2 / 3, contentMode: .fill)
             } placeholder: {
@@ -230,5 +220,15 @@ private struct FilmRow<Trailing: View>: View {
             trailing
         }
         .padding(.vertical, 2)
+    }
+}
+
+extension Film {
+    /// The film's page on TMDB, which shows its poster in the message preview.
+    var page: URL { URL(string: "https://www.themoviedb.org/movie/\(tmdbId)")! }
+
+    /// What a friend reads when someone shares a film they requested.
+    var shareMessage: String {
+        "I asked the Ojai Playhouse to screen \(title)\(year.map { " (\($0))" } ?? ""). Want to see it there too? Request it in the Ojai Playhouse app."
     }
 }

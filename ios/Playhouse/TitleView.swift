@@ -4,7 +4,6 @@ struct TitleView: View {
     @Environment(FeedStore.self) private var store
     let title: Title
     @State private var calendarItem: ScheduledShowtime?
-    @State private var inviteItem: ScheduledShowtime?
     @State private var ticketPage: TicketPage?
     @Environment(\.openURL) private var openURL
     /// The date block grows with the text size.
@@ -38,10 +37,6 @@ struct TitleView: View {
         }
         .sheet(item: $calendarItem) { item in
             AddToCalendarSheet(item: item, theater: feed?.theater)
-                .ignoresSafeArea()
-        }
-        .sheet(item: $inviteItem) { item in
-            AddToCalendarSheet(item: item, theater: feed?.theater, invite: true)
                 .ignoresSafeArea()
         }
         .sheet(item: $ticketPage) { page in
@@ -225,33 +220,27 @@ struct TitleView: View {
         if invites { inviteButton(showtime, fills: showtime.booking == nil) }
     }
 
-    /// A calendar invite for this Showtime: Apple's or Google's new-event screen,
-    /// with notes written to the friend, who is added there as an invitee/guest.
+    /// Shares the Title's own ojaiplayhouse.com page by text, email or any app,
+    /// with a line naming this Showtime.
     private func inviteButton(_ showtime: Showtime, fills: Bool) -> some View {
-        let item = ScheduledShowtime(title: title, showtime: showtime)
-        return Menu {
-            Section("Send a calendar invite") {
-                Button("Apple Calendar", systemImage: "calendar") { inviteItem = item }
-                if let theater = feed?.theater {
-                    Button("Google Calendar", systemImage: "globe") {
-                        openURL(GoogleCalendar.url(for: item, theater: theater, invite: true))
-                    }
-                }
-            }
-        } label: {
+        let when = format(showtime.startsAt, .dateTime.weekday(.wide).month(.abbreviated).day().hour().minute())
+        return ShareLink(
+            item: title.sourceUrl ?? title.url,
+            subject: Text(title.name),
+            message: Text("Want to see \(title.name) with me at the Ojai Playhouse? \(when)"),
+            preview: SharePreview(title.name)
+        ) {
             Label("Invite a friend", systemImage: "person.badge.plus")
                 .font(.headline)
                 .lineLimit(1)
                 .frame(maxWidth: fills ? .infinity : nil)
                 .padding(.vertical, 4)
         }
-        .menuStyle(.button)
         .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
         // White in dark mode (black in light), so Tickets stays the one colored button.
         .tint(.primary)
-        .accessibilityLabel("Invite a friend")
-        .accessibilityHint("Sends a calendar invite with Apple or Google Calendar")
+        .accessibilityHint("Shares the Playhouse's page for this show by text or another app")
     }
 
     private func bookingLabel(_ showtime: Showtime, _ booking: Showtime.Booking) -> String {

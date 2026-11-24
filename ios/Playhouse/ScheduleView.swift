@@ -20,24 +20,47 @@ struct ScheduleView: View {
                 .navigationDestination(for: Title.self) { TitleView(title: $0) }
                 .toolbar {
                     ToolbarItem(placement: .principal) {
+                        // The Playhouse's stacked logo, trimmed to its edges and as tall as the bar allows.
                         Button { backToToday += 1 } label: {
-                            HStack(spacing: 8) {
-                                PlayhouseMark()
-                                    .fill(Color.accentColor)
-                                    .frame(width: 20, height: 20)
-                                Wordmark().frame(height: 15)
-                            }
+                            Image("Logo")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(Color.accentColor)
+                                .frame(height: 44)
                         }
                         .buttonStyle(.plain)
                         .accessibilityLabel("Ojai Playhouse")
                         .accessibilityHint("Scrolls back to today")
                     }
+                    // Request and Settings are drawn like the filter chips, not the bar's larger glass buttons.
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Request a Movie", systemImage: "popcorn") { showsRequests = true }
+                        Button { showsRequests = true } label: {
+                            // Not a Label: the bar would show only its icon.
+                            HStack(spacing: 5) {
+                                Image(systemName: "popcorn")
+                                Text("Request")
+                            }
+                            .padding(.horizontal, 13)
+                                .chip()
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Request a Movie")
                     }
+                    .sharedBackgroundVisibility(.hidden)
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button("Settings", systemImage: "gearshape") { showsSettings = true }
+                        Button { showsSettings = true } label: {
+                            // Not a Label: the bar would show only its icon.
+                            HStack(spacing: 5) {
+                                Image(systemName: "info.circle")
+                                Text("Info")
+                            }
+                            .padding(.horizontal, 13)
+                            .chip()
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Info and Settings")
                     }
+                    .sharedBackgroundVisibility(.hidden)
                     // The search field sits at the bottom of the screen, within thumb's reach.
                     DefaultToolbarItem(kind: .search, placement: .bottomBar)
                 }
@@ -175,24 +198,6 @@ struct Wordmark: View {
     }
 }
 
-/// The Playhouse's four-lobed mark: a square with a half-circle on each side.
-struct PlayhouseMark: Shape {
-    func path(in rect: CGRect) -> Path {
-        let side = min(rect.width, rect.height)
-        // Each lobe's radius is 16% of the whole mark; the square fills the rest.
-        let r = side * 0.16
-        let square = CGRect(x: rect.midX - side / 2 + r, y: rect.midY - side / 2 + r, width: side - 2 * r, height: side - 2 * r)
-        var lobes = Path()
-        for center in [
-            CGPoint(x: square.midX, y: square.minY), CGPoint(x: square.maxX, y: square.midY),
-            CGPoint(x: square.midX, y: square.maxY), CGPoint(x: square.minX, y: square.midY),
-        ] {
-            lobes.addEllipse(in: CGRect(x: center.x - r, y: center.y - r, width: 2 * r, height: 2 * r))
-        }
-        return Path(square).union(lobes)
-    }
-}
-
 /// All / Movies / Live Shows / Free, pinned above the schedule. Scrolls
 /// sideways when the screen is too narrow to fit them all.
 struct FilterChips: View {
@@ -247,6 +252,32 @@ struct FilterChips: View {
     }
 }
 
+/// The filter chips' look (FilterChips) for the bar's Request and Settings buttons:
+/// footnote semibold on a grey capsule exactly a chip's height, with a little extra tap
+/// margin around it. Round (a circle) unless the caller pads it wider.
+private struct Chip: ViewModifier {
+    /// A filter chip's height at the default text size: footnote text plus 7 above and below.
+    @ScaledMetric(relativeTo: .footnote) private var height = 28
+
+    func body(content: Content) -> some View {
+        content
+            .font(.footnote.weight(.semibold))
+            // The bar draws its icons large; chips keep them text-sized.
+            .imageScale(.medium)
+            .foregroundStyle(Color.primary)
+            .frame(minWidth: height, minHeight: height, maxHeight: height)
+            // Its full width, even where the bar offers less.
+            .fixedSize(horizontal: true, vertical: false)
+            .background(Color(.secondarySystemFill), in: .capsule)
+            .padding(.vertical, 4)
+            .contentShape(.rect)
+    }
+}
+
+extension View {
+    func chip() -> some View { modifier(Chip()) }
+}
+
 struct ShowtimeRow: View {
     let item: ScheduledShowtime
     let time: String
@@ -256,7 +287,7 @@ struct ShowtimeRow: View {
     @ScaledMetric(relativeTo: .caption) private var buttonWidth = 84
 
     /// The poster, the name, director and year, and on the right the time over the Tickets /
-    /// RSVP / Details pill, with a faint ticket fading out below it.
+    /// RSVP / Details pill.
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             RowPoster(title: item.title)
@@ -280,21 +311,13 @@ struct ShowtimeRow: View {
                 HStack(spacing: 6) { yearAndBadge }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            // The time, the pill under it, and the ticket printed in the space below.
+            // The time, with the pill under it.
             VStack(spacing: 6) {
                 timeView
                 openLabelView
-                if ticketed || freeRSVP {
-                    TicketWatermark(free: freeRSVP)
-                } else {
-                    Spacer(minLength: 0)
-                }
             }
             .frame(width: buttonWidth)
-            .frame(maxHeight: .infinity)
         }
-        // As tall as the taller of the poster and the text, so the ticket reaches the bottom.
-        .fixedSize(horizontal: false, vertical: true)
         .padding(.vertical, 4)
     }
 
@@ -380,24 +403,6 @@ private struct OpenTitleLabel: View {
             .padding(.vertical, 6)
             .frame(maxWidth: .infinity)
             .background(fill, in: .capsule)
-            .accessibilityHidden(true)
-    }
-}
-
-/// A faint, tilted ticket printed under the pill, fading out toward the bottom.
-private struct TicketWatermark: View {
-    let free: Bool
-
-    var body: some View {
-        Image(systemName: "ticket.fill")
-            .resizable()
-            .scaledToFit()
-            .padding(.horizontal, 19)
-            .rotationEffect(.degrees(-18))
-            .foregroundStyle((free ? Color.softGreen : .softBlue).opacity(0.3))
-            // Fades out toward the bottom of the row.
-            .mask(LinearGradient(colors: [.black, .black.opacity(0)], startPoint: .top, endPoint: .bottom))
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .accessibilityHidden(true)
     }
 }

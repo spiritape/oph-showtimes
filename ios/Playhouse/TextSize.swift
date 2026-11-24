@@ -81,8 +81,6 @@ struct TextSizeSettings: View {
                 get: { size == .system },
                 set: { size = $0 ? .system : TextSize.steps[step] }
             ))
-        } header: {
-            Text("Text Size")
         } footer: {
             Text(size == .system
                  ? "Following the text size in your iPhone's Display & Brightness settings. Move the slider to choose a size for this app."

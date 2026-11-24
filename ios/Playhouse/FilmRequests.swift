@@ -10,19 +10,9 @@ struct Film: Codable, Hashable, Identifiable, Sendable {
     var id: Int { tmdbId }
 }
 
-/// A film in the most requested list. How many asked for it stays private to the Playhouse.
-struct RankedFilm: Decodable, Identifiable, Sendable {
-    var tmdbId: Int
-    var title: String
-    var year: String?
-    var posterUrl: URL?
-    var id: Int { tmdbId }
-    var film: Film { Film(tmdbId: tmdbId, title: title, year: year, posterUrl: posterUrl) }
-}
-
 /// Film Requests (see CONTEXT.md): searching films and requesting the ones
-/// someone would like the Playhouse to show. Everyone sees the most requested
-/// few; this install remembers its own requests to show in "Your requests".
+/// someone would like the Playhouse to show. Only the Playhouse sees what others
+/// asked for; this install remembers its own requests to show in "Your requests".
 @MainActor @Observable
 final class FilmRequests {
     static let shared = FilmRequests()
@@ -31,8 +21,6 @@ final class FilmRequests {
     static let tmdbURL = URL(string: "https://www.themoviedb.org")!
 
     private(set) var results: [Film] = []
-    /// The most requested films across everyone, most requested first.
-    private(set) var top: [RankedFilm] = []
     private(set) var isSearching = false
     /// This install's requests, most recent first.
     private(set) var mine: [Film] {
@@ -64,19 +52,9 @@ final class FilmRequests {
 
     func isRequested(_ film: Film) -> Bool { mine.contains { $0.tmdbId == film.tmdbId } }
 
-    func loadTop() async {
-        let url = Notifications.watcherURL.appending(path: "requests/top")
-        guard let (data, response) = try? await URLSession.shared.data(from: url),
-              (response as? HTTPURLResponse)?.statusCode == 200,
-              let decoded = try? JSONDecoder().decode(TopResponse.self, from: data)
-        else { return } // Keep what's showing; the list is a nice-to-have.
-        top = decoded.films
-        await refreshMine()
-    }
-
     /// Fetches "Your requests" again once they're five months old (or of unknown age), so this
     /// install never keeps TMDB's data longer than the six months its terms allow.
-    private func refreshMine() async {
+    func refreshMine() async {
         let due = Date.now.addingTimeInterval(-150 * 86_400)
         for film in mine where (fetchedAt[film.tmdbId] ?? .distantPast) < due {
             let url = Notifications.watcherURL.appending(path: "films/\(film.tmdbId)")
@@ -116,7 +94,6 @@ final class FilmRequests {
             try await post("requests", film)
             mine.insert(film, at: 0)
             fetchedAt[film.tmdbId] = .now
-            await loadTop()
         } catch {
             message = "Couldn't send your request. Please try again."
         }
@@ -129,14 +106,12 @@ final class FilmRequests {
             try await post("requests/withdraw", film)
             mine.removeAll { $0.tmdbId == film.tmdbId }
             fetchedAt[film.tmdbId] = nil
-            await loadTop()
         } catch {
             message = "Couldn't withdraw your request. Please try again."
         }
     }
 
     private struct SearchResponse: Decodable { var films: [Film] }
-    private struct TopResponse: Decodable { var films: [RankedFilm] }
     private struct FilmResponse: Decodable { var film: Film }
     private struct RequestBody: Encodable { var installId: String; var tmdbId: Int }
 

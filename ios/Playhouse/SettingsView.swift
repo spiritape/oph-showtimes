@@ -38,31 +38,6 @@ struct SettingsView: View {
             Form {
                 Group {
                     Section {
-                        Picker("Appearance", selection: $appearance) {
-                            ForEach(Appearance.allCases) { Text($0.label).tag($0) }
-                        }
-                        .pickerStyle(.inline)
-                        .labelsHidden()
-                    } header: {
-                        Text("Appearance")
-                    } footer: {
-                        Text("Widgets and notifications follow your iPhone's own setting.")
-                    }
-
-                    TextSizeSettings()
-
-                    Section {
-                        Toggle(isOn: Binding(get: { notifications.isOn }, set: { _ in Task { await notifications.toggle() } })) {
-                            Label("New Title Notifications", systemImage: "bell")
-                        }
-                        .disabled(notifications.isBusy)
-                    } header: {
-                        Text("Notifications")
-                    } footer: {
-                        Text("Get a notification when a new film or live show is announced.")
-                    }
-
-                    Section {
                         VStack(spacing: 14) {
                             Image("Emblem")
                                 .resizable()
@@ -95,12 +70,34 @@ struct SettingsView: View {
                         Link(destination: PlayhouseInfo.directionsURL) {
                             Label("Directions", systemImage: "map")
                         }
+                    }
+
+                    Section {
+                        Toggle(isOn: Binding(get: { notifications.isOn }, set: { _ in Task { await notifications.toggle() } })) {
+                            Label("New Title Notifications", systemImage: "bell")
+                        }
+                        .disabled(notifications.isBusy)
+                    } footer: {
+                        Text("Get a notification when a new film or live show is announced.")
+                    }
+
+                    Section {
+                        Picker("Appearance", selection: $appearance) {
+                            ForEach(Appearance.allCases) { Text($0.label).tag($0) }
+                        }
+                        .pickerStyle(.inline)
+                        .labelsHidden()
+                    } footer: {
+                        Text("Widgets and notifications follow your iPhone's own setting.")
+                    }
+
+                    TextSizeSettings()
+
+                    Section {
                         LabeledContent("Version", value: Self.version)
                         LabeledContent("App by", value: "Micah Van Hove")
-                    } header: {
-                        Text("About")
                     } footer: {
-                        // TMDB's terms ask for its logo and notice here, less prominent than the Playhouse's own marks.
+                        // TMDB's terms ask for its logo and notice with the app's credits, less prominent than the Playhouse's own marks.
                         VStack(alignment: .leading, spacing: 8) {
                             Link(destination: FilmRequests.tmdbURL) {
                                 Image("TMDBLogo")
