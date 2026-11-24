@@ -175,7 +175,7 @@ private struct CompactFilmRow: View {
                 .lineLimit(1)
             Spacer(minLength: 6)
             ShareLink(
-                item: film.page,
+                item: PlayhouseInfo.website,
                 subject: Text(film.title),
                 message: Text(film.shareMessage),
                 preview: SharePreview(film.title)
@@ -224,11 +224,8 @@ private struct FilmRow<Trailing: View>: View {
 }
 
 extension Film {
-    /// The film's page on TMDB, which shows its poster in the message preview.
-    var page: URL { URL(string: "https://www.themoviedb.org/movie/\(tmdbId)")! }
-
-    /// What a friend reads when someone shares a film they requested.
+    /// What a friend reads when someone shares a film they requested, above a link to ojaiplayhouse.com.
     var shareMessage: String {
-        "I asked the Ojai Playhouse to screen \(title)\(year.map { " (\($0))" } ?? ""). Want to see it there too? Request it in the Ojai Playhouse app."
+        "I requested that the Ojai Playhouse screens \(title)\(year.map { " (\($0))" } ?? ""). Make your requests on the Playhouse App!"
     }
 }

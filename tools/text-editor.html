@@ -1,0 +1,301 @@
+<title>Playhouse Text Editor</title>
+<style>
+:root{--bg:#f4f2ee;--panel:#fff;--fg:#1c1b19;--muted:#6d685f;--line:#e2ddd3;--accent:#2f5fb3;--accent-fg:#fff;--chg:#b8650a;--chg-bg:#fff4e5;--ok:#1f8a4c;--pop:#7a3fb0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#100f0e;--panel:#1a1917;--fg:#eeeae3;--muted:#9b958b;--line:#2e2c28;--accent:#8db2f5;--accent-fg:#101014;--chg:#f0a648;--chg-bg:#2c2114;--ok:#5fd08f;--pop:#c39bf0}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#100f0e;--panel:#1a1917;--fg:#eeeae3;--muted:#9b958b;--line:#2e2c28;--accent:#8db2f5;--accent-fg:#101014;--chg:#f0a648;--chg-bg:#2c2114;--ok:#5fd08f;--pop:#c39bf0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:52rem;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left))}
+header.bar{position:sticky;top:0;z-index:2;background:var(--bg);padding:16px 0 10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.title{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+h1{font-size:1.15rem;margin:0}
+.sub{margin:2px 0 0;color:var(--muted);font-size:.85rem}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+.btn{padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font-weight:600;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn:disabled{opacity:.55;cursor:default}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tools input{flex:1 1 14rem;min-width:0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg);font:inherit}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--panel);color:var(--fg);padding:6px 12px;font-size:.85rem}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.status{margin:0;font-size:.85rem;color:var(--muted);min-height:1.2em}
+.status.ok{color:var(--ok)}
+section{margin-top:22px}
+section h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+.item{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px;display:grid;gap:6px}
+.item.changed{border-color:var(--chg);box-shadow:inset 3px 0 0 var(--chg)}
+.head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.head b{font-size:.9rem}
+.tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;border-radius:4px;border:1px solid currentColor}
+.tag.pop{color:var(--pop)}
+.tag.chg{color:var(--chg);background:var(--chg-bg)}
+.where{margin-left:auto;font:12px/1.3 ui-monospace,Menlo,monospace;color:var(--muted)}
+textarea{width:100%;resize:vertical;min-height:2.4em;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg);font:inherit;line-height:1.4;field-sizing:content}
+.foot{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.8rem;color:var(--muted)}
+.foot code{font:12px ui-monospace,Menlo,monospace;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.was{flex-basis:100%;color:var(--muted);font-size:.8rem}
+.was s{text-decoration-color:var(--chg)}
+.revert{margin-left:auto;border:0;background:none;color:var(--accent);font-size:.8rem;font-weight:600;padding:2px 0}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+@media (max-width:520px){.where{margin-left:0;flex-basis:100%}}
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <div class="title">
+      <div>
+        <h1>Playhouse Text Editor</h1>
+        <p class="sub">Edit the app's buttons, messages and pop-ups. Save, then ask Claude to "apply the saved text".</p>
+      </div>
+      <div class="actions">
+        <button class="btn" id="copy">Copy changes</button>
+        <button class="btn" id="reset">Reset all</button>
+        <button class="btn primary" id="save" hidden>Save</button>
+      </div>
+    </div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="Find text…" aria-label="Find text">
+      <div class="seg" role="group" aria-label="Show">
+        <button data-f="all" aria-pressed="true">All</button>
+        <button data-f="pop" aria-pressed="false">Pop-ups</button>
+        <button data-f="chg" aria-pressed="false">Changed <span id="n"></span></button>
+      </div>
+    </div>
+    <p class="status" id="status" role="status"></p>
+  </header>
+  <main id="list"></main>
+</div>
+
+<script>
+const DOC = "text/strings";
+// What's in the app now. Words in {braces} are filled in by the app; keep them.
+// [id, screen, label, where, text, popup?]
+const LIVE_ROWS = [
+  ["schedule.title","Schedule","Screen title","ScheduleView.swift","Schedule"],
+  ["schedule.request","Schedule","Request chip (top left)","ScheduleView.swift","Request"],
+  ["schedule.info","Schedule","Info chip (top right)","ScheduleView.swift","Info"],
+  ["schedule.search","Schedule","Search prompt","ScheduleView.swift:67","Search films and shows"],
+  ["filter.all","Schedule","Filter: everything","Shared/Feed.swift:142","All"],
+  ["filter.movies","Schedule","Filter: films","Shared/Feed.swift:143","Movies"],
+  ["filter.live","Schedule","Filter: live shows","Shared/Feed.swift:144","Live Shows"],
+  ["filter.free","Schedule","Filter: free","Shared/Feed.swift:145","Free"],
+  ["row.details","Schedule","Row button: no tickets","ScheduleView.swift:343","Details"],
+  ["row.rsvp","Schedule","Row button: free","ScheduleView.swift:345","RSVP"],
+  ["row.tickets","Schedule","Row button: ticketed","ScheduleView.swift:346","Tickets"],
+  ["badge.freeFilm","Schedule","Badge: free film","BookingBadge.swift:13","Free Screening"],
+  ["badge.freeEvent","Schedule","Badge: free live show","BookingBadge.swift:13","Free Event"],
+  ["badge.soldOut","Schedule","Badge: sold out","BookingBadge.swift:17","Sold out"],
+  ["schedule.noResults","Schedule","Search finds nothing","ScheduleView.swift:102","No results for “{query}”."],
+  ["schedule.nothing","Schedule","Empty schedule","ScheduleView.swift:102","Nothing scheduled right now."],
+  ["schedule.offline","Schedule","No connection: heading","ScheduleView.swift:107","No schedule"],
+  ["schedule.retry","Schedule","No connection: button","ScheduleView.swift:111","Try again"],
+  ["feed.loadError","Schedule","Load failed, nothing saved","FeedStore.swift:38","Couldn't load the schedule. Check your connection and pull to retry.",1],
+  ["feed.stale","Schedule","Load failed, showing saved","FeedStore.swift:38","Showing the last saved schedule.",1],
+
+  ["title.livestream","Film page","Livestream button","TitleView.swift:23","Watch the livestream"],
+  ["title.starring","Film page","Cast line","TitleView.swift:73","Starring {starring}"],
+  ["title.showtimes","Film page","Showtimes heading","TitleView.swift:130","Showtimes"],
+  ["title.nothing","Film page","No showtimes","TitleView.swift:132","Nothing scheduled right now."],
+  ["title.soldOut","Film page","Booking button: sold out","TitleView.swift:247","Sold Out · Check for Seats"],
+  ["title.rsvpFree","Film page","Booking button: free","TitleView.swift:248","RSVP · Free"],
+  ["title.appleCal","Film page","Calendar menu: Apple","TitleView.swift:172","Apple Calendar",1],
+  ["title.googleCal","Film page","Calendar menu: Google","TitleView.swift:176","Google Calendar",1],
+  ["title.invite","Film page","Invite button","TitleView.swift:233","Invite a friend"],
+  ["title.inviteMessage","Film page","Invite text sent to a friend (link follows)","TitleView.swift:230","Want to see {title} with me at the Ojai Playhouse? {when}",1],
+  ["title.about","Film page","About heading","TitleView.swift:100","About"],
+  ["title.more","Film page","Link to the Playhouse page","TitleView.swift:111","More on ojaiplayhouse.com"],
+
+  ["request.title","Request a Movie","Screen title","RequestFilmView.swift:79","Request a Movie"],
+  ["request.heading","Request a Movie","Intro heading","RequestFilmView.swift:125","A movie you'd like to see on the big screen?"],
+  ["request.intro","Request a Movie","Intro text","RequestFilmView.swift:126","Search for a film and request it. The Playhouse sees how many people asked for each film."],
+  ["request.search","Request a Movie","Search prompt","RequestFilmView.swift:108","Search films"],
+  ["request.mine","Request a Movie","Your list heading","RequestFilmView.swift:35","Your requests"],
+  ["request.none","Request a Movie","Search finds nothing","RequestFilmView.swift:50","No films found."],
+  ["request.button","Request a Movie","Request button","RequestFilmView.swift:149","Request"],
+  ["request.withdrawAsk","Request a Movie","Withdraw pop-up question","RequestFilmView.swift:90","Withdraw your request for {title}?",1],
+  ["request.withdraw","Request a Movie","Withdraw pop-up button","RequestFilmView.swift:95","Withdraw Request",1],
+  ["request.shareMessage","Request a Movie","Share text sent to a friend (ojaiplayhouse.com link follows)","RequestFilmView.swift:229","I requested that the Ojai Playhouse screens {title} ({year}). Make your requests on the Playhouse App!",1],
+  ["request.searchError","Request a Movie","Search failed","FilmRequests.swift:85","Couldn't search right now. Please try again.",1],
+  ["request.sendError","Request a Movie","Request failed","FilmRequests.swift:98","Couldn't send your request. Please try again.",1],
+  ["request.withdrawError","Request a Movie","Withdraw failed","FilmRequests.swift:110","Couldn't withdraw your request. Please try again.",1],
+
+  ["info.title","Info","Screen title","SettingsView.swift:126","Settings"],
+  ["info.address","Info","Address under the logo","SettingsView.swift:48","145 E Ojai Ave, Ojai · next to Libbey Park"],
+  ["info.visiting","Info","Visiting link","SettingsView.swift:58","Visiting the Playhouse"],
+  ["info.directions","Info","Directions button","SettingsView.swift:78","Directions"],
+  ["info.appleMaps","Info","Directions menu: Apple","SettingsView.swift:72","Apple Maps",1],
+  ["info.googleMaps","Info","Directions menu: Google","SettingsView.swift:75","Google Maps",1],
+  ["info.notify","Info","Notifications switch","SettingsView.swift:84","New Title Notifications"],
+  ["info.notifyFooter","Info","Notifications note","SettingsView.swift:88","Get a notification when a new film or live show is announced."],
+  ["info.appearanceFooter","Info","Appearance note","SettingsView.swift:98","Widgets and notifications follow your iPhone's own setting."],
+  ["info.matchSize","Info","Text size switch","TextSize.swift:80","Match iPhone Setting"],
+  ["info.sizeSystem","Info","Text size note: matching iPhone","TextSize.swift:86","Following the text size in your iPhone's Display & Brightness settings. Move the slider to choose a size for this app."],
+  ["info.sizeChosen","Info","Text size note: chosen size","TextSize.swift:87","{size}. Turn on Match iPhone Setting to follow your iPhone's text size again."],
+  ["info.version","Info","Version label","SettingsView.swift:104","Version"],
+  ["info.appBy","Info","Credit label","SettingsView.swift:105","App by"],
+  ["notify.off","Info","Turned notifications off","Notifications.swift:41","Notifications are off.",1],
+  ["notify.denied","Info","iPhone blocks notifications","Notifications.swift:46","Notifications are turned off for Playhouse. You can allow them in Settings.",1],
+  ["notify.on","Info","Turned notifications on","Notifications.swift:77","You'll get a notification when a new film or live show is announced.",1],
+  ["notify.error","Info","Couldn't turn them on","Notifications.swift:79, 86","Couldn't turn on notifications. Please try again.",1],
+
+  ["visit.title","Visiting the Playhouse","Screen title","PlayhouseInfoView.swift:62","Visiting the Playhouse"],
+  ["visit.boxOffice1","Visiting the Playhouse","Box Office: where","PlayhouseInfoView.swift:23","107 S. Signal Street, directly behind the Playhouse and across from the Post Office and Libbey Park."],
+  ["visit.boxOffice2","Visiting the Playhouse","Box Office: hours","PlayhouseInfoView.swift:24","Opens 60 minutes before showtime. All tickets are held at will call and must be picked up at the box office before entering the Playhouse."],
+  ["visit.about","Visiting the Playhouse","About the Playhouse","PlayhouseInfoView.swift:27","Opened in 1914, the Ojai Playhouse is a historic 200-seat, single-screen movie theater at 145 E. Ojai Ave, next to Libbey Park. It screens digital and 35mm films, and curates music, comedy, variety and more."],
+  ["visit.parking1","Visiting the Playhouse","Parking","PlayhouseInfoView.swift:30","On Ojai city streets, north and south of E. Ojai Avenue."],
+  ["visit.parking2","Visiting the Playhouse","Parking: ADA","PlayhouseInfoView.swift:31","ADA parking is on E. Ojai Avenue and S. Signal Street."],
+  ["visit.food","Visiting the Playhouse","Food & Drink","PlayhouseInfoView.swift:34","Popcorn, candy, fountain soda, beer & wine, and specialty drinks."],
+  ["visit.access","Visiting the Playhouse","Accessibility","PlayhouseInfoView.swift:37","The Ojai Playhouse is ADA accessible."],
+  ["visit.seating1","Visiting the Playhouse","Seating: movies","PlayhouseInfoView.swift:40","Movies are general admission."],
+  ["visit.seating2","Visiting the Playhouse","Seating: events","PlayhouseInfoView.swift:41","Music, comedy and other events may be general admission or reserved seating."],
+  ["visit.tickets","Visiting the Playhouse","Tickets","PlayhouseInfoView.swift:44","Sold on the Ojai Playhouse website. Prices vary by movie and event; see each one's details for pricing."],
+  ["visit.policy1","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:47","All sales are final. No refunds or exchanges."],
+  ["visit.policy2","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:48","No late entry. Please arrive and be seated at least 15 minutes before the screening or performance."],
+  ["visit.policy3","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:49","Phones must be off inside the theater during the movie or performance."],
+  ["visit.policy4","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:50","No outside food, candy or drink."],
+  ["visit.policy5","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:51","No smoking or vaping."],
+  ["visit.policy6","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:52","Children 16 and under must be with an adult."],
+  ["visit.policy7","Visiting the Playhouse","Policy","PlayhouseInfoView.swift:53","The Ojai Playhouse reserves the right to refuse service to anyone."],
+  ["visit.green","Visiting the Playhouse","Sustainability","PlayhouseInfoView.swift:56","The Playhouse looks for green solutions across the theater's operations wherever it can."],
+
+  ["push.one","Push notifications","One new title: heading","src/notification.ts:21","New at the Playhouse: {name}",1],
+  ["push.oneBody","Push notifications","One new title: text","src/notification.ts:22","{category} · first showing {day}, {time}",1],
+  ["push.many","Push notifications","Several new titles: heading (text lists their names)","src/notification.ts:29","{count} new at the Playhouse",1],
+
+  ["widget.name","Widgets & Watch","Widget name in the gallery","Widgets/NextShowtimesWidget.swift:18","Next at the Playhouse"],
+  ["widget.desc","Widgets & Watch","Widget description","Widgets/NextShowtimesWidget.swift:19","The next Showtimes at the Ojai Playhouse."],
+  ["widget.empty","Widgets & Watch","Widget before first load","Widgets/NextShowtimesWidget.swift:98","Open the app to load the schedule."],
+  ["watch.tickets","Widgets & Watch","Watch: how to buy","Watch/WatchShowtimeView.swift:41","For tickets, open the App Switcher on your iPhone and tap Playhouse."],
+  ["watch.also","Widgets & Watch","Watch: other showtimes","Watch/WatchShowtimeView.swift:48","Also showing"],
+  ["watch.nothing","Widgets & Watch","Watch: empty","Watch/WatchScheduleView.swift:45","Nothing scheduled right now"],
+  ["watch.error","Widgets & Watch","Watch: load failed","Watch/WatchScheduleView.swift:59","Couldn't load the schedule"],
+  ["watch.retry","Widgets & Watch","Watch: retry button","Watch/WatchScheduleView.swift:61","Try Again"],
+  ["complication.desc","Widgets & Watch","Complication description","WatchWidgets/NextShowtimeComplication.swift:19","The next Showtime at the Ojai Playhouse."],
+  ["complication.empty","Widgets & Watch","Complication before first load","WatchWidgets/NextShowtimeComplicationView.swift:72","Open Playhouse to load the schedule."],
+];
+const ROWS = LIVE_ROWS.map(([id, screen, label, where, text, pop]) => ({ id, screen, label, where, text, pop: !!pop }));
+const LIVE = Object.fromEntries(ROWS.map(r => [r.id, r.text]));
+
+let s = { ...LIVE };
+let filter = "all";
+const $ = id => document.getElementById(id);
+const status = (t, ok) => { $("status").textContent = t; $("status").className = "status" + (ok ? " ok" : ""); };
+const changedIds = () => ROWS.filter(r => s[r.id] !== LIVE[r.id]).map(r => r.id);
+const holes = t => (t.match(/\{\w+\}/g) || []).sort().join();
+
+function el(tag, props = {}, ...kids) {
+  const e = Object.assign(document.createElement(tag), props);
+  for (const k of kids) if (k != null) e.append(k);
+  return e;
+}
+
+function build() {
+  const list = $("list");
+  list.textContent = "";
+  let screen = null, sec = null;
+  for (const r of ROWS) {
+    if (r.screen !== screen) {
+      screen = r.screen;
+      sec = el("section", {}, el("h2", { textContent: screen }));
+      list.append(sec);
+    }
+    const ta = el("textarea", { rows: 1, value: s[r.id], spellcheck: true });
+    ta.setAttribute("aria-label", `${r.screen}: ${r.label}`);
+    const was = el("div", { className: "was" });
+    const warn = el("span", { style: "color:var(--chg)" });
+    const revert = el("button", { className: "revert", textContent: "Undo" });
+    const chgTag = el("span", { className: "tag chg", textContent: "Changed" });
+    const ph = LIVE[r.id].match(/\{\w+\}/g);
+    const foot = el("div", { className: "foot" },
+      ph ? el("span", {}, "Filled in by the app: ", ...ph.flatMap((p, i) => [i ? " " : "", el("code", { textContent: p })])) : null,
+      warn, revert, was);
+    const item = el("div", { className: "item" },
+      el("div", { className: "head" }, el("b", { textContent: r.label }),
+        r.pop ? el("span", { className: "tag pop", textContent: "Pop-up / message" }) : null,
+        chgTag, el("span", { className: "where", textContent: r.where })),
+      ta, foot);
+    item.dataset.id = r.id;
+    item.dataset.pop = r.pop ? "1" : "";
+    item.dataset.find = (r.screen + " " + r.label + " " + LIVE[r.id]).toLowerCase();
+    const sync = () => {
+      const c = s[r.id] !== LIVE[r.id];
+      item.classList.toggle("changed", c);
+      chgTag.hidden = !c; revert.hidden = !c; was.hidden = !c;
+      was.textContent = ""; if (c) was.append("Live: ", el("s", { textContent: LIVE[r.id] }));
+      warn.textContent = holes(s[r.id]) !== holes(LIVE[r.id]) ? "Check the {braces}: they should match the live text." : "";
+    };
+    ta.addEventListener("input", () => { s[r.id] = ta.value; sync(); refresh(); status(""); });
+    revert.addEventListener("click", () => { s[r.id] = LIVE[r.id]; ta.value = s[r.id]; sync(); refresh(); ta.focus(); });
+    item._sync = () => { ta.value = s[r.id]; sync(); };
+    sync();
+    sec.append(item);
+  }
+  list.append(el("p", { className: "empty", id: "empty", textContent: "Nothing matches.", hidden: true }));
+  refresh();
+}
+
+function refresh() {
+  const n = changedIds().length;
+  $("n").textContent = n ? `(${n})` : "";
+  const q = $("q").value.trim().toLowerCase();
+  let shown = 0;
+  for (const sec of $("list").querySelectorAll("section")) {
+    let any = false;
+    for (const item of sec.querySelectorAll(".item")) {
+      const id = item.dataset.id;
+      const ok = (filter === "all" || (filter === "pop" && item.dataset.pop) || (filter === "chg" && s[id] !== LIVE[id]))
+        && (!q || item.dataset.find.includes(q) || s[id].toLowerCase().includes(q));
+      item.hidden = !ok; if (ok) { any = true; shown++; }
+    }
+    sec.hidden = !any;
+  }
+  $("empty").hidden = shown > 0;
+}
+
+function syncAll() { for (const item of $("list").querySelectorAll(".item")) item._sync(); refresh(); }
+
+$("q").addEventListener("input", refresh);
+for (const b of document.querySelectorAll(".seg button")) b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  for (const o of document.querySelectorAll(".seg button")) o.setAttribute("aria-pressed", o === b);
+  refresh();
+});
+$("reset").addEventListener("click", () => { s = { ...LIVE }; syncAll(); status("Back to what's in the app now."); });
+$("copy").addEventListener("click", async () => {
+  const ids = changedIds();
+  if (!ids.length) { status("Nothing changed yet."); return; }
+  const out = Object.fromEntries(ids.map(id => [id, { from: LIVE[id], to: s[id] }]));
+  try { await navigator.clipboard.writeText(JSON.stringify(out, null, 2)); status(`Copied ${ids.length} change${ids.length > 1 ? "s" : ""}. Paste it to Claude to apply.`, true); }
+  catch { status("Couldn't copy here. Use Save instead."); }
+});
+
+build();
+
+// Saved text lives in this page's database, where Claude reads it.
+(async () => {
+  const db = await window.claude?.use?.("db");
+  if (!db) return;
+  const doc = db.doc(DOC);
+  try {
+    const snap = await doc.get();
+    if (snap.exists) {
+      const saved = snap.data()?.strings || {};
+      for (const id in saved) if (id in LIVE && typeof saved[id] === "string") s[id] = saved[id];
+      syncAll();
+      const n = changedIds().length;
+      if (n) status(`Loaded your last save: ${n} change${n > 1 ? "s" : ""} not in the app yet.`);
+    }
+  } catch {}
+  $("save").hidden = false;
+  $("save").addEventListener("click", async () => {
+    $("save").disabled = true;
+    const strings = Object.fromEntries(changedIds().map(id => [id, s[id]]));
+    try { await doc.set({ strings, savedAt: new Date().toISOString() }); status("Saved. Ask Claude to apply the saved text.", true); }
+    catch { status("Couldn't save. Try again in a moment, or use Copy changes."); }
+    finally { $("save").disabled = false; }
+  });
+})();
+</script>

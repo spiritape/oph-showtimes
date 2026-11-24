@@ -10,6 +10,8 @@ enum PlayhouseInfo {
     static let emailURL = URL(string: "mailto:info@ojaiplayhouse.com")!
     static let address = "145 E Ojai Ave, Ojai, CA 93023"
     static let directionsURL = URL(string: "https://maps.apple.com/?q=Ojai%20Playhouse&address=145%20E%20Ojai%20Ave,%20Ojai,%20CA%2093023")!
+    /// Directions in the Google Maps app when it's installed, otherwise on the web.
+    static let googleDirectionsURL = URL(string: "https://www.google.com/maps/dir/?api=1&destination=Ojai%20Playhouse,%20145%20E%20Ojai%20Ave,%20Ojai,%20CA%2093023")!
 }
 
 /// Box office, parking, policies and the rest, opened from Settings › About.

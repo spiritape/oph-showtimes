@@ -67,7 +67,14 @@ struct SettingsView: View {
                         Link(destination: PlayhouseInfo.emailURL) {
                             Label(PlayhouseInfo.email, systemImage: "envelope")
                         }
-                        Link(destination: PlayhouseInfo.directionsURL) {
+                        Menu {
+                            Link(destination: PlayhouseInfo.directionsURL) {
+                                Label("Apple Maps", systemImage: "map")
+                            }
+                            Link(destination: PlayhouseInfo.googleDirectionsURL) {
+                                Label("Google Maps", systemImage: "globe")
+                            }
+                        } label: {
                             Label("Directions", systemImage: "map")
                         }
                     }
