@@ -17,12 +17,14 @@
 		2CD0266245479CBC28A62EF9 /* PlayhouseWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 144E1CE9FF459213BA08DC75 /* PlayhouseWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404885DDDBC74270119939F0 /* TicketPageView.swift */; };
 		34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */; };
+		424EA2A7DF3DA1E281956849 /* ShowtimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C8CF6F19476783A106867 /* ShowtimeRow.swift */; };
 		4B496EF13A03AE59854C2EAD /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
 		4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EC7C4537093AF97DBE301 /* SettingsView.swift */; };
 		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
 		5758990D268A075B4058670B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0195D54F8A1185978FE5C488 /* Assets.xcassets */; };
 		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
+		6CEF1FF89437C6D5BF397333 /* FilterChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351E919EA51E16BC018721E6 /* FilterChips.swift */; };
 		73D3DEEFC7C785153D925DC9 /* PlayhouseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303C6455E7F69F9774CD08A /* PlayhouseInfoView.swift */; };
 		7C5B51CFB61C1C28E581D7AC /* WatchShowtimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F0B1787EB95FBC65C51F2 /* WatchShowtimeView.swift */; };
 		88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */; };
@@ -131,6 +133,7 @@
 		15F6F30B649B35EF4900A6B2 /* NotificationService.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
 		201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCalendar.swift; sourceTree = "<group>"; };
+		351E919EA51E16BC018721E6 /* FilterChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChips.swift; sourceTree = "<group>"; };
 		35D269B8A47898B6C951636C /* WatchWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchWidgets.entitlements; sourceTree = "<group>"; };
 		379807FC88EF4B18A6FB84DF /* ComplicationGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationGallery.swift; sourceTree = "<group>"; };
 		3B10EFD6785A3600EE990DDF /* Playhouse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +148,7 @@
 		6F5F0B1787EB95FBC65C51F2 /* WatchShowtimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShowtimeView.swift; sourceTree = "<group>"; };
 		757EC7C4537093AF97DBE301 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		7A2C8CF6F19476783A106867 /* ShowtimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowtimeRow.swift; sourceTree = "<group>"; };
 		7C7DF878AA52162B32BA06B4 /* NextShowtimesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextShowtimesWidget.swift; sourceTree = "<group>"; };
 		805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFilmView.swift; sourceTree = "<group>"; };
 		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				BD4445C17726A22F08BFFB6C /* BookingBadge.swift */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
 				D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */,
+				351E919EA51E16BC018721E6 /* FilterChips.swift */,
 				201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */,
 				08501A0F400D44D07664ACCE /* Info.plist */,
 				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
@@ -254,6 +259,7 @@
 				805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */,
 				BBEC41856D54314A01CB98A8 /* ScheduleView.swift */,
 				757EC7C4537093AF97DBE301 /* SettingsView.swift */,
+				7A2C8CF6F19476783A106867 /* ShowtimeRow.swift */,
 				61AB9FE0722B39F2C2067546 /* TextSize.swift */,
 				CBC8CC47430F629A8E89F93E /* Theme.swift */,
 				404885DDDBC74270119939F0 /* TicketPageView.swift */,
@@ -556,6 +562,7 @@
 				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
 				88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */,
+				6CEF1FF89437C6D5BF397333 /* FilterChips.swift in Sources */,
 				34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */,
 				89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
@@ -563,6 +570,7 @@
 				8DA6A237D49F9751BB889FAE /* RequestFilmView.swift in Sources */,
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
 				4FEE79E64D397543508E3F0E /* SettingsView.swift in Sources */,
+				424EA2A7DF3DA1E281956849 /* ShowtimeRow.swift in Sources */,
 				2B01EBDF904087B03F029D82 /* TextSize.swift in Sources */,
 				20B09F682616ACBE1BDCFF5F /* Theme.swift in Sources */,
 				2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */,

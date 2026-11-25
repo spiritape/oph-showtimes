@@ -280,3 +280,16 @@ private struct BookingButtonStyle: PrimitiveButtonStyle {
     }
 }
 
+/// A poster, or a plain placeholder while it loads or when there isn't one.
+struct Poster: View {
+    let url: URL?
+
+    var body: some View {
+        AsyncImage(url: url) { image in
+            image.resizable().aspectRatio(contentMode: .fit)
+        } placeholder: {
+            RoundedRectangle(cornerRadius: 4).fill(.quaternary).aspectRatio(3 / 2, contentMode: .fit)
+        }
+        .clipShape(.rect(cornerRadius: 4))
+    }
+}
