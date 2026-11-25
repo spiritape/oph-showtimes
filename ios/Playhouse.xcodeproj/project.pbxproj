@@ -18,6 +18,7 @@
 		2CD0266245479CBC28A62EF9 /* PlayhouseWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 144E1CE9FF459213BA08DC75 /* PlayhouseWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404885DDDBC74270119939F0 /* TicketPageView.swift */; };
 		34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */; };
+		40286F4CD301DD3368BD56F9 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0627813423CEDCF503583 /* Appearance.swift */; };
 		424EA2A7DF3DA1E281956849 /* ShowtimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C8CF6F19476783A106867 /* ShowtimeRow.swift */; };
 		4B496EF13A03AE59854C2EAD /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
 		4FB2112256491BB6B173DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B2329E61FF2F6D94881C7B /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		50B465D0C21D576652DA6001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9524C15AA6715F80420C8F64 /* Assets.xcassets */; };
 		5758990D268A075B4058670B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0195D54F8A1185978FE5C488 /* Assets.xcassets */; };
 		6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17148D90E92590D08AD20A42 /* PlayhouseApp.swift */; };
+		6A067FFBB428B7739E1C511E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BF25FDEFEA2C3F78FC04C /* AppDelegate.swift */; };
 		6CEF1FF89437C6D5BF397333 /* FilterChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351E919EA51E16BC018721E6 /* FilterChips.swift */; };
 		73D3DEEFC7C785153D925DC9 /* PlayhouseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303C6455E7F69F9774CD08A /* PlayhouseInfoView.swift */; };
 		7C5B51CFB61C1C28E581D7AC /* WatchShowtimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F0B1787EB95FBC65C51F2 /* WatchShowtimeView.swift */; };
@@ -150,6 +152,7 @@
 		5DFB3B32C925134B76E8AC59 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
 		5EAAB63A7423C50BAC7C7250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		61AB9FE0722B39F2C2067546 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
+		61D0627813423CEDCF503583 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		6F5F0B1787EB95FBC65C51F2 /* WatchShowtimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShowtimeView.swift; sourceTree = "<group>"; };
 		757EC7C4537093AF97DBE301 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		75E8703096D88355A5D13A31 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFilmView.swift; sourceTree = "<group>"; };
 		8483212570BB1330E953787D /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		8620946FEB3C6B307C393700 /* PlayhouseWatchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlayhouseWatchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6BF25FDEFEA2C3F78FC04C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94461A96001EC8761E4D24EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95FE00E64215D8C70831ADD4 /* PlayhouseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseInfo.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */,
+				8A6BF25FDEFEA2C3F78FC04C /* AppDelegate.swift */,
+				61D0627813423CEDCF503583 /* Appearance.swift */,
 				A5B2329E61FF2F6D94881C7B /* Assets.xcassets */,
 				BD4445C17726A22F08BFFB6C /* BookingBadge.swift */,
 				023924190AF1899EF13AD182 /* FeedStore.swift */,
@@ -570,6 +576,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */,
+				6A067FFBB428B7739E1C511E /* AppDelegate.swift in Sources */,
+				40286F4CD301DD3368BD56F9 /* Appearance.swift in Sources */,
 				9410079B5503CE1014F51834 /* BookingBadge.swift in Sources */,
 				DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */,
 				FFE4E89FF1B9191876B9F47B /* FeedStore.swift in Sources */,
