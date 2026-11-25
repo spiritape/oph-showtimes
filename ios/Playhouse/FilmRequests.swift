@@ -1,6 +1,13 @@
 import Foundation
 import Observation
 
+/// TMDB, where film search results and posters come from.
+enum TMDB {
+    /// The notice TMDB's API terms ask for, alongside its logo.
+    static let credit = "This app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB."
+    static let website = URL(string: "https://www.themoviedb.org")!
+}
+
 /// A film from TMDB, as found by search or remembered in "Your requests".
 struct Film: Codable, Hashable, Identifiable, Sendable {
     var tmdbId: Int
@@ -10,15 +17,19 @@ struct Film: Codable, Hashable, Identifiable, Sendable {
     var id: Int { tmdbId }
 }
 
+extension Film {
+    /// What a friend reads when someone shares a film they requested, above a link to ojaiplayhouse.com.
+    var shareMessage: String {
+        "I requested that the Ojai Playhouse screens \(title)\(year.map { " (\($0))" } ?? ""). Make your requests on the Playhouse App!"
+    }
+}
+
 /// Film Requests (see CONTEXT.md): searching films and requesting the ones
 /// someone would like the Playhouse to show. Only the Playhouse sees what others
 /// asked for; this install remembers its own requests to show in "Your requests".
 @MainActor @Observable
 final class FilmRequests {
     static let shared = FilmRequests()
-    /// The notice TMDB's API terms ask for, alongside its logo.
-    static let credit = "This app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB."
-    static let tmdbURL = URL(string: "https://www.themoviedb.org")!
 
     private(set) var results: [Film] = []
     private(set) var isSearching = false
@@ -57,7 +68,7 @@ final class FilmRequests {
     func refreshMine() async {
         let due = Date.now.addingTimeInterval(-150 * 86_400)
         for film in mine where (fetchedAt[film.tmdbId] ?? .distantPast) < due {
-            let url = Notifications.watcherURL.appending(path: "films/\(film.tmdbId)")
+            let url = Watcher.url.appending(path: "films/\(film.tmdbId)")
             guard let (data, response) = try? await URLSession.shared.data(from: url),
                   (response as? HTTPURLResponse)?.statusCode == 200,
                   let fresh = try? JSONDecoder().decode(FilmResponse.self, from: data).film,
@@ -73,7 +84,7 @@ final class FilmRequests {
         guard query.count >= 2 else { results = []; return }
         isSearching = true
         defer { isSearching = false }
-        var url = Notifications.watcherURL.appending(path: "films/search")
+        var url = Watcher.url.appending(path: "films/search")
         url.append(queryItems: [URLQueryItem(name: "q", value: query)])
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -116,11 +127,6 @@ final class FilmRequests {
     private struct RequestBody: Encodable { var installId: String; var tmdbId: Int }
 
     private func post(_ path: String, _ film: Film) async throws {
-        var request = URLRequest(url: Notifications.watcherURL.appending(path: path))
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try JSONEncoder().encode(RequestBody(installId: installId, tmdbId: film.tmdbId))
-        let (_, response) = try await URLSession.shared.data(for: request)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+        try await Watcher.post(path, json: JSONEncoder().encode(RequestBody(installId: installId, tmdbId: film.tmdbId)))
     }
 }

@@ -177,3 +177,10 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     #expect(digger.facts == "2026 · Dir. Ann Director · 1hr 30min · R")
     #expect(feed.titles[1].facts == "")
 }
+
+@Test func sharesARequestedFilmWithItsYear() {
+    #expect(Film(tmdbId: 1, title: "Dead Man", year: "1995").shareMessage
+        == "I requested that the Ojai Playhouse screens Dead Man (1995). Make your requests on the Playhouse App!")
+    #expect(Film(tmdbId: 2, title: "Untitled").shareMessage
+        == "I requested that the Ojai Playhouse screens Untitled. Make your requests on the Playhouse App!")
+}
