@@ -144,3 +144,14 @@ struct SettingsView: View {
         return "\(version) (\(build))"
     }
 }
+
+/// The Playhouse's own "OJAI PLAYHOUSE" lettering, in the accent blue.
+struct Wordmark: View {
+    var body: some View {
+        Image("Wordmark")
+            .resizable()
+            .scaledToFit()
+            .foregroundStyle(Color.accentColor)
+            .accessibilityLabel("Ojai Playhouse")
+    }
+}
