@@ -61,7 +61,6 @@ struct RequestFilmView: View {
                     } footer: {
                         Text(TMDB.credit).font(.caption2)
                     }
-            
                 }
                 .listRowBackground(Color.appGroupedSurface)
             }
