@@ -59,7 +59,7 @@ struct RequestFilmView: View {
                     }
                     Section {
                     } footer: {
-                        Text(FilmRequests.credit).font(.caption2)
+                        Text(TMDB.credit).font(.caption2)
                     }
             
                 }
@@ -220,12 +220,5 @@ private struct FilmRow<Trailing: View>: View {
             trailing
         }
         .padding(.vertical, 2)
-    }
-}
-
-extension Film {
-    /// What a friend reads when someone shares a film they requested, above a link to ojaiplayhouse.com.
-    var shareMessage: String {
-        "I requested that the Ojai Playhouse screens \(title)\(year.map { " (\($0))" } ?? ""). Make your requests on the Playhouse App!"
     }
 }

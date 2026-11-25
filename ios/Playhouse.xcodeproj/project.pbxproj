@@ -28,6 +28,7 @@
 		6CEF1FF89437C6D5BF397333 /* FilterChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351E919EA51E16BC018721E6 /* FilterChips.swift */; };
 		73D3DEEFC7C785153D925DC9 /* PlayhouseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303C6455E7F69F9774CD08A /* PlayhouseInfoView.swift */; };
 		7C5B51CFB61C1C28E581D7AC /* WatchShowtimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F0B1787EB95FBC65C51F2 /* WatchShowtimeView.swift */; };
+		85F96C6899E96CAD7F4BFA49 /* PlayhouseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE00E64215D8C70831ADD4 /* PlayhouseInfo.swift */; };
 		88A00DFABB7FC71C41BF1CBA /* FilmRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C3B5AF1B8BC52DEFB7DC /* FilmRequests.swift */; };
 		89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EAD2811560EFD04DF3FE02 /* Notifications.swift */; };
 		8BD30DDDFC5190E83140FA9A /* NextShowtimeComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8B9F4B96F4F7240B949F /* NextShowtimeComplication.swift */; };
@@ -41,6 +42,7 @@
 		BEDE479BBDC28AAE594BF0D6 /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 079217AD0A775F6D2ADB4100 /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE5F0B411AB3283E17295F94 /* AddToCalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CF7A64943882B3FBE3BC /* AddToCalendarSheet.swift */; };
 		D2FCDA0DBB64685FD32EA1BA /* WatchScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD300516ECF7D2A2A69B122 /* WatchScheduleView.swift */; };
+		D3F41CADA7D3237E5DF0C428 /* Watcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265A82F76891B1C029B88F62 /* Watcher.swift */; };
 		DA84A3963627F733363A6991 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8703096D88355A5D13A31 /* TitleView.swift */; };
 		DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC41856D54314A01CB98A8 /* ScheduleView.swift */; };
 		DF3BBC0FCA43FDA030A31EC7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F69DA2AAE438D5964A4A3A /* Feed.swift */; };
@@ -135,6 +137,7 @@
 		15F6F30B649B35EF4900A6B2 /* NotificationService.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		17148D90E92590D08AD20A42 /* PlayhouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseApp.swift; sourceTree = "<group>"; };
 		201F431AA204C778FCC3F6AD /* GoogleCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCalendar.swift; sourceTree = "<group>"; };
+		265A82F76891B1C029B88F62 /* Watcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watcher.swift; sourceTree = "<group>"; };
 		351E919EA51E16BC018721E6 /* FilterChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChips.swift; sourceTree = "<group>"; };
 		35D269B8A47898B6C951636C /* WatchWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchWidgets.entitlements; sourceTree = "<group>"; };
 		379807FC88EF4B18A6FB84DF /* ComplicationGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationGallery.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		8620946FEB3C6B307C393700 /* PlayhouseWatchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlayhouseWatchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		94461A96001EC8761E4D24EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9524C15AA6715F80420C8F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95FE00E64215D8C70831ADD4 /* PlayhouseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhouseInfo.swift; sourceTree = "<group>"; };
 		9A690EEAFFD23F569A1CB823 /* ShowtimeLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowtimeLabels.swift; sourceTree = "<group>"; };
 		A5B2329E61FF2F6D94881C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A93E4A5FE957C0364B07F92A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				49EAD2811560EFD04DF3FE02 /* Notifications.swift */,
 				3EE60B41160858391439CFDB /* Playhouse.entitlements */,
 				17148D90E92590D08AD20A42 /* PlayhouseApp.swift */,
+				95FE00E64215D8C70831ADD4 /* PlayhouseInfo.swift */,
 				E303C6455E7F69F9774CD08A /* PlayhouseInfoView.swift */,
 				B44D441951689586381D8134 /* PrivacyInfo.xcprivacy */,
 				805B7F42AC42D85D09CB24D4 /* RequestFilmView.swift */,
@@ -270,6 +275,7 @@
 				CBC8CC47430F629A8E89F93E /* Theme.swift */,
 				404885DDDBC74270119939F0 /* TicketPageView.swift */,
 				75E8703096D88355A5D13A31 /* TitleView.swift */,
+				265A82F76891B1C029B88F62 /* Watcher.swift */,
 			);
 			path = Playhouse;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				34B3E7CC019D71D8FF1CE6DD /* GoogleCalendar.swift in Sources */,
 				89D266DAEF14B245D7F92B28 /* Notifications.swift in Sources */,
 				6067B27FBF33D4AECB5167B2 /* PlayhouseApp.swift in Sources */,
+				85F96C6899E96CAD7F4BFA49 /* PlayhouseInfo.swift in Sources */,
 				73D3DEEFC7C785153D925DC9 /* PlayhouseInfoView.swift in Sources */,
 				8DA6A237D49F9751BB889FAE /* RequestFilmView.swift in Sources */,
 				DF2E64CFDC28F5F1D79B5D7D /* ScheduleView.swift in Sources */,
@@ -583,6 +590,7 @@
 				20B09F682616ACBE1BDCFF5F /* Theme.swift in Sources */,
 				2F9D98E92DF9D48F4FCFF03F /* TicketPageView.swift in Sources */,
 				DA84A3963627F733363A6991 /* TitleView.swift in Sources */,
+				D3F41CADA7D3237E5DF0C428 /* Watcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

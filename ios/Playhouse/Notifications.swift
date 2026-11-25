@@ -8,7 +8,6 @@ import UserNotifications
 @MainActor @Observable
 final class Notifications {
     static let shared = Notifications()
-    static let watcherURL = URL(string: "https://oph-showtimes-watcher.spiritapes.workers.dev")!
 
     private(set) var isOn = UserDefaults.standard.bool(forKey: "notificationsOn") {
         didSet { UserDefaults.standard.set(isOn, forKey: "notificationsOn") }
@@ -87,12 +86,7 @@ final class Notifications {
     }
 
     private func post(_ path: String, _ body: [String: [String: String]]) async throws {
-        var request = URLRequest(url: Self.watcherURL.appending(path: path))
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try JSONSerialization.data(withJSONObject: body)
-        let (_, response) = try await URLSession.shared.data(for: request)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+        try await Watcher.post(path, json: JSONSerialization.data(withJSONObject: body))
     }
 }
 

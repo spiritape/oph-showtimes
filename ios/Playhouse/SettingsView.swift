@@ -106,14 +106,14 @@ struct SettingsView: View {
                     } footer: {
                         // TMDB's terms ask for its logo and notice with the app's credits, less prominent than the Playhouse's own marks.
                         VStack(alignment: .leading, spacing: 8) {
-                            Link(destination: FilmRequests.tmdbURL) {
+                            Link(destination: TMDB.website) {
                                 Image("TMDBLogo")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 9)
                             }
                             .accessibilityLabel("TMDB, The Movie Database")
-                            Text(FilmRequests.credit)
+                            Text(TMDB.credit)
                         }
                         .padding(.top, 4)
                     }
