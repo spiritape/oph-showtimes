@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Every user-facing string in the app. Ids with a dot match tools/text-editor.html
+  (LIVE_ROWS), so saved text from the Text Editor can be applied here as on iOS.
+  Ids starting with "android." exist only in this app.
+-->
+<resources>
+    <string name="app_name">Playhouse</string>
+
+    <!-- Schedule -->
+    <string name="schedule.title">Schedule</string>
+    <string name="schedule.request">Request</string>
+    <string name="schedule.info">Info</string>
+    <string name="schedule.search">Search films and shows</string>
+    <string name="filter.all">All</string>
+    <string name="filter.movies">Movies</string>
+    <string name="filter.live">Live Shows</string>
+    <string name="filter.free">Free</string>
+    <string name="row.details">Details</string>
+    <string name="row.rsvp">RSVP</string>
+    <string name="row.tickets">Tickets</string>
+    <string name="badge.freeFilm">Free Screening</string>
+    <string name="badge.freeEvent">Free Event</string>
+    <string name="badge.soldOut">Sold out</string>
+    <string name="schedule.noResults">No results for “%1$s”.</string>
+    <string name="schedule.nothing">Nothing scheduled right now.</string>
+    <string name="schedule.offline">No schedule</string>
+    <string name="schedule.retry">Try again</string>
+    <string name="feed.loadError">Couldn\'t load the schedule. Check your connection and pull to retry.</string>
+    <string name="feed.stale">Showing the last saved schedule.</string>
+    <string name="android.today">Today</string>
+    <string name="android.yesterday">Yesterday</string>
+    <string name="android.tomorrow">Tomorrow</string>
+    <string name="android.logoDescription">Ojai Playhouse. Scrolls back to today.</string>
+    <string name="android.requestDescription">Request a Movie</string>
+    <string name="android.infoDescription">Info and Settings</string>
+    <string name="android.clearSearch">Clear search</string>
+    <string name="android.closeSearch">Close search</string>
+    <string name="android.directedBy">Directed by %1$s</string>
+    <string name="android.released">Released %1$s</string>
+    <string name="android.ticketed">ticketed</string>
+    <string name="android.freeRsvp">free, RSVP required</string>
+
+    <!-- Film page -->
+    <string name="title.livestream">Watch the livestream</string>
+    <string name="title.starring">Starring %1$s</string>
+    <string name="title.showtimes">Showtimes</string>
+    <string name="title.nothing">Nothing scheduled right now.</string>
+    <string name="title.soldOut">Sold Out · Check for Seats</string>
+    <string name="title.rsvpFree">RSVP · Free</string>
+    <!-- iOS offers Apple Calendar here; Android opens the phone's own calendar app. -->
+    <string name="title.appleCal">Calendar App</string>
+    <string name="title.googleCal">Google Calendar</string>
+    <string name="title.invite">Invite a friend</string>
+    <string name="title.inviteMessage">Want to see %1$s with me at the Ojai Playhouse? %2$s</string>
+    <string name="title.about">About</string>
+    <string name="title.more">More on ojaiplayhouse.com</string>
+    <string name="android.back">Back</string>
+    <string name="android.share">Share</string>
+    <string name="android.addToCalendar">Add to Calendar</string>
+    <string name="android.dirPrefix">Dir. %1$s</string>
+    <!-- Joins a date and a time in invitations: "Thursday, Nov 27 at 7:30 PM". -->
+    <string name="android.dateAtTime">%1$s at %2$s</string>
+    <string name="android.noBrowser">No app can open this link.</string>
+    <string name="android.noCalendar">No calendar app is installed.</string>
+    <string name="android.noMaps">No maps app is installed.</string>
+    <string name="calendar.soldOut">Sold out</string>
+
+    <!-- Request a Movie -->
+    <string name="request.title">Request a Movie</string>
+    <string name="request.heading">A movie you\'d like to see on the big screen?</string>
+    <string name="request.intro">Search for a film and request it. The Playhouse sees how many people asked for each film.</string>
+    <string name="request.search">Search films</string>
+    <string name="request.mine">Your requests</string>
+    <string name="request.none">No films found.</string>
+    <string name="request.button">Request</string>
+    <string name="request.withdrawAsk">Withdraw your request for %1$s?</string>
+    <string name="request.withdraw">Withdraw Request</string>
+    <!-- %2$s is " (year)" or empty when the year is unknown. -->
+    <string name="request.shareMessage">I requested that the Ojai Playhouse screens %1$s%2$s. Make your requests on the Playhouse App!</string>
+    <string name="request.searchError">Couldn\'t search right now. Please try again.</string>
+    <string name="request.sendError">Couldn\'t send your request. Please try again.</string>
+    <string name="request.withdrawError">Couldn\'t withdraw your request. Please try again.</string>
+    <string name="android.done">Done</string>
+    <string name="android.edit">Edit</string>
+    <string name="android.cancel">Cancel</string>
+    <string name="android.ok">OK</string>
+    <string name="android.requested">Requested. Withdraws your request.</string>
+    <string name="android.shareFilm">Share %1$s</string>
+
+    <!-- Info -->
+    <string name="info.title">Settings</string>
+    <string name="info.address">145 E Ojai Ave, Ojai · next to Libbey Park</string>
+    <string name="info.visiting">Visiting the Playhouse</string>
+    <string name="info.directions">Directions</string>
+    <!-- iOS offers Apple Maps here; Android hands a geo: link to whichever maps app the phone has. -->
+    <string name="info.appleMaps">Other Maps App</string>
+    <string name="info.googleMaps">Google Maps</string>
+    <string name="info.notify">New Title Notifications</string>
+    <string name="info.notifyFooter">Get a notification when a new film or live show is announced.</string>
+    <string name="info.appearanceFooter">Widgets and notifications follow your phone\'s own setting.</string>
+    <string name="info.matchSize">Match Phone Setting</string>
+    <string name="info.sizeSystem">Following the font size in your phone\'s display settings. Move the slider to choose a size for this app.</string>
+    <string name="info.sizeChosen">%1$s. Turn on Match Phone Setting to follow your phone\'s font size again.</string>
+    <string name="info.version">Version</string>
+    <string name="info.appBy">App by</string>
+    <string name="android.appByName">Micah Van Hove</string>
+    <string name="android.website">ojaiplayhouse.com</string>
+    <string name="android.phone">805.646.1011</string>
+    <string name="android.callPlayhouse">Call the Playhouse, %1$s</string>
+    <string name="android.email">info@ojaiplayhouse.com</string>
+    <string name="android.appearance">Appearance</string>
+    <string name="android.appearanceDark">Dark</string>
+    <string name="android.appearanceLight">Light</string>
+    <string name="android.appearanceSystem">Match System</string>
+    <string name="android.textSize">Text Size</string>
+    <string name="android.sizeSmall">Small</string>
+    <string name="android.sizeDefault">Default</string>
+    <string name="android.sizeLarge">Large</string>
+    <string name="android.sizeLarger">Larger</string>
+    <string name="android.sizeLargest">Largest</string>
+    <string name="android.matchingPhone">Matching phone</string>
+    <string name="android.tmdbDescription">TMDB, The Movie Database</string>
+    <!-- The notice TMDB's API terms ask for, alongside its logo. Keep it word for word. -->
+    <string name="tmdb.credit">This app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.</string>
+
+    <!-- Visiting the Playhouse -->
+    <string name="visit.title">Visiting the Playhouse</string>
+    <string name="android.visitBoxOffice">Box Office</string>
+    <string name="visit.boxOffice1">107 S. Signal Street, directly behind the Playhouse and across from the Post Office and Libbey Park.</string>
+    <string name="visit.boxOffice2">Opens 60 minutes before showtime. All tickets are held at will call and must be picked up at the box office before entering the Playhouse.</string>
+    <string name="android.visitAbout">About the Playhouse</string>
+    <string name="visit.about">Opened in 1914, the Ojai Playhouse is a historic 200-seat, single-screen movie theater at 145 E. Ojai Ave, next to Libbey Park. It screens digital and 35mm films, and curates music, comedy, variety and more.</string>
+    <string name="android.visitParking">Parking</string>
+    <string name="visit.parking1">On Ojai city streets, north and south of E. Ojai Avenue.</string>
+    <string name="visit.parking2">ADA parking is on E. Ojai Avenue and S. Signal Street.</string>
+    <string name="android.visitFood">Food &amp; Drink</string>
+    <string name="visit.food">Popcorn, candy, fountain soda, beer &amp; wine, and specialty drinks.</string>
+    <string name="android.visitAccess">Accessibility</string>
+    <string name="visit.access">The Ojai Playhouse is ADA accessible.</string>
+    <string name="android.visitSeating">Seating</string>
+    <string name="visit.seating1">Movies are general admission.</string>
+    <string name="visit.seating2">Music, comedy and other events may be general admission or reserved seating.</string>
+    <string name="android.visitTickets">Tickets</string>
+    <string name="visit.tickets">Sold on the Ojai Playhouse website. Prices vary by movie and event; see each one\'s details for pricing.</string>
+    <string name="android.visitPolicies">Policies</string>
+    <string name="visit.policy1">All sales are final. No refunds or exchanges.</string>
+    <string name="visit.policy2">No late entry. Please arrive and be seated at least 15 minutes before the screening or performance.</string>
+    <string name="visit.policy3">Phones must be off inside the theater during the movie or performance.</string>
+    <string name="visit.policy4">No outside food, candy or drink.</string>
+    <string name="visit.policy5">No smoking or vaping.</string>
+    <string name="visit.policy6">Children 16 and under must be with an adult.</string>
+    <string name="visit.policy7">The Ojai Playhouse reserves the right to refuse service to anyone.</string>
+    <string name="android.visitGreen">Sustainability</string>
+    <string name="visit.green">The Playhouse looks for green solutions across the theater\'s operations wherever it can.</string>
+</resources>
