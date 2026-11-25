@@ -60,28 +60,16 @@ struct ShowtimeRow: View {
         .accessibilityElement(children: .combine)
     }
 
-    /// Says what's behind the row: the Title's page, with its ticket or RSVP buttons when there are any.
-    private var openLabel: String {
-        guard !played, !item.showtime.isSoldOut, let booking = item.showtime.booking else { return "Details" }
-        // Free ones RSVP; the Free Screening (or Free Event) badge sits by the year.
-        if booking.free { return "RSVP" }
-        return "Tickets"
-    }
-
     /// Needs a ticket and can still get one: the Tickets label shows the ticket icon.
-    private var ticketed: Bool {
-        !played && !item.showtime.isSoldOut && item.showtime.booking.map { !$0.free } == true
-    }
+    private var ticketed: Bool { item.showtime.isTicketed(played: played) }
 
     /// Free and can still RSVP: the pill reads RSVP.
-    private var freeRSVP: Bool {
-        !played && !item.showtime.isSoldOut && item.showtime.booking?.free == true
-    }
+    private var freeRSVP: Bool { item.showtime.isFreeRSVP(played: played) }
 
     private var openLabelView: some View {
         // Green for a free RSVP, matching the Free badge.
         OpenTitleLabel(
-            text: openLabel,
+            text: item.showtime.rowLabel(played: played),
             quiet: played || item.showtime.isSoldOut,
             free: item.showtime.booking?.free == true
         )

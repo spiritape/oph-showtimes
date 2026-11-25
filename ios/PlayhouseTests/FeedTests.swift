@@ -143,3 +143,37 @@ private func date(_ s: String) -> Date { try! Date(s, strategy: .iso8601) }
     let days = feed.days(.everything, now: date("2026-10-13T20:00:00Z")).matching("brown")
     #expect(days.flatMap(\.showtimes).map(\.id) == ["c"])
 }
+
+@Test func labelsTheRowPillByWhatsBehindIt() {
+    let tickets = Showtime.Booking(label: "Tickets", url: URL(string: "https://tickets.example")!, free: false)
+    let rsvp = Showtime.Booking(label: "RSVP", url: URL(string: "https://rsvp.example")!, free: true)
+    let ticketed = Showtime(id: "t", startsAt: .now, endsAt: .now, booking: tickets)
+    let free = Showtime(id: "f", startsAt: .now, endsAt: .now, booking: rsvp)
+    let soldOut = Showtime(id: "s", startsAt: .now, endsAt: .now, booking: tickets, soldOut: true)
+    let noBooking = Showtime(id: "n", startsAt: .now, endsAt: .now)
+    #expect(ticketed.rowLabel(played: false) == "Tickets")
+    #expect(free.rowLabel(played: false) == "RSVP")
+    #expect(soldOut.rowLabel(played: false) == "Details")
+    #expect(noBooking.rowLabel(played: false) == "Details")
+    #expect(ticketed.rowLabel(played: true) == "Details")
+    #expect(ticketed.isTicketed(played: false) && !ticketed.isFreeRSVP(played: false))
+    #expect(free.isFreeRSVP(played: false) && !free.isTicketed(played: false))
+    #expect(!soldOut.isTicketed(played: false) && !ticketed.isTicketed(played: true))
+}
+
+@Test func labelsTheTitlePageBookingButton() {
+    let tickets = Showtime.Booking(label: "Tickets", url: URL(string: "https://tickets.example")!, free: false)
+    let rsvp = Showtime.Booking(label: "RSVP", url: URL(string: "https://rsvp.example")!, free: true)
+    #expect(tickets.buttonLabel(soldOut: false) == "Tickets")
+    #expect(rsvp.buttonLabel(soldOut: false) == "RSVP · Free")
+    #expect(tickets.buttonLabel(soldOut: true) == "Sold Out · Check for Seats")
+}
+
+@Test func listsATitlesFactsUnderItsName() {
+    var digger = feed.titles[0]
+    #expect(digger.facts == "2026 · 1hr 30min")
+    digger.director = "Ann Director"
+    digger.rating = "R"
+    #expect(digger.facts == "2026 · Dir. Ann Director · 1hr 30min · R")
+    #expect(feed.titles[1].facts == "")
+}
