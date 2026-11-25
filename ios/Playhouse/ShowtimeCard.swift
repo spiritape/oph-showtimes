@@ -83,7 +83,7 @@ struct ShowtimeCard: View {
             Button {
                 openPage(booking.url)
             } label: {
-                Text(bookingLabel(booking))
+                Text(booking.buttonLabel(soldOut: showtime.isSoldOut))
                     .font(.headline)
                     .lineLimit(1)
                     .frame(maxWidth: .infinity)
@@ -117,11 +117,6 @@ struct ShowtimeCard: View {
         // White in dark mode (black in light), so Tickets stays the one colored button.
         .tint(.primary)
         .accessibilityHint("Shares the Playhouse's page for this show by text or another app")
-    }
-
-    private func bookingLabel(_ booking: Showtime.Booking) -> String {
-        if showtime.isSoldOut { return "Sold Out · Check for Seats" }
-        return booking.free ? "RSVP · Free" : booking.label
     }
 
     @ViewBuilder private var timeAndBadge: some View {

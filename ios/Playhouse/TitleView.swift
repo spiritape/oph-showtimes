@@ -60,8 +60,8 @@ struct TitleView: View {
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
-            if !facts.isEmpty {
-                Text(facts)
+            if !title.facts.isEmpty {
+                Text(title.facts)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -114,12 +114,6 @@ struct TitleView: View {
             }
             .frame(maxWidth: 560, alignment: .leading)
         }
-    }
-
-    private var facts: String {
-        [title.year, title.director.map { "Dir. \($0)" }, title.runtime, title.rating]
-            .compactMap(\.self)
-            .joined(separator: " · ")
     }
 
     private var showtimes: some View {
