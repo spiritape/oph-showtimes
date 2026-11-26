@@ -1,8 +1,8 @@
 {
- "lastReadCount": 36,
+ "lastReadCount": 34,
  "lastPublish": {
-  "scheduleHash": "f1667cce6dd2626ae97a49a1b68426f075f51f957cd818bc43b4ec213910c847",
-  "publishedAt": "2026-11-26T15:11:18.623Z"
+  "scheduleHash": "cdc083eae77a600e974472d5823f08fd56141c4dcc7cb38ccfed4ade7bc23a12",
+  "publishedAt": "2026-11-26T21:27:16.418Z"
  },
  "seen": {
   "titles": {
@@ -5340,8 +5340,8 @@
        "highlight": false
       }
      ],
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac3avtwo07lpce03ogyq",
-     "sourceUrl": "https://www.ojaiplayhouse.com/event/focker-in-law2",
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwjxac0fvhqt07ll2bv1mehw",
+     "sourceUrl": "https://www.ojaiplayhouse.com/event/focker-in-law3",
      "livestreamUrl": null,
      "showtimes": [
       {
@@ -5462,6 +5462,10 @@
      "synopsis": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others' wishes.",
      "about": [
       {
+       "text": "Rated PG",
+       "highlight": false
+      },
+      {
        "text": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others' wishes.",
        "highlight": false
       }
@@ -5503,6 +5507,10 @@
      "rating": null,
      "synopsis": "The scientist father of a teenage girl and boy accidentally shrinks his and two other neighborhood teens to the size of insects. Now the teens must fight diminutive dangers as the father searches for them.",
      "about": [
+      {
+       "text": "Rated PG",
+       "highlight": false
+      },
       {
        "text": "The scientist father of a teenage girl and boy accidentally shrinks his and two other neighborhood teens to the size of insects. Now the teens must fight diminutive dangers as the father searches for them.",
        "highlight": false
