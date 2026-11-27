@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A popcorn bucket, standing in for the SF Symbol "popcorn" the iOS app uses. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path
+        android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8"
+        android:strokeLineJoin="round" android:strokeLineCap="round"
+        android:pathData="M5.2,10.5 A2.5,2.5 0 0 1 7.6,6.3 A2.7,2.7 0 0 1 12,4.4 A2.7,2.7 0 0 1 16.4,6.3 A2.5,2.5 0 0 1 18.8,10.5 M4.5,10.5 H19.5 L17.6,21 H6.4 Z M9.9,10.5 L10.5,21 M14.1,10.5 L13.5,21" />
+</vector>
