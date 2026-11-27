@@ -1,8 +1,8 @@
 {
- "lastReadCount": 37,
+ "lastReadCount": 39,
  "lastPublish": {
-  "scheduleHash": "b461ecd58cc022908fac212a71b51619399694542d05c8ef6e2c2570c01490fc",
-  "publishedAt": "2026-11-27T18:23:16.243Z"
+  "scheduleHash": "c6d432ebb49396153bc81884005b1fd548af3545bd7c7d58c15573ac43e9f7db",
+  "publishedAt": "2026-11-27T18:25:16.423Z"
  },
  "seen": {
   "titles": {
@@ -6004,7 +6004,7 @@
     }
    },
    "avengers: doomsday": {
-    "lastShowtime": "2026-12-19T02:45:00.000Z",
+    "lastShowtime": "2026-12-20T02:45:00.000Z",
     "title": {
      "key": "avengers: doomsday",
      "slug": "avengers-doomsday",
@@ -6083,6 +6083,34 @@
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwzas0ajvess07myk7z53g3i",
        "infoHtml": "<p>Year: 2026<br>Director: Anthony Russo, Joe Russo<br>Starring: Robert Downey Jr., Pedro Pascal, Chris Hemsworth, Vanessa Kirby, Anthony Mackie, Sebastian Stan<br>Running Time: 2hr 40min</p><p>Rated: PG-13</p><p>Universes collide and the Multiverse Saga begins its final chapter in Marvel Studios&#39; Avengers: Doomsday. Beloved heroes from three distinct universes will be set on a deadly collision course and ultimately face an existential threat unlike anything they&#39;ve ever encountered. This epic film will lay the foundation for the future of the Marvel Cinematic Universe. See it in Infinity Vision, the way it&#39;s meant to be seen, on bigger, brighter and more immersive screens.</p><p> </p>",
        "sourceUrl": "https://www.ojaiplayhouse.com/event/avengers-doomsday4"
+      },
+      {
+       "id": "cmwzb8dyhvofl08n1he2u2kex",
+       "title": "Avengers: Doomsday",
+       "subtitle": null,
+       "startsAt": "2026-12-19T23:00:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1290?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwzas0chvadt08n1oiszmdfs",
+       "infoHtml": "<p>Year: 2026<br>Director: Anthony Russo, Joe Russo<br>Starring: Robert Downey Jr., Pedro Pascal, Chris Hemsworth, Vanessa Kirby, Anthony Mackie, Sebastian Stan<br>Running Time: 2hr 40min</p><p>Rated: PG-13</p><p>Universes collide and the Multiverse Saga begins its final chapter in Marvel Studios&#39; Avengers: Doomsday. Beloved heroes from three distinct universes will be set on a deadly collision course and ultimately face an existential threat unlike anything they&#39;ve ever encountered. This epic film will lay the foundation for the future of the Marvel Cinematic Universe. See it in Infinity Vision, the way it&#39;s meant to be seen, on bigger, brighter and more immersive screens.</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/avengers-doomsday5"
+      },
+      {
+       "id": "cmwzba6zdvu8707myws1tm80e",
+       "title": "Avengers: Doomsday",
+       "subtitle": null,
+       "startsAt": "2026-12-20T02:45:00.000Z",
+       "category": "film",
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1291?siteToken=0zv2d2xep31txszrx28cn3r0t4",
+       "rsvpUrl": null,
+       "livestreamUrl": null,
+       "price": "$15",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwzas0edvesz07mykkw31hla",
+       "infoHtml": "<p>Year: 2026<br>Director: Anthony Russo, Joe Russo<br>Starring: Robert Downey Jr., Pedro Pascal, Chris Hemsworth, Vanessa Kirby, Anthony Mackie, Sebastian Stan<br>Running Time: 2hr 40min</p><p>Rated: PG-13</p><p>Universes collide and the Multiverse Saga begins its final chapter in Marvel Studios&#39; Avengers: Doomsday. Beloved heroes from three distinct universes will be set on a deadly collision course and ultimately face an existential threat unlike anything they&#39;ve ever encountered. This epic film will lay the foundation for the future of the Marvel Cinematic Universe. See it in Infinity Vision, the way it&#39;s meant to be seen, on bigger, brighter and more immersive screens.</p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/avengers-doomsday6"
       }
      ]
     }
