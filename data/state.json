@@ -1,8 +1,8 @@
 {
- "lastReadCount": 41,
+ "lastReadCount": 42,
  "lastPublish": {
-  "scheduleHash": "671990044019be768050aabc35c9e8a9bbc599629d5b9f0f077f3cb0045c71a2",
-  "publishedAt": "2026-11-27T18:29:21.372Z"
+  "scheduleHash": "d0edd434731df7c88bf33932a0d0100c284250efdfa7185c36b8272771f27130",
+  "publishedAt": "2026-11-27T18:35:14.841Z"
  },
  "seen": {
   "titles": {
@@ -6139,6 +6139,56 @@
        "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmwzas0i8vae408n14unnstlt",
        "infoHtml": "<p>Year: 2026<br>Director: Anthony Russo, Joe Russo<br>Starring: Robert Downey Jr., Pedro Pascal, Chris Hemsworth, Vanessa Kirby, Anthony Mackie, Sebastian Stan<br>Running Time: 2hr 40min</p><p>Rated: PG-13</p><p>Universes collide and the Multiverse Saga begins its final chapter in Marvel Studios&#39; Avengers: Doomsday. Beloved heroes from three distinct universes will be set on a deadly collision course and ultimately face an existential threat unlike anything they&#39;ve ever encountered. This epic film will lay the foundation for the future of the Marvel Cinematic Universe. See it in Infinity Vision, the way it&#39;s meant to be seen, on bigger, brighter and more immersive screens.</p><p> </p>",
        "sourceUrl": "https://www.ojaiplayhouse.com/event/avengers-doomsday8"
+      }
+     ]
+    }
+   },
+   "dune (david lynch - 4k restored)": {
+    "lastShowtime": "2026-12-17T03:00:00.000Z",
+    "title": {
+     "key": "dune (david lynch - 4k restored)",
+     "slug": "dune-david-lynch-4k-restored",
+     "name": "Dune (David Lynch - 4k restored)",
+     "subtitle": null,
+     "category": "film",
+     "isFilm": true,
+     "year": "1984",
+     "director": "David Lynch",
+     "starring": "Kyle MacLachlan, Virginia Madsen, Francesca Annis, Everett McGill, Brad Dourif, Sean Young, Sting",
+     "runtime": "2hr 17min",
+     "rating": null,
+     "synopsis": "The long-awaited film version of Frank Herbert's classic science fiction epic, Dune, explodes on the screen with dazzling special effects, unforgettable images, and powerful performances. The saga of intergalactic warrior Paul Atreides (Kyle MacLachlan) and his messianic rise to leadership features an all-star cast, including Jose Ferrer, Max Von Sydow, Oscar® winner Linda Hunt and rock legend, Sting. This monumental Dino DeLaurentiis presentation is directed by David Lynch (The Elephant Man, Eraserhead), with photography by Academy Award® winner Freddie Francis, music by Grammy® winner Toto, and incredible monster creation by E.T.'s Carlo Rambaldi.",
+     "about": [
+      {
+       "text": "The long-awaited film version of Frank Herbert's classic science fiction epic, Dune, explodes on the screen with dazzling special effects, unforgettable images, and powerful performances. The saga of intergalactic warrior Paul Atreides (Kyle MacLachlan) and his messianic rise to leadership features an all-star cast, including Jose Ferrer, Max Von Sydow, Oscar® winner Linda Hunt and rock legend, Sting. This monumental Dino DeLaurentiis presentation is directed by David Lynch (The Elephant Man, Eraserhead), with photography by Academy Award® winner Freddie Francis, music by Grammy® winner Toto, and incredible monster creation by E.T.'s Carlo Rambaldi.",
+       "highlight": false
+      },
+      {
+       "text": "Visit an unbelievable world beyond time and space and experience the ultimate adventure that goes beyond the imagination.",
+       "highlight": false
+      },
+      {
+       "text": "4K RESTORATION",
+       "highlight": true
+      }
+     ],
+     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmd65ey7pav4h07muuc2v16mn",
+     "sourceUrl": "https://www.ojaiplayhouse.com/event/dune-david-lynch-4k-restored",
+     "livestreamUrl": null,
+     "showtimes": [
+      {
+       "id": "cmwzbgyyevvp808n1o3lp2k0p",
+       "title": "Dune (David Lynch - 4k restored)",
+       "subtitle": null,
+       "startsAt": "2026-12-17T03:00:00.000Z",
+       "category": "film",
+       "ticketUrl": null,
+       "rsvpUrl": "https://www.eventbrite.com/e/2005551509553?aff=oddtdtcreator",
+       "livestreamUrl": null,
+       "price": "REGISTRATION REQUIRED",
+       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmd65ey7pav4h07muuc2v16mn",
+       "infoHtml": "<p>Year: 1984<br>Director: David Lynch<br>Starring: Kyle MacLachlan, Virginia Madsen, Francesca Annis, Everett McGill, Brad Dourif, Sean Young, Sting<br>Running Time: 2hr 17min</p><p>The long-awaited film version of Frank Herbert&#39;s classic science fiction epic, Dune, explodes on the screen with dazzling special effects, unforgettable images, and powerful performances. The saga of intergalactic warrior Paul Atreides (Kyle MacLachlan) and his messianic rise to leadership features an all-star cast, including Jose Ferrer, Max Von Sydow, Oscar® winner Linda Hunt and rock legend, Sting. This monumental Dino DeLaurentiis presentation is directed by David Lynch (The Elephant Man, Eraserhead), with photography by Academy Award® winner Freddie Francis, music by Grammy® winner Toto, and incredible monster creation by E.T.&#39;s Carlo Rambaldi. </p><p>Visit an unbelievable world beyond time and space and experience the ultimate adventure that goes beyond the imagination.</p><p><strong>4K RESTORATION</strong></p><p> </p>",
+       "sourceUrl": "https://www.ojaiplayhouse.com/event/dune-david-lynch-4k-restored"
       }
      ]
     }
