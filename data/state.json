@@ -1,8 +1,8 @@
 {
  "lastReadCount": 37,
  "lastPublish": {
-  "scheduleHash": "282a11ff8f6a56faba92f5ff9326c84cdb4a1b697ed236a6716a7637149f17ca",
-  "publishedAt": "2026-11-27T18:21:16.623Z"
+  "scheduleHash": "b461ecd58cc022908fac212a71b51619399694542d05c8ef6e2c2570c01490fc",
+  "publishedAt": "2026-11-27T18:23:16.243Z"
  },
  "seen": {
   "titles": {
@@ -6076,7 +6076,7 @@
        "subtitle": null,
        "startsAt": "2026-12-19T02:45:00.000Z",
        "category": "film",
-       "ticketUrl": null,
+       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1289?siteToken=0zv2d2xep31txszrx28cn3r0t4",
        "rsvpUrl": null,
        "livestreamUrl": null,
        "price": "$15",
