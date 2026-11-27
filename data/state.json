@@ -2,7 +2,7 @@
  "lastReadCount": 34,
  "lastPublish": {
   "scheduleHash": "cdc083eae77a600e974472d5823f08fd56141c4dcc7cb38ccfed4ade7bc23a12",
-  "publishedAt": "2026-11-26T21:27:16.418Z"
+  "publishedAt": "2026-11-27T08:08:27.505Z"
  },
  "seen": {
   "titles": {
@@ -67,47 +67,6 @@
      "about": [
       {
        "text": "A decade-long global odyssey chronicles the ever-changing record holders of the title of oldest person alive. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.",
-       "highlight": false
-      }
-     ],
-     "sourceUrl": null
-    }
-   },
-   "ha-chan, shake your booty!": {
-    "lastShowtime": "2026-09-28T01:45:00.000Z",
-    "title": {
-     "key": "ha-chan, shake your booty!",
-     "slug": "ha-chan-shake-your-booty",
-     "name": "Ha-Chan, Shake Your Booty!",
-     "subtitle": null,
-     "category": "film",
-     "isFilm": true,
-     "year": "2026",
-     "director": "Josef Kubota Wladyka",
-     "runtime": "2hr 2min",
-     "rating": "R",
-     "synopsis": "Haru and Luis love competing in Tokyo's ballroom dance scene, but after tragedy strikes, Haru withdraws into isolation. When friends coax her back to the studio, she develops an infatuation with the new instructor.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cms94yvho6xhq07lww2fqt4rz",
-     "livestreamUrl": null,
-     "showtimes": [
-      {
-       "id": "cms96cyav84sw07lwhf3vs8ae",
-       "title": "Ha-Chan, Shake Your Booty!",
-       "subtitle": null,
-       "startsAt": "2026-09-28T01:45:00.000Z",
-       "category": "film",
-       "ticketUrl": "https://ticketing.uswest.veezi.com/purchase/1045?siteToken=0zv2d2xep31txszrx28cn3r0t4",
-       "rsvpUrl": null,
-       "livestreamUrl": null,
-       "price": "$15/$13.50 (senior 60+)",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cms94yvho6xhq07lww2fqt4rz",
-       "infoHtml": "<p>Year: 2026<br>Director: Josef Kubota Wladyka<br>Starring: Rinko Kikuchi, Alberto Guerra, Alejandro Edda<br>Running Time: 2hr 2min</p><p>Rated: R</p><p>Haru and Luis love competing in Tokyo&#39;s ballroom dance scene, but after tragedy strikes, Haru withdraws into isolation. When friends coax her back to the studio, she develops an infatuation with the new instructor.</p>"
-      }
-     ],
-     "starring": null,
-     "about": [
-      {
-       "text": "Haru and Luis love competing in Tokyo's ballroom dance scene, but after tragedy strikes, Haru withdraws into isolation. When friends coax her back to the studio, she develops an infatuation with the new instructor.",
        "highlight": false
       }
      ],
