@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.ojaishowtimes.app.R
+import com.ojaishowtimes.app.widget.WidgetUpdates
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -15,7 +16,7 @@ import java.io.File
  * (ios/Playhouse/FeedStore.swift).
  */
 class FeedStore(private val context: Context) {
-    private val cacheFile = File(context.filesDir, "schedule.json")
+    private val cacheFile = cacheFile(context)
 
     var feed by mutableStateOf<Feed?>(null)
         private set
@@ -29,7 +30,7 @@ class FeedStore(private val context: Context) {
     suspend fun loadCache() {
         if (feed != null) return
         feed = withContext(Dispatchers.IO) {
-            runCatching { Feed.decode(cacheFile.readText()) }.getOrNull()
+            readCache(context)
         }
     }
 
@@ -47,6 +48,7 @@ class FeedStore(private val context: Context) {
                 temp.writeText(text)
                 temp.renameTo(cacheFile)
             }
+            WidgetUpdates.refresh(context)
         } catch (e: CancellationException) {
             // Cancelled, e.g. by leaving the app mid-refresh: not a failure.
             throw e
@@ -55,5 +57,13 @@ class FeedStore(private val context: Context) {
         } finally {
             isLoading = false
         }
+    }
+
+    companion object {
+        fun cacheFile(context: Context) = File(context.filesDir, "schedule.json")
+
+        /** The last good Feed, or null before the first load. The widget reads it too. */
+        fun readCache(context: Context): Feed? =
+            runCatching { Feed.decode(cacheFile(context).readText()) }.getOrNull()
     }
 }

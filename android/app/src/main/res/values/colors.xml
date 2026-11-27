@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="launch_background">#FF111018</color>
+    <!-- The widget gallery's preview (layout/widget_preview), matching AppColors. -->
+    <color name="widget_background">#FFFFFFFF</color>
+    <color name="widget_accent">#FF0032E4</color>
+    <color name="widget_secondary">#993C3C43</color>
+    <color name="widget_placeholder">#1F767680</color>
 </resources>

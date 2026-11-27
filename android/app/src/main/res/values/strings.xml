@@ -153,4 +153,11 @@
     <string name="visit.policy7">The Ojai Playhouse reserves the right to refuse service to anyone.</string>
     <string name="android.visitGreen">Sustainability</string>
     <string name="visit.green">The Playhouse looks for green solutions across the theater\'s operations wherever it can.</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget.name">Next at the Playhouse</string>
+    <string name="widget.desc">The next Showtimes at the Ojai Playhouse.</string>
+    <string name="widget.empty">Open the app to load the schedule.</string>
+    <string name="android.widgetLabel">Ojai Playhouse</string>
+    <string name="android.widgetWhen">%1$s · %2$s</string>
 </resources>

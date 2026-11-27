@@ -25,6 +25,14 @@ object Http {
         }
     }
 
+    /** The bytes of a 200 response, or an IOException. For widget thumbnails. */
+    suspend fun bytes(url: String): ByteArray = withContext(Dispatchers.IO) {
+        client.newCall(Request.Builder().url(url).build()).execute().use { response ->
+            if (response.code != 200) throw IOException("HTTP ${response.code}")
+            response.body.bytes()
+        }
+    }
+
     /** POSTs JSON, throwing unless the response is a 200. */
     suspend fun postJson(url: String, json: String): String = withContext(Dispatchers.IO) {
         val request = Request.Builder().url(url).post(json.toRequestBody("application/json".toMediaType())).build()

@@ -26,10 +26,14 @@ Or open `android/` in Android Studio. The SDK path goes in `local.properties` (n
 | `TitleView.swift`, `GoogleCalendar.swift` | `ui/TitleScreen.kt`, `ui/Links.kt` |
 | `RequestFilmView.swift` | `ui/RequestScreen.kt` |
 | `SettingsView.swift`, `PlayhouseInfoView.swift` | `ui/InfoScreen.kt` |
+| `Widgets/NextShowtimesWidget.swift` | `widget/NextShowtimesWidget.kt`, `widget/WidgetUpdates.kt` (Jetpack Glance) |
 
 Every user-facing string is in `app/src/main/res/values/strings.xml`. Ids with a dot match
 `tools/text-editor.html` (`schedule.request` is `R.string.schedule_request` in code); ids
 starting `android.` exist only here.
 
-Not yet on Android: New Title notifications (FCM), the home-screen widget, Wear OS, and
-Play Store signing.
+The home-screen widget draws from the app's saved schedule rather than fetching its own. It
+redraws when the app saves a new schedule, when a Showtime drops off (30 minutes after it starts)
+or the day changes at the theater, and every six hours as a fallback.
+
+Not yet on Android: New Title notifications (FCM), Wear OS, and Play Store signing.

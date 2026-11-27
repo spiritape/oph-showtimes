@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -36,6 +37,7 @@ import com.ojaishowtimes.app.ui.PlayhouseTheme
 import com.ojaishowtimes.app.ui.RequestScreen
 import com.ojaishowtimes.app.ui.ScheduleScreen
 import com.ojaishowtimes.app.ui.TitleScreen
+import com.ojaishowtimes.app.widget.WidgetUpdates
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -44,6 +46,8 @@ class MainActivity : ComponentActivity() {
     private val settings by lazy { Settings(applicationContext) }
     /** A Title a link asked for (ojaiplayhouse://title/<slug>), opened once the schedule has it. */
     private var linkedSlug by mutableStateOf<String?>(null)
+    /** Counts the widget's taps that ask for the schedule, closing whatever is open over it. */
+    private var scheduleRequests by mutableIntStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +55,8 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             store.loadCache()
+            // Catches the widget up (e.g. after an app update); a new schedule redraws it again.
+            WidgetUpdates.refresh(applicationContext)
             // Fresh whenever the app comes to the front, as on iOS.
             repeatOnLifecycle(Lifecycle.State.STARTED) { store.refresh() }
         }
@@ -66,7 +72,7 @@ class MainActivity : ComponentActivity() {
                 enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
             }
             PlayhouseTheme(dark = dark, textSize = settings.textSize) {
-                App(store, requests, settings, linkedSlug, onLinkHandled = { linkedSlug = null })
+                App(store, requests, settings, linkedSlug, scheduleRequests, onLinkHandled = { linkedSlug = null })
             }
         }
     }
@@ -74,11 +80,17 @@ class MainActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         linkedSlug = slug(intent)
+        if (intent.action == ACTION_SHOW_SCHEDULE) scheduleRequests++
     }
 
     private fun slug(intent: Intent?): String? {
         val data = intent?.data ?: return null
         return if (data.scheme == "ojaiplayhouse" && data.host == "title") data.pathSegments.firstOrNull() else null
+    }
+
+    companion object {
+        /** From the widget: back to the schedule, whatever was open. */
+        const val ACTION_SHOW_SCHEDULE = "com.ojaishowtimes.app.SHOW_SCHEDULE"
     }
 }
 
@@ -88,6 +100,7 @@ private fun App(
     requests: FilmRequests,
     settings: Settings,
     linkedSlug: String?,
+    scheduleRequests: Int,
     onLinkHandled: () -> Unit,
 ) {
     /** Titles opened from the schedule, the top one showing. */
@@ -99,8 +112,17 @@ private fun App(
         val slug = linkedSlug ?: return@LaunchedEffect
         val title = store.feed?.titles?.firstOrNull { it.slug == slug } ?: return@LaunchedEffect
         onLinkHandled()
+        showsRequests = false
+        showsInfo = false
         path.clear()
         path.add(title)
+    }
+
+    LaunchedEffect(scheduleRequests) {
+        if (scheduleRequests == 0) return@LaunchedEffect
+        showsRequests = false
+        showsInfo = false
+        path.clear()
     }
 
     Box(Modifier.fillMaxSize()) {

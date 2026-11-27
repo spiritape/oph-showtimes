@@ -18,19 +18,20 @@ class Formats(private val context: Context, val zone: ZoneId) {
         DateTimeFormatter.ofPattern(DateFormat.getBestDateTimePattern(locale, skeleton), locale).withZone(zone)
 
     private val dayLong = formatter("EEEEMMMd")
+    private val dayShort = formatter("EEEMMMd")
     private val time = formatter(if (is24Hour) "Hm" else "hm")
     private val weekdayShort = formatter("EEE")
     private val dayOfMonth = formatter("d")
     private val monthShort = formatter("MMM")
 
-    /** "Today", "Yesterday", "Tomorrow", or e.g. "Thursday, Nov 27". */
-    fun dayLabel(day: LocalDate, now: Instant = Instant.now()): String {
+    /** "Today", "Yesterday", "Tomorrow", or e.g. "Thursday, Nov 27" ("Thu, Nov 27" when [short]). */
+    fun dayLabel(day: LocalDate, now: Instant = Instant.now(), short: Boolean = false): String {
         val today = now.atZone(zone).toLocalDate()
         return when (day) {
             today -> context.getString(R.string.android_today)
             today.minusDays(1) -> context.getString(R.string.android_yesterday)
             today.plusDays(1) -> context.getString(R.string.android_tomorrow)
-            else -> dayLong.format(day.atStartOfDay(zone))
+            else -> (if (short) dayShort else dayLong).format(day.atStartOfDay(zone))
         }
     }
 

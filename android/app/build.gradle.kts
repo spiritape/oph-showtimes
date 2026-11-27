@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.coil.network)
     implementation(libs.okhttp)
     implementation(libs.coroutines.android)
+    implementation(libs.glance.appwidget)
+    implementation(libs.work.runtime)
     debugImplementation(libs.compose.ui.tooling)
     testImplementation(libs.junit)
 }
