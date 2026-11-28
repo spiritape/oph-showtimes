@@ -2,7 +2,7 @@
  "lastReadCount": 42,
  "lastPublish": {
   "scheduleHash": "b5504d403c38e2e222476aef3641df466ec6479992150bdd099b5f7a4d5478e3",
-  "publishedAt": "2026-11-28T01:52:48.224Z"
+  "publishedAt": "2026-11-28T10:12:29.466Z"
  },
  "seen": {
   "titles": {
@@ -67,47 +67,6 @@
      "about": [
       {
        "text": "A decade-long global odyssey chronicles the ever-changing record holders of the title of oldest person alive. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.",
-       "highlight": false
-      }
-     ],
-     "sourceUrl": null
-    }
-   },
-   "collateral (4k restored)": {
-    "lastShowtime": "2026-09-29T02:00:00.000Z",
-    "title": {
-     "key": "collateral (4k restored)",
-     "slug": "collateral-4k-restored",
-     "name": "Collateral (4k restored)",
-     "subtitle": null,
-     "category": "film",
-     "isFilm": true,
-     "year": "2004",
-     "director": "Michael Mann",
-     "runtime": "2hr",
-     "rating": null,
-     "synopsis": "A cab driver finds himself the hostage of an engaging contract killer as he makes his rounds from hit to hit during one night in Los Angeles.",
-     "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsxp0uoxs2lm07mxsgopmqkj",
-     "livestreamUrl": null,
-     "showtimes": [
-      {
-       "id": "cmsxp8inbscta07loow03ri2w",
-       "title": "Collateral (4k restored)",
-       "subtitle": null,
-       "startsAt": "2026-09-29T02:00:00.000Z",
-       "category": "film",
-       "ticketUrl": null,
-       "rsvpUrl": "https://www.eventbrite.com/e/1998266653352?aff=oddtdtcreator",
-       "livestreamUrl": null,
-       "price": "REGISTRATION REQUIRED",
-       "imageUrl": "https://us-west-2.graphassets.com/AjQ6YhqDQQuKSCpFHmA5az/cmsxp0uoxs2lm07mxsgopmqkj",
-       "infoHtml": "<p>Year: 2004<br>Director: Michael Mann<br>Starring: Tom Cruise, Jamie Foxx, Jada Pinkett Smith<br>Running Time: 2hr</p><p>A cab driver finds himself the hostage of an engaging contract killer as he makes his rounds from hit to hit during one night in Los Angeles.</p><p><strong>We look forward to seeing you at the historic Ojai Playhouse. We ask that you please help support the theater and our free film screenings by visiting the concession stand and enjoying our delicious organic popcorn, candies, slushies, snacks and more. Your support is much appreciated!</strong></p><p><strong>Important note:</strong></p><p><strong>If you make a reservation for this film but opt not to attend or need to cancel, please click the ‘go to my tickets’ button in your confirmation email from Eventbrite, then click ‘cancel my order’ so that your tickets are available for someone else.</strong></p><p><strong>Most free screenings fill up quickly. We would love to fill every seat in the theater. Please help us by cancelling your order if you cannot make it.</strong></p><p><strong>Thank you! See you at the movies.</strong></p>"
-      }
-     ],
-     "starring": null,
-     "about": [
-      {
-       "text": "A cab driver finds himself the hostage of an engaging contract killer as he makes his rounds from hit to hit during one night in Los Angeles.",
        "highlight": false
       }
      ],
